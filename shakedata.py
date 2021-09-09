@@ -189,6 +189,7 @@ if __name__ == '__main__':
     set_args(args)
     logger = create_logger(args.log_severity)
 
+    # test
     repo = git.Repo(git_repository)
     repo.remotes.origin.pull()
 
