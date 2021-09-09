@@ -350,8 +350,8 @@ def git_push():
         repo = git.Repo(args.git_repo_dir)
         repo.git.add(update=True)
         repo.index.commit("Some XML data updated")
-        origin = repo.remote(name='origin')
-        origin.push()
+        #origin = repo.remote(name='origin')
+        #origin.push()
     except Exception as e:
         logger.critical("Unexpected error:: {}".format(str(e)))
         exc_type, exc_obj, exc_tb = sys.exc_info()
