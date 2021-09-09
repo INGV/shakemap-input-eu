@@ -1,3 +1,5 @@
+import os.path
+
 import requests
 import argparse
 import json
@@ -46,7 +48,7 @@ class MyParser(argparse.ArgumentParser):
         self.print_help()
         sys.exit(2)
 
-def set_args(args):
+def set_args():
     if args.days == '15m':
         args.days = 1./24. * 0.25
     else:
@@ -62,6 +64,9 @@ def set_args(args):
     appo = UTCDateTime(args.end_time) - args.days * ONEDAY
     args.start_time =  appo.strftime("%Y-%m-%dT%H:%M:%S")
     #
+
+    if not os.path.isdir(args.local_data_dir):
+        sys.exit(f"Directory: {args.local_data_dir} does not exist!!!")
 
 # extract ID from event string
 def extract_id(string, fdsn_client):
@@ -90,7 +95,7 @@ def extract_id(string, fdsn_client):
     return event_id
 
 
-# routine to extract an obspy catalog and a list of event_ids from fdsn event ws
+# routine to extract an obspy catalog and a list of events id from fdsn event ws
 def find_events(
         fdsn_client,
         start_time="1900-01-01",
@@ -132,33 +137,49 @@ def find_events(
         try: cat2 = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=-180, maxlongitude=-(360-lonmax), orderby=orderby, limit=1000)
         except: cat2 = Catalog()
         # combine the catalog object
-        cat = cat1 + cat2
+        catalog = cat1 + cat2
     else:
         try:
-            cat = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=lonmin, maxlongitude=lonmax, orderby=orderby, limit=1000)
+            catalog = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=lonmin, maxlongitude=lonmax, orderby=orderby, limit=1000)
         except:
             logger.error ("No events were found in the time window: [%s / %s]" % (starttime, endtime))
             quit()
 
 #     tmp = str(cat[0].resource_id)
 #     event_id = extract_id(tmp, fdsn_client)
-    event_ids=[]
-    for c in cat:
+    event_ids_list=[]
+    for c in catalog:
         tmp = str(c.resource_id)
-        event_ids.append(extract_id(tmp, fdsn_client))
+        event_ids_list.append(extract_id(tmp, fdsn_client))
 
     if verbose == True:
 
-        for i, c in enumerate(cat):
+        for i, c in enumerate(catalog):
             ot = c.origins[0].time
             lat = c.origins[0].latitude
             lon = c.origins[0].longitude
             dep = c.origins[0].depth #/ 1000.
             mag = c.magnitudes[0].mag
             mag_type = c.magnitudes[0].magnitude_type
-            logger.info("%s %s      %s   %s %s %s   %s (%s)" % (fdsn_client, event_ids[i], ot, lat, lon, dep, mag, mag_type))
+            logger.info("%s %s      %s   %s %s %s   %s (%s)" % (fdsn_client, event_ids_list[i], ot, lat, lon, dep, mag, mag_type))
 
-    return cat, event_ids
+    return catalog, event_ids_list
+
+def log_summary_data():
+    logger.info('EVENTS:')
+    logger.info(args.event_ids)
+    logger.info("STARTIME: %s   ENDTIME: %s" % (args.start_time, args.end_time))
+    logger.info("MINMAG: %.1f" % (args.minmag))
+    logger.info("ESM BCK VERIFICATION (days): %.2f" % (args.chkbcktime))
+    logger.info("run at: %s" % (UTCDateTime().strftime("%Y-%m-%dT%H:%M:%S")))
+
+def generate_events_xml_data():
+    for eid in args.event_ids:
+        generate_events_xml_data(eid)
+
+def generate_events_xml_data(event_id):
+    pass
+
 
 if __name__ == '__main__':
 
@@ -175,7 +196,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument("days",  help="set the number of days before end time (15m, 1d, 5d, 10d, 30d, 365d)", choices=['15m', '1d', '5d', '10d', '30d', '365d'])
-    parser.add_argument("shake_home_dir", help="provide the shakemap installation home dir (e.g., /Users/michelini/shakemap_profiles/world)")
+    parser.add_argument("local_data_dir", help="provide the shakemap installation home dir (e.g., /Users/michelini/shakemap_profiles/world)")
     parser.add_argument("-e","--end_time", nargs="?", default=default_end_time, help="provide the end time  (e.g., 2020-10-23); [default is now]")
     parser.add_argument("-m","--minmag", nargs="?", default=default_minmag, help="provide the minimum magnitude (e.g.,4.5); [default is 4.0]")
     parser.add_argument("-b","--chkbcktime", nargs="?", default=default_chkbcktime, help="provide the number of days to check for ESM new input data [default is 1.0]")
@@ -186,14 +207,14 @@ if __name__ == '__main__':
                         default="INFO")
 
     args = parser.parse_args()
-    set_args(args)
+    set_args()
     logger = create_logger(args.log_severity)
 
-    # test
     repo = git.Repo(git_repository)
     repo.remotes.origin.pull()
 
-    cat,event_ids = find_events(
+    # my strategy is to have only one variabe shared by all functins, that is args
+    args.catalog, args.event_ids = find_events(
         fdsn_client,
         start_time=args.start_time,
         end_time=args.end_time,
@@ -205,7 +226,12 @@ if __name__ == '__main__':
         mode='hist',
         verbose=True
     )
-    pass
+
+    log_summary_data()
+    generate_events_xml_data()
+
+
+
 
 
 
