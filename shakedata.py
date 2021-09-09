@@ -28,6 +28,8 @@ def catch_all_and_print(f):
     # type: (Callable[..., Any]) -> Callable[..., Any]
     """
     A function wrapper for catching all exceptions and logging them
+    Questo trucco del decorator è carino però perdo l'informazione sulla linea di codice che è andata il errore
+    Ho solo il nome della funzione
     """
     @functools.wraps(f)
     def inner(*args, **kwargs):
@@ -355,7 +357,7 @@ def log_summary_data():
 
 @catch_all_and_print
 def git_pull():
-    repo = git.Repo(args.git_repo_dir+'pappa/.git')
+    repo = git.Repo(args.git_repo_dir+'/.git')
     repo.remotes.origin.pull()
 
 @catch_all_and_print
