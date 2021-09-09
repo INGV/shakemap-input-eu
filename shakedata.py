@@ -15,7 +15,7 @@ import sys
 USRNAME = "&username=spada"
 ONEDAY = 3600 * 24
 fdsn_client = 'EMSC'
-git_repository = '/home/sergio/projects/ingv/sismologia/shakemap-input-eu/data'
+git_repository = '/home/sergio/projects/ingv/sismologia/shakemap-input-eu'
 
 # global logger
 logger = None
