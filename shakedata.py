@@ -14,6 +14,7 @@ import argparse
 import sys
 import inspect
 import shutil
+import functools
 
 # COMSTANTS
 USRNAME = "&username=spada"
@@ -23,6 +24,25 @@ fdsn_client = 'EMSC'
 # global logger
 logger = None
 
+def catch_all_and_print(f):
+    # type: (Callable[..., Any]) -> Callable[..., Any]
+    """
+    A function wrapper for catching all exceptions and logging them
+    """
+    @functools.wraps(f)
+    def inner(*args, **kwargs):
+        # type: (*Any, **Any) -> Any
+        try:
+            return f(*args, **kwargs)
+        except Exception as e:
+            logger.critical("Unexpected error:: {}".format(str(e)))
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            this_function_name = inspect.currentframe().f_code.co_name
+            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+            #logger.critical("DETAILS: {}, {}, {}, {}".format(exc_type, fname, f.__name__, exc_tb.tb_lineno))
+            logger.critical("DETAILS: {}, {}, {}".format(exc_type, fname, f.__name__))
+            sys.exit()
+    return inner
 
 def create_logger(severity):
     log_name = Path(__file__).stem
@@ -333,33 +353,18 @@ def log_summary_data():
     logger.info("ESM BCK VERIFICATION (days): %.2f" % (args.chkbcktime))
     logger.info("run at: %s" % (UTCDateTime().strftime("%Y-%m-%dT%H:%M:%S")))
 
+@catch_all_and_print
 def git_pull():
-    try:
-        repo = git.Repo(args.git_repo_dir+'/.git')
-        repo.remotes.origin.pull()
-    except Exception as e:
-        logger.critical("Unexpected error:: {}".format(str(e)))
-        exc_type, exc_obj, exc_tb = sys.exc_info()
-        this_function_name = inspect.currentframe().f_code.co_name
-        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        logger.critical("DETAILS: {}, {}, {}, {}".format(exc_type, fname, this_function_name, exc_tb.tb_lineno))
-        sys.exit()
+    repo = git.Repo(args.git_repo_dir+'pappa/.git')
+    repo.remotes.origin.pull()
 
+@catch_all_and_print
 def git_push():
-    try:
-        repo = git.Repo(args.git_repo_dir+'/.git')
-        repo.git.add('--all')
-        repo.index.commit("Some XML data updated")
-        origin = repo.remote(name='origin')
-        origin.push()
-    except Exception as e:
-        logger.critical("Unexpected error:: {}".format(str(e)))
-        exc_type, exc_obj, exc_tb = sys.exc_info()
-        this_function_name = inspect.currentframe().f_code.co_name
-        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-        logger.critical("DETAILS: {}, {}, {}, {}".format(exc_type, fname, this_function_name, exc_tb.tb_lineno))
-        sys.exit()
-
+    repo = git.Repo(args.git_repo_dir+'/.git')
+    repo.git.add('--all')
+    repo.index.commit("Some XML data updated")
+    origin = repo.remote(name='origin')
+    origin.push()
 
 def generate_events_xml_data():
     for eid in args.event_ids:
