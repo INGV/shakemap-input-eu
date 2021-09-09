@@ -335,7 +335,7 @@ def log_summary_data():
 
 def git_pull():
     try:
-        repo = git.Repo(args.git_repo_dir)
+        repo = git.Repo(args.git_repo_dir+'/.git')
         repo.remotes.origin.pull()
     except Exception as e:
         logger.critical("Unexpected error:: {}".format(str(e)))
@@ -347,7 +347,7 @@ def git_pull():
 
 def git_push():
     try:
-        repo = git.Repo(args.git_repo_dir)
+        repo = git.Repo(args.git_repo_dir+'/.git')
         repo.git.add('--all')
         repo.index.commit("Some XML data updated")
         #origin = repo.remote(name='origin')
