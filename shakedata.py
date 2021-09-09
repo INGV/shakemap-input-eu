@@ -386,6 +386,8 @@ def generate_event_xml_data(event_id):
          __SERGIO__ 
          Ho commentato le due seguenti righe perchè non credo che nella cartella GIT ci possano essere entrambi i file ESM e RRSM
          Comunque se dovessi riabilitarle, è necessati effettuare un git.remove
+         domanda perche la verifica "se esiste gia" viene fatta solo sul file ESM
+         inltre se ESM c'è vede se c'è RRSM quando tutti e due insieme nn ci sono mai
         '''
         #
         # if os.path.isfile(RRSM_datXML_file):
