@@ -15,7 +15,7 @@ import sys
 USRNAME = "&username=spada"
 ONEDAY = 3600 * 24
 fdsn_client = 'EMSC'
-git_dir = 'https://github.com/INGV/shakemap-input-eu'
+git_repository = '/home/sergio/projects/ingv/sismologia/shakemap-input-eu/data'
 
 # global logger
 logger = None
@@ -189,8 +189,8 @@ if __name__ == '__main__':
     set_args(args)
     logger = create_logger(args.log_severity)
 
-    g = git.cmd.Git(git_dir)
-    g.pull()
+    repo = git.Repo(git_repository)
+    repo.remotes.origin.pull()
 
     cat,event_ids = find_events(
         fdsn_client,
