@@ -48,6 +48,12 @@ def catch_all_and_print(f):
             sys.exit()
     return inner
 
+def makedirs(fileFullPath):
+    dir = os.path.dirname(fileFullPath)
+    if not os.path.isdir(dir):
+        os.makedirs(dir)
+
+
 def create_logger(severity):
     log_name = Path(__file__).stem
     _logger = logging.getLogger(log_name)
@@ -319,6 +325,7 @@ def clean_and_write_eventxml(event_data, out_file):
             del event[k]
 
     if not os.path.isfile(out_file):
+        makedirs(out_file)
         tree.write(out_file, xml_declaration=True, encoding="UTF-8")
         return
 
@@ -472,8 +479,8 @@ def generate_event_xml_data(event_id):
 
     # IF NEW EVENT -------
     # generate the directories if they are not already present
-    if not os.path.isdir(EVENT_DIR):
-        os.makedirs(EVENT_DIR)
+    # if not os.path.isdir(EVENT_DIR):
+    #     os.makedirs(EVENT_DIR)
 
     #
     # DOWNLOAD THE DATA ----
