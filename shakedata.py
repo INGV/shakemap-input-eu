@@ -15,6 +15,8 @@ import sys
 import inspect
 import shutil
 import functools
+import tempfile
+
 
 # COMSTANTS
 USRNAME = "&username=spada"
@@ -144,12 +146,13 @@ def get_IMs_ESM(ev, CATALOG, INPUTEVENTDIR):
         #clean_eventxml(FNAME_EV, FNAME_EV_TMP)
         #shutil.move(FNAME_EV_TMP, FNAME_EV)
         eventxml = r.content
-        cleaned_eventxml = clean_eventxml(eventxml)
+        clean_and_write_eventxml(eventxml, FNAME_EV)
 
-        if os.path.isfile(FNAME_EV):
-            if diff(FNAME_EV, eventxml):
-                with open(FNAME_EV, mode='wb') as localfile:
-                    localfile.write(r.content)
+        # if os.path.isfile(FNAME_EV):
+
+            # if diff(FNAME_EV, eventxml):
+            #     with open(FNAME_EV, mode='wb') as localfile:
+            #         localfile.write(r.content)
 
     # ---------- done event
     # # ---------- the following is added to skip the fault request that gives arror -
@@ -294,14 +297,18 @@ def clean_eventxml_OLD(event_file, new_event_file):
     tree.write(new_event_file, xml_declaration=True, encoding="UTF-8")
     return
 
-def clean_eventxml(event_data):
+def clean_and_write_eventxml(event_data, out_file):
     netid = "IV"
     network = "INGV-ONT"
     #
-    tree = ET.fromstring(event_data)
+    temp = tempfile.NamedTemporaryFile(prefix='shake')
+    temp.write(event_data)
+    temp.flush()
+
+    tree = ET.parse(temp.name)
     root = tree.getroot()
     event = root.attrib
-    # define the new attributes
+    # define the new attributesv
     event['netid'] = netid
     event['network'] = network
     event['time'] = "%04d-%02d-%02dT%02d:%02d:%02dZ" % (int(event['year']), int(event['month']), int(event['day']),
@@ -311,7 +318,22 @@ def clean_eventxml(event_data):
         if k in event:
             del event[k]
 
-    return tree
+    if not os.path.isfile(out_file):
+        tree.write(out_file, xml_declaration=True, encoding="UTF-8")
+        return
+
+    # Write only if data differ
+    tree1 = ET.parse(out_file)
+    root1 = tree1.getroot()
+    dict1 = root1.attrib
+    dict1.pop('time')
+
+    dict2 = event.copy()
+    dict2.pop('time')
+
+    if dict1 != dict2:
+        tree.write(out_file, xml_declaration=True, encoding="UTF-8")
+
 
 # routine to extract an obspy catalog and a list of events id from fdsn event ws
 def find_events(
