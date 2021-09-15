@@ -48,7 +48,15 @@ def catch_all_and_print(f):
             sys.exit()
     return inner
 
-def makedirs(fileFullPath):
+def writeFile(fileFullPath, data):
+    dir = os.path.dirname(fileFullPath)
+    if not os.path.isdir(dir):
+        os.makedirs(dir)
+
+    with open(fileFullPath, mode='wb') as localfile:
+        localfile.write(data)
+
+def makeDirs(fileFullPath):
     dir = os.path.dirname(fileFullPath)
     if not os.path.isdir(dir):
         os.makedirs(dir)
@@ -123,9 +131,7 @@ def get_IMs_ESM(ev, CATALOG, INPUTEVENTDIR):
     # url_str_dat = "https://esm.mi.ingv.it/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat&encoding=US-ASCII" % (str(ev), CATALOG)
     # r = requests.get(url_str_dat)
     if status_dat == 200:
-        makedirs(FNAME_DAT)
-        with open(FNAME_DAT, mode='wb') as localfile:
-            localfile.write(r.content)
+        writeFile(FNAME_DAT, r.content)
 
 # ---------- done data
 #
@@ -326,7 +332,7 @@ def clean_and_write_eventxml(event_data, out_file):
             del event[k]
 
     if not os.path.isfile(out_file):
-        makedirs(out_file)
+        makeDirs(out_file)
         tree.write(out_file, xml_declaration=True, encoding="UTF-8")
         return
 
