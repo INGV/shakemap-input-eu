@@ -123,6 +123,7 @@ def get_IMs_ESM(ev, CATALOG, INPUTEVENTDIR):
     # url_str_dat = "https://esm.mi.ingv.it/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat&encoding=US-ASCII" % (str(ev), CATALOG)
     # r = requests.get(url_str_dat)
     if status_dat == 200:
+        makedirs(FNAME_DAT)
         with open(FNAME_DAT, mode='wb') as localfile:
             localfile.write(r.content)
 
