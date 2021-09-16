@@ -107,10 +107,8 @@ def set_args():
     if not os.path.isdir(args.git_repo_dir):
         sys.exit(f"Directory: {args.git_repo_dir} does not exist!!!")
 
-def get_IMs(url_str_dat, url_str_ev, ev, INPUTEVENTDIR, prefix):
+def get_IMs(url_str_dat, url_str_ev, ev, FNAME_DAT, FNAME_EV):
     # data
-    FNAME_DAT = os.path.join(INPUTEVENTDIR, f"{str(ev)}_{prefix}_dat.xml")
-
     logger.info("request event_dat ws: %s" % (url_str_dat))
     try:
         r = requests.get(url_str_dat)
@@ -123,97 +121,17 @@ def get_IMs(url_str_dat, url_str_ev, ev, INPUTEVENTDIR, prefix):
         pass
 
     # event
-    FNAME_EV = os.path.join(INPUTEVENTDIR,"event.xml")
-
     logger.info (f"request event ws: [{url_str_ev}]")
     try:
         r = requests.get(url_str_ev)
         if r.status_code == 200:
-            eventxml = r.content
-            clean_and_write_eventxml(eventxml, FNAME_EV)
+            clean_eventxml(r.content, FNAME_EV)
         else:
             logger.error(f"event problems with url: [{url_str_dat}] statuscode: [{r.status_code}]")
     except:
         logger.error("event problems with url: [{url_str_dat}] status_ev forced to 204")
 
 
-# def get_IMs_ESM(url_str_dat, url_str_ev, ev, CATALOG, INPUTEVENTDIR, prefix):
-#     # create filename for  _dat.xml output file
-#     fname_dat = f"{str(ev)}_{prefix}_ESM_dat.xml"
-#     FNAME_DAT = os.path.join(INPUTEVENTDIR, fname_dat)
-#
-#     logger.info("request to ESM event_dat ws: %s" % (url_str_dat))
-#     try:
-#         r = requests.get(url_str_dat)
-#         status_dat = r.status_code
-#     except:
-#         logger.error (f"event_dat problems with url: [{url_str_dat}] status_dat forced to 204")
-#         status_dat = 204
-#         pass
-#
-#     # r = requests.get(url_str_dat)
-#     if status_dat == 200:
-#         writeFile(FNAME_DAT, r.content)
-#
-#     # ---------- done data
-#
-#     # prepare for _ev
-#     fname_ev = "event.xml"
-#     FNAME_EV = os.path.join(INPUTEVENTDIR,fname_ev)
-#
-#     print ("request to ESM event ws: %s" % (url_str_ev))
-#     try:
-#         r = requests.get(url_str_ev)
-#         status_ev = r.status_code
-#     except:
-#         logger.error("event problems with url: [{url_str_dat}] status_ev forced to 204")
-#         status_ev = 204
-#         pass
-#
-#     if status_ev == 200:
-#         eventxml = r.content
-#         clean_and_write_eventxml(eventxml, FNAME_EV)
-#
-#     return status_dat, status_ev, 0
-#
-#
-# def get_IMs_RRSM(url_str_dat, url_str_ev, ev, CATALOG, INPUTEVENTDIR, prefix):
-#     # create filename for  _dat.xml output file
-#     fname_dat = f"{ev}_{prefix}_RRSM_dat.xml"
-#     FNAME_DAT = os.path.join(INPUTEVENTDIR, fname_dat)
-#
-#     logger.info ("request to RRSM event_dat ws: %s" % (url_str_dat))
-#     try:
-#         r = requests.get(url_str_dat)
-#         status_dat = r.status_code
-#     except:
-#         logger.error ("RRSM event_dat problems: status_dat forced to 204")
-#         status_dat = 204
-#         pass
-#
-#     # print ("status:", status, 'event:', ev)
-#
-#     if status_dat == 200:
-#         writeFile(FNAME_DAT, r.content)
-#
-#     # prepare for _ev
-#     fname_ev = "event.xml"
-#     FNAME_EV = os.path.join(INPUTEVENTDIR,fname_ev)
-#
-#     logger.info ("request to RRSM event ws: %s" % (url_str_ev))
-#     try:
-#         r = requests.get(url_str_ev)
-#         status_ev = r.status_code
-#     except:
-#         logger.error ("RRSM event problems: status_ev forced to 204")
-#         status_ev = 204
-#         pass
-#
-#     if status_ev == 200:
-#         eventxml = r.content
-#         clean_and_write_eventxml(eventxml, FNAME_EV)
-#
-#     return status_dat, status_ev
 
 # extract ID from event string
 def extract_id(string, fdsn_client):
@@ -241,14 +159,40 @@ def extract_id(string, fdsn_client):
 
     return event_id
 
-def diff(event_file, new_event_data):
-    tree = ET.parse(event_file)
+
+def clean_eventxml(xmlstring, filename):
+    netid = "IV"
+    network = "INGV-ONT"
+    #
+    tree = ET.ElementTree(ET.fromstring(xmlstring))
     root = tree.getroot()
-    dict1 = root.attrib
-    dict1.pop('time')
-    dict2 = new_event_data.copy()
-    dict2.pop('time')
-    return dict1 == dict2
+    event = root.attrib
+    # define the new attributesv
+    event['netid'] = netid
+    event['network'] = network
+    event['time'] = "%04d-%02d-%02dT%02d:%02d:%02dZ" % (int(event['year']), int(event['month']), int(event['day']),
+                                        int(event['hour']),int(event['minute']),int(event['second']))
+    # drop not needed values
+    for k in ['year', 'month', 'day', 'hour', 'minute', 'second']:
+        if k in event:
+            del event[k]
+
+    tree.write(filename, xml_declaration=True, encoding="UTF-8")
+
+def diff(eventfile1, eventfile2):
+    tree1 = ET.parse(eventfile1)
+    root1 = tree1.getroot()
+    event1 = root1.attrib
+
+    tree2 = ET.parse(eventfile2)
+    root2 = tree2.getroot()
+    event2 = root2.attrib
+
+    event1.pop('created')
+    event2.pop('created')
+
+    return event1 != event2
+
 
 def clean_and_write_eventxml(event_data, out_file):
     netid = "IV"
@@ -389,13 +333,26 @@ def generate_event_xml_data(event_id):
     logger.info("DOING EVENT: %s" % (event_id))
     EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id[:6], event_id, 'current')
 
+    temp_event_file = tempfile.NamedTemporaryFile(prefix='shake_event')
+
     url_str_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
     url_str_ev = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
-    get_IMs(url_str_dat, url_str_ev, event_id, EVENT_DIR, 'B_ESM')
+    FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_B_ESM_dat.xml")
+    get_IMs(url_str_dat, url_str_ev, event_id, FNAME_DAT, temp_event_file.name)
 
     url_str_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
     url_str_ev = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
-    get_IMs(url_str_dat, url_str_ev, event_id, EVENT_DIR, 'A_RRSM')
+    FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
+    get_IMs(url_str_dat, url_str_ev, event_id, FNAME_DAT, temp_event_file.name)
+
+    if os.stat(temp_event_file.name).st_size > 0:
+        FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
+        if os.path.isfile(FNAME_EV):
+            if diff(temp_event_file.name, FNAME_EV):
+                shutil.copyfile(temp_event_file.name, FNAME_EV)
+        else:
+            shutil.copyfile(temp_event_file.name, FNAME_EV)
+
     return
 
 
