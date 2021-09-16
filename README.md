@@ -51,3 +51,13 @@ Per quanto riguarda il file evento viene creato un file temporaneo che viene pas
 
 Per quanto riguarda il file dati-evento. Il procedimento del file temporaneo viene applicato solo al sito ESM, perchè anche in questo caso è presente nei dati il campo `created`, da non considerare. Prr il sito RRSM vine passato alla funzione `get_IMs` direttamente la path assoluta del file nella cartella di destinazione, che verrà quindi creato o sovrascritto. Nel caso viene sovrascritto pur essendo uguale, la commit di git lo ignorerà.
 
+### Punti da chiarire
+
+La procedura di scarico dati ESM dello script vecchio, nel caso di file già esistente fa un controllo che il file dati-evento sia più recente di un certo numero di giorni passati a configurazione (dfault = 1), se lo è lo scarico dell'evento è annullato. Attualmente la script nuovo ignora questo controllo. Va inserito?
+
+La codice di scarico del file fault (ce  n'è uno nel periodo 2020/10/30), dello script vecchio,  crea due file: `event_fault.txt.sav` e `rupture.json`. Va generato solo il secondo?
+
+
+
+
+
