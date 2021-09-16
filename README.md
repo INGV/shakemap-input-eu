@@ -1,3 +1,12 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [shakemap-input-eu](#shakemap-input-eu)
+  - [Situazione attuale](#situazione-attuale)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # shakemap-input-eu
 Repository for ShakeMap4 input XML files
 
@@ -25,4 +34,20 @@ data/202109
 20210905_0000177/current
 data/202108
 20210807_0000078/current
+
+
+
+## Situazione attuale
+
+Per ogni evento viene chiamata due volte la funzione `get_IMs`
+
+La prima volta con le due URL, dati-evento ed evento, di ESM 
+
+La seconda volta con le due URL, dati-evento ed evento, di RRSM
+
+alla funzione  `get_IMs` vengono passate le path assolute dei due file (dati-evento ed evento), dove scrivere i dati scaricati.
+
+Per quanto riguarda il file evento viene creato un file temporaneo che viene passato ad entrambe le chiamate a `get_IMs`. Ciò significa che se i dati evento vengono scaricati da entrambi i siti, nel file ci saranno i dati relativi alla seconda chiamata. Al termine delle due chiamate viene controllato se il file evento già esiste nella cartella. Se non esiste viene creato con il contenuto del file temporaneo. se esiste viene sovrascritto soltanto se i dati sono cambiati a meno del campo `created`. Questo perchè il campo `created` cambia sempre, anche quando i dati sono gli stessi.
+
+Per quanto riguarda il file dati-evento. Il procedimento del file temporaneo viene applicato solo al sito ESM, perchè anche in questo caso è presente nei dati il campo `created`, da non considerare. Prr il sito RRSM vine passato alla funzione `get_IMs` direttamente la path assoluta del file nella cartella di destinazione, che verrà quindi creato o sovrascritto. Nel caso viene sovrascritto pur essendo uguale, la commit di git lo ignorerà.
 
