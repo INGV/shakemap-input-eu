@@ -345,13 +345,13 @@ def generate_event_xml_data(event_id):
     FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
     get_IMs(url_str_dat, url_str_ev, event_id, FNAME_DAT, temp_event_file.name)
 
-    if os.stat(temp_event_file.name).st_size > 0:
-        FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
-        if os.path.isfile(FNAME_EV):
-            if diff(temp_event_file.name, FNAME_EV):
-                shutil.copyfile(temp_event_file.name, FNAME_EV)
-        else:
-            shutil.copyfile(temp_event_file.name, FNAME_EV)
+    # if os.stat(temp_event_file.name).st_size > 0:
+    #     FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
+    #     if os.path.isfile(FNAME_EV):
+    #         if diff(temp_event_file.name, FNAME_EV):
+    #             shutil.copyfile(temp_event_file.name, FNAME_EV)
+    #     else:
+    #         shutil.copyfile(temp_event_file.name, FNAME_EV)
 
     return
 
