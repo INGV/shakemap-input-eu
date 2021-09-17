@@ -56,12 +56,6 @@ def writeFile(fileFullPath, data):
     with open(fileFullPath, mode='wb') as localfile:
         localfile.write(data)
 
-def makeDirs(fileFullPath):
-    dir = os.path.dirname(fileFullPath)
-    if not os.path.isdir(dir):
-        os.makedirs(dir)
-
-
 def create_logger(severity):
     log_name = Path(__file__).stem
     _logger = logging.getLogger(log_name)
@@ -192,46 +186,6 @@ def diff(eventfile1, eventfile2):
     event2.pop('created')
 
     return event1 != event2
-
-
-def clean_and_write_eventxml(event_data, out_file):
-    netid = "IV"
-    network = "INGV-ONT"
-    #
-    temp = tempfile.NamedTemporaryFile(prefix='shake')
-    temp.write(event_data)
-    temp.flush()
-
-    tree = ET.parse(temp.name)
-    root = tree.getroot()
-    event = root.attrib
-    # define the new attributesv
-    event['netid'] = netid
-    event['network'] = network
-    event['time'] = "%04d-%02d-%02dT%02d:%02d:%02dZ" % (int(event['year']), int(event['month']), int(event['day']),
-                                        int(event['hour']),int(event['minute']),int(event['second']))
-    # drop not needed values
-    for k in ['year', 'month', 'day', 'hour', 'minute', 'second']:
-        if k in event:
-            del event[k]
-
-    if not os.path.isfile(out_file):
-        makeDirs(out_file)
-        tree.write(out_file, xml_declaration=True, encoding="UTF-8")
-        return
-
-    # Write only if data differ
-    tree1 = ET.parse(out_file)
-    root1 = tree1.getroot()
-    dict1 = root1.attrib
-    dict1.pop('created')
-
-    dict2 = event.copy()
-    dict2.pop('created')
-
-    if dict1 != dict2:
-        makeDirs(out_file)
-        tree.write(out_file, xml_declaration=True, encoding="UTF-8")
 
 
 # routine to extract an obspy catalog and a list of events id from fdsn event ws
