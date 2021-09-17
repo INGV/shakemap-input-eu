@@ -303,7 +303,9 @@ def generate_event_xml_data(event_id):
     url_str_ev = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
     temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat_RRSM')
     get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file, temp_event_file)
-    if os.stat(temp_dat_file.name).st_size > 0:
+    temp_dat_file.seek(0, os.SEEK_END)
+    if temp_dat_file.tell() > 0:
+    #if os.stat(temp_dat_file.name).st_size > 0:
         FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
         copyFile(temp_dat_file, FNAME_DAT)
     temp_dat_file.close()
@@ -352,6 +354,8 @@ def generate_event_xml_data(event_id):
 
 
 def diff_replacement(currFile, new_file):
+    # new_file.seek(0, os.SEEK_END)
+    # if new_file.tell() > 0:
     if os.stat(new_file.name).st_size > 0:
         if os.path.isfile(currFile):
             if diff(new_file, currFile):
