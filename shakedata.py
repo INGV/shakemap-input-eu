@@ -293,24 +293,24 @@ def generate_event_xml_data(event_id):
     url_str_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
     url_str_ev = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
     temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat_ESM')
-    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file.name, temp_event_file.name)
+    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file, temp_event_file)
     FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_B_ESM_dat.xml")
-    diff_replacement(FNAME_DAT, temp_dat_file.name)
+    diff_replacement(FNAME_DAT, temp_dat_file)
     temp_dat_file.close()
 
     # RRSM
     url_str_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
     url_str_ev = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
     temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat_RRSM')
-    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file.name, temp_event_file.name)
+    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file, temp_event_file)
     if os.stat(temp_dat_file.name).st_size > 0:
         FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
-        copyFile(temp_dat_file.name, FNAME_DAT)
+        copyFile(temp_dat_file, FNAME_DAT)
     temp_dat_file.close()
 
     # EVENT
     FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
-    diff_replacement(FNAME_EV, temp_event_file.name)
+    diff_replacement(FNAME_EV, temp_event_file)
     temp_event_file.close()
 
     # FAULT
@@ -352,7 +352,7 @@ def generate_event_xml_data(event_id):
 
 
 def diff_replacement(currFile, new_file):
-    if os.stat(new_file).st_size > 0:
+    if os.stat(new_file.name).st_size > 0:
         if os.path.isfile(currFile):
             if diff(new_file, currFile):
                 shutil.copyfile(new_file, currFile)
