@@ -271,17 +271,8 @@ def generate_event_xml_data(event_id):
     # ESM DAT
     url_ESM_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
     data = DownloadData(url_ESM_dat)
-    if data:
-        FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_B_ESM_dat.xml")
-        if os.path.isfile(FNAME_DAT):
-            if diff(data, FNAME_DAT):
-                with open (FNAME_DAT, mode='wb') as f:
-                    f.write(data)
-        else:
-            if not os.path.isdir(EVENT_DIR):
-                os.makedirs(EVENT_DIR)
-            with open (FNAME_DAT, mode='wb') as f:
-                f.write(data)
+    FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_B_ESM_dat.xml")
+    saveIfChanged(data, FNAME_DAT)
 
     data_event = None
     # ESM EVENT
@@ -296,25 +287,33 @@ def generate_event_xml_data(event_id):
     if data:
         data_event = clean_event_data(data)
 
-    if data_event:
-        FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
-        if os.path.isfile(FNAME_EV):
-            if diff(data_event, FNAME_EV):
-                with open (FNAME_EV, mode='wb') as f:
-                    f.write(data_event)
-        else:
-            if not os.path.isdir(EVENT_DIR):
-                os.makedirs(EVENT_DIR)
-            with open (FNAME_EV, mode='wb') as f:
-                f.write(data_event)
+    FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
+    saveIfChanged(data_event, FNAME_EV)
 
     # RRSM DAT
     url_RRSM_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
     data = DownloadData(url_RRSM_dat)
     if data:
         FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
-        with open (FNAME_DAT, mode='wb') as f:
-            f.write(data)
+        writeFile(data, FNAME_DAT)
+
+def saveIfChanged(data, FileFullPath):
+    if data:
+        if os.path.isfile(FileFullPath):
+            if diff(data, FileFullPath):
+                with open (FileFullPath, mode='wb') as f:
+                    f.write(data)
+        else:
+            writeFile(data, FileFullPath)
+
+
+def writeFile(data, FileFullPath):
+    dir = os.path.dirname(FileFullPath)
+    if not os.path.isdir(dir):
+        os.makedirs(dir)
+    with open(FileFullPath, mode='wb') as f:
+        f.write(data)
+
 
 if __name__ == '__main__':
 
