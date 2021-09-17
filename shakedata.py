@@ -316,7 +316,7 @@ def manage_replacement(currFile, new_file):
             if diff(new_file, currFile):
                 shutil.copyfile(new_file, currFile)
         else:
-            shutil.copyfile(new_file.name, currFile)
+            shutil.copyfile(new_file, currFile)
 
 
 if __name__ == '__main__':
