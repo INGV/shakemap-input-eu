@@ -48,13 +48,12 @@ def catch_all_and_print(f):
             sys.exit()
     return inner
 
-def writeFile(fileFullPath, data):
-    dir = os.path.dirname(fileFullPath)
+def copyFile(src, dest):
+    dir = os.path.dirname(dest)
     if not os.path.isdir(dir):
         os.makedirs(dir)
+    shutil.copyfile(src, dest)
 
-    with open(fileFullPath, mode='wb') as localfile:
-        localfile.write(data)
 
 def create_logger(severity):
     log_name = Path(__file__).stem
@@ -107,7 +106,8 @@ def get_IMs(url_str_dat, url_str_ev, ev, FNAME_DAT, FNAME_EV):
     try:
         r = requests.get(url_str_dat)
         if r.status_code == 200:
-            writeFile(FNAME_DAT, r.content)
+            with open(FNAME_DAT, mode='wb') as f:
+                f.write(r.content)
         else:
             logger.error(f"event_dat problems with url: [{url_str_dat}] statuscode: [{r.status_code}]")
     except:
@@ -293,32 +293,35 @@ def generate_event_xml_data(event_id):
     # ESM
     url_str_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
     url_str_ev = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
-    temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat')
+    temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat_ESM')
     get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file, temp_event_file.name)
     FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_B_ESM_dat.xml")
-    manage_replacement(FNAME_DAT, temp_dat_file.name)
+    diff_replacement(FNAME_DAT, temp_dat_file.name)
+    temp_dat_file.close()
 
     # RRSM
     url_str_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
     url_str_ev = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
+    temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat_RRSM')
+    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file, temp_event_file.name)
     FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
-    get_IMs(url_str_dat, url_str_ev, event_id, FNAME_DAT, temp_event_file.name)
+    if os.stat(temp_dat_file.name).st_size > 0:
+        copyFile(temp_dat_file, FNAME_DAT)
+    temp_dat_file.close()
 
 
     FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
-    manage_replacement(FNAME_EV, temp_event_file.name)
+    diff_replacement(FNAME_EV, temp_event_file.name)
+    temp_event_file.close()
 
-    return
 
-
-def manage_replacement(currFile, new_file):
+def diff_replacement(currFile, new_file):
     if os.stat(new_file).st_size > 0:
         if os.path.isfile(currFile):
             if diff(new_file, currFile):
                 shutil.copyfile(new_file, currFile)
         else:
-            shutil.copyfile(new_file, currFile)
-
+            copyFile(new_file, currFile)
 
 if __name__ == '__main__':
 
