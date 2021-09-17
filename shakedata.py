@@ -293,7 +293,7 @@ def generate_event_xml_data(event_id):
     url_str_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
     url_str_ev = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
     temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat_ESM')
-    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file, temp_event_file.name)
+    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file.name, temp_event_file.name)
     FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_B_ESM_dat.xml")
     diff_replacement(FNAME_DAT, temp_dat_file.name)
     temp_dat_file.close()
@@ -302,16 +302,53 @@ def generate_event_xml_data(event_id):
     url_str_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
     url_str_ev = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
     temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat_RRSM')
-    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file, temp_event_file.name)
-    FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
+    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file.name, temp_event_file.name)
     if os.stat(temp_dat_file.name).st_size > 0:
-        copyFile(temp_dat_file, FNAME_DAT)
+        FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
+        copyFile(temp_dat_file.name, FNAME_DAT)
     temp_dat_file.close()
 
-
+    # EVENT
     FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
     diff_replacement(FNAME_EV, temp_event_file.name)
     temp_event_file.close()
+
+    # FAULT
+    # url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
+    # temp_fault_file = tempfile.NamedTemporaryFile(prefix='shake_FAULT_')
+    # get_IMs(url_str_dat, url_str_ev, event_id, temp_fault_file, None)
+    # if os.stat(temp_fault_file.name).st_size > 0:
+    #     pass
+
+    '''
+        # prepare for _fault
+        fname_fault = "event_fault.txt"
+        rupture = "rupture.json"
+        FNAME_FAULT = os.path.join(INPUTEVENTDIR,fname_fault)
+        FNAME_RUPT = os.path.join(INPUTEVENTDIR,rupture)
+        #
+    
+        url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(ev), CATALOG)
+        print ("request to ESM fault ws: %s" % (url_str_fault))
+        try:
+            r = requests.get(url_str_fault)
+            status_fault = r.status_code
+        except:
+            print ("ESM event_fault problems: status_fault forced to 204")
+            status_fault = 204
+            pass
+    
+        #     print "status:", status
+        if status_fault == 200:
+            with open(FNAME_FAULT, mode='wb') as localfile:
+                localfile.write(r.content)
+            jdict = text_to_json(FNAME_FAULT, new_format=False)
+            with open(FNAME_RUPT,'w') as f:
+                json.dump(jdict,f)
+            stringa = "mv %s %s.sav" % (FNAME_FAULT, FNAME_FAULT)
+            os.system(stringa)
+        return status_dat, status_ev, status_fault
+    '''
 
 
 def diff_replacement(currFile, new_file):
