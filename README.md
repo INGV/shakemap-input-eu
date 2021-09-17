@@ -57,6 +57,8 @@ La procedura di scarico dati ESM dello script vecchio, nel caso di file già esi
 
 La codice di scarico del file fault (ce  n'è uno nel periodo 2020/10/30), dello script vecchio,  crea due file: `event_fault.txt.sav` e `rupture.json`. Va generato solo il secondo?
 
+Viene chiamata la funzione `_rotate_polygon` che non esiste.
+
 
 
 

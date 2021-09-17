@@ -26,6 +26,96 @@ fdsn_client = 'EMSC'
 # global logger
 logger = None
 
+class ShakeLibException(Exception):
+    """
+    Class to represent errors in the Fault class.
+    """
+
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return repr(self.value)
+
+def _check_polygon(p):
+    """
+    Check if the verticies are specified top first.
+
+    Args:
+        p (list):
+            A list of five lon/lat/depth lists.
+
+    Raises:
+        ValueError: incorrectly specified polygon.
+
+    """
+    n_points = len(p)
+    if n_points % 2 == 0:
+        raise ValueError('Number of points in polyon must be odd.')
+
+    if p[0] != p[-1]:
+        raise ValueError('First and last points in polygon must be '
+                         'identical.')
+
+    n_pairs = int((n_points - 1) / 2)
+    for j in range(n_pairs):
+        # -------------------------------------------------------------
+        # Points are paired and in each pair the top is first, as in:
+        #
+        #      _.-P1-._
+        #   P0'        'P2---P3
+        #   |                  \
+        #   P7---P6----P5-------P4
+        #
+        # Pairs: P0-P7, P1-P6, P2-P5, P3-P4
+        # -------------------------------------------------------------
+        top_depth = p[j][2]
+        bot_depth = p[-(j + 2)][2]
+        if top_depth >= bot_depth:
+            raise ValueError(
+                'Top points must be ordered before bottom points.')
+
+def validate_json(d):
+    """
+    Check that the JSON format is acceptable. This is only for requirements
+    that are common to both QuadRupture and EdgeRupture.
+
+    Args:
+        d (dict): Rupture JSON dictionary.
+    """
+    if d['type'] != 'FeatureCollection':
+        raise Exception('JSON file is not a \"FeatureColleciton\".')
+
+    if len(d['features']) != 1:
+        raise Exception('JSON file should contain excactly one feature.')
+
+    if 'reference' not in d['metadata'].keys():
+        raise Exception('Json metadata field should contain '
+                        '\"reference\" key.')
+
+    f = d['features'][0]
+
+    if f['type'] != 'Feature':
+        raise Exception('Feature type should be \"Feature\".')
+
+    geom = f['geometry']
+
+    if (geom['type'] != 'MultiPolygon' and
+            geom['type'] != 'Point'):
+        raise Exception('Geometry type should be \"MultiPolygon\" '
+                        'or \"Point\".')
+
+    if 'coordinates' not in geom.keys():
+        raise Exception('Geometry dictionary should contain \"coordinates\" '
+                        'key.')
+
+    polygons = geom['coordinates'][0]
+
+    if geom['type'] == 'MultiPolygon':
+        n_polygons = len(polygons)
+        for i in range(n_polygons):
+            _check_polygon(polygons[i])
+
 def catch_all_and_print(f):
     # type: (Callable[..., Any]) -> Callable[..., Any]
     """
@@ -275,18 +365,19 @@ def generate_event_xml_data(event_id):
     saveIfChanged(data, FNAME_DAT)
 
     data_event = None
-    # ESM EVENT
+    # DOWNLOAD ESM EVENT
     url_ESM_event = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
     data = DownloadData(url_ESM_event)
     if data:
         data_event = clean_event_data(data)
 
-    # ESM RRSM
+    # DOWNLOAD RRSM EVENT
     url_RRSM_event = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
     data = DownloadData(url_RRSM_event)
     if data:
         data_event = clean_event_data(data)
 
+    # ELABORATE EVENT
     FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
     saveIfChanged(data_event, FNAME_EV)
 
@@ -296,6 +387,144 @@ def generate_event_xml_data(event_id):
     if data:
         FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
         writeFile(data, FNAME_DAT)
+
+    # FAULT (ESM?)
+    url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
+    data = DownloadData(url_str_fault)
+    if data:
+        jdict = text_to_json(data, new_format=False)
+        FNAME_RUPT = os.path.join(EVENT_DIR, "rupture.json")
+        writeFile(json.dumps(jdict).encode(), FNAME_RUPT)
+
+
+def text_to_json(data, new_format=True):
+    """
+    Read in old or new ShakeMap 3 textfile rupture format and convert to
+    GeoJSON.
+
+    This will handle ShakeMap3.5-style fault text files, which can have the
+    following format:
+     - # at the top indicates a reference.
+     - Lines beginning with a > indicate the end of one segment and the
+       beginning of another.
+     - Coordinates are specified in lat,lon,depth order.
+     - Coordinates can be separated by commas or spaces.
+     - Vertices can be specified in top-edge or bottom-edge first order.
+
+    Args:
+        file (str):
+            Path to rupture file OR file-like object in GMT
+            psxy format, where:
+
+                * Rupture vertices are space/comma separated lat, lon, depth
+                  triplets on a single line.
+                * Rupture groups are separated by lines containing ">"
+                * Rupture groups must be closed.
+                * Verticies within a rupture group must start along the top
+                  edge and move in the strike direction then move to the bottom
+                  edge and move back in the opposite direction.
+
+        new_format (bool):
+            Indicates whether text rupture format is
+            "old" (lat, lon, depth) or "new" (lon, lat, depth) style.
+
+    Returns:
+        dict: GeoJSON rupture dictionary.
+
+    """
+
+    reference = ''
+    polygons = []
+    polygon = []
+
+    data = data.decode("utf-8")
+    for line in data.splitlines():
+        if not len(line.strip()):
+            continue
+
+        if line.strip().startswith('#'):
+            # Get reference string
+            reference += line.strip().replace('#', '')
+            continue
+
+        if line.strip().startswith('>'):
+            if not len(polygon):
+                continue
+            polygons.append(polygon)
+            polygon = []
+            continue
+
+        # first try to split on whitespace
+        parts = line.split()
+        if len(parts) == 1:
+            if new_format:
+                raise ShakeLibException(
+                    'Rupture  [%s] has unspecified delimiters.' % line)
+            parts = line.split(',')
+            if len(parts) == 1:
+                raise ShakeLibException(
+                    'Rupture [%s] has unspecified delimiters.' % line)
+
+        if len(parts) != 3:
+            msg = 'Rupture [%s] is not in lat, lon, depth format.'
+            if new_format:
+                'Rupture [%s] is not in lon, lat, depth format.'
+            raise ShakeLibException(msg % line)
+
+        parts = [float(p) for p in parts]
+        if not new_format:
+            old_parts = parts.copy()
+            parts[0] = old_parts[1]
+            parts[1] = old_parts[0]
+        polygon.append(parts)
+
+    if len(polygon):
+        polygons.append(polygon)
+
+    # Try to fix polygons
+    original_polygons = polygons.copy()
+    fixed = []
+    n_polygons = len(polygons)
+    for i in range(n_polygons):
+        n_verts = len(polygons[i])
+        success = False
+        for j in range(n_verts - 1):
+            try:
+                _check_polygon(polygons[i])
+                success = True
+                break
+            except ValueError:
+                polygons[i] = _rotate_polygon(polygons[i])
+        if success:
+            fixed.append(True)
+        else:
+            fixed.append(False)
+
+    if not all(fixed):
+        polygons = original_polygons
+
+    json_dict = {
+        "type": "FeatureCollection",
+        "metadata": {
+            'reference': reference
+        },
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {
+                    "rupture type": "rupture extent"
+                },
+                "geometry": {
+                    "type": "MultiPolygon",
+                    "coordinates": [polygons]
+                }
+            }
+        ]
+    }
+    validate_json(json_dict)
+
+    return json_dict
+
 
 def saveIfChanged(data, FileFullPath):
     if data:
