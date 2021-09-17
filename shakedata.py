@@ -286,7 +286,8 @@ def generate_events_xml_data():
 def generate_event_xml_data(event_id):
     logger.info("DOING EVENT: %s" % (event_id))
     EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id[:6], event_id, 'current')
-
+    if not event_id == '20201030_0000186':
+        return
     temp_event_file = tempfile.NamedTemporaryFile(prefix='shake_event')
 
     # ESM
