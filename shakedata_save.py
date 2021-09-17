@@ -15,6 +15,8 @@ import sys
 import inspect
 import shutil
 import functools
+import tempfile
+
 
 # COMSTANTS
 USRNAME = "&username=spada"
@@ -45,6 +47,13 @@ def catch_all_and_print(f):
             logger.critical("DETAILS: {}, {}, {}".format(exc_type, fname, f.__name__))
             sys.exit()
     return inner
+
+def copyFile(src, dest):
+    dir = os.path.dirname(dest)
+    if not os.path.isdir(dir):
+        os.makedirs(dir)
+    shutil.copyfile(src, dest)
+
 
 def create_logger(severity):
     log_name = Path(__file__).stem
@@ -91,145 +100,32 @@ def set_args():
     if not os.path.isdir(args.git_repo_dir):
         sys.exit(f"Directory: {args.git_repo_dir} does not exist!!!")
 
-
-def get_IMs_ESM(ev, CATALOG, INPUTEVENTDIR):
-    # create filename for  _dat.xml output file
-    fname_dat = "%s_ESM_dat.xml" % (str(ev))
-    FNAME_DAT = os.path.join(INPUTEVENTDIR, fname_dat)
-    #
-    # url_i_event='https://esm.mi.ingv.it/esmws/shakemap/1/query?eventid='+evid+'&catalog=EMSC&format=event'
-    # url_i_fault='https://esm.mi.ingv.it/esmws/shakemap/1/query?eventid='+evid+'&catalog=EMSC&format=event_fault
-    # url_i_dat='https://esm.mi.ingv.it/esmws/shakemap/1/query?eventid='+evid+'&catalog=EMSC&format=event_dat&flag=all'
-    # url_str_dat = "https://esm.mi.ingv.it/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(ev), CATALOG)
-
-    url_str_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(ev), CATALOG)
-    logger.info("request to ESM event_dat ws: %s" % (url_str_dat))
+def get_IMs(url_str_dat, url_str_ev, ev, FNAME_DAT, FNAME_EV):
+    # data
+    logger.info("request event_dat ws: %s" % (url_str_dat))
     try:
         r = requests.get(url_str_dat)
-        status_dat = r.status_code
+        if r.status_code == 200:
+            with open(FNAME_DAT, mode='wb') as f:
+                f.write(r.content)
+        else:
+            logger.error(f"event_dat problems with url: [{url_str_dat}] statuscode: [{r.status_code}]")
     except:
-        logger.error ("ESM event_dat problems: status_dat forced to 204")
-        status_dat = 204
+        logger.error (f"event_dat problems with url: [{url_str_dat}] status_dat forced to 204")
         pass
 
-    # url_str_dat = "https://esm.mi.ingv.it/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat&encoding=US-ASCII" % (str(ev), CATALOG)
-    # r = requests.get(url_str_dat)
-    if status_dat == 200:
-        with open(FNAME_DAT, mode='wb') as localfile:
-            localfile.write(r.content)
-
-# ---------- done data
-#
-    # prepare for _ev
-    fname_ev = "event.xml"
-    FNAME_EV = os.path.join(INPUTEVENTDIR,fname_ev)
-    FNAME_EV_TMP = os.path.join(INPUTEVENTDIR,"event_SM4.xml")
-    #
-    url_str_ev = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(ev), CATALOG)
-    print ("request to ESM event ws: %s" % (url_str_ev))
+    # event
+    logger.info (f"request event ws: [{url_str_ev}]")
     try:
         r = requests.get(url_str_ev)
-        status_ev = r.status_code
+        if r.status_code == 200:
+            clean_eventxml(r.content, FNAME_EV)
+        else:
+            logger.error(f"event problems with url: [{url_str_dat}] statuscode: [{r.status_code}]")
     except:
-        logger.error("ESM event problems: status_ev forced to 204")
-        status_ev = 204
-        pass
-
-    status_ev = r.status_code
-    if status_ev == 200:
-        with open(FNAME_EV, mode='wb') as localfile:
-            localfile.write(r.content)
-        # clean to adhere to new standard SM4
-        clean_eventxml(FNAME_EV, FNAME_EV_TMP)
-        shutil.move(FNAME_EV_TMP, FNAME_EV)
-
-    # ---------- done event
-    # # ---------- the following is added to skip the fault request that gives arror -
-    # 	status_fault = 204
-    # 	return status_dat, status_ev, status_fault
-    # # ---------- end of the modification fault request that gives arror -
-
-    # prepare for _fault
-
-    '''
-    __SERGIO__ questa parte la commento perchè non so che fare con i file di tipo fault
-    '''
-    # fname_fault = "event_fault.txt"
-    # rupture = "rupture.json"
-    # FNAME_FAULT = os.path.join(INPUTEVENTDIR,fname_fault)
-    # FNAME_RUPT = os.path.join(INPUTEVENTDIR,rupture)
-    #
-    # url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(ev), CATALOG)
-    # print ("request to ESM fault ws: %s" % (url_str_fault))
-    # try:
-    #     r = requests.get(url_str_fault)
-    #     status_fault = r.status_code
-    # except:
-    #     print ("ESM event_fault problems: status_fault forced to 204")
-    #     status_fault = 204
-    #     pass
-    #
-    # if status_fault == 200:
-    #     with open(FNAME_FAULT, mode='wb') as localfile:
-    #         localfile.write(r.content)
-    #     jdict = text_to_json(FNAME_FAULT, new_format=False)
-    #     with open(FNAME_RUPT,'w') as f:
-    #         json.dump(jdict,f)
-    #     stringa = "mv %s %s.sav" % (FNAME_FAULT, FNAME_FAULT)
-    #     os.system(stringa)
-    #return status_dat, status_ev, status_fault
-    return status_dat, status_ev, 0
+        logger.error("event problems with url: [{url_str_dat}] status_ev forced to 204")
 
 
-def get_IMs_RRSM(ev, CATALOG, INPUTEVENTDIR):
-    # create filename for  _dat.xml output file
-    fname_dat = "%s_RRSM_dat.xml" % (str(ev))
-    FNAME_DAT = os.path.join(INPUTEVENTDIR, fname_dat)
-    #
-    # urlrrsm_event='http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid='+evid+'&type=event'
-    # #urlrrsm_dat='ftp://www.orfeus-eu.org/pub/data/shakemaps/'+evid+'/input/event_dat.xml'
-    # urlrrsm_dat='http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid='+evid
-    url_str_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(ev))
-    print ("request to RRSM event_dat ws: %s" % (url_str_dat))
-    try:
-        r = requests.get(url_str_dat)
-        status_dat = r.status_code
-    except:
-        logger.error ("RRSM event_dat problems: status_dat forced to 204")
-        status_dat = 204
-        pass
-
-    # print ("status:", status, 'event:', ev)
-
-    if status_dat == 200:
-        with open(FNAME_DAT, mode='wb') as localfile:
-            localfile.write(r.content)
-
-    # ---------- done data
-    #
-    # prepare for _ev
-    fname_ev = "event.xml"
-    FNAME_EV = os.path.join(INPUTEVENTDIR,fname_ev)
-    FNAME_EV_TMP = os.path.join(INPUTEVENTDIR,"event_SM4.xml")
-    #
-    url_str_ev = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(ev))
-    logger.info ("request to RRSM event ws: %s" % (url_str_ev))
-    try:
-        r = requests.get(url_str_ev)
-        status_ev = r.status_code
-    except:
-        logger.error ("RRSM event problems: status_ev forced to 204")
-        status_ev = 204
-        pass
-    #     print "status:", status
-    if status_ev == 200:
-        with open(FNAME_EV, mode='wb') as localfile:
-                localfile.write(r.content)
-        # clean to adhere to new standard SM4
-        clean_eventxml(FNAME_EV, FNAME_EV_TMP)
-        shutil.move(FNAME_EV_TMP, FNAME_EV)
-    # ---------- done event
-    return status_dat, status_ev
 
 # extract ID from event string
 def extract_id(string, fdsn_client):
@@ -257,14 +153,15 @@ def extract_id(string, fdsn_client):
 
     return event_id
 
-def clean_eventxml(event_file, new_event_file):
+
+def clean_eventxml(xmlstring, filename):
     netid = "IV"
     network = "INGV-ONT"
     #
-    tree = ET.parse(event_file)
+    tree = ET.ElementTree(ET.fromstring(xmlstring))
     root = tree.getroot()
     event = root.attrib
-    # define the new attributes
+    # define the new attributesv
     event['netid'] = netid
     event['network'] = network
     event['time'] = "%04d-%02d-%02dT%02d:%02d:%02dZ" % (int(event['year']), int(event['month']), int(event['day']),
@@ -273,8 +170,23 @@ def clean_eventxml(event_file, new_event_file):
     for k in ['year', 'month', 'day', 'hour', 'minute', 'second']:
         if k in event:
             del event[k]
-    tree.write(new_event_file, xml_declaration=True, encoding="UTF-8")
-    return
+
+    tree.write(filename, xml_declaration=True, encoding="UTF-8")
+
+def diff(eventfile1, eventfile2):
+    tree1 = ET.parse(eventfile1)
+    root1 = tree1.getroot()
+    event1 = root1.attrib
+
+    tree2 = ET.parse(eventfile2)
+    root2 = tree2.getroot()
+    event2 = root2.attrib
+
+    event1.pop('created')
+    event2.pop('created')
+
+    return event1 != event2
+
 
 # routine to extract an obspy catalog and a list of events id from fdsn event ws
 def find_events(
@@ -373,79 +285,83 @@ def generate_events_xml_data():
 
 def generate_event_xml_data(event_id):
     logger.info("DOING EVENT: %s" % (event_id))
-    EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id, 'current')
-    # define the files that have been possibly downloaded from the ws
-    RRSM_datXML_file = os.path.join(EVENT_DIR, event_id + '_RRSM_dat.xml')
-    ESM_datXML_file = os.path.join(EVENT_DIR, event_id + '_ESM_dat.xml')
-    #
-    # THESE ARE OPERATIONS BEFORE DOWNLOAD TO CHECK FOR EXISTING EVENT DATA
-    # ---- verify if the files exists and if their creation time is less than a given time
-    #
-    timestamp = int(time.time())
-    #  ESM first
-    # do the following only if the the <event_id>_ESM_dat.xml file exists
-    if os.path.isfile(ESM_datXML_file):
-        logger.info("   ESM: input %s file exist" % (ESM_datXML_file))
+    EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id[:6], event_id, 'current')
 
-        # some cleaning in case that <event_id>_RRSM_dat.xml still exists
-        '''
-         __SERGIO__ 
-         Ho commentato le due seguenti righe perchè non credo che nella cartella GIT ci possano essere entrambi i file ESM e RRSM
-         Comunque se dovessi riabilitarle, è necessati effettuare un git.remove
-         domanda perche la verifica "se esiste gia" viene fatta solo sul file ESM
-         inltre se ESM c'è vede se c'è RRSM quando tutti e due insieme nn ci sono mai
-        '''
+    temp_event_file = tempfile.NamedTemporaryFile(prefix='shake_event')
+
+    # ESM
+    url_str_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
+    url_str_ev = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
+    temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat_ESM')
+    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file, temp_event_file)
+    FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_B_ESM_dat.xml")
+    diff_replacement(FNAME_DAT, temp_dat_file)
+    temp_dat_file.close()
+
+    # RRSM
+    url_str_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
+    url_str_ev = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
+    temp_dat_file = tempfile.NamedTemporaryFile(prefix='shake_dat_RRSM')
+    get_IMs(url_str_dat, url_str_ev, event_id, temp_dat_file, temp_event_file)
+    temp_dat_file.seek(0, os.SEEK_END)
+    if temp_dat_file.tell() > 0:
+    #if os.stat(temp_dat_file.name).st_size > 0:
+        FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
+        copyFile(temp_dat_file, FNAME_DAT)
+    temp_dat_file.close()
+
+    # EVENT
+    FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
+    diff_replacement(FNAME_EV, temp_event_file)
+    temp_event_file.close()
+
+    # FAULT
+    # url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
+    # temp_fault_file = tempfile.NamedTemporaryFile(prefix='shake_FAULT_')
+    # get_IMs(url_str_dat, url_str_ev, event_id, temp_fault_file, None)
+    # if os.stat(temp_fault_file.name).st_size > 0:
+    #     pass
+
+    '''
+        # prepare for _fault
+        fname_fault = "event_fault.txt"
+        rupture = "rupture.json"
+        FNAME_FAULT = os.path.join(INPUTEVENTDIR,fname_fault)
+        FNAME_RUPT = os.path.join(INPUTEVENTDIR,rupture)
         #
-        # if os.path.isfile(RRSM_datXML_file):
-        #     os.remove(RRSM_datXML_file)
+    
+        url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(ev), CATALOG)
+        print ("request to ESM fault ws: %s" % (url_str_fault))
+        try:
+            r = requests.get(url_str_fault)
+            status_fault = r.status_code
+        except:
+            print ("ESM event_fault problems: status_fault forced to 204")
+            status_fault = 204
+            pass
+    
+        #     print "status:", status
+        if status_fault == 200:
+            with open(FNAME_FAULT, mode='wb') as localfile:
+                localfile.write(r.content)
+            jdict = text_to_json(FNAME_FAULT, new_format=False)
+            with open(FNAME_RUPT,'w') as f:
+                json.dump(jdict,f)
+            stringa = "mv %s %s.sav" % (FNAME_FAULT, FNAME_FAULT)
+            os.system(stringa)
+        return status_dat, status_ev, status_fault
+    '''
 
-        # check the creation time of the <event_id>_ESM_dat.xml
-        ESM_unix_time = os.path.getctime(ESM_datXML_file)
-        # calculate the difference in seconds between the ESM_dat.xml file and the
-        # current timestamp
-        ESM_time_from_creation = timestamp - ESM_unix_time
-        # if the call is made less than the time_span, no need to download
-        # and calculate shakemap
-        if ESM_time_from_creation < args.chkbcktime:
-            logging.warning("   ESM: input %s file has been generated %.2f days earlier" % (
-            ESM_datXML_file, ESM_time_from_creation / (3600 * 24.)))
-            return
 
-    # IF NEW EVENT -------
-    # generate the directories if they are not already present
-    if not os.path.isdir(EVENT_DIR):
-        os.makedirs(EVENT_DIR)
-
-    #
-    # DOWNLOAD THE DATA ----
-    # the procedure attempts to download only the data from one webservice
-    # if it finds the data in ESM, it skips downloading data from RRSM
-    # ---------------------------------------------
-    # ADDED THE TRY TO HANDLE ESM WEB SERVICES PROBLEM
-    # try:
-    #     status_dat, status_ev, status_fault = get_IMs_ESM(event_id, CATALOG, EVENT_DIR_CURRENT)
-    # except:
-    #     print ('PROBLEMS WITH ESM WEB SERVICES: STATUS VALUES SET ALL TO 204')
-    #     status_ev = 204; status_dat = 204; status_fault = 204
-    # --------------------------------------------
-    status_dat, status_ev, status_fault = get_IMs_ESM(event_id, fdsn_client, EVENT_DIR)
-
-    logger.info ('   ESM: results of the ws query for _dat, event and fault: %d %d %d' % (status_dat, status_ev, status_fault))
-    if (status_ev == 204) and (status_dat == 204):
-        logger.warning ("   ESM: no event_dat.xml and no %s found!" % (ESM_datXML_file))
-        logger.warning ("   --- Now try the RRSM webservice")
-
-        status_dat, status_ev = get_IMs_RRSM(event_id, fdsn_client, EVENT_DIR)
-
-        logger.info ('   RRSM: results of the ws query for _dat, event: %d %d' % (status_dat, status_ev))
-
-        if (status_dat == 204) and  (status_ev == 204):
-            logger.warning ("   RRSM: no event_dat.xml and no %s found!" % (RRSM_datXML_file))
-
-            if len(os.listdir(EVENT_DIR)) == 0:
-                shutil.rmtree(os.path.split(EVENT_DIR)[0])
-                logger.warning ("   --- Removed event directory with empty files  %s" % EVENT_DIR)
-
+def diff_replacement(currFile, new_file):
+    # new_file.seek(0, os.SEEK_END)
+    # if new_file.tell() > 0:
+    if os.stat(new_file.name).st_size > 0:
+        if os.path.isfile(currFile):
+            if diff(new_file, currFile):
+                shutil.copyfile(new_file, currFile)
+        else:
+            copyFile(new_file, currFile)
 
 if __name__ == '__main__':
 
