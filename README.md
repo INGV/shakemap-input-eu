@@ -53,11 +53,16 @@ Per quanto riguarda il file dati-evento. Il procedimento del file temporaneo vie
 
 ### Punti da chiarire
 
-La procedura di scarico dati ESM dello script vecchio, nel caso di file già esistente fa un controllo che il file dati-evento sia più recente di un certo numero di giorni passati a configurazione (dfault = 1), se lo è lo scarico dell'evento è annullato. Attualmente la script nuovo ignora questo controllo. Va inserito?
+La procedura di scarico dati ESM dello script vecchio, nel caso di file già esistente fa un controllo che il file dati-evento sia più recente di un certo numero di giorni passati a configurazione (default = 1), se lo è lo scarico dell'evento è annullato. Attualmente la script nuovo ignora questo controllo. Va inserito?
 
 La codice di scarico del file fault (ce  n'è uno nel periodo 2020/10/30), dello script vecchio,  crea due file: `event_fault.txt.sav` e `rupture.json`. Va generato solo il secondo?
 
 Viene chiamata la funzione `_rotate_polygon` che non esiste.
+
+### TODO
+
+La push deve esere fatta con un token
+Prima di sostituire un file già esistente, va verificato che l'ultima commit sia stata fatta dall'utente titolare del token. Se no, il file non deve essere sovrascritto
 
 
 
