@@ -52,7 +52,11 @@ You also need to install some python modules:
 
 
 ```
-pip install --no-cache-dir -r requirements.txt
+pip install GitPython
+pip install numpy
+pip install Pillow
+pip install obspy
+pip install requests
 ```
 
 
