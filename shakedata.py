@@ -171,7 +171,7 @@ def set_args():
     args.minmag = float(args.minmag)
 
     # time to verify backward if input files from ESM have changed
-    args.chkbcktime = float(args.chkbcktime) * ONEDAY # in seconnds
+    #args.chkbcktime = float(args.chkbcktime) * ONEDAY # in seconnds
 
     # define the number of seconds in order to calculate the start_time
     # identify start and end times of the last month
@@ -333,7 +333,7 @@ def log_summary_data():
     logger.info(args.event_ids)
     logger.info("STARTIME: %s   ENDTIME: %s" % (args.start_time, args.end_time))
     logger.info("MINMAG: %.1f" % (args.minmag))
-    logger.info("ESM BCK VERIFICATION (days): %.2f" % (args.chkbcktime))
+    #logger.info("ESM BCK VERIFICATION (days): %.2f" % (args.chkbcktime))
     logger.info("run at: %s" % (UTCDateTime().strftime("%Y-%m-%dT%H:%M:%S")))
 
 @catch_all_and_print
@@ -552,8 +552,7 @@ if __name__ == '__main__':
     default_minmag = 4.0
     #
     # default time backward to cross-check the input files of ESM
-    default_chkbcktime = 1.0 # in days
-    # check_time_bckwd = chkbcktime*ONEDAY # in seconnds
+    #default_chkbcktime = 1.0 # in days
 
     parser = argparse.ArgumentParser()
 
@@ -561,7 +560,7 @@ if __name__ == '__main__':
     parser.add_argument("git_repo_dir", help="provide the shakemap installation home dir (e.g., /Users/michelini/shakemap_profiles/world)")
     parser.add_argument("-e","--end_time", nargs="?", default=default_end_time, help="provide the end time  (e.g., 2020-10-23); [default is now]")
     parser.add_argument("-m","--minmag", nargs="?", default=default_minmag, help="provide the minimum magnitude (e.g.,4.5); [default is 4.0]")
-    parser.add_argument("-b","--chkbcktime", nargs="?", default=default_chkbcktime, help="provide the number of days to check for ESM new input data [default is 1.0]")
+    #parser.add_argument("-b","--chkbcktime", nargs="?", default=default_chkbcktime, help="provide the number of days to check for ESM new input data [default is 1.0]")
     parser.add_argument("-l", "--log_severity",
                         type=str,
                         choices=["DEBUG", "INFO", "WARN", "ERROR", "CRITICAL"],

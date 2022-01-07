@@ -1,3 +1,5 @@
+
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -6,9 +8,8 @@
   - [1.1 Files in the project](#11-files-in-the-project)
 - [2. Installation](#2-installation)
   - [2.1 Python](#21-python)
-- [2.2 ee2db.py](#22-ee2dbpy)
-  - [Delete events](#delete-events)
-- [3 Test the script](#3-test-the-script)
+- [2.2 shakedata.py](#22-shakedatapy)
+- [3 Example of use](#3-example-of-use)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -30,19 +31,24 @@ The following files are maintained in the archive:
 | /requirements.txt | needed python modules |
 | README.md | This readme file you are reading |
 
-
 # 2. Installation #
+
+clone the project
+
+```
+git clone https://github.com/INGV/shakemap-input-eu
+```
+
 ## 2.1 Python ##
 
 You need Python 3.6+ installed.
-We assume, in the rest of this document, that python command points to python 3.6+
 
-- You also need to install pip on your linux system:
+You also need to install pip on your linux system:
 
 
     sudo apt-get install python-pip
 
-- You also need to install some python modules:
+You also need to install some python modules:
 
 
 ```
@@ -75,9 +81,30 @@ The script does the following actions:
 
 # 3 Example of use #
 
-Run the script: test.py
+Run the script with --help option to show the launch syntax
 
 ```
-python test.py
+python shakedata.py --help
+```
+
+
+
+The first two mandatory positional arguments are:
+
+1. time before the end_time to search for the event data. Provided value must be one of: `15m, 1d, 5d, 10d, 30d, 365d`
+2. repository URL
+
+The other parameter are optional:
+
+- --end_time default value is current time
+- --minmag Minimal magnitude for searched events. Default value is `4.0`
+- --log_severity Log severity level. One of `DEBUG, INFO, WARN, ERROR, CRITICAL`. Default value is `INFO`
+
+
+
+With the following launch, the script will search for events between  2020-10-30 and 2020-10-31 and magnitude from 4.0 on.
+
+```
+python shakedata.py  1d /data/projects/ingv/sismologia/shakemap-input-eu --end_time 2020-10-31
 ```
 
