@@ -1,5 +1,4 @@
 import os.path
-
 import requests
 import argparse
 import json
@@ -13,9 +12,9 @@ import logging
 import argparse
 import sys
 import inspect
-import shutil
+#import shutil
 import functools
-import tempfile
+#import tempfile
 
 
 # COMSTANTS
@@ -120,7 +119,7 @@ def catch_all_and_print(f):
     # type: (Callable[..., Any]) -> Callable[..., Any]
     """
     A function wrapper for catching all exceptions and logging them
-    Questo trucco del decorator è carino però perdo l'informazione sulla linea di codice che è andata il errore
+    Questo trucco del decorator è carino però si perde l'informazione sulla linea di codice che è andata in errore
     Ho solo il nome della funzione
     """
     @functools.wraps(f)

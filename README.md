@@ -2,64 +2,124 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [shakemap-input-eu](#shakemap-input-eu)
-  - [Situazione attuale](#situazione-attuale)
+- [1. Introduction](#1-introduction)
+  - [1.1 Files in the project](#11-files-in-the-project)
+- [2. Installation](#2-installation)
+  - [2.1 Python](#21-python)
+- [2.2 ee2db.py](#22-ee2dbpy)
+  - [Delete events](#delete-events)
+- [3 Test the script](#3-test-the-script)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# shakemap-input-eu
-Repository for ShakeMap4 input XML files
+# 1. Introduction #
 
-comandi per configurare le credenziali di github:
+The script `ee2db.py` inserts earthquake events into the `quakedb` . Its input is the xml file produce by Early-Est. It uses the module: [ee2json](https://gitlab.rm.ingv.it/early-est/ee2json) for converting the input file into the json format and then It calls the [web service](http://caravel-dev.int.ingv.it )  for inserting the events into the `quakedb` database
 
-git remote rm origin
+## 1.1 Files in the project ##
 
-git remote add origin https://serioca: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@github.com/INGV/shakemap-input-eu.git
+The following files are maintained in the archive:
 
-todo
-
-anno (CCYY) in testa alla root /data
-verificare i cambiamenti di event.xml (perche il campo ora cambia sempre, quindi controllare tutti meno questo)
-verifica di chi ha fatto il commit (solo i commit fatti dal programma automatico possono essere sovrascritti)
-
-le due funzioni ESM e RRSM quanto differiscono tra loro. 
-se sono simili farne uno solo con url sistemati in fase di priorita (cosi ci possiamo aggiungere il link INGV)
-
-VALENTINO....
-Riguardo a shakemap-input-eu, ho parlato con Alberto e non c’e’ piu la necessita di cercare i file prima su ESM e poi su RRSM; si possono cercare su entrambi indistintamente. L’importate e’ che ESM appaia, dal punto di vista di ordinamento alfabetico, dopo RRSM. Quindi i file dovranno, ad esempio, esser chiamati:
-20210908_0000116_A_RRSM_dat.xml
-20210908_0000116_B_ESM_dat.xml
-Per quanto riguarda il nome delle directory, sotto data meglio mettere una directory con YYYYMM; esempio:
-data/202109
-20210905_0000177/current
-data/202108
-20210807_0000078/current
+| file | description |
+| ------ | ------ |
+| /ee2db.py | the script |
+| /test.py | test script |
+| README.md | This readme file you are reading |
 
 
+# 2. Installation #
+## 2.1 Python ##
 
-## Situazione attuale
+You need Python 3.5+ installed.
+We assume, in the rest of this document, that python command points to python 3.5+
 
-Per ogni evento viene chiamata due volte la funzione `get_IMs`
-
-La prima volta con le due URL, dati-evento ed evento, di ESM 
-
-La seconda volta con le due URL, dati-evento ed evento, di RRSM
-
-alla funzione  `get_IMs` vengono passate le path assolute dei due file (dati-evento ed evento), dove scrivere i dati scaricati.
-
-Per quanto riguarda il file evento viene creato un file temporaneo che viene passato ad entrambe le chiamate a `get_IMs`. Ciò significa che se i dati evento vengono scaricati da entrambi i siti, nel file ci saranno i dati relativi alla seconda chiamata. Al termine delle due chiamate viene controllato se il file evento già esiste nella cartella. Se non esiste viene creato con il contenuto del file temporaneo. se esiste viene sovrascritto soltanto se i dati sono cambiati a meno del campo `created`. Questo perchè il campo `created` cambia sempre, anche quando i dati sono gli stessi.
-
-Per quanto riguarda il file dati-evento. Il procedimento del file temporaneo viene applicato solo al sito ESM, perchè anche in questo caso è presente nei dati il campo `created`, da non considerare. Prr il sito RRSM vine passato alla funzione `get_IMs` direttamente la path assoluta del file nella cartella di destinazione, che verrà quindi creato o sovrascritto. Nel caso viene sovrascritto pur essendo uguale, la commit di git lo ignorerà.
-
-### Punti da chiarire
-
-La procedura di scarico dati ESM dello script vecchio, nel caso di file già esistente fa un controllo che il file dati-evento sia più recente di un certo numero di giorni passati a configurazione (dfault = 1), se lo è lo scarico dell'evento è annullato. Attualmente la script nuovo ignora questo controllo. Va inserito?
-
-La codice di scarico del file fault (ce  n'è uno nel periodo 2020/10/30), dello script vecchio,  crea due file: `event_fault.txt.sav` e `rupture.json`. Va generato solo il secondo?
-
-Viene chiamata la funzione `_rotate_polygon` che non esiste.
+- You also need to install pip on your linux system:
 
 
+    sudo apt-get install python-pip
+
+- You also need to install the module `ee2json`:
 
 
+```
+pip install git+https://gitlab+deploy-token-49:CE8DXPECvX1tHpsy4s5w@gitlab.rm.ingv.it/early-est/ee2json.git
+```
+
+The `ee2json` needs the configuration file `.ee2jsonrc`, located in the user home directory
+
+You have to create this file like the following: 
+
+```
+{
+   "localspace": {
+      "name": "early-est-1.2.4_space1",
+      "description": ""
+   },
+   "provenance": {
+      "name": "INGV",
+      "description": "from WS",
+      "softwarename": "early-est",
+      "username": "ee"
+   }
+}
+```
+
+Refer to the  [ee2json documentation](https://gitlab.rm.ingv.it/early-est/ee2json) for details.
+
+- Then install the module `jinja2`
+
+```
+pip install jinja2
+```
+
+- Then You clone the project `ee2db`:
+
+
+```
+git clone https://gitlab.rm.ingv.it/early-est/ee2db
+```
+
+
+
+# 2.2 ee2db.py
+
+This script uses the module `ee2json`. It adds the events to the `quakedb` by invoking a web service.
+
+Launch the script with the option `-h` to show the usage:
+
+`python ee2db.py -h`
+
+An example of the launch is the following:
+
+`python ee2db.py -x ./input_files/monitor_1.1.9.xml -w http://caravel.int.ingv.it -l DEBUG `
+
+The only mandatory  option is `-x`  followed by the xml file containing the events (this is the file produced by Early-Est).
+
+The log messages are printed to the standard output.
+
+The default value of the log severity is INFO.
+
+if the option `-w` is not provided, the script just log the json-formatted events to the log file (if the log severity level is not greater than INFO)
+
+if the option `-w` is provided, the script calls the service with the href obtained joining the parameter associated to the option (origin) with the pathname: `/api/quakedb/v1/event`
+
+The href relative to the above launch example is: `http://caravel.int.ingv.it/api/quakedb/v1/event`
+
+This script needs two additional python modules: `requests` and `validators`, that are automatically installed when installing the module `ee2json`
+
+
+## Delete events
+
+ee2db.py registers, at each run, the ids of the elaborated events, in a file (named event list file). At each launch, the first thing it does is to compare the ids generated at the previous launch, with the ones present in the file `hypolist.csv` (provided by early-est), and set to deleted the events present in the event file list but not in `hypolist.csv`. At the end of this operation, it delete the event list file. 
+
+[The following diagram](https://docs.google.com/drawings/d/1Qcd5fMgu4A3OpbrK1ktpNBOMm1N_ITaN6L-PEDYaT4w/edit?usp=sharing) shows this scenario.
+
+
+# 3 Test the script #
+
+Run the script: test.py
+
+```
+python test.py
+```
 
