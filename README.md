@@ -14,7 +14,11 @@
 
 # 1. Introduction #
 
-The script `ee2db.py` inserts earthquake events into the `quakedb` . Its input is the xml file produce by Early-Est. It uses the module: [ee2json](https://gitlab.rm.ingv.it/early-est/ee2json) for converting the input file into the json format and then It calls the [web service](http://caravel-dev.int.ingv.it )  for inserting the events into the `quakedb` database
+The scope of the project is to maintain a remote shake data repository updated, searching, at time interval,  for new shake data available on the net. 
+
+When a file is discovered to be changed on the remote repository by external users, it is skipped.
+
+  
 
 ## 1.1 Files in the project ##
 
@@ -22,100 +26,54 @@ The following files are maintained in the archive:
 
 | file | description |
 | ------ | ------ |
-| /ee2db.py | the script |
-| /test.py | test script |
+| /shakedata.py | the main (and unique) script of the project |
+| /requirements.txt | needed python modules |
 | README.md | This readme file you are reading |
 
 
 # 2. Installation #
 ## 2.1 Python ##
 
-You need Python 3.5+ installed.
-We assume, in the rest of this document, that python command points to python 3.5+
+You need Python 3.6+ installed.
+We assume, in the rest of this document, that python command points to python 3.6+
 
 - You also need to install pip on your linux system:
 
 
     sudo apt-get install python-pip
 
-- You also need to install the module `ee2json`:
+- You also need to install some python modules:
 
 
 ```
-pip install git+https://gitlab+deploy-token-49:CE8DXPECvX1tHpsy4s5w@gitlab.rm.ingv.it/early-est/ee2json.git
-```
-
-The `ee2json` needs the configuration file `.ee2jsonrc`, located in the user home directory
-
-You have to create this file like the following: 
-
-```
-{
-   "localspace": {
-      "name": "early-est-1.2.4_space1",
-      "description": ""
-   },
-   "provenance": {
-      "name": "INGV",
-      "description": "from WS",
-      "softwarename": "early-est",
-      "username": "ee"
-   }
-}
-```
-
-Refer to the  [ee2json documentation](https://gitlab.rm.ingv.it/early-est/ee2json) for details.
-
-- Then install the module `jinja2`
-
-```
-pip install jinja2
-```
-
-- Then You clone the project `ee2db`:
-
-
-```
-git clone https://gitlab.rm.ingv.it/early-est/ee2db
+pip install --no-cache-dir -r requirements.txt
 ```
 
 
 
-# 2.2 ee2db.py
+# 2.2 shakedata.py
 
-This script uses the module `ee2json`. It adds the events to the `quakedb` by invoking a web service.
+The script does the following actions:
 
-Launch the script with the option `-h` to show the usage:
+- Execute a pull from git repository, whose address is provided by a mandatory option
 
-`python ee2db.py -h`
+- Search for all event from ESMC, filtering with the launch options. For each event found do the following actions 
 
-An example of the launch is the following:
+  - set the full name of the three files that contain the data to search for, that is: 
+    1. `event data file`: `data/<first six chars of event id>/<event id>/current/event.xml`
+    2. `ESM shake file`: `data/<first six chars of event id>/<event id>/current/data/<event id>_B_ESM_dat.xml`
+    3. `RRSM shake file`:  `data/<first six chars of event id>/<event id>/current/data/<event id>_A_RRSM_dat.xml`
+  - For each one of these files, check if it exists on remote repository and, if yes, if the last change on repository have been made from an external user. If yes the search for data relative to that event is not done
+  - search for event data from ESM and RRSM sites ad, if found, save it to local file `event data file`. If event data are found from both sites, that from  RRSM will be taken
+  - search for shake data from ESM and, if found, save it to local file `ESM shake file`
+  - search for shake data from RRSM and, if found, save it to local file `RRSM shake file`
 
-`python ee2db.py -x ./input_files/monitor_1.1.9.xml -w http://caravel.int.ingv.it -l DEBUG `
+- execute push into remote repository
 
-The only mandatory  option is `-x`  followed by the xml file containing the events (this is the file produced by Early-Est).
-
-The log messages are printed to the standard output.
-
-The default value of the log severity is INFO.
-
-if the option `-w` is not provided, the script just log the json-formatted events to the log file (if the log severity level is not greater than INFO)
-
-if the option `-w` is provided, the script calls the service with the href obtained joining the parameter associated to the option (origin) with the pathname: `/api/quakedb/v1/event`
-
-The href relative to the above launch example is: `http://caravel.int.ingv.it/api/quakedb/v1/event`
-
-This script needs two additional python modules: `requests` and `validators`, that are automatically installed when installing the module `ee2json`
+  
 
 
-## Delete events
-
-ee2db.py registers, at each run, the ids of the elaborated events, in a file (named event list file). At each launch, the first thing it does is to compare the ids generated at the previous launch, with the ones present in the file `hypolist.csv` (provided by early-est), and set to deleted the events present in the event file list but not in `hypolist.csv`. At the end of this operation, it delete the event list file. 
-
-[The following diagram](https://docs.google.com/drawings/d/1Qcd5fMgu4A3OpbrK1ktpNBOMm1N_ITaN6L-PEDYaT4w/edit?usp=sharing) shows this scenario.
-
-
-# 3 Test the script #
+# 3 Example of use #
 
 Run the script: test.py
 
