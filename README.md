@@ -36,7 +36,7 @@ The following files are maintained in the archive:
 clone the project
 
 ```
-git clone https://github.com/INGV/shakemap-input-eu
+git clone https://<token>@github.com/INGV/shakemap-input-eu
 ```
 
 ## 2.1 Python ##
