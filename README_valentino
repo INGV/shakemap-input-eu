@@ -1,0 +1,2 @@
+docker build --no-cache --pull --tag ingv/shakemap-input-eu .
+docker run -it --rm -v $(pwd):/opt/data ingv/shakemap-input-eu 1d /opt/data --end_time 2020-10-31
