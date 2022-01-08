@@ -28,7 +28,6 @@ The following files are maintained in the archive:
 | file | description |
 | ------ | ------ |
 | /shakedata.py | the main (and unique) script of the project |
-| /requirements.txt | needed python modules |
 | README.md | This readme file you are reading |
 
 # 2. Installation #
@@ -41,12 +40,18 @@ git clone https://<token>@github.com/INGV/shakemap-input-eu
 
 ## 2.1 Python ##
 
-You need Python 3.6+ installed.
+You need Python 3.7.0 installed.
 
 You also need to install pip on your linux system:
 
 
     sudo apt-get install python-pip
+
+If pip is already installed, upgrade it:
+
+```
+pip install --upgrade pip
+```
 
 You also need to install some python modules:
 
