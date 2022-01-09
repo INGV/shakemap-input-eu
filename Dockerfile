@@ -16,7 +16,7 @@ RUN apt-get clean \
 RUN python -m pip install --upgrade pip
 
 # Adding python3 libraries
-RUN python3 -m pip install GitPython
+RUN python3 -m pip install PyDriller
 RUN python3 -m pip install numpy
 RUN python3 -m pip install Pillow
 RUN python3 -m pip install obspy
