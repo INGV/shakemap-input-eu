@@ -349,8 +349,8 @@ def git_pull():
 @catch_all_and_print
 def git_push():
     repo = git.Repo(args.git_repo_dir+'/.git')
-    repo.git.add('--all')
-    #repo.git.add('data')
+    #repo.git.add('--all')
+    repo.git.add('data')
     repo.index.commit("Some XML data updated")
     origin = repo.remote(name='origin')
     origin.push()
