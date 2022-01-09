@@ -372,7 +372,7 @@ def generate_event_xml_data(event_id):
         data = DownloadData(url_ESM_dat)
         saveIfChanged(data, FILE_FULL_NAME_DAT)
     else:
-        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user {author}")
+        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user: {author}")
 
     # ===================================
     # EVENT DATA
@@ -406,7 +406,7 @@ def generate_event_xml_data(event_id):
         if data:
             writeFile(data, FILE_FULL_NAME_DAT)
     else:
-        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user {author}")
+        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user: {author}")
 
     # FAULT (ESM?)
     url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)

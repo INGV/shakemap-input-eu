@@ -57,7 +57,7 @@ You also need to install some python modules:
 
 
 ```
-pip install GitPython
+pip install PyDriller
 pip install numpy
 pip install Pillow
 pip install obspy
