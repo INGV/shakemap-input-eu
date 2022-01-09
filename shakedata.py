@@ -366,12 +366,13 @@ def generate_event_xml_data(event_id):
     FILE_NAME_DAT = f"{str(event_id)}_B_ESM_dat.xml"
     FILE_FULL_NAME_DAT = os.path.join(EVENT_DIR, FILE_NAME_DAT)
 
-    if check_repository_file(FILE_NAME_DAT):
+    result, author = check_repository_file(FILE_NAME_DAT)
+    if result:
         url_ESM_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
         data = DownloadData(url_ESM_dat)
         saveIfChanged(data, FILE_FULL_NAME_DAT)
     else:
-        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by an external user")
+        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user {author}")
 
     # ===================================
     # EVENT DATA
@@ -397,13 +398,15 @@ def generate_event_xml_data(event_id):
     # RRSM SHAKE DATA
     FILE_NAME_DAT = f"{str(event_id)}_A_RRSM_dat.xml"
     FILE_FULL_NAME_DAT = os.path.join(EVENT_DIR, FILE_NAME_DAT)
-    if check_repository_file(FILE_NAME_DAT):
+
+    result, author = check_repository_file(FILE_NAME_DAT)
+    if result:
         url_RRSM_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
         data = DownloadData(url_RRSM_dat)
         if data:
             writeFile(data, FILE_FULL_NAME_DAT)
     else:
-        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by an external user")
+        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user {author}")
 
     # FAULT (ESM?)
     url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
@@ -573,7 +576,13 @@ def get_repository_files_info():
 returns true if the file do not exist on the repository or the author of its last modification is GIT_USERNAME
 '''
 def check_repository_file(file_name):
-    return file_name not in repository_files or repository_files[file_name]['author'] == GIT_USERNAME
+    if file_name not in repository_files:
+        return True, None
+
+    if repository_files[file_name]['author'] == GIT_USERNAME:
+        return True, GIT_USERNAME
+
+    return False, repository_files[file_name]['author']
 
 
 if __name__ == '__main__':
