@@ -350,6 +350,7 @@ def git_pull():
 def git_push():
     repo = git.Repo(args.git_repo_dir+'/.git')
     repo.git.add('--all')
+    #repo.git.add('data')
     repo.index.commit("Some XML data updated")
     origin = repo.remote(name='origin')
     origin.push()
@@ -632,7 +633,6 @@ if __name__ == '__main__':
 
     log_summary_data()
     generate_events_xml_data()
-
     git_push()
 
 
