@@ -1,8 +1,6 @@
 import os.path
 import requests
-import argparse
 import json
-import time
 import xml.etree.ElementTree as ET
 from obspy import UTCDateTime, Catalog
 from obspy.clients.fdsn import Client
@@ -12,19 +10,25 @@ import logging
 import argparse
 import sys
 import inspect
-#import shutil
 import functools
-#import tempfile
+from pydriller import Repository
+
 
 # test
 
 # COMSTANTS
-USRNAME = "&username=spada"
+#USRNAME = "&username=spada"
 ONEDAY = 3600 * 24
 fdsn_client = 'EMSC'
+GIT_USERNAME = 'sergio'
 
 # global logger
 logger = None
+
+# repository files
+# this dictionary contains, for each file in the git repository
+# the author and date of last modification
+repository_files = {}
 
 class ShakeLibException(Exception):
     """
@@ -358,12 +362,20 @@ def generate_event_xml_data(event_id):
     logger.info("DOING EVENT: %s" % (event_id))
     EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id[:6], event_id, 'current')
 
-    # ESM DAT
-    url_ESM_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
-    data = DownloadData(url_ESM_dat)
-    FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_B_ESM_dat.xml")
-    saveIfChanged(data, FNAME_DAT)
+    # ESM SHAKE DATA
+    FILE_NAME_DAT = f"{str(event_id)}_B_ESM_dat.xml"
+    FILE_FULL_NAME_DAT = os.path.join(EVENT_DIR, FILE_NAME_DAT)
 
+    if check_repository_file(FILE_NAME_DAT):
+        url_ESM_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
+        data = DownloadData(url_ESM_dat)
+        saveIfChanged(data, FILE_FULL_NAME_DAT)
+    else:
+        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by an external user")
+
+    # ===================================
+    # EVENT DATA
+    # ===================================
     data_event = None
     # DOWNLOAD ESM EVENT
     url_ESM_event = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
@@ -380,13 +392,18 @@ def generate_event_xml_data(event_id):
     # ELABORATE EVENT
     FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
     saveIfChanged(data_event, FNAME_EV)
+    # ===================================
 
-    # RRSM DAT
-    url_RRSM_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
-    data = DownloadData(url_RRSM_dat)
-    if data:
-        FNAME_DAT = os.path.join(EVENT_DIR, f"{str(event_id)}_A_RRSM_dat.xml")
-        writeFile(data, FNAME_DAT)
+    # RRSM SHAKE DATA
+    FILE_NAME_DAT = f"{str(event_id)}_A_RRSM_dat.xml"
+    FILE_FULL_NAME_DAT = os.path.join(EVENT_DIR, FILE_NAME_DAT)
+    if check_repository_file(FILE_NAME_DAT):
+        url_RRSM_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
+        data = DownloadData(url_RRSM_dat)
+        if data:
+            writeFile(data, FILE_FULL_NAME_DAT)
+    else:
+        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by an external user")
 
     # FAULT (ESM?)
     url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
@@ -395,7 +412,6 @@ def generate_event_xml_data(event_id):
         jdict = text_to_json(data, new_format=False)
         FNAME_RUPT = os.path.join(EVENT_DIR, "rupture.json")
         writeFile(json.dumps(jdict).encode(), FNAME_RUPT)
-
 
 def text_to_json(data, new_format=True):
     """
@@ -525,7 +541,6 @@ def text_to_json(data, new_format=True):
 
     return json_dict
 
-
 def saveIfChanged(data, FileFullPath):
     if data:
         if os.path.isfile(FileFullPath):
@@ -535,13 +550,30 @@ def saveIfChanged(data, FileFullPath):
         else:
             writeFile(data, FileFullPath)
 
-
 def writeFile(data, FileFullPath):
     dir = os.path.dirname(FileFullPath)
     if not os.path.isdir(dir):
         os.makedirs(dir)
     with open(FileFullPath, mode='wb') as f:
         f.write(data)
+
+# set the dictionary of the repository files with the author and date of last modification
+def get_repository_files_info():
+    rm = Repository(args.git_repo_dir+'/.git')
+    for commit in rm.traverse_commits():
+        for f in commit.modified_files:
+            if f.change_type.name != 'DELETE':
+                #repository_files[os.path.join(f.new_path, f.filename)] = {
+                repository_files[f.filename] = {
+                    'author': commit.author.name,
+                    'date': commit.author_date.date()
+                }
+
+'''
+returns true if the file do not exist on the repository or the author of its last modification is GIT_USERNAME
+'''
+def check_repository_file(file_name):
+    return file_name not in repository_files or repository_files[file_name]['author'] == GIT_USERNAME
 
 
 if __name__ == '__main__':
@@ -573,6 +605,7 @@ if __name__ == '__main__':
     logger = create_logger(args.log_severity)
 
     git_pull()
+    get_repository_files_info()
 
     # my strategy is to have only one variabe shared by all functins, that is args
     args.catalog, args.event_ids = find_events(
