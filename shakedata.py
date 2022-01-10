@@ -566,12 +566,10 @@ def get_repository_files_info():
     rm = Repository(args.git_repo_dir+'/.git')
     for commit in rm.traverse_commits():
         for f in commit.modified_files:
-            if f.change_type.name != 'DELETE':
-                #repository_files[os.path.join(f.new_path, f.filename)] = {
-                repository_files[f.filename] = {
-                    'author': commit.author.name,
-                    'date': commit.author_date.date()
-                }
+            repository_files[f.filename] = {
+                'author': commit.author.name,
+                'date': commit.author_date.date()
+            }
 
 '''
 returns true if the file do not exist on the repository or the author of its last modification is GIT_USERNAME
