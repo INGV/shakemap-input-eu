@@ -78,8 +78,8 @@ The script does the following actions:
     1. `event data file`: `data/<first six chars of event id>/<event id>/current/event.xml`
     2. `ESM shake file`: `data/<first six chars of event id>/<event id>/current/data/<event id>_B_ESM_dat.xml`
     3. `RRSM shake file`:  `data/<first six chars of event id>/<event id>/current/data/<event id>_A_RRSM_dat.xml`
-  - For each one of these files, check if it exists on remote repository and, if yes, if the last change on repository have been made from an external user. If yes the search for data relative to that event is not done. May be this check is not needed for `event data file`. This point will be established  in the future
-  - search for event data from ESM and RRSM sites ad, if found, save it to local file `event data file`. If event data are found from both sites, that from  RRSM will be taken
+  - For each one of the files 2. and 3. (shape files), check if it exists on remote repository and, if yes, if the last change on repository have been made from an external user. If yes the search for data relative to that event is not done.
+  - search the event data from ESM first and if not found search fro RRSM. if the file is found save it to local file `event data file`. If event data are found from both sites, that from  RRSM will be taken
   - search for shake data from ESM and, if found, save it to local file `ESM shake file`
   - search for shake data from RRSM and, if found, save it to local file `RRSM shake file`
 

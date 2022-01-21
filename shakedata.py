@@ -12,6 +12,7 @@ import sys
 import inspect
 import functools
 from pydriller import Repository
+from datetime import datetime
 
 
 # test
@@ -180,7 +181,11 @@ def set_args():
 
     # define the number of seconds in order to calculate the start_time
     # identify start and end times of the last month
-    appo = UTCDateTime(args.end_time) - args.days * ONEDAY
+    try:
+        appo = UTCDateTime(args.end_time) - args.days * ONEDAY
+    except Exception as e:
+        sys.exit(f"option --end_time is not valid time {args.end_time}. {str(e)}")
+
     args.start_time =  appo.strftime("%Y-%m-%dT%H:%M:%S")
     #
 
@@ -189,16 +194,15 @@ def set_args():
 
 def DownloadData(url):
     # data
-    logger.info("request event_dat ws: %s" % (url))
     try:
         r = requests.get(url)
         if r.status_code == 200:
             return r.content
         else:
-            logger.error(f"event_dat problems with url: [{url}] statuscode: [{r.status_code}]")
+            logger.info(f"\t\trequest return: [{url}] statuscode: [{r.status_code}]")
             return None
     except:
-        logger.error (f"event_dat problems with url: [{url}] status_dat forced to 204")
+        logger.error (f"\t\tevent_dat problems with url: [{url}] status_dat forced to 204")
         return None
 
 
@@ -322,6 +326,7 @@ def find_events(
 
     if verbose == True:
 
+        logger.info(f'DETAILED LIST OF EVENTS:')
         for i, c in enumerate(catalog):
             ot = c.origins[0].time
             lat = c.origins[0].latitude
@@ -329,17 +334,18 @@ def find_events(
             dep = c.origins[0].depth #/ 1000.
             mag = c.magnitudes[0].mag
             mag_type = c.magnitudes[0].magnitude_type
-            logger.info("%s %s      %s   %s %s %s   %s (%s)" % (fdsn_client, event_ids_list[i], ot, lat, lon, dep, mag, mag_type))
+            logger.info("\t%s %s      %s   %s %s %s   %s (%s)" % (fdsn_client, event_ids_list[i], ot, lat, lon, dep, mag, mag_type))
+    else:
+        logger.info(f'LIST OF EVENTS: {event_ids_list}')
 
     return catalog, event_ids_list
 
 def log_summary_data():
-    logger.info('EVENTS:')
-    logger.info(args.event_ids)
-    logger.info("STARTIME: %s   ENDTIME: %s" % (args.start_time, args.end_time))
-    logger.info("MINMAG: %.1f" % (args.minmag))
+    logger.info(f'SUMMARY DATA:')
+    logger.info("\tSTARTIME: %s   ENDTIME: %s" % (args.start_time, args.end_time))
+    logger.info("\tMINMAG: %.1f" % (args.minmag))
     #logger.info("ESM BCK VERIFICATION (days): %.2f" % (args.chkbcktime))
-    logger.info("run at: %s" % (UTCDateTime().strftime("%Y-%m-%dT%H:%M:%S")))
+    logger.info("\trun at: %s" % (UTCDateTime().strftime("%Y-%m-%dT%H:%M:%S")))
 
 @catch_all_and_print
 def git_pull():
@@ -356,11 +362,13 @@ def git_push():
     origin.push()
 
 def generate_events_xml_data():
-    for eid in args.event_ids:
-        generate_event_xml_data(eid)
+    totalEvents = len(args.event_ids)
+    spaces = len(str(totalEvents))
+    for index, eid in enumerate(args.event_ids):
+        logger.info(f'{index+1:{spaces}d}/{totalEvents} - DOING EVENT: {eid}')
+        #generate_event_xml_data(eid)
 
 def generate_event_xml_data(event_id):
-    logger.info("DOING EVENT: %s" % (event_id))
     EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id[:6], event_id, 'current')
 
     # ESM SHAKE DATA
@@ -370,10 +378,11 @@ def generate_event_xml_data(event_id):
     result, author = check_repository_file(FILE_NAME_DAT)
     if result:
         url_ESM_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
+        logger.info(f"\trequest _dat.xml ws: {url_ESM_dat}")
         data = DownloadData(url_ESM_dat)
         saveIfChanged(data, FILE_FULL_NAME_DAT)
     else:
-        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user: {author}")
+        logger.warning(f"\tfile {FILE_NAME_DAT} skipped because modified by the external user: {author}")
 
     # ===================================
     # EVENT DATA
@@ -381,15 +390,17 @@ def generate_event_xml_data(event_id):
     data_event = None
     # DOWNLOAD ESM EVENT
     url_ESM_event = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
+    logger.info(f"\trequest event.xml ws: {url_ESM_event}")
     data = DownloadData(url_ESM_event)
     if data:
         data_event = clean_event_data(data)
-
-    # DOWNLOAD RRSM EVENT
-    url_RRSM_event = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
-    data = DownloadData(url_RRSM_event)
-    if data:
-        data_event = clean_event_data(data)
+    else:
+        # DOWNLOAD RRSM EVENT
+        url_RRSM_event = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
+        logger.info(f"\trequest event.xml ws: {url_RRSM_event}")
+        data = DownloadData(url_RRSM_event)
+        if data:
+            data_event = clean_event_data(data)
 
     # ELABORATE EVENT
     FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
@@ -403,6 +414,7 @@ def generate_event_xml_data(event_id):
     result, author = check_repository_file(FILE_NAME_DAT)
     if result:
         url_RRSM_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
+        logger.info(f"\trequest _dat.xml ws: {url_RRSM_dat}")
         data = DownloadData(url_RRSM_dat)
         if data:
             writeFile(data, FILE_FULL_NAME_DAT)
@@ -411,6 +423,7 @@ def generate_event_xml_data(event_id):
 
     # FAULT (ESM?)
     url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
+    logger.info(f"\trequest _fault.xml ws: {url_str_fault}")
     data = DownloadData(url_str_fault)
     if data:
         jdict = text_to_json(data, new_format=False)
@@ -602,6 +615,7 @@ if __name__ == '__main__':
     parser.add_argument("-e","--end_time", nargs="?", default=default_end_time, help="provide the end time  (e.g., 2020-10-23); [default is now]")
     parser.add_argument("-m","--minmag", nargs="?", default=default_minmag, help="provide the minimum magnitude (e.g.,4.5); [default is 4.0]")
     #parser.add_argument("-b","--chkbcktime", nargs="?", default=default_chkbcktime, help="provide the number of days to check for ESM new input data [default is 1.0]")
+    parser.add_argument("-v","--verbose", action='store_true')
     parser.add_argument("-l", "--log_severity",
                         type=str,
                         choices=["DEBUG", "INFO", "WARN", "ERROR", "CRITICAL"],
@@ -615,6 +629,7 @@ if __name__ == '__main__':
     git_pull()
     get_repository_files_info()
 
+    log_summary_data()
     # my strategy is to have only one variabe shared by all functins, that is args
     args.catalog, args.event_ids = find_events(
         fdsn_client,
@@ -626,10 +641,9 @@ if __name__ == '__main__':
         lonmin=-32,
         lonmax=51,
         mode='hist',
-        verbose=True
+        verbose=args.verbose
     )
 
-    log_summary_data()
     generate_events_xml_data()
     git_push()
 
