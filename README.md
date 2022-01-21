@@ -108,6 +108,7 @@ The other parameter are optional:
 - --end_time default value is current time
 - --minmag Minimal magnitude for searched events. Default value is `4.0`
 - --log_severity Log severity level. One of `DEBUG, INFO, WARN, ERROR, CRITICAL`. Default value is `INFO`
+- --verbose If true the summary detail of the events found is logged at the start of the process
 
 
 
