@@ -26,6 +26,10 @@ RUN python3 -m pip install requests
 COPY shakedata.py /opt
 COPY entrypoint.sh /opt
 
+# Set GIT params
+RUN git config --global user.email "valentino.lauciani@ingv.it"
+RUN git config --global user.name "sergio"
+
 #
 WORKDIR /opt
 ENTRYPOINT ["bash", "/opt/entrypoint.sh"]
