@@ -1,2 +1,5 @@
 docker build --no-cache --pull --tag ingv/shakemap-input-eu .
-docker run -it --rm -v $(pwd):/opt/data ingv/shakemap-input-eu 1d /opt/data --end_time 2020-10-31
+docker run -it --rm -v $(pwd):/opt/shakemap-input-eu ingv/shakemap-input-eu 1d /opt/shakemap-input-eu --end_time 2020-10-31
+docker run -it --rm -v $(pwd):/opt/shakemap-input-eu --entrypoint=bash ingv/shakemap-input-eu
+
+test deploy key
