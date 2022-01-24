@@ -23,8 +23,8 @@ RUN python3 -m pip install obspy
 RUN python3 -m pip install requests
 
 # Copy files
-COPY shakedata.py /opt
-COPY entrypoint.sh /opt
+#COPY shakedata.py /opt
+#COPY entrypoint.sh /opt
 
 # Set GIT params
 RUN git config --global user.email "valentino.lauciani@ingv.it"
@@ -32,4 +32,4 @@ RUN git config --global user.name "sergio"
 
 #
 WORKDIR /opt
-ENTRYPOINT ["bash", "/opt/entrypoint.sh"]
+ENTRYPOINT ["bash", "/opt/shakemap-input-eu/entrypoint.sh"]

@@ -13,10 +13,10 @@ export MPLCONFIGDIR="/tmp"
 # Check input parameter
 if [[ -z ${@} ]]; then
         echo ""
-	/usr/local/bin/python /opt/shakedata.py -h
+	/usr/local/bin/python /opt/shakemap-input-eu/shakedata.py -h
         echo ""
         exit 1
 fi
 
 # run command
-/usr/local/bin/python /opt/shakedata.py $@
+/usr/local/bin/python /opt/shakemap-input-eu/shakedata.py $@
