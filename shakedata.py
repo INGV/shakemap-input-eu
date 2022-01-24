@@ -349,6 +349,7 @@ def log_summary_data():
 
 @catch_all_and_print
 def git_pull():
+    logger.info(f"Executing pull from {args.git_repo_dir}")
     repo = git.Repo(args.git_repo_dir+'/.git')
     repo.remotes.origin.pull()
 
@@ -357,8 +358,10 @@ def git_push():
     repo = git.Repo(args.git_repo_dir+'/.git')
     #repo.git.add('--all')
     repo.git.add('data')
+    logger.info(f"Executing commit")
     repo.index.commit("Some XML data updated")
     origin = repo.remote(name='origin')
+    logger.info(f"Executing push to {args.git_repo_dir}")
     origin.push()
 
 def generate_events_xml_data():
@@ -366,7 +369,7 @@ def generate_events_xml_data():
     spaces = len(str(totalEvents))
     for index, eid in enumerate(args.event_ids):
         logger.info(f'{index+1:{spaces}d}/{totalEvents} - DOING EVENT: {eid}')
-        #generate_event_xml_data(eid)
+        generate_event_xml_data(eid)
 
 def generate_event_xml_data(event_id):
     EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id[:6], event_id, 'current')
