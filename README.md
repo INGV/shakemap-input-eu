@@ -15,7 +15,7 @@
 
 # 1. Introduction #
 
-The scope of the project is to maintain a remote shake data repository updated, searching, at time interval,  for new shake data available on the net. 
+The scope of this project is to maintain a remote shake data repository updated, searching, at time interval,  for new shake data available on the net. 
 
 When a file is discovered to be changed on the remote repository by external users, it is skipped.
 
