@@ -32,10 +32,10 @@ The following files are maintained in the archive:
 
 # 2. Installation #
 
-clone the project
+clone the project WITH SSH!!! (not HTTPS)
 
 ```
-git clone https://<token>@github.com/INGV/shakemap-input-eu
+git clone git@github.com:INGV/shakemap-input-eu.git
 ```
 
 ## 2.1 Python ##
