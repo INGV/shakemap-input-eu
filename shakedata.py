@@ -22,7 +22,7 @@ from datetime import datetime
 ONEDAY = 3600 * 24
 fdsn_client = 'EMSC'
 GIT_USERNAME = 'sergio'
-
+TAB_SIZE = 2
 # global logger
 logger = None
 
@@ -199,10 +199,10 @@ def DownloadData(url):
         if r.status_code == 200:
             return r.content
         else:
-            logger.info(f"\t\trequest return: [{url}] statuscode: [{r.status_code}]")
+            logger.info(f"\t\treturn: [{r.status_code}]".expandtabs(TAB_SIZE))
             return None
     except:
-        logger.error (f"\t\tevent_dat problems with url: [{url}] status_dat forced to 204")
+        logger.error (f"\t\tevent_dat problems with url: [{url}] status_dat forced to 204".expandtabs(TAB_SIZE))
         return None
 
 
@@ -252,19 +252,22 @@ def clean_event_data(xmlstring):
     return ET.tostring(root, encoding='utf8')
 
 
-def diff(xmlstring, xml_file):
-    tree1 = ET.ElementTree(ET.fromstring(xmlstring))
-    root1 = tree1.getroot()
-    event1 = root1.attrib
+def diff(mode, xmlstring, xml_file):
+    if mode == 'DETAIL_MODE':
+        tree1 = ET.ElementTree(ET.fromstring(xmlstring))
+        root1 = tree1.getroot()
+        event1 = root1.attrib
 
-    tree2 = ET.parse(xml_file)
-    root2 = tree2.getroot()
-    event2 = root2.attrib
+        tree2 = ET.parse(xml_file)
+        root2 = tree2.getroot()
+        event2 = root2.attrib
 
-    event1.pop('created')
-    event2.pop('created')
+        event1.pop('created')
+        event2.pop('created')
 
-    return event1 != event2
+        return event1 != event2
+    else:
+        return xmlstring == open(xml_file).read()
 
 
 # routine to extract an obspy catalog and a list of events id from fdsn event ws
@@ -301,13 +304,20 @@ def find_events(
 
     client = Client(fdsn_client)
 
+    logger.info(f"\tGET: {client.base_url}. PARAMS: fdsn_client={fdsn_client}, start_time={start_time}, end_time={end_time}, minmag={minmag}, maxmag={maxmag}, latmin={latmin}, latmax={latmax}, lonmin={lonmin}, lonmax={lonmax}, mode={mode}, orderby={orderby}".expandtabs(TAB_SIZE))
+
     # another shitty dateline patch
     if lonmax > 180:
         # split in two requests
-        try: cat1 = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=lonmin, maxlongitude=180, orderby=orderby, limit=1000)
-        except: cat1 = Catalog()
-        try: cat2 = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=-180, maxlongitude=-(360-lonmax), orderby=orderby, limit=1000)
-        except: cat2 = Catalog()
+        try:
+            cat1 = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=lonmin, maxlongitude=180, orderby=orderby, limit=1000)
+        except:
+            cat1 = Catalog()
+
+        try:
+            cat2 = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=-180, maxlongitude=-(360-lonmax), orderby=orderby, limit=1000)
+        except:
+            cat2 = Catalog()
         # combine the catalog object
         catalog = cat1 + cat2
     else:
@@ -334,18 +344,18 @@ def find_events(
             dep = c.origins[0].depth #/ 1000.
             mag = c.magnitudes[0].mag
             mag_type = c.magnitudes[0].magnitude_type
-            logger.info("\t%s %s      %s   %s %s %s   %s (%s)" % (fdsn_client, event_ids_list[i], ot, lat, lon, dep, mag, mag_type))
+            logger.info(f"\t\t{fdsn_client} {event_ids_list[i]}      {ot}   {lat} {lon} {dep}   {mag} ({mag_type})".expandtabs(TAB_SIZE))
     else:
-        logger.info(f'LIST OF EVENTS: {event_ids_list}')
+        logger.info(f'\t\tLIST OF EVENTS: {event_ids_list}'.expandtabs(TAB_SIZE))
 
     return catalog, event_ids_list
 
 def log_summary_data():
     logger.info(f'SUMMARY DATA:')
-    logger.info("\tSTARTIME: %s   ENDTIME: %s" % (args.start_time, args.end_time))
-    logger.info("\tMINMAG: %.1f" % (args.minmag))
+    logger.info(f"\tSTARTIME: {args.start_time}   ENDTIME: {args.end_time}".expandtabs(TAB_SIZE))
+    logger.info(f"\tMINMAG: {args.minmag}.1f".expandtabs(TAB_SIZE))
     #logger.info("ESM BCK VERIFICATION (days): %.2f" % (args.chkbcktime))
-    logger.info("\trun at: %s" % (UTCDateTime().strftime("%Y-%m-%dT%H:%M:%S")))
+    #logger.info("\trun at: %s" % (UTCDateTime().strftime("%Y-%m-%dT%H:%M:%S")))
 
 @catch_all_and_print
 def git_pull():
@@ -357,12 +367,20 @@ def git_pull():
 def git_push():
     repo = git.Repo(args.git_repo_dir+'/.git')
     #repo.git.add('--all')
-    repo.git.add('data')
-    logger.info(f"Executing commit")
-    repo.index.commit("Some XML data updated")
+    # repo.git.add('data')
+    # logger.info(f"Executing commit")
+    # repo.index.commit("Some XML data updated")
     origin = repo.remote(name='origin')
     logger.info(f"Executing push to {args.git_repo_dir}")
     origin.push()
+
+@catch_all_and_print
+def git_commit(FileFullPath, msg):
+    repo = git.Repo(args.git_repo_dir+'/.git')
+    repo.git.add(FileFullPath)
+    #repo.git.add('data')
+    #logger.info(f"Executing commit")
+    repo.index.commit(msg)
 
 def generate_events_xml_data():
     totalEvents = len(args.event_ids)
@@ -381,11 +399,12 @@ def generate_event_xml_data(event_id):
     result, author = check_repository_file(FILE_NAME_DAT)
     if result:
         url_ESM_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
-        logger.info(f"\trequest _dat.xml ws: {url_ESM_dat}")
+        logger.info(f"\trequest _dat.xml on: {url_ESM_dat}".expandtabs(TAB_SIZE))
         data = DownloadData(url_ESM_dat)
-        saveIfChanged(data, FILE_FULL_NAME_DAT)
+        if data:
+            saveIfChanged('DETAIL_MODE', data, FILE_FULL_NAME_DAT, event_id)
     else:
-        logger.warning(f"\tfile {FILE_NAME_DAT} skipped because modified by the external user: {author}")
+        logger.warning(f"\tfile {FILE_NAME_DAT} skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
 
     # ===================================
     # EVENT DATA
@@ -393,22 +412,23 @@ def generate_event_xml_data(event_id):
     data_event = None
     # DOWNLOAD ESM EVENT
     url_ESM_event = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
-    logger.info(f"\trequest event.xml ws: {url_ESM_event}")
+    logger.info(f"\trequest event.xml on: {url_ESM_event}".expandtabs(TAB_SIZE))
     data = DownloadData(url_ESM_event)
     if data:
         data_event = clean_event_data(data)
     else:
         # DOWNLOAD RRSM EVENT
         url_RRSM_event = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
-        logger.info(f"\trequest event.xml ws: {url_RRSM_event}")
+        logger.info(f"\trequest event.xml on: {url_RRSM_event}".expandtabs(TAB_SIZE))
         data = DownloadData(url_RRSM_event)
         if data:
             data_event = clean_event_data(data)
 
-    # ELABORATE EVENT
-    FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
-    saveIfChanged(data_event, FNAME_EV)
+    if data_event:
+        FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
+        saveIfChanged('DETAIL_MODE', data_event, FNAME_EV, event_id)
     # ===================================
+
 
     # RRSM SHAKE DATA
     FILE_NAME_DAT = f"{str(event_id)}_A_RRSM_dat.xml"
@@ -417,16 +437,18 @@ def generate_event_xml_data(event_id):
     result, author = check_repository_file(FILE_NAME_DAT)
     if result:
         url_RRSM_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
-        logger.info(f"\trequest _dat.xml ws: {url_RRSM_dat}")
+        logger.info(f"\trequest _dat.xml on: {url_RRSM_dat}".expandtabs(TAB_SIZE))
         data = DownloadData(url_RRSM_dat)
         if data:
-            writeFile(data, FILE_FULL_NAME_DAT)
+            saveIfChanged('RAW_MODE', data, FILE_FULL_NAME_DAT, event_id)
+
     else:
-        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user: {author}")
+        logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
+
 
     # FAULT (ESM?)
     url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
-    logger.info(f"\trequest _fault.xml ws: {url_str_fault}")
+    logger.info(f"\trequest _fault.xml on: {url_str_fault}".expandtabs(TAB_SIZE))
     data = DownloadData(url_str_fault)
     if data:
         jdict = text_to_json(data, new_format=False)
@@ -561,14 +583,20 @@ def text_to_json(data, new_format=True):
 
     return json_dict
 
-def saveIfChanged(data, FileFullPath):
-    if data:
-        if os.path.isfile(FileFullPath):
-            if diff(data, FileFullPath):
-                with open (FileFullPath, mode='wb') as f:
-                    f.write(data)
-        else:
-            writeFile(data, FileFullPath)
+def saveIfChanged(mode, data, FileFullPath, event_id):
+    if os.path.isfile(FileFullPath):
+        if diff(mode, data, FileFullPath):
+            with open (FileFullPath, mode='wb') as f:
+                f.write(data)
+            msg = f"Update event={event_id}"
+            logger.info(f"\tcommit: {msg}".expandtabs(TAB_SIZE))
+            git_commit(FileFullPath, msg)
+    else:
+        writeFile(data, FileFullPath)
+        msg = f"Add event={event_id}"
+        logger.info(f"\tcommit: {msg}".expandtabs(TAB_SIZE))
+        git_commit(FileFullPath, msg)
+
 
 def writeFile(data, FileFullPath):
     dir = os.path.dirname(FileFullPath)
