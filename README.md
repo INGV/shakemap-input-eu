@@ -35,6 +35,14 @@ $
 $ docker run -it --rm -v $(pwd):/opt/shakemap-input-eu -v $(pwd)/ssh_key:/home/shake/.ssh ingv/shakemap-input-eu 1d /opt/shakemap-input-eu --end_time 2020-10-31
 ```
 
+## Tip
+`crontab` file
+```
+# shakemap-input-e
+*/15 * * * * (cd /home/shake/gitwork/_INGV/shakemap-input-eu && docker run --rm -v $(pwd):/opt/shakemap-input-eu -v $(pwd)/ssh_key:/home/shake/.ssh ingv/shakemap-input-eu 1d /opt/shakemap-input-eu --end_time 2020-11-06) >> /tmp/shakemap-input-eu.log 2>&1
+00 00 * * * mv /tmp/shakemap-input-eu.log /tmp/shakemap-input-eu.yesterday.log
+```
+
 ## Contribute
 Thanks to your contributions!
 
@@ -44,7 +52,7 @@ Here is a list of users who already contributed to this repository:
 </a>
 
 ## Author
-(c) 2022 Valentino Lauciani valentino.lauciani[at]ingv.it
+(c) 2022 Valentino Lauciani valentino.lauciani[at]ingv.it \
 (c) 2022 Sergio Bruni sergio.bruni[at]ingv.it
 
 Istituto Nazionale di Geofisica e Vulcanologia, Italia
