@@ -324,7 +324,7 @@ def find_events(
         try:
             catalog = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=lonmin, maxlongitude=lonmax, orderby=orderby, limit=1000)
         except:
-            logger.error ("No events were found in the time window: [%s / %s]" % (starttime, endtime))
+            logger.info ("No events were found in the time window: [%s / %s]" % (starttime, endtime))
             quit()
 
 #     tmp = str(cat[0].resource_id)
