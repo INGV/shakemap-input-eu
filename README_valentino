@@ -1,4 +1,5 @@
 docker build --no-cache --pull --tag ingv/shakemap-input-eu .
+git remote add origin_ssh git@github.com:INGV/shakemap-input-eu.git
 
 docker run -it --rm -v $(pwd):/opt/shakemap-input-eu -v $(pwd)/ssh_key:/root/.ssh ingv/shakemap-input-eu 1d /opt/shakemap-input-eu --end_time 2020-10-31
 
