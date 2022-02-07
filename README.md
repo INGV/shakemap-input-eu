@@ -1,4 +1,34 @@
+# shakemap-input-eu
 
+The scope of this project is to maintain a remote shake data repository updated, searching, at time interval,  for new shake data available on the net. 
+
+When a file is discovered to be changed on the remote repository by external users, it is skipped.
+
+## Quickstart
+First, clone the git repositry:
+```
+$ git clone https://github.com/INGV/shakemap-input-eu.git
+$ cd shakemap-input-eu
+```
+
+### Build docker image
+```
+$ docker build --no-cache --pull --build-arg ENV_UID=$(id -u) --build-arg ENV_GID=$(id -g) --tag ingv/shakemap-input-eu .
+```
+
+### Add git `remote` to `push` using `ssh`
+```
+$ git remote add origin_ssh git@github.com:INGV/shakemap-input-eu.git
+```
+
+### Add valid ssh_key directory into the project folder, to push
+```
+$ ls -l ssh_key/
+total 12
+-rw------- 1 shake shake 2602 Feb  7 14:26 id_rsa
+-rw-r--r-- 1 shake shake  571 Feb  7 14:26 id_rsa.pub
+$
+```
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
