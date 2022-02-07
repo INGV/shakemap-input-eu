@@ -370,7 +370,7 @@ def git_push():
     # repo.git.add('data')
     # logger.info(f"Executing commit")
     # repo.index.commit("Some XML data updated")
-    origin = repo.remote(name='origin_ssh')
+    origin = repo.remote(name='origin')
     logger.info(f"Executing push to {args.git_repo_dir}")
     origin.push()
 
