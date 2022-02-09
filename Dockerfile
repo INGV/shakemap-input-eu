@@ -31,6 +31,7 @@ RUN python3 -m pip install numpy
 RUN python3 -m pip install Pillow
 RUN python3 -m pip install obspy
 RUN python3 -m pip install requests
+RUN python3 -m pip install xmldiff
 
 ##### START - Create user #####
 RUN echo ENV_UID=${ENV_UID}
