@@ -12,6 +12,9 @@ import sys
 import inspect
 import functools
 from pydriller import Repository
+from xmldiff import main
+from  tempfile import NamedTemporaryFile
+
 from datetime import datetime
 
 
@@ -251,8 +254,22 @@ def clean_event_data(xmlstring):
 
     return ET.tostring(root, encoding='utf8')
 
+def diff(xmlstring, xml_file):
+    f = NamedTemporaryFile(delete=False)
+    f.write(xmlstring)
+    path = f.name
+    f.close()
+    diff = main.diff_files(path, xml_file )
+    os.unlink(path)
 
-def diff(mode, xmlstring, xml_file):
+    if len(diff) == 0:
+        return True
+    if len(diff) == 1 and diff[0].name == 'created':
+        return True
+    return False
+
+'''
+def diff_old(mode, xmlstring, xml_file):
     if mode == 'DETAIL_MODE':
         tree1 = ET.ElementTree(ET.fromstring(xmlstring))
         root1 = tree1.getroot()
@@ -267,8 +284,8 @@ def diff(mode, xmlstring, xml_file):
 
         return event1 != event2
     else:
-        return xmlstring == open(xml_file).read()
-
+        return xmlstring != open(xml_file).read()
+'''
 
 # routine to extract an obspy catalog and a list of events id from fdsn event ws
 def find_events(
@@ -387,7 +404,8 @@ def generate_events_xml_data():
     spaces = len(str(totalEvents))
     for index, eid in enumerate(args.event_ids):
         logger.info(f'{index+1:{spaces}d}/{totalEvents} - DOING EVENT: {eid}')
-        generate_event_xml_data(eid)
+        if eid == '20201030_0000082':
+            generate_event_xml_data(eid)
 
 def generate_event_xml_data(event_id):
     EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id[:6], event_id, 'current')
@@ -402,7 +420,7 @@ def generate_event_xml_data(event_id):
         logger.info(f"\trequest _dat.xml on: {url_ESM_dat}".expandtabs(TAB_SIZE))
         data = DownloadData(url_ESM_dat)
         if data:
-            saveIfChanged('DETAIL_MODE', data, FILE_FULL_NAME_DAT, event_id)
+            saveIfChanged(data, FILE_FULL_NAME_DAT, event_id)
     else:
         logger.warning(f"\tfile {FILE_NAME_DAT} skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
 
@@ -426,7 +444,7 @@ def generate_event_xml_data(event_id):
 
     if data_event:
         FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
-        saveIfChanged('DETAIL_MODE', data_event, FNAME_EV, event_id)
+        saveIfChanged(data_event, FNAME_EV, event_id)
     # ===================================
 
 
@@ -440,7 +458,7 @@ def generate_event_xml_data(event_id):
         logger.info(f"\trequest _dat.xml on: {url_RRSM_dat}".expandtabs(TAB_SIZE))
         data = DownloadData(url_RRSM_dat)
         if data:
-            saveIfChanged('RAW_MODE', data, FILE_FULL_NAME_DAT, event_id)
+            saveIfChanged(data, FILE_FULL_NAME_DAT, event_id)
 
     else:
         logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
@@ -583,9 +601,9 @@ def text_to_json(data, new_format=True):
 
     return json_dict
 
-def saveIfChanged(mode, data, FileFullPath, event_id):
+def saveIfChanged(data, FileFullPath, event_id):
     if os.path.isfile(FileFullPath):
-        if diff(mode, data, FileFullPath):
+        if diff(data, FileFullPath):
             with open (FileFullPath, mode='wb') as f:
                 f.write(data)
             msg = f"Update event={event_id}"
