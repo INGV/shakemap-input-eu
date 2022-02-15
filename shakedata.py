@@ -259,14 +259,14 @@ def diff(xmlstring, xml_file):
     f.write(xmlstring)
     path = f.name
     f.close()
-    diff = main.diff_files(path, xml_file )
+    diff = main.diff_files(path, xml_file, {'ratio_mode': 'faster', 'fast_match': True} )
     os.unlink(path)
 
     if len(diff) == 0:
-        return True
+        return False
     if len(diff) == 1 and diff[0].name == 'created':
-        return True
-    return False
+        return False
+    return True
 
 '''
 def diff_old(mode, xmlstring, xml_file):
@@ -387,7 +387,7 @@ def git_push():
     # repo.git.add('data')
     # logger.info(f"Executing commit")
     # repo.index.commit("Some XML data updated")
-    origin = repo.remote(name='origin')
+    origin = repo.remote(name='origin_ssh')
     logger.info(f"Executing push to {args.git_repo_dir}")
     origin.push()
 
@@ -459,7 +459,6 @@ def generate_event_xml_data(event_id):
         data = DownloadData(url_RRSM_dat)
         if data:
             saveIfChanged(data, FILE_FULL_NAME_DAT, event_id)
-
     else:
         logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
 
