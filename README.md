@@ -21,13 +21,22 @@ $ docker build --no-cache --pull --build-arg ENV_UID=$(id -u) --build-arg ENV_GI
 $ git remote add origin_ssh git@github.com:INGV/shakemap-input-eu.git
 ```
 
-### Add `ssh_key` directory into the project folder, with valid ssh key to `push`
+### Add `ssh_key` directory into the project folder.
+Create an `ssh_key` directory with valid ssh key to `push`; the ssh key must be called `id_rsa__origin_ssh` like below:
 ```
 $ ls -l ssh_key/
 total 12
--rw------- 1 shake shake 2602 Feb  7 14:26 id_rsa
--rw-r--r-- 1 shake shake  571 Feb  7 14:26 id_rsa.pub
+-rw------- 1 shake shake 2602 Feb  7 14:26 id_rsa__origin_ssh
+-rw-r--r-- 1 shake shake  571 Feb  7 14:26 id_rsa__origin_ssh.pub
 $
+```
+after that, create a `ssh_key/config` file with this contents:
+```
+$ cat ssh_key/config
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa__origin_ssh
 ```
 
 ### Run
