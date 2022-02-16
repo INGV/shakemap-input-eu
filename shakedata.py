@@ -404,8 +404,8 @@ def generate_events_xml_data():
     spaces = len(str(totalEvents))
     for index, eid in enumerate(args.event_ids):
         logger.info(f'{index+1:{spaces}d}/{totalEvents} - DOING EVENT: {eid}')
-        if eid == '20201030_0000082':
-            generate_event_xml_data(eid)
+        # if eid == '20201030_0000082':
+        generate_event_xml_data(eid)
 
 def generate_event_xml_data(event_id):
     EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id[:6], event_id, 'current')
