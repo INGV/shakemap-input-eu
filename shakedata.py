@@ -378,9 +378,9 @@ def log_summary_data():
 def git_pull():
     logger.info(f"Executing pull from {args.git_repo_dir}")
     repo = git.Repo(args.git_repo_dir+'/.git')
-    # repo.remotes.origin.pull()
-    origin = repo.remote(name='origin_ssh')
-    origin.pull()
+    repo.remotes.origin.pull()
+    #origin = repo.remote(name='origin_ssh')
+    #origin.pull()
 
 @catch_all_and_print
 def git_push():
