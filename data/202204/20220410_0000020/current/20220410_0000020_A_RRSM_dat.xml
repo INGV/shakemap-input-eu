@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="MG04" name="MG04" netid="CL" insttype="TRILLIUM-40" lat="38.4142" lon="21.9481">
+    <comp name="04.HHE">
+      <acc value="0.0321778320" flag="0"/>
+      <vel value="0.0200617542" flag="0"/>
+      <psa03 value="0.0686197764" flag="0"/>
+      <psa10 value="0.0227432509" flag="0"/>
+      <psa30 value="0.0020960332" flag="0"/>
+    </comp>
+    <comp name="04.HHZ">
+      <acc value="0.0149679924" flag="0"/>
+      <vel value="0.0084758000" flag="0"/>
+      <psa03 value="0.0240275812" flag="0"/>
+      <psa10 value="0.0084454698" flag="0"/>
+      <psa30 value="0.0022109881" flag="0"/>
+    </comp>
+    <comp name="04.HHN">
+      <acc value="0.0314062291" flag="0"/>
+      <vel value="0.0195364086" flag="0"/>
+      <psa03 value="0.0746523514" flag="0"/>
+      <psa10 value="0.0205299139" flag="0"/>
+      <psa30 value="0.0018985824" flag="0"/>
+    </comp>
+  </station>
   <station code="KLV" name="KLV" netid="MN" insttype="" lat="38.0437" lon="22.1504">
     <comp name="--.HHZ">
       <acc value="0.0173810844" flag="0"/>
