@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="LEHL" name="LEHL" netid="RO" insttype="Seismometer/Basalt" lat="44.4739" lon="26.8194">
+    <comp name="--.HHZ">
+      <acc value="0.0181589419" flag="0"/>
+      <vel value="0.0025895663" flag="0"/>
+      <psa03 value="0.0049212502" flag="0"/>
+      <psa10 value="0.0006728347" flag="0"/>
+      <psa30 value="0.0000488245" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0141903410" flag="0"/>
+      <vel value="0.0047846511" flag="0"/>
+      <psa03 value="0.0167967911" flag="0"/>
+      <psa10 value="0.0014010798" flag="0"/>
+      <psa30 value="0.0001230844" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0109271321" flag="0"/>
+      <vel value="0.0033233975" flag="0"/>
+      <psa03 value="0.0109528603" flag="0"/>
+      <psa10 value="0.0009393002" flag="0"/>
+      <psa30 value="0.0001265619" flag="0"/>
+    </comp>
+  </station>
   <station code="MLR" name="MLR" netid="RO" insttype="330HR" lat="45.4909" lon="25.945">
     <comp name="--.HHE">
       <acc value="0.0403100358" flag="0"/>
