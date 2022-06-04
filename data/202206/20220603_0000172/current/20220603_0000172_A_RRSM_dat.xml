@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="MYT1" name="MYT1" netid="HI" insttype="CMG-5TD,ACCELEROMETER,GURALP" lat="39.085" lon="26.5694">
+    <comp name="--.HNE">
+      <acc value="0.0618028864" flag="0"/>
+      <vel value="0.0510230419" flag="0"/>
+      <psa03 value="0.1452630024" flag="0"/>
+      <psa10 value="0.0730289665" flag="0"/>
+      <psa30 value="0.0088376100" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="0.0534043092" flag="0"/>
+      <vel value="0.0548124175" flag="0"/>
+      <psa03 value="0.1316415746" flag="0"/>
+      <psa10 value="0.1355702505" flag="0"/>
+      <psa30 value="0.0101704450" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0276961237" flag="0"/>
+      <vel value="0.0246507202" flag="0"/>
+      <psa03 value="0.0909771737" flag="0"/>
+      <psa10 value="0.0518092573" flag="0"/>
+      <psa30 value="0.0024174239" flag="0"/>
+    </comp>
+  </station>
   <station code="AKS" name="AKS" netid="KO" insttype="CMG-5T" lat="38.8785" lon="27.8129">
     <comp name="--.HNZ">
       <acc value="0.0328915911" flag="0"/>
