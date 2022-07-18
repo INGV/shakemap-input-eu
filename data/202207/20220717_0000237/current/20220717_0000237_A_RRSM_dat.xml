@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="BAC" name="BAC" netid="RO" insttype="2.5V" lat="46.5669" lon="26.9124">
+    <comp name="--.HNE">
+      <acc value="0.0440028808" flag="0"/>
+      <vel value="0.0115615458" flag="0"/>
+      <psa03 value="0.0323587105" flag="0"/>
+      <psa10 value="0.0034354455" flag="0"/>
+      <psa30 value="0.0003043704" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="0.0298186284" flag="0"/>
+      <vel value="0.0083862106" flag="0"/>
+      <psa03 value="0.0493729157" flag="0"/>
+      <psa10 value="0.0030197901" flag="0"/>
+      <psa30 value="0.0003004466" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0210704942" flag="0"/>
+      <vel value="0.0038709465" flag="0"/>
+      <psa03 value="0.0110518471" flag="0"/>
+      <psa10 value="0.0010177890" flag="0"/>
+      <psa30 value="0.0000994515" flag="0"/>
+    </comp>
+  </station>
   <station code="BIR" name="BIR" netid="RO" insttype="200" lat="46.2334" lon="27.6436">
     <comp name="--.HNZ">
       <acc value="0.0320562534" flag="0"/>
@@ -70,6 +93,20 @@
       <psa03 value="0.0480240904" flag="0"/>
       <psa10 value="0.0026322490" flag="0"/>
       <psa30 value="0.0005294051" flag="0"/>
+    </comp>
+    <comp name="--.HNE">
+      <acc value="0.0560732227" flag="0"/>
+      <vel value="0.0180883733" flag="0"/>
+      <psa03 value="0.0664852932" flag="0"/>
+      <psa10 value="0.0038947121" flag="0"/>
+      <psa30 value="0.0004660738" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="0.0769674719" flag="0"/>
+      <vel value="0.0204496362" flag="0"/>
+      <psa03 value="0.0678032027" flag="0"/>
+      <psa10 value="0.0036430989" flag="0"/>
+      <psa30 value="0.0004354333" flag="0"/>
     </comp>
   </station>
   <station code="GIUM" name="GIUM" netid="RO" insttype="2.5V" lat="45.485" lon="28.2081">
