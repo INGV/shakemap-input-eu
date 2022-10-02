@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="ARG" name="ARG" netid="HL" insttype="LE3D20_DR24" lat="36.2136" lon="28.1212">
+    <comp name="--.HHN">
+      <acc value="0.0201537850" flag="0"/>
+      <vel value="0.0115737744" flag="0"/>
+      <psa03 value="0.0512619919" flag="0"/>
+      <psa10 value="0.0093949736" flag="0"/>
+      <psa30 value="0.0014760498" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0133562337" flag="0"/>
+      <vel value="0.0054796700" flag="0"/>
+      <psa03 value="0.0166752848" flag="0"/>
+      <psa10 value="0.0078679524" flag="0"/>
+      <psa30 value="0.0008943493" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0269776061" flag="0"/>
+      <vel value="0.0112993494" flag="0"/>
+      <psa03 value="0.0452420036" flag="0"/>
+      <psa10 value="0.0128822899" flag="0"/>
+      <psa30 value="0.0013504854" flag="0"/>
+    </comp>
+  </station>
   <station code="APMY" name="APMY" netid="KO" insttype="30s," lat="37.4718" lon="29.3018">
     <comp name="--.HHE">
       <acc value="0.1201423688" flag="0"/>
