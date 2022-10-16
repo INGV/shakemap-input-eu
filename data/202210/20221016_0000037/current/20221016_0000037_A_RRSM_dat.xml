@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="ACB" name="ACB" netid="CH" insttype="Trillium 240s_g2" lat="47.5877" lon="8.25474">
+    <comp name="--.HHN">
+      <acc value="0.0537372314" flag="0"/>
+      <vel value="0.0211960610" flag="0"/>
+      <psa03 value="0.0810002724" flag="0"/>
+      <psa10 value="0.0048290712" flag="0"/>
+      <psa30 value="0.0003667451" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0612708312" flag="0"/>
+      <vel value="0.0189794565" flag="0"/>
+      <psa03 value="0.1094386788" flag="0"/>
+      <psa10 value="0.0084378797" flag="0"/>
+      <psa30 value="0.0006152130" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0350294651" flag="0"/>
+      <vel value="0.0089129946" flag="0"/>
+      <psa03 value="0.0621980032" flag="0"/>
+      <psa10 value="0.0027402603" flag="0"/>
+      <psa30 value="0.0002280107" flag="0"/>
+    </comp>
+  </station>
+  <station code="BERGE" name="BERGE" netid="CH" insttype="Trillium Compact 120s" lat="47.8716" lon="8.17798">
+    <comp name="--.HHN">
+      <acc value="0.1035614186" flag="0"/>
+      <vel value="0.0156572587" flag="0"/>
+      <psa03 value="0.0461201598" flag="0"/>
+      <psa10 value="0.0023355951" flag="0"/>
+      <psa30 value="0.0002120388" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.1360043291" flag="0"/>
+      <vel value="0.0259220783" flag="0"/>
+      <psa03 value="0.0397370637" flag="0"/>
+      <psa10 value="0.0029072735" flag="0"/>
+      <psa30 value="0.0003226332" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0427721264" flag="0"/>
+      <vel value="0.0130623171" flag="0"/>
+      <psa03 value="0.0249237108" flag="0"/>
+      <psa10 value="0.0039670957" flag="0"/>
+      <psa30 value="0.0003030842" flag="0"/>
+    </comp>
+  </station>
+  <station code="BOBI" name="BOBI" netid="CH" insttype="EpiSensor ES-T" lat="47.5463" lon="8.33992">
+    <comp name="SF.HGZ">
+      <acc value="0.0352884351" flag="0"/>
+      <vel value="0.0092396327" flag="0"/>
+      <psa03 value="0.0450494547" flag="0"/>
+      <psa10 value="0.0027560870" flag="0"/>
+      <psa30 value="0.0001853341" flag="0"/>
+    </comp>
+    <comp name="SF.HGE">
+      <acc value="0.1024847378" flag="0"/>
+      <vel value="0.0290675343" flag="0"/>
+      <psa03 value="0.1299336955" flag="0"/>
+      <psa10 value="0.0076625547" flag="0"/>
+      <psa30 value="0.0007138890" flag="0"/>
+    </comp>
+    <comp name="SF.HGN">
+      <acc value="0.0643153103" flag="0"/>
+      <vel value="0.0229638512" flag="0"/>
+      <psa03 value="0.0884243025" flag="0"/>
+      <psa10 value="0.0060143284" flag="0"/>
+      <psa30 value="0.0006170947" flag="0"/>
+    </comp>
+  </station>
+  <station code="BULAC" name="BULAC" netid="CH" insttype="ABBT" lat="47.5424" lon="8.52044">
+    <comp name="BT.HG1">
+      <acc value="0.0256562337" flag="0"/>
+      <vel value="0.0060418658" flag="0"/>
+      <psa03 value="0.0217401465" flag="0"/>
+      <psa10 value="0.0023178170" flag="0"/>
+      <psa30 value="0.0001212698" flag="0"/>
+    </comp>
+    <comp name="BT.HG2">
+      <acc value="0.0276318126" flag="0"/>
+      <vel value="0.0072451093" flag="0"/>
+      <psa03 value="0.0386060076" flag="0"/>
+      <psa10 value="0.0015730440" flag="0"/>
+      <psa30 value="0.0001245412" flag="0"/>
+    </comp>
+    <comp name="BT.HGZ">
+      <acc value="0.0141949007" flag="0"/>
+      <vel value="0.0032961718" flag="0"/>
+      <psa03 value="0.0154732068" flag="0"/>
+      <psa10 value="0.0012152400" flag="0"/>
+      <psa30 value="0.0001372636" flag="0"/>
+    </comp>
+  </station>
+  <station code="SFEL" name="SFEL" netid="CH" insttype="EpiSensor ES-T" lat="47.5326" lon="8.23088">
+    <comp name="--.HGZ">
+      <acc value="0.0455301522" flag="0"/>
+      <vel value="0.0096851036" flag="0"/>
+      <psa03 value="0.0307758382" flag="0"/>
+      <psa10 value="0.0022837123" flag="0"/>
+      <psa30 value="0.0001852475" flag="0"/>
+    </comp>
+  </station>
+  <station code="TRULL" name="TRULL" netid="CH" insttype="STS2_gen2" lat="47.6487" lon="8.68161">
+    <comp name="--.HHE">
+      <acc value="0.0963913705" flag="0"/>
+      <vel value="0.0245026153" flag="0"/>
+      <psa03 value="0.1977767559" flag="0"/>
+      <psa10 value="0.0072819612" flag="0"/>
+      <psa30 value="0.0005597595" flag="0"/>
+    </comp>
+  </station>
   <station code="STU" name="STU" netid="GE" insttype="STS-2/N" lat="48.7719" lon="9.195">
     <comp name="--.HHE">
       <acc value="0.0485968744" flag="0"/>
