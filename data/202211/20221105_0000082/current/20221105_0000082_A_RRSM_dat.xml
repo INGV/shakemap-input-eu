@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="KARP" name="KARP" netid="GE" insttype="STS-2/N" lat="35.5471" lon="27.1611">
+    <comp name="--.HHE">
+      <acc value="0.2486088949" flag="0"/>
+      <vel value="0.0441223803" flag="0"/>
+      <psa03 value="0.0763153949" flag="0"/>
+      <psa10 value="0.0112088315" flag="0"/>
+      <psa30 value="0.0006454887" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.1269336072" flag="0"/>
+      <vel value="0.0286920389" flag="0"/>
+      <psa03 value="0.0575160593" flag="0"/>
+      <psa10 value="0.0062004426" flag="0"/>
+      <psa30 value="0.0004838755" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.1967388652" flag="0"/>
+      <vel value="0.0416171997" flag="0"/>
+      <psa03 value="0.0883457167" flag="0"/>
+      <psa10 value="0.0128433750" flag="0"/>
+      <psa30 value="0.0009418429" flag="0"/>
+    </comp>
+  </station>
   <station code="ARG" name="ARG" netid="HL" insttype="LE3D20_DR24" lat="36.2136" lon="28.1212">
     <comp name="--.HHE">
       <acc value="0.1312152230" flag="0"/>
@@ -22,6 +45,29 @@
       <psa03 value="0.0450527948" flag="0"/>
       <psa10 value="0.0170356363" flag="0"/>
       <psa30 value="0.0008279571" flag="0"/>
+    </comp>
+  </station>
+  <station code="KARP" name="KARP" netid="HL" insttype="120" lat="35.5471" lon="27.1611">
+    <comp name="--.HHZ">
+      <acc value="0.1179693424" flag="0"/>
+      <vel value="0.0275303962" flag="0"/>
+      <psa03 value="0.0552929763" flag="0"/>
+      <psa10 value="0.0061275600" flag="0"/>
+      <psa30 value="0.0004720616" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.1726022768" flag="0"/>
+      <vel value="0.0383977012" flag="0"/>
+      <psa03 value="0.0863462853" flag="0"/>
+      <psa10 value="0.0126149699" flag="0"/>
+      <psa30 value="0.0009267003" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.2306833803" flag="0"/>
+      <vel value="0.0421993820" flag="0"/>
+      <psa03 value="0.0741502777" flag="0"/>
+      <psa10 value="0.0110911247" flag="0"/>
+      <psa30 value="0.0006085971" flag="0"/>
     </comp>
   </station>
   <station code="NISR2" name="NISR2" netid="HL" insttype="120" lat="36.5744" lon="27.1767">
