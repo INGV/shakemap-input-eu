@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="MYT1" name="MYT1" netid="HI" insttype="CMG-5TD,ACCELEROMETER,GURALP" lat="39.085" lon="26.5694">
+    <comp name="--.HNE">
+      <acc value="0.0920028896" flag="0"/>
+      <vel value="0.0562932617" flag="0"/>
+      <psa03 value="0.2125419773" flag="0"/>
+      <psa10 value="0.0520366542" flag="0"/>
+      <psa30 value="0.0027859480" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="0.0783525309" flag="0"/>
+      <vel value="0.0456160146" flag="0"/>
+      <psa03 value="0.2507444384" flag="0"/>
+      <psa10 value="0.0524578086" flag="0"/>
+      <psa30 value="0.0022760375" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0344826479" flag="0"/>
+      <vel value="0.0210578711" flag="0"/>
+      <psa03 value="0.0991520794" flag="0"/>
+      <psa10 value="0.0228855704" flag="0"/>
+      <psa30 value="0.0013855726" flag="0"/>
+    </comp>
+  </station>
   <station code="PRK" name="PRK" netid="HL" insttype="120" lat="39.2456" lon="26.265">
     <comp name="--.HHE">
       <acc value="0.1376025575" flag="0"/>
@@ -68,6 +91,29 @@
       <psa03 value="0.1013016434" flag="0"/>
       <psa10 value="0.0124042265" flag="0"/>
       <psa30 value="0.0009715539" flag="0"/>
+    </comp>
+  </station>
+  <station code="ARMT" name="ARMT" netid="KO" insttype="CMG-3ESP" lat="40.5683" lon="28.866">
+    <comp name="--.HHN">
+      <acc value="0.0993454730" flag="0"/>
+      <vel value="0.0278793215" flag="0"/>
+      <psa03 value="0.2594361283" flag="0"/>
+      <psa10 value="0.0111758560" flag="0"/>
+      <psa30 value="0.0015718266" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0358351677" flag="0"/>
+      <vel value="0.0123030401" flag="0"/>
+      <psa03 value="0.0850209868" flag="0"/>
+      <psa10 value="0.0070176892" flag="0"/>
+      <psa30 value="0.0005173826" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0594506040" flag="0"/>
+      <vel value="0.0230390954" flag="0"/>
+      <psa03 value="0.1221079393" flag="0"/>
+      <psa10 value="0.0076105038" flag="0"/>
+      <psa30 value="0.0007456692" flag="0"/>
     </comp>
   </station>
   <station code="BIGA" name="BIGA" netid="KO" insttype="CMG-5T" lat="40.2813" lon="27.1505">
@@ -390,6 +436,22 @@
       <psa03 value="0.4150261121" flag="0"/>
       <psa10 value="0.1160628846" flag="0"/>
       <psa30 value="0.0092542829" flag="0"/>
+    </comp>
+  </station>
+  <station code="MDNY" name="MDNY" netid="KO" insttype="30s," lat="40.371" lon="28.8847">
+    <comp name="--.HHN">
+      <acc value="0.2383651277" flag="0"/>
+      <vel value="0.0944242586" flag="0"/>
+      <psa03 value="0.6164608147" flag="0"/>
+      <psa10 value="0.0287491847" flag="0"/>
+      <psa30 value="0.0028900495" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.2456900659" flag="0"/>
+      <vel value="0.0992575999" flag="0"/>
+      <psa03 value="0.9229986352" flag="0"/>
+      <psa10 value="0.0301331640" flag="0"/>
+      <psa30 value="0.0029625532" flag="0"/>
     </comp>
   </station>
   <station code="MRMT" name="MRMT" netid="KO" insttype="CMG-3T" lat="40.609" lon="27.5832">
