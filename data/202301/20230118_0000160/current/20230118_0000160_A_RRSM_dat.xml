@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="TASB" name="TASB" netid="KO" insttype="CMG-3T" lat="39.9838" lon="44.2384">
+    <comp name="--.HHE">
+      <acc value="0.0052157088" flag="0"/>
+      <vel value="0.0127822222" flag="0"/>
+      <psa03 value="0.0072207149" flag="0"/>
+      <psa10 value="0.0128842742" flag="0"/>
+      <psa30 value="0.0068561992" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0131431061" flag="0"/>
+      <vel value="0.0071908358" flag="0"/>
+      <psa03 value="0.0049032993" flag="0"/>
+      <psa10 value="0.0114860976" flag="0"/>
+      <psa30 value="0.0045135931" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0051076296" flag="0"/>
+      <vel value="0.0078723702" flag="0"/>
+      <psa03 value="0.0051312799" flag="0"/>
+      <psa10 value="0.0084206538" flag="0"/>
+      <psa30 value="0.0038614353" flag="0"/>
+    </comp>
+  </station>
   <station code="VANB" name="VANB" netid="KO" insttype="CMG-3T" lat="38.509" lon="43.4056">
     <comp name="--.HHN">
       <acc value="0.0050972181" flag="0"/>
