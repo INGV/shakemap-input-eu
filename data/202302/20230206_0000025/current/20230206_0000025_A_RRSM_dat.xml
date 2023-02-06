@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
-  <station code="TAHT" name="TAHT" netid="KO" insttype="CMG-3ESPC" lat="36.3755" lon="36.1855">
+  <station code="GAZ" name="GAZ" netid="KO" insttype="CMG-3T" lat="37.1721" lon="37.2096">
     <comp name="--.HHE">
-      <acc value="1.3200224837" flag="0"/>
-      <vel value="0.2334577553" flag="0"/>
-      <psa03 value="1.9569329982" flag="0"/>
-      <psa10 value="0.1216424472" flag="0"/>
-      <psa30 value="0.0081440452" flag="0"/>
+      <acc value="0.1367508433" flag="0"/>
+      <vel value="0.0888026610" flag="0"/>
+      <psa03 value="0.1310387427" flag="0"/>
+      <psa10 value="0.1261835881" flag="0"/>
+      <psa30 value="0.0106038054" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0740500930" flag="0"/>
+      <vel value="0.0413185855" flag="0"/>
+      <psa03 value="0.1083600665" flag="0"/>
+      <psa10 value="0.0877276600" flag="0"/>
+      <psa30 value="0.0064733581" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0746756342" flag="0"/>
+      <vel value="0.0311946426" flag="0"/>
+      <psa03 value="0.0958082259" flag="0"/>
+      <psa10 value="0.0632396343" flag="0"/>
+      <psa30 value="0.0105966884" flag="0"/>
     </comp>
   </station>
 </stationlist>
