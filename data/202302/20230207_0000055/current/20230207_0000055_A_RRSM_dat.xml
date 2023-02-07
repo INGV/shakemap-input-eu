@@ -2,13 +2,6 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="BNN" name="BNN" netid="KO" insttype="CMG-3T" lat="38.8521" lon="35.8472">
-    <comp name="--.HHE">
-      <acc value="0.0320162654" flag="0"/>
-      <vel value="0.0147578922" flag="0"/>
-      <psa03 value="0.0856083378" flag="0"/>
-      <psa10 value="0.0120402693" flag="0"/>
-      <psa30 value="0.0023503518" flag="0"/>
-    </comp>
     <comp name="--.HHN">
       <acc value="0.0306351780" flag="0"/>
       <vel value="0.0194097915" flag="0"/>
@@ -22,6 +15,13 @@
       <psa03 value="0.0741060757" flag="0"/>
       <psa10 value="0.0105469047" flag="0"/>
       <psa30 value="0.0016411955" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0320162654" flag="0"/>
+      <vel value="0.0147578922" flag="0"/>
+      <psa03 value="0.0856083378" flag="0"/>
+      <psa10 value="0.0120402693" flag="0"/>
+      <psa30 value="0.0023503518" flag="0"/>
     </comp>
   </station>
   <station code="DARE" name="DARE" netid="KO" insttype="CMG-3ESP" lat="38.5712" lon="37.4832">
@@ -39,21 +39,28 @@
       <psa10 value="0.0091707756" flag="0"/>
       <psa30 value="0.0011389727" flag="0"/>
     </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0241234860" flag="0"/>
+      <vel value="0.0141835474" flag="0"/>
+      <psa03 value="0.0499861643" flag="0"/>
+      <psa10 value="0.0106173271" flag="0"/>
+      <psa30 value="0.0010058809" flag="0"/>
+    </comp>
   </station>
   <station code="GAZ" name="GAZ" netid="KO" insttype="CMG-3T" lat="37.1721" lon="37.2096">
-    <comp name="--.HHE">
-      <acc value="0.1393858880" flag="0"/>
-      <vel value="0.0702829447" flag="0"/>
-      <psa03 value="0.1979567935" flag="0"/>
-      <psa10 value="0.0848732434" flag="0"/>
-      <psa30 value="0.0043968157" flag="0"/>
-    </comp>
     <comp name="--.HHZ">
       <acc value="0.0889357133" flag="0"/>
       <vel value="0.0430398749" flag="0"/>
       <psa03 value="0.1512733655" flag="0"/>
       <psa10 value="0.0328406654" flag="0"/>
       <psa30 value="0.0025530459" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.1393858880" flag="0"/>
+      <vel value="0.0702829447" flag="0"/>
+      <psa03 value="0.1979567935" flag="0"/>
+      <psa10 value="0.0848732434" flag="0"/>
+      <psa30 value="0.0043968157" flag="0"/>
     </comp>
     <comp name="--.HHN">
       <acc value="0.0948478784" flag="0"/>
@@ -63,20 +70,43 @@
       <psa30 value="0.0035680962" flag="0"/>
     </comp>
   </station>
-  <station code="SARI" name="SARI" netid="KO" insttype="CMG-3T" lat="38.4072" lon="36.4181">
+  <station code="KMRS" name="KMRS" netid="KO" insttype="CMG-3T" lat="37.5053" lon="36.9">
     <comp name="--.HHE">
-      <acc value="0.9205986124" flag="0"/>
-      <vel value="0.2164763182" flag="0"/>
-      <psa03 value="1.5865229767" flag="0"/>
-      <psa10 value="0.0542409158" flag="0"/>
-      <psa30 value="0.0072046488" flag="0"/>
+      <acc value="0.1570204899" flag="0"/>
+      <vel value="0.1185901263" flag="0"/>
+      <psa03 value="0.3201608374" flag="0"/>
+      <psa10 value="0.1105401144" flag="0"/>
+      <psa30 value="0.0063905053" flag="0"/>
     </comp>
+    <comp name="--.HHN">
+      <acc value="0.4281493689" flag="0"/>
+      <vel value="0.2018622722" flag="0"/>
+      <psa03 value="0.8414095746" flag="0"/>
+      <psa10 value="0.0722395834" flag="0"/>
+      <psa30 value="0.0060434411" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.1978613258" flag="0"/>
+      <vel value="0.0992111881" flag="0"/>
+      <psa03 value="0.3943770613" flag="0"/>
+      <psa10 value="0.0417438219" flag="0"/>
+      <psa30 value="0.0033512270" flag="0"/>
+    </comp>
+  </station>
+  <station code="SARI" name="SARI" netid="KO" insttype="CMG-3T" lat="38.4072" lon="36.4181">
     <comp name="--.HHN">
       <acc value="0.5807267094" flag="0"/>
       <vel value="0.1716261830" flag="0"/>
       <psa03 value="0.8662479762" flag="0"/>
       <psa10 value="0.0493193612" flag="0"/>
       <psa30 value="0.0087320745" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.9205986124" flag="0"/>
+      <vel value="0.2164763182" flag="0"/>
+      <psa03 value="1.5865229767" flag="0"/>
+      <psa10 value="0.0542409158" flag="0"/>
+      <psa30 value="0.0072046488" flag="0"/>
     </comp>
     <comp name="--.HHZ">
       <acc value="0.4803938321" flag="0"/>
