@@ -2,6 +2,13 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="CEYT" name="CEYT" netid="KO" insttype="CMG-3ESP" lat="37.0105" lon="35.7478">
+    <comp name="--.HHE">
+      <acc value="0.0092963723" flag="0"/>
+      <vel value="0.0035772609" flag="0"/>
+      <psa03 value="0.0340133758" flag="0"/>
+      <psa10 value="0.0038414830" flag="0"/>
+      <psa30 value="0.0003123251" flag="0"/>
+    </comp>
     <comp name="--.HHN">
       <acc value="0.0069750693" flag="0"/>
       <vel value="0.0032096341" flag="0"/>
@@ -16,15 +23,15 @@
       <psa10 value="0.0023837444" flag="0"/>
       <psa30 value="0.0002783244" flag="0"/>
     </comp>
-    <comp name="--.HHE">
-      <acc value="0.0092963723" flag="0"/>
-      <vel value="0.0035772609" flag="0"/>
-      <psa03 value="0.0340133758" flag="0"/>
-      <psa10 value="0.0038414830" flag="0"/>
-      <psa30 value="0.0003123251" flag="0"/>
-    </comp>
   </station>
   <station code="ANDN" name="ANDN" netid="TU" insttype="T" lat="37.58" lon="36.3452">
+    <comp name="--.HHN">
+      <acc value="0.3386233616" flag="0"/>
+      <vel value="0.0850463003" flag="0"/>
+      <psa03 value="0.4123750028" flag="0"/>
+      <psa10 value="0.0279082157" flag="0"/>
+      <psa30 value="0.0023230524" flag="0"/>
+    </comp>
     <comp name="--.HHE">
       <acc value="0.1928457802" flag="0"/>
       <vel value="0.0716595238" flag="0"/>
@@ -38,13 +45,6 @@
       <psa03 value="0.1849701303" flag="0"/>
       <psa10 value="0.0188802784" flag="0"/>
       <psa30 value="0.0014343813" flag="0"/>
-    </comp>
-    <comp name="--.HHN">
-      <acc value="0.3386233616" flag="0"/>
-      <vel value="0.0850463003" flag="0"/>
-      <psa03 value="0.4123750028" flag="0"/>
-      <psa10 value="0.0279082157" flag="0"/>
-      <psa30 value="0.0023230524" flag="0"/>
     </comp>
   </station>
 </stationlist>
