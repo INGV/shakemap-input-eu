@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
-  <station code="KMRS" name="KMRS" netid="KO" insttype="CMG-3T" lat="37.5053" lon="36.9">
+  <station code="GAZ" name="GAZ" netid="KO" insttype="CMG-3T" lat="37.1721" lon="37.2096">
     <comp name="--.HHE">
-      <acc value="0.7663163305" flag="0"/>
-      <vel value="0.2233263855" flag="0"/>
-      <psa03 value="1.1154682524" flag="0"/>
-      <psa10 value="0.0860135486" flag="0"/>
-      <psa30 value="0.0075933749" flag="0"/>
+      <acc value="0.2096270345" flag="0"/>
+      <vel value="0.0547546323" flag="0"/>
+      <psa03 value="0.2462034872" flag="0"/>
+      <psa10 value="0.0607131824" flag="0"/>
+      <psa30 value="0.0038287349" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.1153339474" flag="0"/>
+      <vel value="0.0563515642" flag="0"/>
+      <psa03 value="0.2713467410" flag="0"/>
+      <psa10 value="0.0499461250" flag="0"/>
+      <psa30 value="0.0046041047" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0733626173" flag="0"/>
+      <vel value="0.0309194726" flag="0"/>
+      <psa03 value="0.2008255095" flag="0"/>
+      <psa10 value="0.0431033393" flag="0"/>
+      <psa30 value="0.0030829024" flag="0"/>
     </comp>
   </station>
 </stationlist>
