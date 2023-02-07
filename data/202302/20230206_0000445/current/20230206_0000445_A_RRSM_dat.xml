@@ -2,13 +2,6 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="ANDN" name="ANDN" netid="TU" insttype="T" lat="37.58" lon="36.3452">
-    <comp name="--.HHE">
-      <acc value="0.1251679771" flag="0"/>
-      <vel value="0.0782594954" flag="0"/>
-      <psa03 value="0.2646617926" flag="0"/>
-      <psa10 value="0.1376656306" flag="0"/>
-      <psa30 value="0.0130538723" flag="0"/>
-    </comp>
     <comp name="--.HHZ">
       <acc value="0.0726205350" flag="0"/>
       <vel value="0.0410659844" flag="0"/>
@@ -22,6 +15,13 @@
       <psa03 value="0.2921546323" flag="0"/>
       <psa10 value="0.0731967699" flag="0"/>
       <psa30 value="0.0046675041" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.1251679771" flag="0"/>
+      <vel value="0.0782594954" flag="0"/>
+      <psa03 value="0.2646617926" flag="0"/>
+      <psa10 value="0.1376656306" flag="0"/>
+      <psa30 value="0.0130538723" flag="0"/>
     </comp>
   </station>
 </stationlist>
