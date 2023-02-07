@@ -2,13 +2,6 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="GAZ" name="GAZ" netid="KO" insttype="CMG-3T" lat="37.1721" lon="37.2096">
-    <comp name="--.HHZ">
-      <acc value="0.0275720017" flag="0"/>
-      <vel value="0.0245025293" flag="0"/>
-      <psa03 value="0.0537137339" flag="0"/>
-      <psa10 value="0.0169248219" flag="0"/>
-      <psa30 value="0.0015262301" flag="0"/>
-    </comp>
     <comp name="--.HHN">
       <acc value="0.0373462863" flag="0"/>
       <vel value="0.0316484195" flag="0"/>
@@ -16,15 +9,22 @@
       <psa10 value="0.0384628657" flag="0"/>
       <psa30 value="0.0031623659" flag="0"/>
     </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0275720017" flag="0"/>
+      <vel value="0.0245025293" flag="0"/>
+      <psa03 value="0.0537137339" flag="0"/>
+      <psa10 value="0.0169248219" flag="0"/>
+      <psa30 value="0.0015262301" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0374327810" flag="0"/>
+      <vel value="0.0256243188" flag="0"/>
+      <psa03 value="0.0912099555" flag="0"/>
+      <psa10 value="0.0396788669" flag="0"/>
+      <psa30 value="0.0028037195" flag="0"/>
+    </comp>
   </station>
   <station code="ANDN" name="ANDN" netid="TU" insttype="T" lat="37.58" lon="36.3452">
-    <comp name="--.HHE">
-      <acc value="0.1126915216" flag="0"/>
-      <vel value="0.0834337868" flag="0"/>
-      <psa03 value="0.3053506692" flag="0"/>
-      <psa10 value="0.1319425896" flag="0"/>
-      <psa30 value="0.0133586082" flag="0"/>
-    </comp>
     <comp name="--.HHZ">
       <acc value="0.0654696417" flag="0"/>
       <vel value="0.0470998222" flag="0"/>
@@ -38,6 +38,13 @@
       <psa03 value="0.3415759465" flag="0"/>
       <psa10 value="0.0753414735" flag="0"/>
       <psa30 value="0.0055465747" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.1126915216" flag="0"/>
+      <vel value="0.0834337868" flag="0"/>
+      <psa03 value="0.3053506692" flag="0"/>
+      <psa10 value="0.1319425896" flag="0"/>
+      <psa30 value="0.0133586082" flag="0"/>
     </comp>
   </station>
 </stationlist>
