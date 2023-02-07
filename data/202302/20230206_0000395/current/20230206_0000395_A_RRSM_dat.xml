@@ -2,26 +2,26 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="GAZ" name="GAZ" netid="KO" insttype="CMG-3T" lat="37.1721" lon="37.2096">
-    <comp name="--.HHE">
-      <acc value="0.0322102240" flag="0"/>
-      <vel value="0.0172148411" flag="0"/>
-      <psa03 value="0.0683258143" flag="0"/>
-      <psa10 value="0.0198985635" flag="0"/>
-      <psa30 value="0.0036383986" flag="0"/>
-    </comp>
-    <comp name="--.HHZ">
-      <acc value="0.0379255772" flag="0"/>
-      <vel value="0.0181531366" flag="0"/>
-      <psa03 value="0.0888562146" flag="0"/>
-      <psa10 value="0.0133897182" flag="0"/>
-      <psa30 value="0.0021317344" flag="0"/>
-    </comp>
     <comp name="--.HHN">
       <acc value="0.0343033573" flag="0"/>
       <vel value="0.0130582145" flag="0"/>
       <psa03 value="0.0772201250" flag="0"/>
       <psa10 value="0.0191224788" flag="0"/>
       <psa30 value="0.0019245585" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0322102250" flag="0"/>
+      <vel value="0.0172148371" flag="0"/>
+      <psa03 value="0.0683258143" flag="0"/>
+      <psa10 value="0.0198985577" flag="0"/>
+      <psa30 value="0.0036384877" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0379255779" flag="0"/>
+      <vel value="0.0181531308" flag="0"/>
+      <psa03 value="0.0888562146" flag="0"/>
+      <psa10 value="0.0133897181" flag="0"/>
+      <psa30 value="0.0021316743" flag="0"/>
     </comp>
   </station>
   <station code="URFA" name="URFA" netid="KO" insttype="CMG-3ESP" lat="37.4409" lon="38.8213">
@@ -31,6 +31,20 @@
       <psa03 value="0.1265213558" flag="0"/>
       <psa10 value="0.0157275828" flag="0"/>
       <psa30 value="0.0011687927" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0594442911" flag="0"/>
+      <vel value="0.0353743066" flag="0"/>
+      <psa03 value="0.1231151141" flag="0"/>
+      <psa10 value="0.0263470717" flag="0"/>
+      <psa30 value="0.0019739838" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0702756305" flag="0"/>
+      <vel value="0.0276081197" flag="0"/>
+      <psa03 value="0.1258918531" flag="0"/>
+      <psa10 value="0.0256940726" flag="0"/>
+      <psa30 value="0.0027907172" flag="0"/>
     </comp>
   </station>
 </stationlist>
