@@ -2,6 +2,13 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="CEYT" name="CEYT" netid="KO" insttype="CMG-3ESP" lat="37.0105" lon="35.7478">
+    <comp name="--.HHZ">
+      <acc value="0.0523757857" flag="0"/>
+      <vel value="0.0247334671" flag="0"/>
+      <psa03 value="0.1051739183" flag="0"/>
+      <psa10 value="0.0200967453" flag="0"/>
+      <psa30 value="0.0022220745" flag="0"/>
+    </comp>
     <comp name="--.HHN">
       <acc value="0.0754915041" flag="0"/>
       <vel value="0.0615718115" flag="0"/>
@@ -15,13 +22,6 @@
       <psa03 value="0.1951346991" flag="0"/>
       <psa10 value="0.0243380329" flag="0"/>
       <psa30 value="0.0025628902" flag="0"/>
-    </comp>
-    <comp name="--.HHZ">
-      <acc value="0.0523757857" flag="0"/>
-      <vel value="0.0247334671" flag="0"/>
-      <psa03 value="0.1051739183" flag="0"/>
-      <psa10 value="0.0200967453" flag="0"/>
-      <psa30 value="0.0022220745" flag="0"/>
     </comp>
   </station>
 </stationlist>
