@@ -1,66 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
-  <station code="ARPRA" name="ARPRA" netid="KO" insttype="CMG-5T" lat="39.0929" lon="38.3356">
-    <comp name="--.HNN">
-      <acc value="0.0259613134" flag="0"/>
-      <vel value="0.0163602109" flag="0"/>
-      <psa03 value="0.0577313062" flag="0"/>
-      <psa10 value="0.0170970631" flag="0"/>
-      <psa30 value="0.0011664451" flag="0"/>
-    </comp>
-    <comp name="--.HNZ">
-      <acc value="0.0134376854" flag="0"/>
-      <vel value="0.0081605951" flag="0"/>
-      <psa03 value="0.0354044149" flag="0"/>
-      <psa10 value="0.0097558162" flag="0"/>
-      <psa30 value="0.0009757985" flag="0"/>
-    </comp>
-    <comp name="--.HNE">
-      <acc value="0.0245852011" flag="0"/>
-      <vel value="0.0169720740" flag="0"/>
-      <psa03 value="0.0605244249" flag="0"/>
-      <psa10 value="0.0126411885" flag="0"/>
-      <psa30 value="0.0010688898" flag="0"/>
-    </comp>
-  </station>
   <station code="DARE" name="DARE" netid="KO" insttype="CMG-3ESP" lat="38.5712" lon="37.4832">
-    <comp name="--.HHZ">
-      <acc value="0.0070106168" flag="0"/>
-      <vel value="0.0040729382" flag="0"/>
-      <psa03 value="0.0236742946" flag="0"/>
-      <psa10 value="0.0038510534" flag="0"/>
-      <psa30 value="0.0007924715" flag="0"/>
-    </comp>
     <comp name="--.HHE">
       <acc value="0.0072175746" flag="0"/>
       <vel value="0.0035061059" flag="0"/>
       <psa03 value="0.0174484156" flag="0"/>
       <psa10 value="0.0039455597" flag="0"/>
-      <psa30 value="0.0005633694" flag="0"/>
+      <psa30 value="0.0005633685" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0070106168" flag="0"/>
+      <vel value="0.0040729383" flag="0"/>
+      <psa03 value="0.0236742946" flag="0"/>
+      <psa10 value="0.0038510534" flag="0"/>
+      <psa30 value="0.0007924705" flag="0"/>
     </comp>
   </station>
   <station code="URFA" name="URFA" netid="KO" insttype="CMG-3ESP" lat="37.4409" lon="38.8213">
+    <comp name="--.HHE">
+      <acc value="0.0485238924" flag="0"/>
+      <vel value="0.0138173448" flag="0"/>
+      <psa03 value="0.0403902474" flag="0"/>
+      <psa10 value="0.0157093519" flag="0"/>
+      <psa30 value="0.0046008218" flag="0"/>
+    </comp>
     <comp name="--.HHN">
       <acc value="0.0405536901" flag="0"/>
-      <vel value="0.0108916581" flag="0"/>
+      <vel value="0.0108916593" flag="0"/>
       <psa03 value="0.0532870206" flag="0"/>
       <psa10 value="0.0197001436" flag="0"/>
-      <psa30 value="0.0031995107" flag="0"/>
+      <psa30 value="0.0031995110" flag="0"/>
     </comp>
     <comp name="--.HHZ">
       <acc value="0.0326162546" flag="0"/>
-      <vel value="0.0128938169" flag="0"/>
+      <vel value="0.0128938166" flag="0"/>
       <psa03 value="0.0379777062" flag="0"/>
       <psa10 value="0.0201838844" flag="0"/>
-      <psa30 value="0.0041474779" flag="0"/>
-    </comp>
-    <comp name="--.HHE">
-      <acc value="0.0485238924" flag="0"/>
-      <vel value="0.0138173433" flag="0"/>
-      <psa03 value="0.0403902474" flag="0"/>
-      <psa10 value="0.0157093519" flag="0"/>
-      <psa30 value="0.0046008213" flag="0"/>
+      <psa30 value="0.0041474775" flag="0"/>
     </comp>
   </station>
 </stationlist>
