@@ -1,27 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
-  <station code="URFA" name="URFA" netid="KO" insttype="CMG-3ESP" lat="37.4409" lon="38.8213">
+  <station code="ARPRA" name="ARPRA" netid="KO" insttype="CMG-5T" lat="39.0929" lon="38.3356">
+    <comp name="--.HNE">
+      <acc value="0.0196032090" flag="0"/>
+      <vel value="0.0117807447" flag="0"/>
+      <psa03 value="0.0526326637" flag="0"/>
+      <psa10 value="0.0102283787" flag="0"/>
+      <psa30 value="0.0011586831" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="0.0190984162" flag="0"/>
+      <vel value="0.0147774910" flag="0"/>
+      <psa03 value="0.0556584189" flag="0"/>
+      <psa10 value="0.0199028933" flag="0"/>
+      <psa30 value="0.0008823791" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0083376017" flag="0"/>
+      <vel value="0.0059807569" flag="0"/>
+      <psa03 value="0.0257559921" flag="0"/>
+      <psa10 value="0.0129543485" flag="0"/>
+      <psa30 value="0.0009336016" flag="0"/>
+    </comp>
+  </station>
+  <station code="KMRS" name="KMRS" netid="KO" insttype="CMG-3T" lat="37.5053" lon="36.9">
     <comp name="--.HHE">
-      <acc value="0.0549586531" flag="0"/>
-      <vel value="0.0150782052" flag="0"/>
-      <psa03 value="0.0595724217" flag="0"/>
-      <psa10 value="0.0082273608" flag="0"/>
-      <psa30 value="0.0039941401" flag="0"/>
+      <acc value="0.0145350626" flag="0"/>
+      <vel value="0.0109368004" flag="0"/>
+      <psa03 value="0.0387674576" flag="0"/>
+      <psa10 value="0.0103505323" flag="0"/>
+      <psa30 value="0.0012271170" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0132963742" flag="0"/>
+      <vel value="0.0112555841" flag="0"/>
+      <psa03 value="0.0330012466" flag="0"/>
+      <psa10 value="0.0167038459" flag="0"/>
+      <psa30 value="0.0008640051" flag="0"/>
     </comp>
     <comp name="--.HHZ">
+      <acc value="0.0195498041" flag="0"/>
+      <vel value="0.0150354913" flag="0"/>
+      <psa03 value="0.0501571991" flag="0"/>
+      <psa10 value="0.0083897789" flag="0"/>
+      <psa30 value="0.0009309444" flag="0"/>
+    </comp>
+  </station>
+  <station code="URFA" name="URFA" netid="KO" insttype="CMG-3ESP" lat="37.4409" lon="38.8213">
+    <comp name="--.HHZ">
       <acc value="0.0264365572" flag="0"/>
-      <vel value="0.0080216736" flag="0"/>
+      <vel value="0.0080216739" flag="0"/>
       <psa03 value="0.0416458560" flag="0"/>
       <psa10 value="0.0088492217" flag="0"/>
-      <psa30 value="0.0016665721" flag="0"/>
+      <psa30 value="0.0016665677" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0549586531" flag="0"/>
+      <vel value="0.0150782055" flag="0"/>
+      <psa03 value="0.0595724217" flag="0"/>
+      <psa10 value="0.0082273608" flag="0"/>
+      <psa30 value="0.0039941420" flag="0"/>
     </comp>
     <comp name="--.HHN">
       <acc value="0.0393101282" flag="0"/>
-      <vel value="0.0107099105" flag="0"/>
+      <vel value="0.0107099120" flag="0"/>
       <psa03 value="0.0745404702" flag="0"/>
       <psa10 value="0.0134983669" flag="0"/>
-      <psa30 value="0.0033601154" flag="0"/>
+      <psa30 value="0.0033601145" flag="0"/>
     </comp>
   </station>
 </stationlist>
