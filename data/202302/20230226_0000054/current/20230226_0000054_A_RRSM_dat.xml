@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="GAZ" name="GAZ" netid="KO" insttype="CMG-3T" lat="37.1721" lon="37.2096">
+    <comp name="--.HHE">
+      <acc value="0.0276598203" flag="0"/>
+      <vel value="0.0077451858" flag="0"/>
+      <psa03 value="0.0311583137" flag="0"/>
+      <psa10 value="0.0038585328" flag="0"/>
+      <psa30 value="0.0003049002" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0277854737" flag="0"/>
+      <vel value="0.0051672613" flag="0"/>
+      <psa03 value="0.0213127929" flag="0"/>
+      <psa10 value="0.0022461603" flag="0"/>
+      <psa30 value="0.0001652901" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0276862159" flag="0"/>
+      <vel value="0.0066650110" flag="0"/>
+      <psa03 value="0.0216659231" flag="0"/>
+      <psa10 value="0.0035677690" flag="0"/>
+      <psa30 value="0.0002510880" flag="0"/>
+    </comp>
+  </station>
   <station code="ANDN" name="ANDN" netid="TU" insttype="T" lat="37.58" lon="36.3452">
     <comp name="--.HHN">
       <acc value="0.0861415027" flag="0"/>
