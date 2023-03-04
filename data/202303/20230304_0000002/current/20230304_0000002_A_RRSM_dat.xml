@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="CMRD" name="CMRD" netid="KO" insttype="CMG-5T" lat="37.6623" lon="34.9902">
+    <comp name="--.HNN">
+      <acc value="0.0000000241" flag="0"/>
+      <vel value="-100.0000000000" flag="0"/>
+      <psa03 value="0.0000001146" flag="0"/>
+      <psa10 value="0.0000001174" flag="0"/>
+      <psa30 value="0.0000001424" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0135024114" flag="0"/>
+      <vel value="0.0046010238" flag="0"/>
+      <psa03 value="0.0162188255" flag="0"/>
+      <psa10 value="0.0069509532" flag="0"/>
+      <psa30 value="0.0003739226" flag="0"/>
+    </comp>
+  </station>
   <station code="SARI" name="SARI" netid="KO" insttype="CMG-3T" lat="38.4072" lon="36.4181">
     <comp name="--.HHE">
       <acc value="0.1274928739" flag="0"/>
