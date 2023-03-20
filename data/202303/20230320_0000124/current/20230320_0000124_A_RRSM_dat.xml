@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="PLVAM" name="PLVAM" netid="BS" insttype="200" lat="43.9523" lon="22.8502">
+    <comp name="--.HNE">
+      <acc value="0.1258271530" flag="0"/>
+      <vel value="0.0569974688" flag="0"/>
+      <psa03 value="0.3733459908" flag="0"/>
+      <psa10 value="0.0398755404" flag="0"/>
+      <psa30 value="0.0043170653" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0767509326" flag="0"/>
+      <vel value="0.0250169634" flag="0"/>
+      <psa03 value="0.1358774267" flag="0"/>
+      <psa10 value="0.0227226335" flag="0"/>
+      <psa30 value="0.0017430314" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="0.1155827325" flag="0"/>
+      <vel value="0.0495015691" flag="0"/>
+      <psa03 value="0.3145781188" flag="0"/>
+      <psa10 value="0.0370629678" flag="0"/>
+      <psa30 value="0.0042545627" flag="0"/>
+    </comp>
+  </station>
   <station code="BZS" name="BZS" netid="MN" insttype="" lat="45.6188" lon="21.6401">
     <comp name="--.HHZ">
       <acc value="0.1775153158" flag="0"/>
@@ -24,20 +47,13 @@
       <psa30 value="0.0033321164" flag="0"/>
     </comp>
   </station>
-  <station code="ARR" name="ARR" netid="RO" insttype="200" lat="45.3657" lon="24.6332">
-    <comp name="--.HNN">
-      <acc value="0.0290561856" flag="0"/>
-      <vel value="0.0149550149" flag="0"/>
-      <psa03 value="0.0894251710" flag="0"/>
-      <psa10 value="0.0151359190" flag="0"/>
-      <psa30 value="0.0006537172" flag="0"/>
-    </comp>
-    <comp name="--.HNZ">
-      <acc value="0.0294815660" flag="0"/>
-      <vel value="0.0112731317" flag="0"/>
-      <psa03 value="0.0884956014" flag="0"/>
-      <psa10 value="0.0064160803" flag="0"/>
-      <psa30 value="0.0004046989" flag="0"/>
+  <station code="ARR" name="ARR" netid="RO" insttype="w/attenuator" lat="45.3657" lon="24.6332">
+    <comp name="--.HHE">
+      <acc value="0.0323459262" flag="0"/>
+      <vel value="0.0127478787" flag="0"/>
+      <psa03 value="0.0933060425" flag="0"/>
+      <psa10 value="0.0075266303" flag="0"/>
+      <psa30 value="0.0007237648" flag="0"/>
     </comp>
   </station>
   <station code="BAIL" name="BAIL" netid="RO" insttype="Seismometer/Basalt" lat="44.0201" lon="23.345">
