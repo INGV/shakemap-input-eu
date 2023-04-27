@@ -2,49 +2,65 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="ARPRA" name="ARPRA" netid="KO" insttype="CMG-5T" lat="39.0929" lon="38.3356">
+    <comp name="--.HNN">
+      <acc value="0.0162156036" flag="0"/>
+      <vel value="0.0080840032" flag="0"/>
+      <psa03 value="0.0282906255" flag="0"/>
+      <psa10 value="0.0160936174" flag="0"/>
+      <psa30 value="0.0050823855" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0071485501" flag="0"/>
+      <vel value="0.0032611193" flag="0"/>
+      <psa03 value="0.0154490652" flag="0"/>
+      <psa10 value="0.0060121376" flag="0"/>
+      <psa30 value="0.0015640329" flag="0"/>
+    </comp>
     <comp name="--.HNE">
-      <acc value="0.0182235110" flag="0"/>
-      <vel value="0.0070393648" flag="0"/>
+      <acc value="0.0182235082" flag="0"/>
+      <vel value="0.0070393631" flag="0"/>
       <psa03 value="0.0326168671" flag="0"/>
       <psa10 value="0.0132329631" flag="0"/>
-      <psa30 value="0.0043353956" flag="0"/>
-    </comp>
-    <comp name="--.HNZ">
-      <acc value="0.0071485492" flag="0"/>
-      <vel value="0.0032611082" flag="0"/>
-      <psa03 value="0.0154490652" flag="0"/>
-      <psa10 value="0.0060121374" flag="0"/>
-      <psa30 value="0.0015638833" flag="0"/>
-    </comp>
-    <comp name="--.HNN">
-      <acc value="0.0162156068" flag="0"/>
-      <vel value="0.0080839798" flag="0"/>
-      <psa03 value="0.0282906255" flag="0"/>
-      <psa10 value="0.0160936172" flag="0"/>
-      <psa30 value="0.0050822111" flag="0"/>
+      <psa30 value="0.0043354135" flag="0"/>
     </comp>
   </station>
-  <station code="TUNC" name="TUNC" netid="KO" insttype="CMG-5T" lat="39.6942" lon="37.5388">
-    <comp name="--.HNN">
-      <acc value="0.0125567145" flag="0"/>
-      <vel value="0.0054625841" flag="0"/>
-      <psa03 value="0.0520208441" flag="0"/>
-      <psa10 value="0.0054918960" flag="0"/>
-      <psa30 value="0.0006005798" flag="0"/>
+  <station code="SARI" name="SARI" netid="KO" insttype="CMG-3T" lat="38.4072" lon="36.4181">
+    <comp name="--.HHN">
+      <acc value="0.0168321914" flag="0"/>
+      <vel value="0.0111792790" flag="0"/>
+      <psa03 value="0.0454411582" flag="0"/>
+      <psa10 value="0.0204718798" flag="0"/>
+      <psa30 value="0.0020539609" flag="0"/>
     </comp>
-    <comp name="--.HNZ">
-      <acc value="0.0093982689" flag="0"/>
-      <vel value="0.0032607667" flag="0"/>
-      <psa03 value="0.0174459909" flag="0"/>
-      <psa10 value="0.0041189816" flag="0"/>
-      <psa30 value="0.0004452138" flag="0"/>
+    <comp name="--.HHZ">
+      <acc value="0.0131424303" flag="0"/>
+      <vel value="0.0104995906" flag="0"/>
+      <psa03 value="0.0460021040" flag="0"/>
+      <psa10 value="0.0142603851" flag="0"/>
+      <psa30 value="0.0014698675" flag="0"/>
     </comp>
-    <comp name="--.HNE">
-      <acc value="0.0148817939" flag="0"/>
-      <vel value="0.0071031634" flag="0"/>
-      <psa03 value="0.0376179411" flag="0"/>
-      <psa10 value="0.0067384880" flag="0"/>
-      <psa30 value="0.0011450476" flag="0"/>
+  </station>
+  <station code="SVSK" name="SVSK" netid="KO" insttype="CMG-3T" lat="39.9157" lon="36.9925">
+    <comp name="--.HHE">
+      <acc value="0.0076958040" flag="0"/>
+      <vel value="0.0037985686" flag="0"/>
+      <psa03 value="0.0192112005" flag="0"/>
+      <psa10 value="0.0033513058" flag="0"/>
+      <psa30 value="0.0003801835" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0036605804" flag="0"/>
+      <vel value="0.0022539910" flag="0"/>
+      <psa03 value="0.0093076354" flag="0"/>
+      <psa10 value="0.0017605121" flag="0"/>
+      <psa30 value="0.0002045137" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0028262564" flag="0"/>
+      <vel value="0.0015584399" flag="0"/>
+      <psa03 value="0.0078566656" flag="0"/>
+      <psa10 value="0.0020003863" flag="0"/>
+      <psa30 value="0.0001800837" flag="0"/>
     </comp>
   </station>
 </stationlist>
