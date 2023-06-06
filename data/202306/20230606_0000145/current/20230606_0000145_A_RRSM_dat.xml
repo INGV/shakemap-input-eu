@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="LTVH" name="LTVH" netid="HU" insttype="" lat="47.3849" lon="21.9007">
+    <comp name="--.HHN">
+      <acc value="0.1050035903" flag="0"/>
+      <vel value="0.0513166895" flag="0"/>
+      <psa03 value="0.2795399303" flag="0"/>
+      <psa10 value="0.0475216870" flag="0"/>
+      <psa30 value="0.0082363968" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.1192995136" flag="0"/>
+      <vel value="0.0464086508" flag="0"/>
+      <psa03 value="0.3121906749" flag="0"/>
+      <psa10 value="0.0381796406" flag="0"/>
+      <psa30 value="0.0079379357" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0376510843" flag="0"/>
+      <vel value="0.0139166440" flag="0"/>
+      <psa03 value="0.0706448042" flag="0"/>
+      <psa10 value="0.0119910409" flag="0"/>
+      <psa30 value="0.0066016110" flag="0"/>
+    </comp>
+  </station>
   <station code="BZS" name="BZS" netid="MN" insttype="" lat="45.6188" lon="21.6401">
     <comp name="--.HHZ">
       <acc value="0.1860131548" flag="0"/>
@@ -45,6 +68,45 @@
       <psa03 value="2.5402573801" flag="0"/>
       <psa10 value="1.2470875595" flag="0"/>
       <psa30 value="0.0948128287" flag="0"/>
+    </comp>
+  </station>
+  <station code="BORR" name="BORR" netid="RO" insttype="CMG40T.1to100/Quanterra" lat="47.0902" lon="21.7856">
+    <comp name="--.HHE">
+      <acc value="0.3801770424" flag="0"/>
+      <vel value="0.1292370343" flag="0"/>
+      <psa03 value="0.9025687405" flag="0"/>
+      <psa10 value="0.1074635508" flag="0"/>
+      <psa30 value="0.0119045721" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.2579063317" flag="0"/>
+      <vel value="0.1636318203" flag="0"/>
+      <psa03 value="0.5840300894" flag="0"/>
+      <psa10 value="0.1156561879" flag="0"/>
+      <psa30 value="0.0135832122" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.3014714225" flag="0"/>
+      <vel value="0.0738820296" flag="0"/>
+      <psa03 value="0.2140262828" flag="0"/>
+      <psa10 value="0.0661882210" flag="0"/>
+      <psa30 value="0.0055184777" flag="0"/>
+    </comp>
+  </station>
+  <station code="BZS" name="BZS" netid="RO" insttype="w/attenuator" lat="45.6188" lon="21.6401">
+    <comp name="--.HHN">
+      <acc value="0.2093630183" flag="0"/>
+      <vel value="0.0861730725" flag="0"/>
+      <psa03 value="0.3377097913" flag="0"/>
+      <psa10 value="0.0339392017" flag="0"/>
+      <psa30 value="0.0024448347" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.1383025672" flag="0"/>
+      <vel value="0.0532930974" flag="0"/>
+      <psa03 value="0.1743411803" flag="0"/>
+      <psa10 value="0.0295274890" flag="0"/>
+      <psa30 value="0.0028235058" flag="0"/>
     </comp>
   </station>
   <station code="CRBR" name="CRBR" netid="RO" insttype="200" lat="45.4108" lon="22.2383">
@@ -222,6 +284,13 @@
       <psa03 value="0.5965057095" flag="0"/>
       <psa10 value="0.1048762145" flag="0"/>
       <psa30 value="0.0235257571" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.2370852189" flag="0"/>
+      <vel value="0.0723552148" flag="0"/>
+      <psa03 value="0.1515105491" flag="0"/>
+      <psa10 value="0.0820620320" flag="0"/>
+      <psa30 value="0.0059269524" flag="0"/>
     </comp>
   </station>
   <station code="SURR" name="SURR" netid="RO" insttype="Linear" lat="45.754" lon="22.1246">
