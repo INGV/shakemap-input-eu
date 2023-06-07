@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="PRAS" name="PRAS" netid="HL" insttype="120" lat="41.3524" lon="24.55">
+    <comp name="--.HHN">
+      <acc value="0.1681092849" flag="0"/>
+      <vel value="0.0757004908" flag="0"/>
+      <psa03 value="0.2309927331" flag="0"/>
+      <psa10 value="0.0485969284" flag="0"/>
+      <psa30 value="0.0066963210" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.2944877069" flag="0"/>
+      <vel value="0.1032827952" flag="0"/>
+      <psa03 value="0.4844361370" flag="0"/>
+      <psa10 value="0.0530551249" flag="0"/>
+      <psa30 value="0.0071706476" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0789208064" flag="0"/>
+      <vel value="0.0320268459" flag="0"/>
+      <psa03 value="0.1690734934" flag="0"/>
+      <psa10 value="0.0388132640" flag="0"/>
+      <psa30 value="0.0057991026" flag="0"/>
+    </comp>
+  </station>
+  <station code="RDO" name="RDO" netid="HL" insttype="120" lat="41.145" lon="25.5355">
+    <comp name="--.HHE">
+      <acc value="0.3149992972" flag="0"/>
+      <vel value="0.1095496141" flag="0"/>
+      <psa03 value="0.5762665808" flag="0"/>
+      <psa10 value="0.0256133032" flag="0"/>
+      <psa30 value="0.0031703383" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.1022444644" flag="0"/>
+      <vel value="0.0567356206" flag="0"/>
+      <psa03 value="0.1840020259" flag="0"/>
+      <psa10 value="0.0428769110" flag="0"/>
+      <psa30 value="0.0041289427" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.2856327188" flag="0"/>
+      <vel value="0.0828152701" flag="0"/>
+      <psa03 value="0.3865816509" flag="0"/>
+      <psa10 value="0.0300038039" flag="0"/>
+      <psa30 value="0.0054550682" flag="0"/>
+    </comp>
+  </station>
+  <station code="KAVA" name="KAVA" netid="HT" insttype="Compact," lat="40.9967" lon="24.5137">
+    <comp name="--.HHE">
+      <acc value="0.3168417971" flag="0"/>
+      <vel value="0.1369335403" flag="0"/>
+      <psa03 value="0.5430423568" flag="0"/>
+      <psa10 value="0.1080090581" flag="0"/>
+      <psa30 value="0.0077911542" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.3363213047" flag="0"/>
+      <vel value="0.1334920604" flag="0"/>
+      <psa03 value="0.9458815237" flag="0"/>
+      <psa10 value="0.0517334801" flag="0"/>
+      <psa30 value="0.0069542136" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.1754299380" flag="0"/>
+      <vel value="0.0809338490" flag="0"/>
+      <psa03 value="0.4191814484" flag="0"/>
+      <psa10 value="0.0768900849" flag="0"/>
+      <psa30 value="0.0067804270" flag="0"/>
+    </comp>
+  </station>
   <station code="BG11A" name="BG11A" netid="Y8" insttype="" lat="42.0614" lon="26.2549">
     <comp name="00.HHN">
       <acc value="0.0000000000" flag="0"/>
