@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="BNN" name="BNN" netid="KO" insttype="CMG-3T" lat="38.8521" lon="35.8472">
+    <comp name="--.HHZ">
+      <acc value="0.0042772805" flag="0"/>
+      <vel value="0.0036496920" flag="0"/>
+      <psa03 value="0.0096063486" flag="0"/>
+      <psa10 value="0.0075130392" flag="0"/>
+      <psa30 value="0.0004377756" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0060697105" flag="0"/>
+      <vel value="0.0058406164" flag="0"/>
+      <psa03 value="0.0132415584" flag="0"/>
+      <psa10 value="0.0071329516" flag="0"/>
+      <psa30 value="0.0005158420" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0078005894" flag="0"/>
+      <vel value="0.0072963679" flag="0"/>
+      <psa03 value="0.0151875072" flag="0"/>
+      <psa10 value="0.0208235419" flag="0"/>
+      <psa30 value="0.0008513674" flag="0"/>
+    </comp>
+  </station>
   <station code="CEYT" name="CEYT" netid="KO" insttype="CMG-3ESP" lat="37.0105" lon="35.7478">
     <comp name="--.HHE">
       <acc value="0.0106131150" flag="0"/>
