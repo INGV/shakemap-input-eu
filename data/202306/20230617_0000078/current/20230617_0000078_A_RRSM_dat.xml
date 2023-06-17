@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="BIR" name="BIR" netid="RO" insttype="MBB2/Quanterra" lat="46.2334" lon="27.6436">
+    <comp name="--.HHE">
+      <acc value="0.1178034455" flag="0"/>
+      <vel value="0.0295487267" flag="0"/>
+      <psa03 value="0.1786282289" flag="0"/>
+      <psa10 value="0.0221462027" flag="0"/>
+      <psa30 value="0.0015007332" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0730677710" flag="0"/>
+      <vel value="0.0370656676" flag="0"/>
+      <psa03 value="0.1238435898" flag="0"/>
+      <psa10 value="0.0239622225" flag="0"/>
+      <psa30 value="0.0017917464" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0512586584" flag="0"/>
+      <vel value="0.0167593844" flag="0"/>
+      <psa03 value="0.0771050134" flag="0"/>
+      <psa10 value="0.0074491831" flag="0"/>
+      <psa30 value="0.0003877519" flag="0"/>
+    </comp>
+  </station>
   <station code="BISRR" name="BISRR" netid="RO" insttype="CMG40T.1to100/Basalt" lat="45.5481" lon="26.7099">
     <comp name="--.HHE">
       <acc value="0.0408065805" flag="0"/>
@@ -153,6 +176,13 @@
       <psa03 value="0.0300306812" flag="0"/>
       <psa10 value="0.0035662095" flag="0"/>
       <psa30 value="0.0002532598" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0106239624" flag="0"/>
+      <vel value="0.0075777199" flag="0"/>
+      <psa03 value="0.0285909915" flag="0"/>
+      <psa10 value="0.0051010470" flag="0"/>
+      <psa30 value="0.0003068708" flag="0"/>
     </comp>
   </station>
   <station code="NEGRR" name="NEGRR" netid="RO" insttype="CMG40T.1to100/Quanterra" lat="45.5373" lon="27.8771">
