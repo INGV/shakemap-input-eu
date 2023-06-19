@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="DARE" name="DARE" netid="KO" insttype="CMG-3ESP" lat="38.5712" lon="37.4832">
+    <comp name="--.HHZ">
+      <acc value="0.0445103691" flag="0"/>
+      <vel value="0.0087853930" flag="0"/>
+      <psa03 value="0.0249930917" flag="0"/>
+      <psa10 value="0.0071299955" flag="0"/>
+      <psa30 value="0.0007787075" flag="0"/>
+    </comp>
+  </station>
   <station code="GAZ" name="GAZ" netid="KO" insttype="CMG-3T" lat="37.1721" lon="37.2096">
     <comp name="--.HHE">
       <acc value="0.0195360344" flag="0"/>
@@ -31,6 +40,13 @@
       <psa03 value="0.0324105557" flag="0"/>
       <psa10 value="0.0078909063" flag="0"/>
       <psa30 value="0.0011337086" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0300985888" flag="0"/>
+      <vel value="0.0080237980" flag="0"/>
+      <psa03 value="0.0193622093" flag="0"/>
+      <psa10 value="0.0081981111" flag="0"/>
+      <psa30 value="0.0007949573" flag="0"/>
     </comp>
   </station>
   <station code="SARI" name="SARI" netid="KO" insttype="CMG-3T" lat="38.4072" lon="36.4181">
