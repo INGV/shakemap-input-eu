@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="BAPR" name="BAPR" netid="RO" insttype="2.5V" lat="44.4059" lon="26.119">
+    <comp name="--.HNN">
+      <acc value="0.0466324927" flag="0"/>
+      <vel value="0.0154561863" flag="0"/>
+      <psa03 value="0.0773132428" flag="0"/>
+      <psa10 value="0.0058241305" flag="0"/>
+      <psa30 value="0.0004386427" flag="0"/>
+    </comp>
+    <comp name="--.HNE">
+      <acc value="0.0986876848" flag="0"/>
+      <vel value="0.0389229096" flag="0"/>
+      <psa03 value="0.2017329675" flag="0"/>
+      <psa10 value="0.0109291026" flag="0"/>
+      <psa30 value="0.0011656863" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0393117580" flag="0"/>
+      <vel value="0.0069229331" flag="0"/>
+      <psa03 value="0.0368589993" flag="0"/>
+      <psa10 value="0.0021548425" flag="0"/>
+      <psa30 value="0.0005102073" flag="0"/>
+    </comp>
+  </station>
   <station code="BISRR" name="BISRR" netid="RO" insttype="CMG40T.1to100/Basalt" lat="45.5481" lon="26.7099">
     <comp name="--.HHE">
       <acc value="0.0469461274" flag="0"/>
@@ -8,6 +31,20 @@
       <psa03 value="0.1748023413" flag="0"/>
       <psa10 value="0.0257737110" flag="0"/>
       <psa30 value="0.0014028703" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0552209571" flag="0"/>
+      <vel value="0.0229794023" flag="0"/>
+      <psa03 value="0.0972669751" flag="0"/>
+      <psa10 value="0.0177448860" flag="0"/>
+      <psa30 value="0.0010938447" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0386747308" flag="0"/>
+      <vel value="0.0169224873" flag="0"/>
+      <psa03 value="0.1064834741" flag="0"/>
+      <psa10 value="0.0105196093" flag="0"/>
+      <psa30 value="0.0005897902" flag="0"/>
     </comp>
   </station>
   <station code="BOSR" name="BOSR" netid="RO" insttype="Seismometer/Basalt" lat="46.0749" lon="25.6611">
@@ -142,6 +179,20 @@
       <psa10 value="0.0063413372" flag="0"/>
       <psa30 value="0.0003783173" flag="0"/>
     </comp>
+    <comp name="--.HHE">
+      <acc value="0.0323372096" flag="0"/>
+      <vel value="0.0082013645" flag="0"/>
+      <psa03 value="0.0557452983" flag="0"/>
+      <psa10 value="0.0078001470" flag="0"/>
+      <psa30 value="0.0005357040" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0200678081" flag="0"/>
+      <vel value="0.0072749683" flag="0"/>
+      <psa03 value="0.0432558880" flag="0"/>
+      <psa10 value="0.0038209929" flag="0"/>
+      <psa30 value="0.0002302878" flag="0"/>
+    </comp>
   </station>
   <station code="IZVR" name="IZVR" netid="RO" insttype="CMG40T.1to100/Quanterra" lat="45.5442" lon="27.7655">
     <comp name="--.HHE">
@@ -173,6 +224,20 @@
       <psa03 value="0.0377291207" flag="0"/>
       <psa10 value="0.0027743269" flag="0"/>
       <psa30 value="0.0003043269" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0154620024" flag="0"/>
+      <vel value="0.0054846182" flag="0"/>
+      <psa03 value="0.0256340797" flag="0"/>
+      <psa10 value="0.0020162356" flag="0"/>
+      <psa30 value="0.0001956900" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0236371498" flag="0"/>
+      <vel value="0.0049282544" flag="0"/>
+      <psa03 value="0.0116513584" flag="0"/>
+      <psa10 value="0.0003846430" flag="0"/>
+      <psa30 value="0.0000468149" flag="0"/>
     </comp>
   </station>
   <station code="MLR" name="MLR" netid="RO" insttype="330HR" lat="45.4909" lon="25.945">
