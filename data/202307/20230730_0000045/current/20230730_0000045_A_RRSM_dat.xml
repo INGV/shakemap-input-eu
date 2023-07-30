@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
-  <station code="BIR" name="BIR" netid="RO" insttype="200" lat="46.2334" lon="27.6436">
-    <comp name="--.HNZ">
-      <acc value="0.0655662849" flag="0"/>
-      <vel value="0.0132262480" flag="0"/>
-      <psa03 value="0.0608596814" flag="0"/>
-      <psa10 value="0.0022637501" flag="0"/>
-      <psa30 value="0.0002116711" flag="0"/>
+  <station code="BIR" name="BIR" netid="RO" insttype="MBB2/Quanterra" lat="46.2334" lon="27.6436">
+    <comp name="--.HHE">
+      <acc value="0.2118860994" flag="0"/>
+      <vel value="0.0373253983" flag="0"/>
+      <psa03 value="0.0774325600" flag="0"/>
+      <psa10 value="0.0071407797" flag="0"/>
+      <psa30 value="0.0006204566" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0654906878" flag="0"/>
+      <vel value="0.0130698075" flag="0"/>
+      <psa03 value="0.0594218583" flag="0"/>
+      <psa10 value="0.0022011985" flag="0"/>
+      <psa30 value="0.0002069558" flag="0"/>
     </comp>
   </station>
   <station code="BISRR" name="BISRR" netid="RO" insttype="CMG40T.1to100/Basalt" lat="45.5481" lon="26.7099">
