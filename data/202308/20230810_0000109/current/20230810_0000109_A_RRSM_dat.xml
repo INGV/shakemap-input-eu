@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="AKMS" name="AKMS" netid="CQ" insttype="" lat="35.018" lon="32.335">
+    <comp name="--.HHN">
+      <acc value="0.0511616141" flag="0"/>
+      <vel value="0.0191202381" flag="0"/>
+      <psa03 value="0.1779191664" flag="0"/>
+      <psa10 value="0.0245904750" flag="0"/>
+      <psa30 value="0.0015146895" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0571171640" flag="0"/>
+      <vel value="0.0372137417" flag="0"/>
+      <psa03 value="0.3047469541" flag="0"/>
+      <psa10 value="0.0300436966" flag="0"/>
+      <psa30 value="0.0023691745" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0341423735" flag="0"/>
+      <vel value="0.0163065408" flag="0"/>
+      <psa03 value="0.1003023184" flag="0"/>
+      <psa10 value="0.0096434040" flag="0"/>
+      <psa30 value="0.0010307647" flag="0"/>
+    </comp>
+  </station>
   <station code="LEF" name="LEF" netid="KO" insttype="CMG-6T" lat="35.1118" lon="32.8433">
     <comp name="--.HHE">
       <acc value="0.0222063616" flag="0"/>
