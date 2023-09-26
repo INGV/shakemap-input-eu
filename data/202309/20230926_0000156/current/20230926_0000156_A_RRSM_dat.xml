@@ -1,50 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="DPC" name="DPC" netid="CZ" insttype="" lat="50.3502" lon="16.3222">
+    <comp name="--.HHE">
+      <acc value="0.0066864896" flag="0"/>
+      <vel value="0.0008711979" flag="0"/>
+      <psa03 value="0.0030546245" flag="0"/>
+      <psa10 value="0.0005397251" flag="0"/>
+      <psa30 value="0.0000990217" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0068170886" flag="0"/>
+      <vel value="0.0010074404" flag="0"/>
+      <psa03 value="0.0026742954" flag="0"/>
+      <psa10 value="0.0007245742" flag="0"/>
+      <psa30 value="0.0001190761" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0050684641" flag="0"/>
+      <vel value="0.0008019231" flag="0"/>
+      <psa03 value="0.0028543654" flag="0"/>
+      <psa10 value="0.0007806733" flag="0"/>
+      <psa30 value="0.0002184020" flag="0"/>
+    </comp>
+  </station>
   <station code="UPC" name="UPC" netid="CZ" insttype="" lat="50.5074" lon="16.0121">
     <comp name="--.HHE">
-      <acc value="0.0086142550" flag="0"/>
-      <vel value="0.0034312779" flag="0"/>
+      <acc value="0.0086142557" flag="0"/>
+      <vel value="0.0034312778" flag="0"/>
       <psa03 value="0.0253331840" flag="0"/>
-      <psa10 value="0.0019322383" flag="0"/>
-      <psa30 value="0.0001762843" flag="0"/>
+      <psa10 value="0.0019322389" flag="0"/>
+      <psa30 value="0.0001762818" flag="0"/>
     </comp>
     <comp name="--.HHZ">
       <acc value="0.0100399254" flag="0"/>
-      <vel value="0.0058899500" flag="0"/>
+      <vel value="0.0058899499" flag="0"/>
       <psa03 value="0.0219640391" flag="0"/>
       <psa10 value="0.0043694923" flag="0"/>
-      <psa30 value="0.0002766190" flag="0"/>
+      <psa30 value="0.0002766202" flag="0"/>
     </comp>
     <comp name="--.HHN">
-      <acc value="0.0137078247" flag="0"/>
-      <vel value="0.0042623964" flag="0"/>
+      <acc value="0.0137078249" flag="0"/>
+      <vel value="0.0042623958" flag="0"/>
       <psa03 value="0.0186858331" flag="0"/>
       <psa10 value="0.0044747016" flag="0"/>
-      <psa30 value="0.0003243248" flag="0"/>
+      <psa30 value="0.0003243292" flag="0"/>
     </comp>
   </station>
-  <station code="KSP" name="KSP" netid="PL" insttype="STS-2/N" lat="50.8428" lon="16.2931">
+  <station code="DPC" name="DPC" netid="MN" insttype="" lat="50.3502" lon="16.3222">
     <comp name="--.HHN">
-      <acc value="0.0032766049" flag="0"/>
-      <vel value="0.0031003111" flag="0"/>
-      <psa03 value="0.0111356858" flag="0"/>
-      <psa10 value="0.0018065917" flag="0"/>
-      <psa30 value="0.0007541827" flag="0"/>
-    </comp>
-    <comp name="--.HHE">
-      <acc value="0.0036203544" flag="0"/>
-      <vel value="0.0012301424" flag="0"/>
-      <psa03 value="0.0087372544" flag="0"/>
-      <psa10 value="0.0009423600" flag="0"/>
-      <psa30 value="0.0003998640" flag="0"/>
+      <acc value="0.0068170886" flag="0"/>
+      <vel value="0.0010074404" flag="0"/>
+      <psa03 value="0.0026742954" flag="0"/>
+      <psa10 value="0.0007245742" flag="0"/>
+      <psa30 value="0.0001190761" flag="0"/>
     </comp>
     <comp name="--.HHZ">
-      <acc value="0.0032734735" flag="0"/>
-      <vel value="0.0025022396" flag="0"/>
-      <psa03 value="0.0060004925" flag="0"/>
-      <psa10 value="0.0016821579" flag="0"/>
-      <psa30 value="0.0008655577" flag="0"/>
+      <acc value="0.0050684641" flag="0"/>
+      <vel value="0.0008019231" flag="0"/>
+      <psa03 value="0.0028543654" flag="0"/>
+      <psa10 value="0.0007806733" flag="0"/>
+      <psa30 value="0.0002184020" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0066864896" flag="0"/>
+      <vel value="0.0008711979" flag="0"/>
+      <psa03 value="0.0030546245" flag="0"/>
+      <psa10 value="0.0005397251" flag="0"/>
+      <psa30 value="0.0000990217" flag="0"/>
     </comp>
   </station>
 </stationlist>
