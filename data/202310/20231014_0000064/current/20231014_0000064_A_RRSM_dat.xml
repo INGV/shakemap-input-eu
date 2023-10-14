@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="GVD" name="GVD" netid="GE" insttype="STS-2/N" lat="34.8391" lon="24.0874">
+    <comp name="--.HHE">
+      <acc value="0.1863018133" flag="0"/>
+      <vel value="0.0776550328" flag="0"/>
+      <psa03 value="0.2448037424" flag="0"/>
+      <psa10 value="0.0470488534" flag="0"/>
+      <psa30 value="0.0040986618" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.1492098178" flag="0"/>
+      <vel value="0.0716983013" flag="0"/>
+      <psa03 value="0.2659883033" flag="0"/>
+      <psa10 value="0.0877666519" flag="0"/>
+      <psa30 value="0.0059446924" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.1096572978" flag="0"/>
+      <vel value="0.0344703081" flag="0"/>
+      <psa03 value="0.2894941744" flag="0"/>
+      <psa10 value="0.0226400697" flag="0"/>
+      <psa30 value="0.0024318315" flag="0"/>
+    </comp>
+  </station>
   <station code="IMOD" name="IMOD" netid="HC" insttype="120" lat="34.9731" lon="24.7995">
     <comp name="--.HHN">
       <acc value="0.0803681737" flag="0"/>
@@ -68,6 +91,29 @@
       <psa03 value="0.0255777256" flag="0"/>
       <psa10 value="0.0123489687" flag="0"/>
       <psa30 value="0.0006888044" flag="0"/>
+    </comp>
+  </station>
+  <station code="GVD" name="GVD" netid="HL" insttype="120" lat="34.8391" lon="24.0874">
+    <comp name="--.HHE">
+      <acc value="0.1954823438" flag="0"/>
+      <vel value="0.0764797206" flag="0"/>
+      <psa03 value="0.2376976529" flag="0"/>
+      <psa10 value="0.0466344466" flag="0"/>
+      <psa30 value="0.0040725339" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.1447875262" flag="0"/>
+      <vel value="0.0702419562" flag="0"/>
+      <psa03 value="0.2587593790" flag="0"/>
+      <psa10 value="0.0871506756" flag="0"/>
+      <psa30 value="0.0059217464" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.1065647945" flag="0"/>
+      <vel value="0.0335166208" flag="0"/>
+      <psa03 value="0.2812527852" flag="0"/>
+      <psa10 value="0.0224814044" flag="0"/>
+      <psa30 value="0.0024200352" flag="0"/>
     </comp>
   </station>
   <station code="IDI" name="IDI" netid="HL" insttype="120" lat="35.288" lon="24.89">
