@@ -1,89 +1,135 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="BODM" name="BODM" netid="KO" insttype="ACEBOX" lat="37.031" lon="27.4247">
+    <comp name="--.HNZ">
+      <acc value="0.0267221222" flag="0"/>
+      <vel value="0.0101215864" flag="0"/>
+      <psa03 value="0.0569524846" flag="0"/>
+      <psa10 value="0.0042876176" flag="0"/>
+      <psa30 value="0.0005224151" flag="0"/>
+    </comp>
+    <comp name="--.HNE">
+      <acc value="0.1334628569" flag="0"/>
+      <vel value="0.0633434429" flag="0"/>
+      <psa03 value="0.2821037616" flag="0"/>
+      <psa10 value="0.0225148646" flag="0"/>
+      <psa30 value="0.0018111991" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="0.1278380264" flag="0"/>
+      <vel value="0.0741774139" flag="0"/>
+      <psa03 value="0.3469003665" flag="0"/>
+      <psa10 value="0.0240811599" flag="0"/>
+      <psa30 value="0.0024123932" flag="0"/>
+    </comp>
+  </station>
   <station code="DALY" name="DALY" netid="KO" insttype="CMG-3T" lat="36.8162" lon="28.6532">
     <comp name="--.HHZ">
       <acc value="0.0056851561" flag="0"/>
-      <vel value="0.0019633258" flag="0"/>
+      <vel value="0.0019633260" flag="0"/>
       <psa03 value="0.0071645467" flag="0"/>
       <psa10 value="0.0026260222" flag="0"/>
-      <psa30 value="0.0002022781" flag="0"/>
+      <psa30 value="0.0002022772" flag="0"/>
     </comp>
     <comp name="--.HHN">
       <acc value="0.0121234755" flag="0"/>
-      <vel value="0.0036788154" flag="0"/>
+      <vel value="0.0036788153" flag="0"/>
       <psa03 value="0.0154749239" flag="0"/>
       <psa10 value="0.0030331487" flag="0"/>
-      <psa30 value="0.0003301607" flag="0"/>
+      <psa30 value="0.0003301588" flag="0"/>
     </comp>
     <comp name="--.HHE">
-      <acc value="0.0097664269" flag="0"/>
-      <vel value="0.0038012816" flag="0"/>
+      <acc value="0.0097664268" flag="0"/>
+      <vel value="0.0038012813" flag="0"/>
       <psa03 value="0.0124895144" flag="0"/>
       <psa10 value="0.0028220118" flag="0"/>
-      <psa30 value="0.0001564682" flag="0"/>
+      <psa30 value="0.0001564711" flag="0"/>
     </comp>
   </station>
   <station code="DAT" name="DAT" netid="KO" insttype="CMG-3T" lat="36.7308" lon="27.5767">
     <comp name="--.HHE">
-      <acc value="0.2840021965" flag="0"/>
-      <vel value="0.0547614614" flag="0"/>
+      <acc value="0.2840021968" flag="0"/>
+      <vel value="0.0547614613" flag="0"/>
       <psa03 value="0.2008067002" flag="0"/>
-      <psa10 value="0.0178392384" flag="0"/>
-      <psa30 value="0.0013050486" flag="0"/>
+      <psa10 value="0.0178392362" flag="0"/>
+      <psa30 value="0.0013048972" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.2060017627" flag="0"/>
+      <vel value="0.0521733558" flag="0"/>
+      <psa03 value="0.2329042726" flag="0"/>
+      <psa10 value="0.0173475790" flag="0"/>
+      <psa30 value="0.0014071650" flag="0"/>
     </comp>
     <comp name="--.HHZ">
-      <acc value="0.0000308152" flag="0"/>
+      <acc value="0.0000308155" flag="0"/>
       <vel value="0.0000033215" flag="0"/>
       <psa03 value="0.0000125470" flag="0"/>
       <psa10 value="0.0000039722" flag="0"/>
-      <psa30 value="0.0000006111" flag="0"/>
-    </comp>
-    <comp name="--.HHN">
-      <acc value="0.2060017625" flag="0"/>
-      <vel value="0.0521733557" flag="0"/>
-      <psa03 value="0.2329042726" flag="0"/>
-      <psa10 value="0.0173475769" flag="0"/>
-      <psa30 value="0.0014069588" flag="0"/>
+      <psa30 value="0.0000006140" flag="0"/>
     </comp>
   </station>
   <station code="MLSB" name="MLSB" netid="KO" insttype="CMG-3ESP" lat="37.2953" lon="27.7767">
-    <comp name="--.HHZ">
-      <acc value="0.0083171796" flag="0"/>
-      <vel value="0.0045388188" flag="0"/>
-      <psa03 value="0.0246969975" flag="0"/>
-      <psa10 value="0.0062529818" flag="0"/>
-      <psa30 value="0.0006137838" flag="0"/>
+    <comp name="--.HHE">
+      <acc value="0.0106878720" flag="0"/>
+      <vel value="0.0073831102" flag="0"/>
+      <psa03 value="0.0292907564" flag="0"/>
+      <psa10 value="0.0098214374" flag="0"/>
+      <psa30 value="0.0006978685" flag="0"/>
     </comp>
     <comp name="--.HHN">
       <acc value="0.0068637822" flag="0"/>
-      <vel value="0.0038387537" flag="0"/>
+      <vel value="0.0038387544" flag="0"/>
       <psa03 value="0.0187895527" flag="0"/>
       <psa10 value="0.0043243393" flag="0"/>
-      <psa30 value="0.0002699194" flag="0"/>
+      <psa30 value="0.0002699131" flag="0"/>
     </comp>
-    <comp name="--.HHE">
-      <acc value="0.0106878721" flag="0"/>
-      <vel value="0.0073831096" flag="0"/>
-      <psa03 value="0.0292907564" flag="0"/>
-      <psa10 value="0.0098214374" flag="0"/>
-      <psa30 value="0.0006978377" flag="0"/>
+    <comp name="--.HHZ">
+      <acc value="0.0083171797" flag="0"/>
+      <vel value="0.0045388181" flag="0"/>
+      <psa03 value="0.0246969975" flag="0"/>
+      <psa10 value="0.0062529818" flag="0"/>
+      <psa30 value="0.0006137852" flag="0"/>
     </comp>
   </station>
   <station code="YER" name="YER" netid="KO" insttype="CMG-3T" lat="37.1336" lon="28.284">
     <comp name="--.HHE">
-      <acc value="0.0138818750" flag="0"/>
-      <vel value="0.0046596040" flag="0"/>
+      <acc value="0.0138818745" flag="0"/>
+      <vel value="0.0046596031" flag="0"/>
       <psa03 value="0.0293658394" flag="0"/>
       <psa10 value="0.0035673166" flag="0"/>
-      <psa30 value="0.0003033975" flag="0"/>
+      <psa30 value="0.0003033904" flag="0"/>
     </comp>
     <comp name="--.HHN">
-      <acc value="0.0114327190" flag="0"/>
-      <vel value="0.0071083606" flag="0"/>
+      <acc value="0.0114327181" flag="0"/>
+      <vel value="0.0071083608" flag="0"/>
       <psa03 value="0.0226474210" flag="0"/>
       <psa10 value="0.0158834696" flag="0"/>
-      <psa30 value="0.0005374756" flag="0"/>
+      <psa30 value="0.0005374533" flag="0"/>
+    </comp>
+  </station>
+  <station code="YKAV" name="YKAV" netid="KO" insttype="CMG-5T" lat="37.1246" lon="27.2801">
+    <comp name="--.HNE">
+      <acc value="0.0387828724" flag="0"/>
+      <vel value="0.0154240621" flag="0"/>
+      <psa03 value="0.0621206169" flag="0"/>
+      <psa10 value="0.0148243125" flag="0"/>
+      <psa30 value="0.0010558816" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="0.0342136062" flag="0"/>
+      <vel value="0.0143601514" flag="0"/>
+      <psa03 value="0.0478234528" flag="0"/>
+      <psa10 value="0.0111804888" flag="0"/>
+      <psa30 value="0.0006105249" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0208705754" flag="0"/>
+      <vel value="0.0116250547" flag="0"/>
+      <psa03 value="0.0325121272" flag="0"/>
+      <psa10 value="0.0126745338" flag="0"/>
+      <psa30 value="0.0010027517" flag="0"/>
     </comp>
   </station>
 </stationlist>
