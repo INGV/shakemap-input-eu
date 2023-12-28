@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="ARG" name="ARG" netid="HL" insttype="LE3D20_DR24" lat="36.2136" lon="28.1212">
+    <comp name="--.HHE">
+      <acc value="0.1338045297" flag="0"/>
+      <vel value="0.0374616358" flag="0"/>
+      <psa03 value="0.2071637957" flag="0"/>
+      <psa10 value="0.0229912253" flag="0"/>
+      <psa30 value="0.0020084943" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.1004413924" flag="0"/>
+      <vel value="0.0268276018" flag="0"/>
+      <psa03 value="0.1165009206" flag="0"/>
+      <psa10 value="0.0071815433" flag="0"/>
+      <psa30 value="0.0005814246" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.1119585284" flag="0"/>
+      <vel value="0.0363708177" flag="0"/>
+      <psa03 value="0.2226449636" flag="0"/>
+      <psa10 value="0.0165431839" flag="0"/>
+      <psa30 value="0.0015037097" flag="0"/>
+    </comp>
+  </station>
+  <station code="NISR2" name="NISR2" netid="HL" insttype="120" lat="36.5744" lon="27.1767">
+    <comp name="--.HHE">
+      <acc value="0.0760310422" flag="0"/>
+      <vel value="0.0315439034" flag="0"/>
+      <psa03 value="0.2913843174" flag="0"/>
+      <psa10 value="0.0205357116" flag="0"/>
+      <psa30 value="0.0011219173" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0445576270" flag="0"/>
+      <vel value="0.0207281152" flag="0"/>
+      <psa03 value="0.2067308717" flag="0"/>
+      <psa10 value="0.0075240581" flag="0"/>
+      <psa30 value="0.0005741838" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.1128383040" flag="0"/>
+      <vel value="0.0470270801" flag="0"/>
+      <psa03 value="0.4963738099" flag="0"/>
+      <psa10 value="0.0262964475" flag="0"/>
+      <psa30 value="0.0016539168" flag="0"/>
+    </comp>
+  </station>
   <station code="CAME" name="CAME" netid="KO" insttype="CMG-5T" lat="36.9435" lon="29.3023">
     <comp name="--.HNZ">
       <acc value="0.0774187931" flag="0"/>
