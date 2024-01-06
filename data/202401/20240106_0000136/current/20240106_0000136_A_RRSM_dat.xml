@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="MYT1" name="MYT1" netid="HI" insttype="CMG-5TD,ACCELEROMETER,GURALP" lat="39.085" lon="26.5694">
+    <comp name="--.HNN">
+      <acc value="0.0347387284" flag="0"/>
+      <vel value="0.0160181545" flag="0"/>
+      <psa03 value="0.0710946867" flag="0"/>
+      <psa10 value="0.0196368190" flag="0"/>
+      <psa30 value="0.0016438150" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0376090355" flag="0"/>
+      <vel value="0.0143636900" flag="0"/>
+      <psa03 value="0.0541012759" flag="0"/>
+      <psa10 value="0.0105890524" flag="0"/>
+      <psa30 value="0.0008169387" flag="0"/>
+    </comp>
+    <comp name="--.HNE">
+      <acc value="0.0590491800" flag="0"/>
+      <vel value="0.0240918575" flag="0"/>
+      <psa03 value="0.1299590865" flag="0"/>
+      <psa10 value="0.0163358726" flag="0"/>
+      <psa30 value="0.0013069870" flag="0"/>
+    </comp>
+  </station>
+  <station code="PRK" name="PRK" netid="HL" insttype="120" lat="39.2456" lon="26.265">
+    <comp name="--.HHZ">
+      <acc value="0.0348314555" flag="0"/>
+      <vel value="0.0091347613" flag="0"/>
+      <psa03 value="0.0438814055" flag="0"/>
+      <psa10 value="0.0051281596" flag="0"/>
+      <psa30 value="0.0004601967" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0279717904" flag="0"/>
+      <vel value="0.0133510095" flag="0"/>
+      <psa03 value="0.0883304467" flag="0"/>
+      <psa10 value="0.0133248508" flag="0"/>
+      <psa30 value="0.0007849577" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0304329871" flag="0"/>
+      <vel value="0.0115724281" flag="0"/>
+      <psa03 value="0.0685407592" flag="0"/>
+      <psa10 value="0.0115559607" flag="0"/>
+      <psa30 value="0.0005949751" flag="0"/>
+    </comp>
+  </station>
+  <station code="CHOS" name="CHOS" netid="HT" insttype="100" lat="38.3869" lon="26.0506">
+    <comp name="--.HHN">
+      <acc value="0.1122321947" flag="0"/>
+      <vel value="0.0381375080" flag="0"/>
+      <psa03 value="0.3013674381" flag="0"/>
+      <psa10 value="0.0183674177" flag="0"/>
+      <psa30 value="0.0019612533" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0455084530" flag="0"/>
+      <vel value="0.0157084140" flag="0"/>
+      <psa03 value="0.1785267873" flag="0"/>
+      <psa10 value="0.0065471277" flag="0"/>
+      <psa30 value="0.0008480999" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.1351923370" flag="0"/>
+      <vel value="0.0460836196" flag="0"/>
+      <psa03 value="0.3978611006" flag="0"/>
+      <psa10 value="0.0157621924" flag="0"/>
+      <psa30 value="0.0014562712" flag="0"/>
+    </comp>
+  </station>
+  <station code="LES3" name="LES3" netid="HT" insttype="" lat="39.3032" lon="26.1807">
+    <comp name="--.HHZ">
+      <acc value="0.0296392655" flag="0"/>
+      <vel value="0.0107486348" flag="0"/>
+      <psa03 value="0.0598469887" flag="0"/>
+      <psa10 value="0.0028722696" flag="0"/>
+      <psa30 value="0.0003176984" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0527566718" flag="0"/>
+      <vel value="0.0196073134" flag="0"/>
+      <psa03 value="0.1052718710" flag="0"/>
+      <psa10 value="0.0081468327" flag="0"/>
+      <psa30 value="0.0007244996" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0645415386" flag="0"/>
+      <vel value="0.0271275304" flag="0"/>
+      <psa03 value="0.1446180253" flag="0"/>
+      <psa10 value="0.0062320965" flag="0"/>
+      <psa30 value="0.0005234390" flag="0"/>
+    </comp>
+  </station>
   <station code="BALB" name="BALB" netid="KO" insttype="CMG-5T" lat="39.6507" lon="27.8642">
     <comp name="--.HNN">
       <acc value="0.0231400402" flag="0"/>
