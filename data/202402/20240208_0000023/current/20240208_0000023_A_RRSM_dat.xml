@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="GVD" name="GVD" netid="GE" insttype="STS-2/N" lat="34.8391" lon="24.0874">
+    <comp name="--.HHE">
+      <acc value="0.0567169952" flag="0"/>
+      <vel value="0.0125330747" flag="0"/>
+      <psa03 value="0.0671382034" flag="0"/>
+      <psa10 value="0.0175432686" flag="0"/>
+      <psa30 value="0.0041967262" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0147662605" flag="0"/>
+      <vel value="0.0111022531" flag="0"/>
+      <psa03 value="0.0654592162" flag="0"/>
+      <psa10 value="0.0068838355" flag="0"/>
+      <psa30 value="0.0018464907" flag="0"/>
+    </comp>
+  </station>
   <station code="CHAN" name="CHAN" netid="HC" insttype="120" lat="35.5193" lon="24.0428">
     <comp name="--.HHE">
       <acc value="0.0288883528" flag="0"/>
