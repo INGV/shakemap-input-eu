@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="THERA" name="THERA" netid="GE" insttype="STS-2/N" lat="36.367" lon="25.4753">
+    <comp name="--.HHE">
+      <acc value="0.0645227655" flag="0"/>
+      <vel value="0.0165721426" flag="0"/>
+      <psa03 value="0.0734070692" flag="0"/>
+      <psa10 value="0.0043587904" flag="0"/>
+      <psa30 value="0.0004991383" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0557963488" flag="0"/>
+      <vel value="0.0128072455" flag="0"/>
+      <psa03 value="0.0702043254" flag="0"/>
+      <psa10 value="0.0038819440" flag="0"/>
+      <psa30 value="0.0003058451" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0569095743" flag="0"/>
+      <vel value="0.0170761047" flag="0"/>
+      <psa03 value="0.0718129009" flag="0"/>
+      <psa10 value="0.0034920940" flag="0"/>
+      <psa30 value="0.0002931985" flag="0"/>
+    </comp>
+  </station>
   <station code="SNT1" name="SNT1" netid="HA" insttype="30" lat="36.4159" lon="25.4282">
     <comp name="--.HHE">
       <acc value="0.0678806645" flag="0"/>
