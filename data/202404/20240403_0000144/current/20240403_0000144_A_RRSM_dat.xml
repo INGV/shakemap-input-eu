@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="BARME" name="BARME" netid="ME" insttype="CMG-5" lat="42.1055" lon="19.0889">
+    <comp name="--.HNE">
+      <acc value="0.1064206127" flag="0"/>
+      <vel value="0.0572770691" flag="0"/>
+      <psa03 value="0.3996410984" flag="0"/>
+      <psa10 value="0.1221119828" flag="0"/>
+      <psa30 value="0.0054042026" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="0.1170174112" flag="0"/>
+      <vel value="0.0522097580" flag="0"/>
+      <psa03 value="0.4061945359" flag="0"/>
+      <psa10 value="0.1150319308" flag="0"/>
+      <psa30 value="0.0047294878" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0420184557" flag="0"/>
+      <vel value="0.0324023038" flag="0"/>
+      <psa03 value="0.1358692627" flag="0"/>
+      <psa10 value="0.0309974214" flag="0"/>
+      <psa30 value="0.0020098601" flag="0"/>
+    </comp>
+  </station>
   <station code="PDG" name="PDG" netid="MN" insttype="" lat="42.4297" lon="19.2608">
     <comp name="--.HHN">
       <acc value="0.0885856972" flag="0"/>
