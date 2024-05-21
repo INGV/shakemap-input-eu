@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="CAMPI" name="CAMPI" netid="GX" insttype="Trillium Compact" lat="40.7071" lon="15.2738">
+    <comp name="--.HHZ">
+      <acc value="0.0015388892" flag="0"/>
+      <vel value="0.0022489117" flag="0"/>
+      <psa03 value="0.0034839926" flag="0"/>
+      <psa10 value="0.0049212311" flag="0"/>
+      <psa30 value="0.0003452764" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0033861475" flag="0"/>
+      <vel value="0.0046885645" flag="0"/>
+      <psa03 value="0.0051258397" flag="0"/>
+      <psa10 value="0.0075955092" flag="0"/>
+      <psa30 value="0.0009173966" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0031464384" flag="0"/>
+      <vel value="0.0036270183" flag="0"/>
+      <psa03 value="0.0070316590" flag="0"/>
+      <psa10 value="0.0071895199" flag="0"/>
+      <psa30 value="0.0009889023" flag="0"/>
+    </comp>
+  </station>
   <station code="BSSO" name="BSSO" netid="IV" insttype="" lat="41.5461" lon="14.5938">
     <comp name="--.HHN">
       <acc value="0.0007660441" flag="0"/>
