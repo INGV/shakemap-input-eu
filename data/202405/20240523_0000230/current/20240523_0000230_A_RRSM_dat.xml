@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="ZKR" name="ZKR" netid="GE" insttype="STS-2/N" lat="35.1147" lon="26.2169">
+    <comp name="--.HHE">
+      <acc value="0.0467253190" flag="0"/>
+      <vel value="0.0205417672" flag="0"/>
+      <psa03 value="0.0726560590" flag="0"/>
+      <psa10 value="0.0131806826" flag="0"/>
+      <psa30 value="0.0010436982" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0395582863" flag="0"/>
+      <vel value="0.0122898050" flag="0"/>
+      <psa03 value="0.0612986714" flag="0"/>
+      <psa10 value="0.0199981881" flag="0"/>
+      <psa30 value="0.0009493883" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0306287097" flag="0"/>
+      <vel value="0.0120208521" flag="0"/>
+      <psa03 value="0.0503893034" flag="0"/>
+      <psa10 value="0.0105507505" flag="0"/>
+      <psa30 value="0.0005606867" flag="0"/>
+    </comp>
+  </station>
   <station code="PFKS" name="PFKS" netid="HC" insttype="120" lat="35.0429" lon="25.4733">
     <comp name="--.HHN">
       <acc value="0.0269459124" flag="0"/>
