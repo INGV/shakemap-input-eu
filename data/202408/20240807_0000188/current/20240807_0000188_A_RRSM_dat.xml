@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="IMMV" name="IMMV" netid="GE" insttype="STS-2/N" lat="35.4606" lon="23.9811">
+    <comp name="--.HHE">
+      <acc value="0.0483540243" flag="0"/>
+      <vel value="0.0349069097" flag="0"/>
+      <psa03 value="0.1796575544" flag="0"/>
+      <psa10 value="0.0486764523" flag="0"/>
+      <psa30 value="0.0054433037" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0438706981" flag="0"/>
+      <vel value="0.0323883953" flag="0"/>
+      <psa03 value="0.1534906072" flag="0"/>
+      <psa10 value="0.0283543030" flag="0"/>
+      <psa30 value="0.0047276991" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0318740696" flag="0"/>
+      <vel value="0.0186330932" flag="0"/>
+      <psa03 value="0.1390161412" flag="0"/>
+      <psa10 value="0.0295317313" flag="0"/>
+      <psa30 value="0.0018145270" flag="0"/>
+    </comp>
+  </station>
+  <station code="ZKR" name="ZKR" netid="GE" insttype="STS-2/N" lat="35.1147" lon="26.2169">
+    <comp name="--.HHE">
+      <acc value="0.0113747759" flag="0"/>
+      <vel value="0.0094421255" flag="0"/>
+      <psa03 value="0.0648140445" flag="0"/>
+      <psa10 value="0.0186749281" flag="0"/>
+      <psa30 value="0.0021155574" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0074608461" flag="0"/>
+      <vel value="0.0073872502" flag="0"/>
+      <psa03 value="0.0320439966" flag="0"/>
+      <psa10 value="0.0145171916" flag="0"/>
+      <psa30 value="0.0019616332" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0076434845" flag="0"/>
+      <vel value="0.0054007190" flag="0"/>
+      <psa03 value="0.0346785632" flag="0"/>
+      <psa10 value="0.0073521283" flag="0"/>
+      <psa30 value="0.0009217853" flag="0"/>
+    </comp>
+  </station>
   <station code="IDI" name="IDI" netid="MN" insttype="" lat="35.288" lon="24.89">
     <comp name="--.HHZ">
       <acc value="0.0585594136" flag="0"/>
