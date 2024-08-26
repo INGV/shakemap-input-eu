@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="PSAM" name="PSAM" netid="CL" insttype="CMG40-T" lat="38.3218" lon="22.1842">
+    <comp name="00.HHE">
+      <acc value="0.0176283056" flag="0"/>
+      <vel value="0.0228684593" flag="0"/>
+      <psa03 value="0.0356883681" flag="0"/>
+      <psa10 value="0.0311197406" flag="0"/>
+      <psa30 value="0.0053692292" flag="0"/>
+    </comp>
+    <comp name="00.HHN">
+      <acc value="0.0169943225" flag="0"/>
+      <vel value="0.0187436108" flag="0"/>
+      <psa03 value="0.0390108888" flag="0"/>
+      <psa10 value="0.0368247040" flag="0"/>
+      <psa30 value="0.0041525917" flag="0"/>
+    </comp>
+    <comp name="00.HHZ">
+      <acc value="0.0079445683" flag="0"/>
+      <vel value="0.0095426902" flag="0"/>
+      <psa03 value="0.0143150819" flag="0"/>
+      <psa10 value="0.0150121698" flag="0"/>
+      <psa30 value="0.0015376573" flag="0"/>
+    </comp>
+  </station>
   <station code="AMPE" name="AMPE" netid="HA" insttype="1s-100Hz," lat="38.3015" lon="23.2688">
     <comp name="--.HHZ">
       <acc value="0.0513080037" flag="0"/>
