@@ -1,27 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
-  <station code="ZIRI" name="ZIRI" netid="CL" insttype="TRILLIUM-40" lat="38.3051" lon="21.9476">
-    <comp name="01.HHE">
-      <acc value="0.1358503663" flag="0"/>
-      <vel value="0.0723214052" flag="0"/>
-      <psa03 value="0.3064183414" flag="0"/>
-      <psa10 value="0.0297102479" flag="0"/>
-      <psa30 value="0.0032691754" flag="0"/>
+  <station code="PSAM" name="PSAM" netid="CL" insttype="CMG40-T" lat="38.3218" lon="22.1842">
+    <comp name="00.HHN">
+      <acc value="0.0683219871" flag="0"/>
+      <vel value="0.0282081024" flag="0"/>
+      <psa03 value="0.1615956738" flag="0"/>
+      <psa10 value="0.0285874991" flag="0"/>
+      <psa30 value="0.0022129028" flag="0"/>
     </comp>
+    <comp name="00.HHZ">
+      <acc value="0.0648046888" flag="0"/>
+      <vel value="0.0143543911" flag="0"/>
+      <psa03 value="0.0402760670" flag="0"/>
+      <psa10 value="0.0104631401" flag="0"/>
+      <psa30 value="0.0013295412" flag="0"/>
+    </comp>
+    <comp name="00.HHE">
+      <acc value="0.0753049970" flag="0"/>
+      <vel value="0.0258477295" flag="0"/>
+      <psa03 value="0.1229861199" flag="0"/>
+      <psa10 value="0.0255086848" flag="0"/>
+      <psa30 value="0.0027496701" flag="0"/>
+    </comp>
+  </station>
+  <station code="TRIZ" name="TRIZ" netid="CL" insttype="STS-2" lat="38.3654" lon="22.0727">
+    <comp name="00.HH2">
+      <acc value="0.0332045950" flag="0"/>
+      <vel value="0.0273695897" flag="0"/>
+      <psa03 value="0.1019658903" flag="0"/>
+      <psa10 value="0.0210858141" flag="0"/>
+      <psa30 value="0.0029399950" flag="0"/>
+    </comp>
+    <comp name="00.HH3">
+      <acc value="0.0413058444" flag="0"/>
+      <vel value="0.0197244954" flag="0"/>
+      <psa03 value="0.1261413216" flag="0"/>
+      <psa10 value="0.0185827908" flag="0"/>
+      <psa30 value="0.0021746673" flag="0"/>
+    </comp>
+    <comp name="00.HHZ">
+      <acc value="0.0435369894" flag="0"/>
+      <vel value="0.0128607879" flag="0"/>
+      <psa03 value="0.0544485806" flag="0"/>
+      <psa10 value="0.0128616666" flag="0"/>
+      <psa30 value="0.0014834603" flag="0"/>
+    </comp>
+  </station>
+  <station code="ZIRI" name="ZIRI" netid="CL" insttype="TRILLIUM-40" lat="38.3051" lon="21.9476">
     <comp name="01.HHZ">
-      <acc value="0.1224451502" flag="0"/>
-      <vel value="0.0349411279" flag="0"/>
+      <acc value="0.1224451485" flag="0"/>
+      <vel value="0.0349411381" flag="0"/>
       <psa03 value="0.1892088509" flag="0"/>
-      <psa10 value="0.0122058136" flag="0"/>
-      <psa30 value="0.0016050806" flag="0"/>
+      <psa10 value="0.0122058142" flag="0"/>
+      <psa30 value="0.0016051442" flag="0"/>
     </comp>
     <comp name="01.HHN">
-      <acc value="0.1799127289" flag="0"/>
-      <vel value="0.0478582064" flag="0"/>
-      <psa03 value="0.3685065078" flag="0"/>
-      <psa10 value="0.0236103546" flag="0"/>
-      <psa30 value="0.0022686350" flag="0"/>
+      <acc value="0.1799127297" flag="0"/>
+      <vel value="0.0478582183" flag="0"/>
+      <psa03 value="0.3685065079" flag="0"/>
+      <psa10 value="0.0236103560" flag="0"/>
+      <psa30 value="0.0022684378" flag="0"/>
+    </comp>
+    <comp name="01.HHE">
+      <acc value="0.1358503652" flag="0"/>
+      <vel value="0.0723213932" flag="0"/>
+      <psa03 value="0.3064183414" flag="0"/>
+      <psa10 value="0.0297102487" flag="0"/>
+      <psa30 value="0.0032690409" flag="0"/>
     </comp>
   </station>
 </stationlist>
