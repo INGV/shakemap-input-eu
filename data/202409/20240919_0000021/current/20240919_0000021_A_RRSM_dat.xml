@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="IMMV" name="IMMV" netid="GE" insttype="STS-2/N" lat="35.4606" lon="23.9811">
+    <comp name="--.HHE">
+      <acc value="0.0679894352" flag="0"/>
+      <vel value="0.0217330815" flag="0"/>
+      <psa03 value="0.1214080287" flag="0"/>
+      <psa10 value="0.0190675691" flag="0"/>
+      <psa30 value="0.0010348909" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0663317660" flag="0"/>
+      <vel value="0.0309100197" flag="0"/>
+      <psa03 value="0.2287959933" flag="0"/>
+      <psa10 value="0.0178786207" flag="0"/>
+      <psa30 value="0.0011688712" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0528284976" flag="0"/>
+      <vel value="0.0164440373" flag="0"/>
+      <psa03 value="0.1073359983" flag="0"/>
+      <psa10 value="0.0122856191" flag="0"/>
+      <psa30 value="0.0006768577" flag="0"/>
+    </comp>
+  </station>
   <station code="IDI" name="IDI" netid="MN" insttype="" lat="35.288" lon="24.89">
     <comp name="--.HHZ">
       <acc value="0.0091961301" flag="0"/>
