@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="ATH" name="ATH" netid="HL" insttype="DR24" lat="37.9738" lon="23.7177">
+    <comp name="--.HHE">
+      <acc value="0.0804704460" flag="0"/>
+      <vel value="0.0389659870" flag="0"/>
+      <psa03 value="0.1778464371" flag="0"/>
+      <psa10 value="0.0530866958" flag="0"/>
+      <psa30 value="0.0114693320" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0594297436" flag="0"/>
+      <vel value="0.0389578361" flag="0"/>
+      <psa03 value="0.0796931680" flag="0"/>
+      <psa10 value="0.0567494665" flag="0"/>
+      <psa30 value="0.0160460378" flag="0"/>
+    </comp>
+  </station>
+  <station code="ELIN" name="ELIN" netid="HL" insttype="LE3D20_SMART24" lat="38.0995" lon="22.4874">
+    <comp name="--.HHN">
+      <acc value="0.3270612394" flag="0"/>
+      <vel value="0.1564751691" flag="0"/>
+      <psa03 value="1.4065033275" flag="0"/>
+      <psa10 value="0.0853807516" flag="0"/>
+      <psa30 value="0.0069841779" flag="0"/>
+    </comp>
+  </station>
   <station code="KLV" name="KLV" netid="MN" insttype="" lat="38.0437" lon="22.1504">
     <comp name="--.HHZ">
       <acc value="0.0119061744" flag="0"/>
