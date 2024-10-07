@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="TRIZ" name="TRIZ" netid="CL" insttype="STS-2" lat="38.3654" lon="22.0727">
+    <comp name="00.HHZ">
+      <acc value="0.0320459973" flag="0"/>
+      <vel value="0.0376142285" flag="0"/>
+      <psa03 value="0.0957472041" flag="0"/>
+      <psa10 value="0.0361378639" flag="0"/>
+      <psa30 value="0.0037083092" flag="0"/>
+    </comp>
+    <comp name="00.HH3">
+      <acc value="0.0962750892" flag="0"/>
+      <vel value="0.0756125202" flag="0"/>
+      <psa03 value="0.3274015812" flag="0"/>
+      <psa10 value="0.0533996536" flag="0"/>
+      <psa30 value="0.0078898866" flag="0"/>
+    </comp>
+    <comp name="00.HH2">
+      <acc value="0.0564555996" flag="0"/>
+      <vel value="0.0495632572" flag="0"/>
+      <psa03 value="0.1913893887" flag="0"/>
+      <psa10 value="0.0366911642" flag="0"/>
+      <psa30 value="0.0050742660" flag="0"/>
+    </comp>
+  </station>
+  <station code="ZIRI" name="ZIRI" netid="CL" insttype="TRILLIUM-40" lat="38.3051" lon="21.9476">
+    <comp name="01.HHN">
+      <acc value="0.0774802885" flag="0"/>
+      <vel value="0.0553087966" flag="0"/>
+      <psa03 value="0.2686279691" flag="0"/>
+      <psa10 value="0.0338996931" flag="0"/>
+      <psa30 value="0.0043883563" flag="0"/>
+    </comp>
+    <comp name="01.HHE">
+      <acc value="0.0517016798" flag="0"/>
+      <vel value="0.0438106736" flag="0"/>
+      <psa03 value="0.1432358899" flag="0"/>
+      <psa10 value="0.0501758357" flag="0"/>
+      <psa30 value="0.0052286304" flag="0"/>
+    </comp>
+    <comp name="01.HHZ">
+      <acc value="0.0419045513" flag="0"/>
+      <vel value="0.0193167889" flag="0"/>
+      <psa03 value="0.1429062711" flag="0"/>
+      <psa10 value="0.0182238957" flag="0"/>
+      <psa30 value="0.0046542387" flag="0"/>
+    </comp>
+  </station>
   <station code="ANTK" name="ANTK" netid="HA" insttype="25" lat="38.3605" lon="22.6385">
     <comp name="--.HHZ">
       <acc value="0.0413429796" flag="0"/>
