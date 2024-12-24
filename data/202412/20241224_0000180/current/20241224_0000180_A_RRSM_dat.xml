@@ -2,13 +2,6 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="AKDN" name="AKDN" netid="KO" insttype="CMG-5T" lat="35.2977" lon="32.9677">
-    <comp name="--.HNZ">
-      <acc value="0.0122737451" flag="0"/>
-      <vel value="0.0068496252" flag="0"/>
-      <psa03 value="0.0284244751" flag="0"/>
-      <psa10 value="0.0059866218" flag="0"/>
-      <psa30 value="0.0014348442" flag="0"/>
-    </comp>
     <comp name="--.HNE">
       <acc value="0.0207169867" flag="0"/>
       <vel value="0.0111399078" flag="0"/>
@@ -23,8 +16,22 @@
       <psa10 value="0.0092373325" flag="0"/>
       <psa30 value="0.0023053039" flag="0"/>
     </comp>
+    <comp name="--.HNZ">
+      <acc value="0.0122737451" flag="0"/>
+      <vel value="0.0068496252" flag="0"/>
+      <psa03 value="0.0284244751" flag="0"/>
+      <psa10 value="0.0059866218" flag="0"/>
+      <psa30 value="0.0014348442" flag="0"/>
+    </comp>
   </station>
   <station code="HSY" name="HSY" netid="KO" insttype="CMG-6T" lat="35.2916" lon="33.0974">
+    <comp name="--.HHN">
+      <acc value="0.0936331500" flag="0"/>
+      <vel value="0.0292339543" flag="0"/>
+      <psa03 value="0.1700456555" flag="0"/>
+      <psa10 value="0.0120150580" flag="0"/>
+      <psa30 value="0.0011254113" flag="0"/>
+    </comp>
     <comp name="--.HHE">
       <acc value="0.0944683119" flag="0"/>
       <vel value="0.0353108253" flag="0"/>
@@ -38,13 +45,6 @@
       <psa03 value="0.0437984398" flag="0"/>
       <psa10 value="0.0093392759" flag="0"/>
       <psa30 value="0.0007100343" flag="0"/>
-    </comp>
-    <comp name="--.HHN">
-      <acc value="0.0936331500" flag="0"/>
-      <vel value="0.0292339543" flag="0"/>
-      <psa03 value="0.1700456555" flag="0"/>
-      <psa10 value="0.0120150580" flag="0"/>
-      <psa30 value="0.0011254113" flag="0"/>
     </comp>
   </station>
   <station code="LEF" name="LEF" netid="KO" insttype="CMG-6T" lat="35.1118" lon="32.8433">
