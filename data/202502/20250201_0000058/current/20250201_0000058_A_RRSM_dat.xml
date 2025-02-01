@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="APE" name="APE" netid="GE" insttype="STS-2/N" lat="37.0727" lon="25.523">
+    <comp name="--.HHZ">
+      <acc value="0.0445005053" flag="0"/>
+      <vel value="0.0110377537" flag="0"/>
+      <psa03 value="0.0276759034" flag="0"/>
+      <psa10 value="0.0046855442" flag="0"/>
+      <psa30 value="0.0016987549" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0575818207" flag="0"/>
+      <vel value="0.0124984452" flag="0"/>
+      <psa03 value="0.0421469690" flag="0"/>
+      <psa10 value="0.0057936691" flag="0"/>
+      <psa30 value="0.0008852105" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.1100340345" flag="0"/>
+      <vel value="0.0189162320" flag="0"/>
+      <psa03 value="0.0382633887" flag="0"/>
+      <psa10 value="0.0050506988" flag="0"/>
+      <psa30 value="0.0011169365" flag="0"/>
+    </comp>
+  </station>
+  <station code="THERA" name="THERA" netid="GE" insttype="STS-2/N" lat="36.367" lon="25.4753">
+    <comp name="--.HHN">
+      <acc value="0.0359638055" flag="0"/>
+      <vel value="0.0122047949" flag="0"/>
+      <psa03 value="0.0349803610" flag="0"/>
+      <psa10 value="0.0104393932" flag="0"/>
+      <psa30 value="0.0020362279" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0539824138" flag="0"/>
+      <vel value="0.0142123575" flag="0"/>
+      <psa03 value="0.0533993834" flag="0"/>
+      <psa10 value="0.0079857418" flag="0"/>
+      <psa30 value="0.0025968884" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0588936346" flag="0"/>
+      <vel value="0.0148063061" flag="0"/>
+      <psa03 value="0.0417597637" flag="0"/>
+      <psa10 value="0.0098164805" flag="0"/>
+      <psa30 value="0.0022938358" flag="0"/>
+    </comp>
+  </station>
   <station code="NAX1" name="NAX1" netid="HI" insttype="CMG-5TD,ACCELEROMETER,GURALP" lat="37.1014" lon="25.3741">
     <comp name="--.HNE">
       <acc value="0.0825834329" flag="0"/>
