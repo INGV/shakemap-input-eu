@@ -2,6 +2,13 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="APE" name="APE" netid="GE" insttype="STS-2/N" lat="37.0727" lon="25.523">
+    <comp name="--.HHN">
+      <acc value="0.2683695780" flag="0"/>
+      <vel value="0.0475661034" flag="0"/>
+      <psa03 value="0.1042894188" flag="0"/>
+      <psa10 value="0.0238406571" flag="0"/>
+      <psa30 value="0.0037548496" flag="0"/>
+    </comp>
     <comp name="--.HHE">
       <acc value="0.1915211986" flag="0"/>
       <vel value="0.0295396040" flag="0"/>
@@ -16,22 +23,8 @@
       <psa10 value="0.0148650101" flag="0"/>
       <psa30 value="0.0036869557" flag="0"/>
     </comp>
-    <comp name="--.HHN">
-      <acc value="0.2683695780" flag="0"/>
-      <vel value="0.0475661034" flag="0"/>
-      <psa03 value="0.1042894188" flag="0"/>
-      <psa10 value="0.0238406571" flag="0"/>
-      <psa30 value="0.0037548496" flag="0"/>
-    </comp>
   </station>
   <station code="THERA" name="THERA" netid="GE" insttype="STS-2/N" lat="36.367" lon="25.4753">
-    <comp name="--.HHE">
-      <acc value="0.1901770277" flag="0"/>
-      <vel value="0.0421488130" flag="0"/>
-      <psa03 value="0.2018014703" flag="0"/>
-      <psa10 value="0.0169620904" flag="0"/>
-      <psa30 value="0.0032155112" flag="0"/>
-    </comp>
     <comp name="--.HHZ">
       <acc value="0.1087631250" flag="0"/>
       <vel value="0.0273045561" flag="0"/>
@@ -45,6 +38,13 @@
       <psa03 value="0.1448361752" flag="0"/>
       <psa10 value="0.0067140790" flag="0"/>
       <psa30 value="0.0013361650" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.1901770277" flag="0"/>
+      <vel value="0.0421488130" flag="0"/>
+      <psa03 value="0.2018014703" flag="0"/>
+      <psa10 value="0.0169620904" flag="0"/>
+      <psa30 value="0.0032155112" flag="0"/>
     </comp>
   </station>
 </stationlist>
