@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="ADVT" name="ADVT" netid="KO" insttype="CMG-3ESP" commtype="DIG" lat="40.4332" lon="29.7383">
+    <comp name="--.HHN">
+      <acc value="0.0371165119" flag="0"/>
+      <vel value="0.0045849429" flag="0"/>
+      <psa03 value="0.0160772845" flag="0"/>
+      <psa10 value="0.0044906284" flag="0"/>
+      <psa30 value="0.0003083494" flag="0"/>
+    </comp>
+  </station>
   <station code="ARMU" name="ARMU" netid="KO" insttype="SA10" commtype="DIG" lat="40.5088" lon="28.838">
     <comp name="--.HNE">
       <acc value="0.8197377588" flag="0"/>
@@ -608,27 +617,20 @@
       <psa30 value="0.0004189268" flag="0"/>
     </comp>
   </station>
-  <station code="SAUV" name="SAUV" netid="KO" insttype="CMG-5T" commtype="DIG" lat="40.7401" lon="30.3271">
-    <comp name="--.HNZ">
-      <acc value="0.0075036859" flag="0"/>
-      <vel value="0.0023621597" flag="0"/>
-      <psa03 value="0.0155231114" flag="0"/>
-      <psa10 value="0.0020722080" flag="0"/>
-      <psa30 value="0.0001436145" flag="0"/>
+  <station code="SAUV" name="SAUV" netid="KO" insttype="CMG-6T" commtype="DIG" lat="40.7401" lon="30.3271">
+    <comp name="--.HHN">
+      <acc value="0.0102808011" flag="0"/>
+      <vel value="0.0034522774" flag="0"/>
+      <psa03 value="0.0120362100" flag="0"/>
+      <psa10 value="0.0039425032" flag="0"/>
+      <psa30 value="0.0001992926" flag="0"/>
     </comp>
-    <comp name="--.HNE">
-      <acc value="0.0111673871" flag="0"/>
-      <vel value="0.0036087204" flag="0"/>
-      <psa03 value="0.0173846399" flag="0"/>
-      <psa10 value="0.0030715311" flag="0"/>
-      <psa30 value="0.0001807110" flag="0"/>
-    </comp>
-    <comp name="--.HNN">
-      <acc value="0.0332639992" flag="0"/>
-      <vel value="0.1295207979" flag="0"/>
-      <psa03 value="0.1999792757" flag="0"/>
-      <psa10 value="0.0940364602" flag="0"/>
-      <psa30 value="0.0609972933" flag="0"/>
+    <comp name="--.HHE">
+      <acc value="0.0117734799" flag="0"/>
+      <vel value="0.0035927038" flag="0"/>
+      <psa03 value="0.0171383377" flag="0"/>
+      <psa10 value="0.0027998665" flag="0"/>
+      <psa30 value="0.0001645397" flag="0"/>
     </comp>
   </station>
   <station code="SILT" name="SILT" netid="KO" insttype="CMG-3ESP" commtype="DIG" lat="41.153" lon="29.643">
