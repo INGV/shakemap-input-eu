@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="APE" name="APE" netid="GE" insttype="STS-2/N" commtype="DIG" lat="37.0727" lon="25.523">
+    <comp name="--.HHN">
+      <acc value="0.1559644313" flag="0"/>
+      <vel value="0.0341426640" flag="0"/>
+      <psa03 value="0.1615356196" flag="0"/>
+      <psa10 value="0.0111776690" flag="0"/>
+      <psa30 value="0.0021389230" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0832974344" flag="0"/>
+      <vel value="0.0139330199" flag="0"/>
+      <psa03 value="0.0754504840" flag="0"/>
+      <psa10 value="0.0107782952" flag="0"/>
+      <psa30 value="0.0012342630" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.1419800428" flag="0"/>
+      <vel value="0.0349503305" flag="0"/>
+      <psa03 value="0.1908080762" flag="0"/>
+      <psa10 value="0.0090442353" flag="0"/>
+      <psa30 value="0.0013464427" flag="0"/>
+    </comp>
+  </station>
+  <station code="THERA" name="THERA" netid="GE" insttype="STS-2/N" commtype="DIG" lat="36.367" lon="25.4753">
+    <comp name="--.HHE">
+      <acc value="0.1266624237" flag="0"/>
+      <vel value="0.0259869645" flag="0"/>
+      <psa03 value="0.1021095191" flag="0"/>
+      <psa10 value="0.0089391602" flag="0"/>
+      <psa30 value="0.0014339844" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0754634605" flag="0"/>
+      <vel value="0.0154160520" flag="0"/>
+      <psa03 value="0.0714813388" flag="0"/>
+      <psa10 value="0.0088564030" flag="0"/>
+      <psa30 value="0.0006100351" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0793625740" flag="0"/>
+      <vel value="0.0187579753" flag="0"/>
+      <psa03 value="0.1337276230" flag="0"/>
+      <psa10 value="0.0102154384" flag="0"/>
+      <psa30 value="0.0009909162" flag="0"/>
+    </comp>
+  </station>
   <station code="IOSI" name="IOSI" netid="HA" insttype="60s," commtype="DIG" lat="36.7225" lon="25.2887">
     <comp name="--.HHE">
       <acc value="0.2219787757" flag="0"/>
