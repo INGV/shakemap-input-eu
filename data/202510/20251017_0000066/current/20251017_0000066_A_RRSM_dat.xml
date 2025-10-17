@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="IMMV" name="IMMV" netid="GE" insttype="STS-2/N" commtype="DIG" lat="35.4606" lon="23.9811">
+    <comp name="--.HHN">
+      <acc value="0.0093929156" flag="0"/>
+      <vel value="0.0098159731" flag="0"/>
+      <psa03 value="0.0289544960" flag="0"/>
+      <psa10 value="0.0088583298" flag="0"/>
+      <psa30 value="0.0013824629" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0080369946" flag="0"/>
+      <vel value="0.0041861286" flag="0"/>
+      <psa03 value="0.0277126812" flag="0"/>
+      <psa10 value="0.0072560388" flag="0"/>
+      <psa30 value="0.0007778836" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0060794832" flag="0"/>
+      <vel value="0.0040708834" flag="0"/>
+      <psa03 value="0.0137760034" flag="0"/>
+      <psa10 value="0.0027437002" flag="0"/>
+      <psa30 value="0.0004725328" flag="0"/>
+    </comp>
+  </station>
+  <station code="KTHA" name="KTHA" netid="GE" insttype="STS-2/N" commtype="DIG" lat="36.2566" lon="23.0621">
+    <comp name="--.HHN">
+      <acc value="0.0089366223" flag="0"/>
+      <vel value="0.0056450978" flag="0"/>
+      <psa03 value="0.0207115893" flag="0"/>
+      <psa10 value="0.0070640219" flag="0"/>
+      <psa30 value="0.0006839811" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0076207898" flag="0"/>
+      <vel value="0.0040586060" flag="0"/>
+      <psa03 value="0.0145648788" flag="0"/>
+      <psa10 value="0.0051954565" flag="0"/>
+      <psa30 value="0.0011553873" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0136410371" flag="0"/>
+      <vel value="0.0141907804" flag="0"/>
+      <psa03 value="0.0280456267" flag="0"/>
+      <psa10 value="0.0227911561" flag="0"/>
+      <psa30 value="0.0014474222" flag="0"/>
+    </comp>
+  </station>
   <station code="CHAN" name="CHAN" netid="HC" insttype="120" commtype="DIG" lat="35.5193" lon="24.0428">
     <comp name="--.HHE">
       <acc value="0.0145831240" flag="0"/>
@@ -130,6 +176,13 @@
       <psa03 value="0.0134052901" flag="0"/>
       <psa10 value="0.0027140057" flag="0"/>
       <psa30 value="0.0004711729" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0078479199" flag="0"/>
+      <vel value="0.0041097812" flag="0"/>
+      <psa03 value="0.0269724893" flag="0"/>
+      <psa10 value="0.0072120222" flag="0"/>
+      <psa30 value="0.0007784409" flag="0"/>
     </comp>
   </station>
 </stationlist>
