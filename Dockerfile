@@ -1,5 +1,4 @@
-#FROM python:3.7-slim-bullseye #### Aggiun gere anche gcc ai pacchetti da installare
-FROM python:3.7-bullseye
+FROM python:3.8-bullseye
 
 LABEL maintainer="Valentino Lauciani <valentino.lauciani@ingv.it>"
 ENV DEBIAN_FRONTEND=noninteractive 
@@ -19,8 +18,8 @@ RUN apt-get clean \
     && apt-get update \
     && apt-get dist-upgrade -y --no-install-recommends \
     && apt-get install -y \
-        wget \
-        vim
+    wget \
+    vim
 
 # Upgrade pip
 RUN python -m pip install --upgrade pip
@@ -38,47 +37,47 @@ RUN echo ENV_UID=${ENV_UID}
 RUN echo ENV_GID=${ENV_GID}
 
 RUN \
-		if [ ${ENV_UID} -eq 0 ] || [ ${ENV_GID} -eq 0 ]; \
-		then \
-			echo ""; \
-			echo "WARNING: when passing UID or GID equal to zero, new user and/or group are created."; \
-			echo "         On Linux, if you run docker image by different UID or GID you could not able to write in docker mount data directory."; \
-			echo ""; \
-		fi
+    if [ ${ENV_UID} -eq 0 ] || [ ${ENV_GID} -eq 0 ]; \
+    then \
+    echo ""; \
+    echo "WARNING: when passing UID or GID equal to zero, new user and/or group are created."; \
+    echo "         On Linux, if you run docker image by different UID or GID you could not able to write in docker mount data directory."; \
+    echo ""; \
+    fi
 
 # Check if GID already exists
 RUN cat /etc/group
 RUN \
-		if [ ${ENV_GID} -eq 0 ]; \
-		then \
-			addgroup --system ${GROUP_NAME}; \
-		elif grep -q -e "[^:][^:]*:[^:][^:]*:${ENV_GID}:.*$" /etc/group; \
-		then \
-			GROUP_NAME_ALREADY_EXISTS=$(grep  -e "[^:][^:]*:[^:][^:]*:${ENV_GID}:.*$" /etc/group | cut -f 1 -d':'); \
-			echo "GID ${ENV_GID} already exists with group name ${GROUP_NAME_ALREADY_EXISTS}"; \
-			groupmod -n ${GROUP_NAME} ${GROUP_NAME_ALREADY_EXISTS}; \
-		else \
-			echo "GID ${ENV_GID} does not exist"; \
-			addgroup --gid ${ENV_GID} --system ${GROUP_NAME}; \
-		fi
+    if [ ${ENV_GID} -eq 0 ]; \
+    then \
+    addgroup --system ${GROUP_NAME}; \
+    elif grep -q -e "[^:][^:]*:[^:][^:]*:${ENV_GID}:.*$" /etc/group; \
+    then \
+    GROUP_NAME_ALREADY_EXISTS=$(grep  -e "[^:][^:]*:[^:][^:]*:${ENV_GID}:.*$" /etc/group | cut -f 1 -d':'); \
+    echo "GID ${ENV_GID} already exists with group name ${GROUP_NAME_ALREADY_EXISTS}"; \
+    groupmod -n ${GROUP_NAME} ${GROUP_NAME_ALREADY_EXISTS}; \
+    else \
+    echo "GID ${ENV_GID} does not exist"; \
+    addgroup --gid ${ENV_GID} --system ${GROUP_NAME}; \
+    fi
 
 # Check if UID already exists
 RUN cat /etc/passwd
 RUN \
-		if [ ${ENV_UID} -eq 0 ]; \
-		then \
-			useradd --system -d ${DIR_EE_HOME} -g ${GROUP_NAME} -s /bin/bash ${USER_NAME}; \
-		elif grep -q -e "[^:][^:]*:[^:][^:]*:${ENV_UID}:.*$" /etc/passwd; \
-		then \
-			USER_NAME_ALREADY_EXISTS=$(grep  -e "[^:][^:]*:[^:][^:]*:${ENV_UID}:.*$" /etc/passwd | cut -f 1 -d':'); \
-			echo "UID ${ENV_UID} already exists with user name ${USER_NAME_ALREADY_EXISTS}"; \
-			usermod -d ${DIR_EE_HOME} -g ${ENV_GID} -l ${USER_NAME} ${USER_NAME_ALREADY_EXISTS}; \
-		else \
-			echo "UID ${ENV_UID} does not exist"; \
-			useradd --system -u ${ENV_UID} -d ${DIR_EE_HOME} -g ${ENV_GID} -G ${GROUP_NAME} -s /bin/bash ${USER_NAME}; \
-		fi
-			# adduser -S -h ${DIR_EE_HOME} -G ${GROUP_NAME} -s /bin/bash ${USER_NAME}; \
-			# adduser --uid ${ENV_UID} --home ${DIR_EE_HOME} --gid ${ENV_GID} --shell /bin/bash ${USER_NAME}; \
+    if [ ${ENV_UID} -eq 0 ]; \
+    then \
+    useradd --system -d ${DIR_EE_HOME} -g ${GROUP_NAME} -s /bin/bash ${USER_NAME}; \
+    elif grep -q -e "[^:][^:]*:[^:][^:]*:${ENV_UID}:.*$" /etc/passwd; \
+    then \
+    USER_NAME_ALREADY_EXISTS=$(grep  -e "[^:][^:]*:[^:][^:]*:${ENV_UID}:.*$" /etc/passwd | cut -f 1 -d':'); \
+    echo "UID ${ENV_UID} already exists with user name ${USER_NAME_ALREADY_EXISTS}"; \
+    usermod -d ${DIR_EE_HOME} -g ${ENV_GID} -l ${USER_NAME} ${USER_NAME_ALREADY_EXISTS}; \
+    else \
+    echo "UID ${ENV_UID} does not exist"; \
+    useradd --system -u ${ENV_UID} -d ${DIR_EE_HOME} -g ${ENV_GID} -G ${GROUP_NAME} -s /bin/bash ${USER_NAME}; \
+    fi
+# adduser -S -h ${DIR_EE_HOME} -G ${GROUP_NAME} -s /bin/bash ${USER_NAME}; \
+# adduser --uid ${ENV_UID} --home ${DIR_EE_HOME} --gid ${ENV_GID} --shell /bin/bash ${USER_NAME}; \
 
 # Set USER password 
 RUN echo ${USER_NAME}:${USER_NAME} | chpasswd
