@@ -55,13 +55,12 @@ $ docker run -it --rm -v $(pwd):/opt/shakemap-input-eu -v $(pwd)/ssh_key:/home/s
 ## Contribute
 Thanks to your contributions!
 
-Here is a list of users who already contributed to this repository:
+Here is a list of users who already contributed to this repository: \
 <a href="https://github.com/ingv/shakemap-input-eu/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ingv/shakemap-input-eu" />
 </a>
 
 ## Author
-(c) 2022 Valentino Lauciani valentino.lauciani[at]ingv.it \
-(c) 2022 Sergio Bruni sergio.bruni[at]ingv.it
+(c) 2025 Valentino Lauciani valentino.lauciani[at]ingv.it \
 
 Istituto Nazionale di Geofisica e Vulcanologia, Italia
