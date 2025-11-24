@@ -1,8 +1,10 @@
 import os.path
+import subprocess
 import requests
 import json
 import xml.etree.ElementTree as ET
 from obspy import UTCDateTime, Catalog
+from obspy.clients.fdsn.header import URL_MAPPINGS
 from obspy.clients.fdsn import Client
 import git
 from pathlib import Path
@@ -11,7 +13,6 @@ import argparse
 import sys
 import inspect
 import functools
-from pydriller import Repository
 from xmldiff import main
 from  tempfile import NamedTemporaryFile
 
@@ -33,6 +34,8 @@ logger = None
 # this dictionary contains, for each file in the git repository
 # the author and date of last modification
 repository_files = {}
+
+URL_MAPPINGS["EMSC"] = "https://www.seismicportal.eu"
 
 class ShakeLibException(Exception):
     """
@@ -172,25 +175,88 @@ class MyParser(argparse.ArgumentParser):
         sys.exit(2)
 
 def set_args():
-    if args.days == '15m':
-        args.days = 1./24. * 0.25
-    else:
-        args.days = float(args.days[:-1])
+    # Check for conflicting parameters: -k cannot be used with time parameters or minmag
+    keep_provided = args.keep is not None
+    days_ago_provided = args.days_ago is not None
+    starttime_provided = args.starttime is not None
+    endtime_provided = args.endtime is not None
+    minmag_provided = args.minmag is not None
 
-    args.minmag = float(args.minmag)
+    if keep_provided and (days_ago_provided or starttime_provided or endtime_provided):
+        sys.exit("Error: Cannot use -k/--keep (event IDs) together with time parameters (-d/--days_ago, -s/--starttime, -e/--endtime). When specifying event IDs, time ranges are not needed.")
+
+    if keep_provided and minmag_provided:
+        sys.exit("Error: Cannot use -k/--keep (event IDs) together with -m/--minmag. When specifying event IDs, magnitude filtering is not needed.")
+
+    # Check for conflicting parameters: -d cannot be used with -s or -e
+    if days_ago_provided and (starttime_provided or endtime_provided):
+        sys.exit("Error: Cannot use -d/--days_ago together with -s/--starttime and/or -e/--endtime. Please use either -d OR (-s and/or -e).")
+
+    # Set default minmag if not provided
+    if args.minmag is None:
+        args.minmag = 4.0
+    else:
+        args.minmag = float(args.minmag)
 
     # time to verify backward if input files from ESM have changed
     #args.chkbcktime = float(args.chkbcktime) * ONEDAY # in seconnds
 
-    # define the number of seconds in order to calculate the start_time
-    # identify start and end times of the last month
-    try:
-        appo = UTCDateTime(args.end_time) - args.days * ONEDAY
-    except Exception as e:
-        sys.exit(f"option --end_time is not valid time {args.end_time}. {str(e)}")
+    # Get current time for defaults
+    now = UTCDateTime()
+    today = UTCDateTime(now.strftime("%Y-%m-%d"))
 
-    args.start_time =  appo.strftime("%Y-%m-%dT%H:%M:%S")
-    #
+    # Handle time calculation based on which parameters were provided
+    if starttime_provided or endtime_provided:
+        # Use explicit start/end times
+        if args.starttime is not None:
+            try:
+                args.start_time = UTCDateTime(args.starttime).strftime("%Y-%m-%dT%H:%M:%S")
+            except Exception as e:
+                sys.exit(f"option --starttime is not valid time {args.starttime}. {str(e)}")
+        else:
+            # If only endtime provided, calculate starttime using default 1d
+            days_value = 1.0
+            try:
+                end_time_obj = UTCDateTime(args.endtime)
+                appo = end_time_obj - days_value * ONEDAY
+                args.start_time = appo.strftime("%Y-%m-%dT%H:%M:%S")
+            except Exception as e:
+                sys.exit(f"option --endtime is not valid time {args.endtime}. {str(e)}")
+
+        if args.endtime is not None:
+            try:
+                args.end_time = UTCDateTime(args.endtime).strftime("%Y-%m-%dT%H:%M:%S")
+            except Exception as e:
+                sys.exit(f"option --endtime is not valid time {args.endtime}. {str(e)}")
+        else:
+            # Default endtime to now
+            args.end_time = now.strftime("%Y-%m-%dT%H:%M:%S")
+
+        # Set days for backward compatibility (use 1d as default)
+        args.days = 1.0
+    else:
+        # Use days_ago logic (default behavior)
+        # If no parameters provided, use default 1d
+        if args.days_ago is None:
+            args.days_ago = '1d'
+
+        if args.days_ago == '15m':
+            days_value = 1./24. * 0.25
+        else:
+            days_value = float(args.days_ago[:-1])
+
+        # If using default 1d (and no explicit times), set to today 00:00:00 - 23:59:59
+        if args.days_ago == '1d' and not endtime_provided:
+            args.start_time = today.strftime("%Y-%m-%dT00:00:00")
+            args.end_time = (today + ONEDAY - 1).strftime("%Y-%m-%dT23:59:59")
+        else:
+            # Calculate based on days_ago from now
+            args.end_time = now.strftime("%Y-%m-%dT%H:%M:%S")
+            appo = now - days_value * ONEDAY
+            args.start_time = appo.strftime("%Y-%m-%dT%H:%M:%S")
+
+        # Store days_value for backward compatibility
+        args.days = days_value
 
     if not os.path.isdir(args.git_repo_dir):
         sys.exit(f"Directory: {args.git_repo_dir} does not exist!!!")
@@ -300,49 +366,77 @@ def find_events(
         lonmax=180,
         mode='sing',
         orderby='time',
-        verbose=True
+        verbose=True,
+        event_ids=None
 ):
 
     # mode = hist -> historical records of seismicity (eg. custom time window)
     # mode = sing -> discovery of a (hopefully) single event
 
-    end_time = UTCDateTime(end_time)
-
-    if mode == 'sing':
-        delta_time = 7 # 7 seconds around event time on either side
-        starttime = end_time - delta_time
-        endtime = end_time + delta_time
-    elif mode == 'hist':
-        endtime = end_time
-        starttime = UTCDateTime(start_time)
-    else:
-        logger.error("mode " + mode + " is not supported.")
-        return False
-
     client = Client(fdsn_client)
+    # If specific event IDs are provided, query directly by event ID
+    if event_ids is not None:
+        logger.info(f"\tGET events by ID: {client.base_url}. PARAMS: fdsn_client={fdsn_client}, event_ids={event_ids}".expandtabs(TAB_SIZE))
+        catalog = Catalog()
+        for event_id in event_ids:
+            try:
+                # Build the URL to show what's being requested
+                # Try different formats for EMSC event IDs
+                query_url = f"{client.base_url}/fdsnws/event/1/query?eventid={event_id}"
+                logger.info(f"\t\tQuerying event ID: {event_id} - URL: {query_url}".expandtabs(TAB_SIZE))
 
-    logger.info(f"\tGET: {client.base_url}. PARAMS: fdsn_client={fdsn_client}, start_time={start_time}, end_time={end_time}, minmag={minmag}, maxmag={maxmag}, latmin={latmin}, latmax={latmax}, lonmin={lonmin}, lonmax={lonmax}, mode={mode}, orderby={orderby}".expandtabs(TAB_SIZE))
+                # Try with simple event ID first
+                try:
+                    event_cat = client.get_events(eventid=event_id)
+                except Exception as e1:
+                    # If that fails, try with QuakeML format for EMSC
+                    logger.debug(f"\t\t\tSimple ID failed: {str(e1)}".expandtabs(TAB_SIZE))
 
-    # another shitty dateline patch
-    if lonmax > 180:
-        # split in two requests
-        try:
-            cat1 = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=lonmin, maxlongitude=180, orderby=orderby, limit=1000)
-        except:
-            cat1 = Catalog()
+                catalog += event_cat
+            except Exception as e:
+                logger.warning(f"\t\tFailed to retrieve event {event_id}: {str(e)}".expandtabs(TAB_SIZE))
+                logger.info(f"\t\t\tAttempted URL: {query_url}".expandtabs(TAB_SIZE))
 
-        try:
-            cat2 = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=-180, maxlongitude=-(360-lonmax), orderby=orderby, limit=1000)
-        except:
-            cat2 = Catalog()
-        # combine the catalog object
-        catalog = cat1 + cat2
-    else:
-        try:
-            catalog = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=lonmin, maxlongitude=lonmax, orderby=orderby, limit=1000)
-        except:
-            logger.info ("No events were found in the time window: [%s / %s]" % (starttime, endtime))
+        if len(catalog) == 0:
+            logger.info("No events were found for the provided event IDs")
             quit()
+    else:
+        # Original time-based query logic
+        end_time = UTCDateTime(end_time)
+
+        if mode == 'sing':
+            delta_time = 7 # 7 seconds around event time on either side
+            starttime = end_time - delta_time
+            endtime = end_time + delta_time
+        elif mode == 'hist':
+            endtime = end_time
+            starttime = UTCDateTime(start_time)
+        else:
+            logger.error("mode " + mode + " is not supported.")
+            return False
+
+        logger.info(f"\tGET: {client.base_url}. PARAMS: fdsn_client={fdsn_client}, start_time={start_time}, end_time={end_time}, minmag={minmag}, maxmag={maxmag}, latmin={latmin}, latmax={latmax}, lonmin={lonmin}, lonmax={lonmax}, mode={mode}, orderby={orderby}".expandtabs(TAB_SIZE))
+
+        # another shitty dateline patch
+        if lonmax > 180:
+            # split in two requests
+            try:
+                cat1 = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=lonmin, maxlongitude=180, orderby=orderby, limit=1000)
+            except:
+                cat1 = Catalog()
+
+            try:
+                cat2 = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=-180, maxlongitude=-(360-lonmax), orderby=orderby, limit=1000)
+            except:
+                cat2 = Catalog()
+            # combine the catalog object
+            catalog = cat1 + cat2
+        else:
+            try:
+                catalog = client.get_events(starttime=starttime, endtime=endtime, minmagnitude=minmag, maxmagnitude=maxmag, minlatitude=latmin, maxlatitude=latmax, minlongitude=lonmin, maxlongitude=lonmax, orderby=orderby, limit=1000)
+            except:
+                logger.info ("No events were found in the time window: [%s / %s]" % (starttime, endtime))
+                quit()
 
 #     tmp = str(cat[0].resource_id)
 #     event_id = extract_id(tmp, fdsn_client)
@@ -370,7 +464,7 @@ def find_events(
 def log_summary_data():
     logger.info(f'SUMMARY DATA:')
     logger.info(f"\tSTARTIME: {args.start_time}   ENDTIME: {args.end_time}".expandtabs(TAB_SIZE))
-    logger.info(f"\tMINMAG: {args.minmag}.1f".expandtabs(TAB_SIZE))
+    logger.info(f"\tMINMAG: {args.minmag:.1f}".expandtabs(TAB_SIZE))
     #logger.info("ESM BCK VERIFICATION (days): %.2f" % (args.chkbcktime))
     #logger.info("\trun at: %s" % (UTCDateTime().strftime("%Y-%m-%dT%H:%M:%S")))
 
@@ -379,8 +473,6 @@ def git_pull():
     logger.info(f"Executing pull from {args.git_repo_dir}")
     repo = git.Repo(args.git_repo_dir+'/.git')
     repo.remotes.origin.pull()
-    #origin = repo.remote(name='origin_ssh')
-    #origin.pull()
 
 @catch_all_and_print
 def git_push():
@@ -389,9 +481,28 @@ def git_push():
     # repo.git.add('data')
     # logger.info(f"Executing commit")
     # repo.index.commit("Some XML data updated")
+
+    # Check if there are commits to push
     origin = repo.remote(name='origin_ssh')
-    logger.info(f"Executing push to {args.git_repo_dir}")
-    origin.push()
+    local_commit = repo.head.commit
+
+    try:
+        # Get remote commit
+        origin.fetch()
+        remote_commit = repo.commit('origin_ssh/main')
+
+        # Check if local is ahead of remote
+        commits_ahead = list(repo.iter_commits(f'{remote_commit}..{local_commit}'))
+
+        if commits_ahead:
+            logger.info(f"Executing push to {args.git_repo_dir} ({len(commits_ahead)} commit(s) to push)")
+            origin.push()
+        else:
+            logger.info(f"Nothing to push to {args.git_repo_dir}")
+    except Exception as e:
+        # If there's an error checking (e.g., no remote branch yet), just push
+        logger.info(f"Executing push to {args.git_repo_dir}")
+        origin.push()
 
 @catch_all_and_print
 def git_commit(FileFullPath, msg):
@@ -412,17 +523,23 @@ def generate_events_xml_data():
 def generate_event_xml_data(event_id):
     EVENT_DIR = os.path.join(args.git_repo_dir, 'data', event_id[:6], event_id, 'current')
 
+    # Track if any data was successfully downloaded
+    any_data_downloaded = False
+
     # ESM SHAKE DATA
     FILE_NAME_DAT = f"{str(event_id)}_B_ESM_dat.xml"
     FILE_FULL_NAME_DAT = os.path.join(EVENT_DIR, FILE_NAME_DAT)
 
-    result, author = check_repository_file(FILE_NAME_DAT)
+    relative_path = os.path.relpath(FILE_FULL_NAME_DAT, args.git_repo_dir)
+    result, author = check_repository_file(relative_path)
+
     if result:
         url_ESM_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
-        logger.info(f"\trequest _dat.xml on: {url_ESM_dat}".expandtabs(TAB_SIZE))
+        logger.info(f"\trequest \"_dat.xml\" on: {url_ESM_dat}".expandtabs(TAB_SIZE))
         data = DownloadData(url_ESM_dat)
         if data:
             saveIfChanged(data, FILE_FULL_NAME_DAT, event_id)
+            any_data_downloaded = True
     else:
         logger.warning(f"\tfile {FILE_NAME_DAT} skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
 
@@ -436,17 +553,26 @@ def generate_event_xml_data(event_id):
     data = DownloadData(url_ESM_event)
     if data:
         data_event = clean_event_data(data)
+        any_data_downloaded = True
     else:
         # DOWNLOAD RRSM EVENT
         url_RRSM_event = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s&type=event" % (str(event_id))
-        logger.info(f"\trequest event.xml on: {url_RRSM_event}".expandtabs(TAB_SIZE))
+        logger.info(f"\trequest \"event.xml\" on: {url_RRSM_event}".expandtabs(TAB_SIZE))
         data = DownloadData(url_RRSM_event)
         if data:
             data_event = clean_event_data(data)
+            any_data_downloaded = True
 
     if data_event:
         FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
-        saveIfChanged(data_event, FNAME_EV, event_id)
+        relative_path = os.path.relpath(FNAME_EV, args.git_repo_dir)
+        result, author = check_repository_file(relative_path)
+
+        if result:
+            saveIfChanged(data_event, FNAME_EV, event_id)
+        else:
+            logger.warning(f"event.xml skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
+
     # ===================================
 
 
@@ -454,25 +580,30 @@ def generate_event_xml_data(event_id):
     FILE_NAME_DAT = f"{str(event_id)}_A_RRSM_dat.xml"
     FILE_FULL_NAME_DAT = os.path.join(EVENT_DIR, FILE_NAME_DAT)
 
-    result, author = check_repository_file(FILE_NAME_DAT)
+    relative_path = os.path.relpath(FILE_FULL_NAME_DAT, args.git_repo_dir)
+    result, author = check_repository_file(relative_path)
     if result:
         url_RRSM_dat = "http://www.orfeus-eu.org/odcws/rrsm/1/shakemap?eventid=%s" % (str(event_id))
-        logger.info(f"\trequest _dat.xml on: {url_RRSM_dat}".expandtabs(TAB_SIZE))
+        logger.info(f"\trequest \"_dat.xml\" on: {url_RRSM_dat}".expandtabs(TAB_SIZE))
         data = DownloadData(url_RRSM_dat)
         if data:
             saveIfChanged(data, FILE_FULL_NAME_DAT, event_id)
+            any_data_downloaded = True
     else:
         logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
 
 
-    # FAULT (ESM?)
-    url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
-    logger.info(f"\trequest _fault.xml on: {url_str_fault}".expandtabs(TAB_SIZE))
-    data = DownloadData(url_str_fault)
-    if data:
-        jdict = text_to_json(data, new_format=False)
-        FNAME_RUPT = os.path.join(EVENT_DIR, "rupture.json")
-        writeFile(json.dumps(jdict).encode(), FNAME_RUPT)
+    # FAULT (ESM?) - Only process if at least one data source was successful
+    if any_data_downloaded:
+        url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
+        logger.info(f"\trequest \"_fault.xml\" on: {url_str_fault}".expandtabs(TAB_SIZE))
+        data = DownloadData(url_str_fault)
+        if data:
+            jdict = text_to_json(data, new_format=False)
+            FNAME_RUPT = os.path.join(EVENT_DIR, "rupture.json")
+            writeFile(json.dumps(jdict).encode(), FNAME_RUPT)
+    else:
+        logger.info(f"\tSkipping fault data request - no event data was successfully downloaded".expandtabs(TAB_SIZE))
 
 def text_to_json(data, new_format=True):
     """
@@ -608,12 +739,12 @@ def saveIfChanged(data, FileFullPath, event_id):
             with open (FileFullPath, mode='wb') as f:
                 f.write(data)
             msg = f"Update event={event_id}"
-            logger.info(f"\tcommit: {msg}".expandtabs(TAB_SIZE))
+            logger.info(f"\t\tcommit: {msg}".expandtabs(TAB_SIZE))
             git_commit(FileFullPath, msg)
     else:
         writeFile(data, FileFullPath)
         msg = f"Add event={event_id}"
-        logger.info(f"\tcommit: {msg}".expandtabs(TAB_SIZE))
+        logger.info(f"\t\tcommit: {msg}".expandtabs(TAB_SIZE))
         git_commit(FileFullPath, msg)
 
 
@@ -625,26 +756,56 @@ def writeFile(data, FileFullPath):
         f.write(data)
 
 # set the dictionary of the repository files with the author and date of last modification
-def get_repository_files_info():
-    rm = Repository(args.git_repo_dir+'/.git')
-    for commit in rm.traverse_commits():
-        for f in commit.modified_files:
-            repository_files[f.filename] = {
-                'author': commit.author.name,
-                'date': commit.author_date.date()
-            }
+def get_repository_files_info(path):
+    return {}
 
-'''
-returns true if the file do not exist on the repository or the author of its last modification is GIT_USERNAME
-'''
+
+def get_git_last_author(repo_path, file_path):
+    """
+    Returns the last author who modified the file, or None if file does not exist in Git history.
+    """
+    try:
+        output = subprocess.check_output(
+            ["git", "-C", repo_path, "log", "-1", "--pretty=format:%an", file_path],
+            stderr=subprocess.DEVNULL
+        )
+        author = output.decode().strip()
+        return author if author else None
+
+    except subprocess.CalledProcessError:
+        # File not tracked by Git or no commits touching it
+        return None
+
+
 def check_repository_file(file_name):
-    if file_name not in repository_files:
+    """
+    Returns (True, None) if the file can be safely created or overwritten.
+    Returns (True, username) if the last author is the same as GIT_USERNAME.
+    Returns (False, 'other-author') if the file was last modified by someone else.
+    """
+
+    repo_path = args.git_repo_dir
+
+    # Full file path inside repository
+    file_path = os.path.join(repo_path, file_name)
+
+    # If the file does not exist at all → safe
+    if not os.path.exists(file_path):
         return True, None
 
-    if repository_files[file_name]['author'] == GIT_USERNAME:
+    # Ask Git for the last author
+    author = get_git_last_author(repo_path, file_name)
+
+    # If Git does not know the file → safe
+    if author is None:
+        return True, None
+
+    # If last author is you → safe
+    if author == GIT_USERNAME:
         return True, GIT_USERNAME
 
-    return False, repository_files[file_name]['author']
+    # Otherwise block overwrite
+    return False, author
 
 
 if __name__ == '__main__':
@@ -660,27 +821,36 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("days",  help="set the number of days before end time (15m, 1d, 5d, 10d, 30d, 365d)", choices=['15m', '1d', '5d', '10d', '30d', '365d'])
-    parser.add_argument("git_repo_dir", help="provide the shakemap installation home dir (e.g., /Users/michelini/shakemap_profiles/world)")
-    parser.add_argument("-e","--end_time", nargs="?", default=default_end_time, help="provide the end time  (e.g., 2020-10-23); [default is now]")
-    parser.add_argument("-m","--minmag", nargs="?", default=default_minmag, help="provide the minimum magnitude (e.g.,4.5); [default is 4.0]")
+    parser.add_argument("-o", "--output", dest="git_repo_dir", required=True, help="provide the shakemap installation home dir (e.g., /Users/michelini/shakemap_profiles/world)")
+    parser.add_argument("-d", "--days_ago", default=None, help="set the number of days before end time (15m, 1d, 5d, 10d, 30d, 365d); [default is 1d: today 00:00 to 23:59]; cannot be used with -k/--keep", choices=['15m', '1d', '5d', '10d', '30d', '365d'])
+    parser.add_argument("-s", "--starttime", default=None, help="provide the start time (e.g., 2020-10-23T00:00:00); cannot be used with -d/--days_ago or -k/--keep")
+    parser.add_argument("-e", "--endtime", default=None, help="provide the end time (e.g., 2020-10-23T23:59:59); [default is now]; cannot be used with -d/--days_ago or -k/--keep")
+    parser.add_argument("-m", "--minmag", nargs="?", default=None, help="provide the minimum magnitude (e.g.,4.5); [default is 4.0]; cannot be used with -k/--keep")
     #parser.add_argument("-b","--chkbcktime", nargs="?", default=default_chkbcktime, help="provide the number of days to check for ESM new input data [default is 1.0]")
-    parser.add_argument("-v","--verbose", action='store_true')
+    parser.add_argument("-k", "--keep", nargs="?", default=None, help="comma-separated list of event IDs to process (e.g., 20251120_0000107,20251118_0000302); cannot be used with time parameters (-d, -s, -e) or -m/--minmag; if not provided, all events in time range will be processed")
+    parser.add_argument("-v", "--verbose", action='store_true')
     parser.add_argument("-l", "--log_severity",
                         type=str,
                         choices=["DEBUG", "INFO", "WARN", "ERROR", "CRITICAL"],
                         help="log severity level",
                         default="INFO")
 
-    args = parser.parse_args()
+    args = parser.parse_args()    
     set_args()
     logger = create_logger(args.log_severity)
-
+    
     git_pull()
-    get_repository_files_info()
+    get_repository_files_info(args.git_repo_dir)
 
     log_summary_data()
     # my strategy is to have only one variabe shared by all functins, that is args
+
+    # Parse event IDs from --keep option if provided
+    keep_ids = None
+    if args.keep is not None:
+        keep_ids = [eid.strip() for eid in args.keep.split(',')]
+        logger.info(f'QUERYING SPECIFIC EVENTS: {keep_ids}')
+
     args.catalog, args.event_ids = find_events(
         fdsn_client,
         start_time=args.start_time,
@@ -691,15 +861,9 @@ if __name__ == '__main__':
         lonmin=-32,
         lonmax=51,
         mode='hist',
-        verbose=args.verbose
+        verbose=args.verbose,
+        event_ids=keep_ids
     )
 
     generate_events_xml_data()
     git_push()
-
-
-
-
-
-
-
