@@ -549,7 +549,7 @@ def generate_event_xml_data(event_id):
     data_event = None
     # DOWNLOAD ESM EVENT
     url_ESM_event = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event" % (str(event_id), fdsn_client)
-    logger.info(f"\trequest event.xml on: {url_ESM_event}".expandtabs(TAB_SIZE))
+    logger.info(f"\trequest \"event.xml\" on: {url_ESM_event}".expandtabs(TAB_SIZE))
     data = DownloadData(url_ESM_event)
     if data:
         data_event = clean_event_data(data)
@@ -601,7 +601,14 @@ def generate_event_xml_data(event_id):
         if data:
             jdict = text_to_json(data, new_format=False)
             FNAME_RUPT = os.path.join(EVENT_DIR, "rupture.json")
-            writeFile(json.dumps(jdict).encode(), FNAME_RUPT)
+            relative_path = os.path.relpath(FNAME_RUPT, args.git_repo_dir)
+            result, author = check_repository_file(relative_path)
+
+            if result:
+                # Convert JSON to bytes and use saveIfChanged to handle git commit
+                saveIfChanged(json.dumps(jdict).encode(), FNAME_RUPT, event_id)
+            else:
+                logger.warning(f"\trupture.json skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
     else:
         logger.info(f"\tSkipping fault data request - no event data was successfully downloaded".expandtabs(TAB_SIZE))
 
@@ -735,7 +742,17 @@ def text_to_json(data, new_format=True):
 
 def saveIfChanged(data, FileFullPath, event_id):
     if os.path.isfile(FileFullPath):
-        if diff(data, FileFullPath):
+        # Check if file is JSON - use simple byte comparison instead of XML diff
+        if FileFullPath.endswith('.json'):
+            # For JSON files, compare content directly
+            with open(FileFullPath, 'rb') as f:
+                existing_data = f.read()
+            has_changed = (data != existing_data)
+        else:
+            # For XML files, use xmldiff
+            has_changed = diff(data, FileFullPath)
+
+        if has_changed:
             with open (FileFullPath, mode='wb') as f:
                 f.write(data)
             msg = f"Update event={event_id}"
