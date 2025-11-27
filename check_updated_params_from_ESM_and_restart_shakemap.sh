@@ -157,8 +157,8 @@ if [ "$HTTP_STATUS" -eq 200 ]; then
         exit 1
     fi
 
-    echo_date "[INFO] Successfully fetched data from API. Parsing ingv_event_id values..."
-    # Parse and print ingv_event_id for each event
+    echo_date "[INFO] Successfully fetched data from API. Parsing \"emsc_event_id\" values..."
+    # Parse and print emsc_event_id for each event
 
     EVENTIDS=$( echo "$RESPONSE" | jq -r '[.[] | .emsc_event_id // empty] | join(",")' )
     cd ${DIRWORK}
