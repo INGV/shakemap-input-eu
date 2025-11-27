@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="IMMV" name="IMMV" netid="GE" insttype="STS-2/N" commtype="DIG" lat="35.4606" lon="23.9811">
+    <comp name="--.HHZ">
+      <acc value="0.1170323992" flag="0"/>
+      <vel value="0.0568526265" flag="0"/>
+      <psa03 value="0.2995203555" flag="0"/>
+      <psa10 value="0.0269050550" flag="0"/>
+      <psa30 value="0.0017035874" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.1595480191" flag="0"/>
+      <vel value="0.0682698131" flag="0"/>
+      <psa03 value="0.6147638095" flag="0"/>
+      <psa10 value="0.0438725976" flag="0"/>
+      <psa30 value="0.0032948225" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.1446367160" flag="0"/>
+      <vel value="0.0589692981" flag="0"/>
+      <psa03 value="0.4207270690" flag="0"/>
+      <psa10 value="0.0478325986" flag="0"/>
+      <psa30 value="0.0028904580" flag="0"/>
+    </comp>
+  </station>
+  <station code="THERA" name="THERA" netid="GE" insttype="STS-2/N" commtype="DIG" lat="36.367" lon="25.4753">
+    <comp name="--.HHE">
+      <acc value="0.1044603624" flag="0"/>
+      <vel value="0.0388144073" flag="0"/>
+      <psa03 value="0.1488375797" flag="0"/>
+      <psa10 value="0.0537300040" flag="0"/>
+      <psa30 value="0.0022584810" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0957936948" flag="0"/>
+      <vel value="0.0473363131" flag="0"/>
+      <psa03 value="0.3188043168" flag="0"/>
+      <psa10 value="0.0168903832" flag="0"/>
+      <psa30 value="0.0014974397" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0822200283" flag="0"/>
+      <vel value="0.0335450408" flag="0"/>
+      <psa03 value="0.3004869984" flag="0"/>
+      <psa10 value="0.0136019342" flag="0"/>
+      <psa30 value="0.0013919681" flag="0"/>
+    </comp>
+  </station>
+  <station code="ZKR" name="ZKR" netid="GE" insttype="STS-2/N" commtype="DIG" lat="35.1147" lon="26.2169">
+    <comp name="--.HHE">
+      <acc value="0.0344984138" flag="0"/>
+      <vel value="0.0246424584" flag="0"/>
+      <psa03 value="0.1035579930" flag="0"/>
+      <psa10 value="0.0214890488" flag="0"/>
+      <psa30 value="0.0024609919" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0155405508" flag="0"/>
+      <vel value="0.0093027546" flag="0"/>
+      <psa03 value="0.0382756664" flag="0"/>
+      <psa10 value="0.0099995263" flag="0"/>
+      <psa30 value="0.0008085864" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0211653552" flag="0"/>
+      <vel value="0.0099867106" flag="0"/>
+      <psa03 value="0.0495125763" flag="0"/>
+      <psa10 value="0.0145037519" flag="0"/>
+      <psa30 value="0.0012869934" flag="0"/>
+    </comp>
+  </station>
   <station code="IOSI" name="IOSI" netid="HA" insttype="60s," commtype="DIG" lat="36.7225" lon="25.2887">
     <comp name="--.HHE">
       <acc value="0.1247479845" flag="0"/>
