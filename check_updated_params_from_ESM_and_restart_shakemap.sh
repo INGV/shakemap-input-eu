@@ -104,20 +104,20 @@ done
 if [ -n "$UPDATEDAFTER_OPT" ]; then
     # Validate format: YYYY-MM-DDThh:mm:ss
     if [[ ! "$UPDATEDAFTER_OPT" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$ ]]; then
-        error_msg "Error: UPDATEDAFTER provided with -s must be in format YYYY-MM-DDThh:mm:ss"
+        echo_date "[ERROR] UPDATEDAFTER provided with -s must be in format YYYY-MM-DDThh:mm:ss"
         exit 1
     fi
     # Validate date
     if [[ "$OS_TYPE" == "Darwin" ]]; then
         # macOS: use -j -f for parsing
         if ! date -j -f "%Y-%m-%dT%H:%M:%S" "$UPDATEDAFTER_OPT" "+%Y-%m-%dT%H:%M:%S" >/dev/null 2>&1; then
-            error_msg "Error: UPDATEDAFTER provided with -s is not a valid date"
+            echo_date "[ERROR] UPDATEDAFTER provided with -s is not a valid date"
             exit 1
         fi
     else
         # Linux: use -d
         if ! date -d "$UPDATEDAFTER_OPT" "+%Y-%m-%dT%H:%M:%S" >/dev/null 2>&1; then
-            error_msg "Error: UPDATEDAFTER provided with -s is not a valid date"
+            echo_date "[ERROR] UPDATEDAFTER provided with -s is not a valid date"
             exit 1
         fi
     fi
