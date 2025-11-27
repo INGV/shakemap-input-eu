@@ -6,7 +6,7 @@
 #
 
 # Check for required commands
-REQUIRED_COMMANDS=("curl" "jq" "date")
+REQUIRED_COMMANDS=("curl" "jq" "date" "docker")
 for CMD in "${REQUIRED_COMMANDS[@]}"; do
     if ! command -v "$CMD" >/dev/null 2>&1; then
         echo "[ERROR] Required command '$CMD' is not installed." >&2
