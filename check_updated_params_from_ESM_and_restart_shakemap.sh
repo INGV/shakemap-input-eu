@@ -161,9 +161,10 @@ if [ "$HTTP_STATUS" -eq 200 ]; then
     # Parse and print ingv_event_id for each event
 
     EVENTIDS=$( echo "$RESPONSE" | jq -r '[.[] | .emsc_event_id // empty] | join(",")' )
-    echo_date " EVENTIDS: $EVENTIDS"
     cd ${DIRWORK}
+    echo_date "[INFO] Restarting shakemap-input-eu (docker run) for EVENTIDS: ${EVENTIDS}"
     docker run --rm -v $(pwd):/opt/shakemap-input-eu -v $(pwd)/ssh_key:/home/shake/.ssh ingv/shakemap-input-eu -o /opt/shakemap-input-eu -k ${EVENTIDS}
+    echo_date "[INFO] Completed shakemap-input-eu run."
 
     # Set SET_FILE_UPDATEDAFTER
     SET_FILE_UPDATEDAFTER=1
