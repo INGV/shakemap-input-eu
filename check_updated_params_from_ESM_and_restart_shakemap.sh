@@ -162,6 +162,9 @@ if [ "$HTTP_STATUS" -eq 200 ]; then
 
     EVENTIDS=$( echo "$RESPONSE" | jq -r '[.[] | .emsc_event_id // empty] | join(",")' )
     echo_date " EVENTIDS: $EVENTIDS"
+    cd ${DIRWORK}
+    docker run --rm -v $(pwd):/opt/shakemap-input-eu -v $(pwd)/ssh_key:/home/shake/.ssh ingv/shakemap-input-eu -o /opt/shakemap-input-eu -k ${EVENTIDS}
+
     # Set SET_FILE_UPDATEDAFTER
     SET_FILE_UPDATEDAFTER=1
 elif [ "$HTTP_STATUS" -eq 204 ]; then
