@@ -2,6 +2,13 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="BALJ" name="BALJ" netid="GE" insttype="STS-2/N" commtype="DIG" lat="32.0873" lon="35.64">
+    <comp name="--.HHZ">
+      <acc value="0.0187432165" flag="0"/>
+      <vel value="0.0047842398" flag="0"/>
+      <psa03 value="0.0301906168" flag="0"/>
+      <psa10 value="0.0019726471" flag="0"/>
+      <psa30 value="0.0002187963" flag="0"/>
+    </comp>
     <comp name="--.HHN">
       <acc value="0.0205314117" flag="0"/>
       <vel value="0.0076558524" flag="0"/>
@@ -16,13 +23,6 @@
       <psa10 value="0.0064191812" flag="0"/>
       <psa30 value="0.0003607972" flag="0"/>
     </comp>
-    <comp name="--.HHZ">
-      <acc value="0.0187432165" flag="0"/>
-      <vel value="0.0047842398" flag="0"/>
-      <psa03 value="0.0301906168" flag="0"/>
-      <psa10 value="0.0019726471" flag="0"/>
-      <psa30 value="0.0002187963" flag="0"/>
-    </comp>
   </station>
   <station code="MSBI" name="MSBI" netid="GE" insttype="Trillium-240" commtype="DIG" lat="31.3126" lon="35.358">
     <comp name="--.HHE">
@@ -32,19 +32,19 @@
       <psa10 value="0.0151344152" flag="0"/>
       <psa30 value="0.0013786328" flag="0"/>
     </comp>
-    <comp name="--.HHN">
-      <acc value="0.0610057700" flag="0"/>
-      <vel value="0.0156201046" flag="0"/>
-      <psa03 value="0.0770554890" flag="0"/>
-      <psa10 value="0.0096851708" flag="0"/>
-      <psa30 value="0.0012071301" flag="0"/>
-    </comp>
     <comp name="--.HHZ">
       <acc value="0.0582779898" flag="0"/>
       <vel value="0.0185213662" flag="0"/>
       <psa03 value="0.0943032125" flag="0"/>
       <psa10 value="0.0071855192" flag="0"/>
       <psa30 value="0.0006214076" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0610057700" flag="0"/>
+      <vel value="0.0156201046" flag="0"/>
+      <psa03 value="0.0770554890" flag="0"/>
+      <psa10 value="0.0096851708" flag="0"/>
+      <psa30 value="0.0012071301" flag="0"/>
     </comp>
   </station>
 </stationlist>
