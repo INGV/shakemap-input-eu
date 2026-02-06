@@ -27,6 +27,7 @@ ONEDAY = 3600 * 24
 fdsn_client = 'EMSC'
 GIT_USERNAME = 'sergio'
 TAB_SIZE = 2
+INGV_BOUNDARIES_BASE_URL = "https://webservices.ingv.it/ingvws/boundaries"
 # global logger
 logger = None
 
@@ -275,35 +276,55 @@ def DownloadData(url):
         return None
 
 
-def get_region_name(lat, lon):
+def get_locstring(lat, lon, mode):
     """
-    Query the INGV boundaries web service to get the region name
+    Query the INGV boundaries web service to get a location string
     for the given coordinates.
 
     Args:
         lat (str or float): Latitude.
         lon (str or float): Longitude.
+        mode (str): 'region_name' or 'boundary'.
 
     Returns:
-        str or None: The region name, or None if the request fails.
+        str or None: The location string, or None if the request fails.
     """
-    url = f"https://webservices.ingv.it/ingvws/boundaries/region_name/1/?lat={lat}&lon={lon}&limit=4000&format=json"
-    logger.info(f"\t\trequest region_name on: {url}".expandtabs(TAB_SIZE))
+    if mode == 'region_name':
+        url = f"{INGV_BOUNDARIES_BASE_URL}/region_name/1/?lat={lat}&lon={lon}&limit=4000&format=json"
+    elif mode == 'boundary':
+        url = f"{INGV_BOUNDARIES_BASE_URL}/boundary/1/?lat={lat}&lon={lon}&boundary_type=flinn_engdahl_1996&includegeometry=false&limit=4000&format=json"
+    else:
+        logger.error(f"\t\tget_locstring: unknown mode '{mode}'".expandtabs(TAB_SIZE))
+        return None
+
+    logger.info(f"\t\trequest locstring ({mode}) on: {url}".expandtabs(TAB_SIZE))
     try:
         r = requests.get(url)
         if r.status_code == 200:
-            data = r.json()
-            region_name = data.get('data', {}).get('region_name', None)
-            if region_name:
-                logger.info(f"\t\tregion_name: {region_name}".expandtabs(TAB_SIZE))
+            resp = r.json()
+
+            if mode == 'region_name':
+                result = resp.get('data', {}).get('region_name', None)
             else:
-                logger.warning(f"\t\tregion_name not found in response".expandtabs(TAB_SIZE))
-            return region_name
+                # Extract the first boundary_type and strip the suffix
+                items = resp.get('data', [])
+                if items:
+                    raw = items[0].get('boundary_type', '')
+                    # Remove the "(flinn_engdahl_1996)" suffix
+                    result = raw.replace('(flinn_engdahl_1996)', '').strip()
+                else:
+                    result = None
+
+            if result:
+                logger.info(f"\t\tlocstring result: {result}".expandtabs(TAB_SIZE))
+            else:
+                logger.warning(f"\t\tlocstring: no result found in response".expandtabs(TAB_SIZE))
+            return result
         else:
-            logger.info(f"\t\tregion_name request returned: [{r.status_code}]".expandtabs(TAB_SIZE))
+            logger.info(f"\t\tlocstring request returned: [{r.status_code}]".expandtabs(TAB_SIZE))
             return None
     except Exception as e:
-        logger.error(f"\t\tregion_name request failed: {str(e)}".expandtabs(TAB_SIZE))
+        logger.error(f"\t\tlocstring request failed: {str(e)}".expandtabs(TAB_SIZE))
         return None
 
 
@@ -382,22 +403,22 @@ def update_event_xml(data_event, event_id):
         else:
             logger.info(f"\t\tupdate-eventid: id already matches '{event_id}', no change needed".expandtabs(TAB_SIZE))
 
-    # Update 'locstring' attribute with the region name from INGV boundaries API
+    # Update 'locstring' attribute via INGV boundaries API (mode: region_name or boundary)
     if args.update_locstring:
         lat = root.attrib.get('lat', '')
         lon = root.attrib.get('lon', '')
         if lat and lon:
-            region_name = get_region_name(lat, lon)
-            if region_name is not None:
+            locstring_value = get_locstring(lat, lon, args.update_locstring)
+            if locstring_value is not None:
                 current_locstring = root.attrib.get('locstring', '')
-                if current_locstring != region_name:
-                    logger.info(f"\t\tupdate-locstring: replacing locstring '{current_locstring}' with '{region_name}'".expandtabs(TAB_SIZE))
-                    root.attrib['locstring'] = region_name
+                if current_locstring != locstring_value:
+                    logger.info(f"\t\tupdate-locstring ({args.update_locstring}): replacing locstring '{current_locstring}' with '{locstring_value}'".expandtabs(TAB_SIZE))
+                    root.attrib['locstring'] = locstring_value
                     modified = True
                 else:
-                    logger.info(f"\t\tupdate-locstring: locstring already matches '{region_name}', no change needed".expandtabs(TAB_SIZE))
+                    logger.info(f"\t\tupdate-locstring ({args.update_locstring}): locstring already matches '{locstring_value}', no change needed".expandtabs(TAB_SIZE))
             else:
-                logger.warning(f"\t\tupdate-locstring: could not retrieve region_name for lat={lat}, lon={lon}".expandtabs(TAB_SIZE))
+                logger.warning(f"\t\tupdate-locstring ({args.update_locstring}): could not retrieve locstring for lat={lat}, lon={lon}".expandtabs(TAB_SIZE))
         else:
             logger.warning(f"\t\tupdate-locstring: lat or lon missing from event XML".expandtabs(TAB_SIZE))
 
@@ -934,7 +955,7 @@ if __name__ == '__main__':
     #parser.add_argument("-b","--chkbcktime", nargs="?", default=default_chkbcktime, help="provide the number of days to check for ESM new input data [default is 1.0]")
     parser.add_argument("-k", "--keep", nargs="?", default=None, help="comma-separated list of event IDs to process (e.g., 20251120_0000107,20251118_0000302); cannot be used with time parameters (-d, -s, -e) or -m/--minmag; if not provided, all events in time range will be processed")
     parser.add_argument("-u", "--update-eventid", action='store_true', default=False, help="if set, updates the 'id' attribute in event.xml to match the event ID used in the query")
-    parser.add_argument("-r", "--update-locstring", action='store_true', default=False, help="if set, updates the 'locstring' attribute in event.xml with the region name from INGV boundaries API")
+    parser.add_argument("-r", "--update-locstring", default=None, choices=['region_name', 'boundary'], help="updates the 'locstring' attribute in event.xml: 'region_name' uses INGV region_name API, 'boundary' uses INGV Flinn-Engdahl boundary API")
     parser.add_argument("-v", "--verbose", action='store_true')
     parser.add_argument("-l", "--log_severity",
                         type=str,
