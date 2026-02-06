@@ -275,6 +275,38 @@ def DownloadData(url):
         return None
 
 
+def get_region_name(lat, lon):
+    """
+    Query the INGV boundaries web service to get the region name
+    for the given coordinates.
+
+    Args:
+        lat (str or float): Latitude.
+        lon (str or float): Longitude.
+
+    Returns:
+        str or None: The region name, or None if the request fails.
+    """
+    url = f"https://webservices.ingv.it/ingvws/boundaries/region_name/1/?lat={lat}&lon={lon}&limit=4000&format=json"
+    logger.info(f"\t\trequest region_name on: {url}".expandtabs(TAB_SIZE))
+    try:
+        r = requests.get(url)
+        if r.status_code == 200:
+            data = r.json()
+            region_name = data.get('data', {}).get('region_name', None)
+            if region_name:
+                logger.info(f"\t\tregion_name: {region_name}".expandtabs(TAB_SIZE))
+            else:
+                logger.warning(f"\t\tregion_name not found in response".expandtabs(TAB_SIZE))
+            return region_name
+        else:
+            logger.info(f"\t\tregion_name request returned: [{r.status_code}]".expandtabs(TAB_SIZE))
+            return None
+    except Exception as e:
+        logger.error(f"\t\tregion_name request failed: {str(e)}".expandtabs(TAB_SIZE))
+        return None
+
+
 # extract ID from event string
 def extract_id(string, fdsn_client):
 
@@ -319,6 +351,60 @@ def clean_event_data(xmlstring):
             del event[k]
 
     return ET.tostring(root, encoding='utf8')
+
+
+def update_event_xml(data_event, event_id):
+    """
+    Optionally update the 'id' and 'locstring' attributes of the event XML
+    based on the -u/--update-eventid and -r/--update-locstring flags.
+
+    Args:
+        data_event (bytes): The event XML data.
+        event_id (str): The event ID used in the GET request.
+
+    Returns:
+        bytes: The (possibly modified) event XML data.
+    """
+    if not args.update_eventid and not args.update_locstring:
+        return data_event
+
+    tree = ET.ElementTree(ET.fromstring(data_event))
+    root = tree.getroot()
+    modified = False
+
+    # Update 'id' attribute to match the event_id from the query
+    if args.update_eventid:
+        current_id = root.attrib.get('id', '')
+        if current_id != event_id:
+            logger.info(f"\t\tupdate-eventid: replacing id '{current_id}' with '{event_id}'".expandtabs(TAB_SIZE))
+            root.attrib['id'] = event_id
+            modified = True
+        else:
+            logger.info(f"\t\tupdate-eventid: id already matches '{event_id}', no change needed".expandtabs(TAB_SIZE))
+
+    # Update 'locstring' attribute with the region name from INGV boundaries API
+    if args.update_locstring:
+        lat = root.attrib.get('lat', '')
+        lon = root.attrib.get('lon', '')
+        if lat and lon:
+            region_name = get_region_name(lat, lon)
+            if region_name is not None:
+                current_locstring = root.attrib.get('locstring', '')
+                if current_locstring != region_name:
+                    logger.info(f"\t\tupdate-locstring: replacing locstring '{current_locstring}' with '{region_name}'".expandtabs(TAB_SIZE))
+                    root.attrib['locstring'] = region_name
+                    modified = True
+                else:
+                    logger.info(f"\t\tupdate-locstring: locstring already matches '{region_name}', no change needed".expandtabs(TAB_SIZE))
+            else:
+                logger.warning(f"\t\tupdate-locstring: could not retrieve region_name for lat={lat}, lon={lon}".expandtabs(TAB_SIZE))
+        else:
+            logger.warning(f"\t\tupdate-locstring: lat or lon missing from event XML".expandtabs(TAB_SIZE))
+
+    if modified:
+        return ET.tostring(root, encoding='utf8')
+    return data_event
+
 
 def diff(xmlstring, xml_file):
     f = NamedTemporaryFile(delete=False)
@@ -564,6 +650,8 @@ def generate_event_xml_data(event_id):
             any_data_downloaded = True
 
     if data_event:
+        # Apply optional updates (-u and/or -r) to the event XML before saving
+        data_event = update_event_xml(data_event, event_id)
         FNAME_EV = os.path.join(EVENT_DIR, "event.xml")
         relative_path = os.path.relpath(FNAME_EV, args.git_repo_dir)
         result, author = check_repository_file(relative_path)
@@ -845,6 +933,8 @@ if __name__ == '__main__':
     parser.add_argument("-m", "--minmag", nargs="?", default=None, help="provide the minimum magnitude (e.g.,4.5); [default is 4.0]; cannot be used with -k/--keep")
     #parser.add_argument("-b","--chkbcktime", nargs="?", default=default_chkbcktime, help="provide the number of days to check for ESM new input data [default is 1.0]")
     parser.add_argument("-k", "--keep", nargs="?", default=None, help="comma-separated list of event IDs to process (e.g., 20251120_0000107,20251118_0000302); cannot be used with time parameters (-d, -s, -e) or -m/--minmag; if not provided, all events in time range will be processed")
+    parser.add_argument("-u", "--update-eventid", action='store_true', default=False, help="if set, updates the 'id' attribute in event.xml to match the event ID used in the query")
+    parser.add_argument("-r", "--update-locstring", action='store_true', default=False, help="if set, updates the 'locstring' attribute in event.xml with the region name from INGV boundaries API")
     parser.add_argument("-v", "--verbose", action='store_true')
     parser.add_argument("-l", "--log_severity",
                         type=str,
