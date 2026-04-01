@@ -193,6 +193,10 @@ def set_args():
     if days_ago_provided and (starttime_provided or endtime_provided):
         sys.exit("Error: Cannot use -d/--days_ago together with -s/--starttime and/or -e/--endtime. Please use either -d OR (-s and/or -e).")
 
+    # Check that --get-felt-report-token is provided when --get-felt-report is used
+    if args.get_felt_report and not args.get_felt_report_token:
+        sys.exit("Error: --get-felt-report-token is required when --get-felt-report is specified.")
+
     # Set default minmag if not provided
     if args.minmag is None:
         args.minmag = 4.0
@@ -273,6 +277,19 @@ def DownloadData(url):
             return None
     except:
         logger.error (f"\t\tevent_dat problems with url: [{url}] status_dat forced to 204".expandtabs(TAB_SIZE))
+        return None
+
+def DownloadDataWithAuth(url, token):
+    try:
+        headers = {'Authorization': f'Bearer {token}'}
+        r = requests.get(url, headers=headers)
+        if r.status_code == 200:
+            return r.content
+        else:
+            logger.warning(f"\t\treturn: [{r.status_code}]".expandtabs(TAB_SIZE))
+            return None
+    except:
+        logger.warning(f"\t\tfelt report problems with url: [{url}]".expandtabs(TAB_SIZE))
         return None
 
 
@@ -702,6 +719,27 @@ def generate_event_xml_data(event_id):
         logger.warning(f"file {FILE_NAME_DAT} skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
 
 
+    # ===================================
+    # FELT REPORT DATA (SeismicPortal testimonies)
+    # ===================================
+    if args.get_felt_report:
+        FILE_NAME_FELT_REPORT = f"{str(event_id)}_FELT-REPORT_dat.xml.test"
+        FILE_FULL_NAME_FELT_REPORT = os.path.join(EVENT_DIR, FILE_NAME_FELT_REPORT)
+
+        relative_path = os.path.relpath(FILE_FULL_NAME_FELT_REPORT, args.git_repo_dir)
+        result, author = check_repository_file(relative_path)
+
+        if result:
+            url_FELT_REPORT = f"https://seismicportal.eu/testimonies-ws/api/shakemap?unid={event_id}&gridsize=1&format=xml"
+            logger.info(f"\trequest \"_FELT-REPORT_dat.xml.test\" on: {url_FELT_REPORT}".expandtabs(TAB_SIZE))
+            data = DownloadDataWithAuth(url_FELT_REPORT, args.get_felt_report_token)
+            if data:
+                saveIfChanged(data, FILE_FULL_NAME_FELT_REPORT, event_id)
+                any_data_downloaded = True
+        else:
+            logger.warning(f"\tfile {FILE_NAME_FELT_REPORT} skipped because modified by the external user: {author}".expandtabs(TAB_SIZE))
+
+
     # FAULT (ESM?) - Only process if at least one data source was successful
     if any_data_downloaded:
         url_str_fault = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_fault" % (str(event_id), fdsn_client)
@@ -956,6 +994,8 @@ if __name__ == '__main__':
     parser.add_argument("-k", "--keep", nargs="?", default=None, help="comma-separated list of event IDs to process (e.g., 20251120_0000107,20251118_0000302); cannot be used with time parameters (-d, -s, -e) or -m/--minmag; if not provided, all events in time range will be processed")
     parser.add_argument("-u", "--update-eventid", action='store_true', default=False, help="if set, updates the 'id' attribute in event.xml to match the event ID used in the query")
     parser.add_argument("-r", "--update-locstring", default=None, choices=['region_name', 'boundary'], help="updates the 'locstring' attribute in event.xml: 'region_name' uses INGV region_name API, 'boundary' uses INGV Flinn-Engdahl boundary API")
+    parser.add_argument("--get-felt-report", action='store_true', default=False, help="if set, downloads felt report data from SeismicPortal testimonies-ws; requires --get-felt-report-token")
+    parser.add_argument("--get-felt-report-token", default=None, help="Bearer token for SeismicPortal testimonies-ws API; required when --get-felt-report is used")
     parser.add_argument("-v", "--verbose", action='store_true')
     parser.add_argument("-l", "--log_severity",
                         type=str,
