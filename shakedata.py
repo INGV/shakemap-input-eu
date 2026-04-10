@@ -14,6 +14,7 @@ import sys
 import inspect
 import functools
 from xmldiff import main
+from xmldiff import actions as xmldiff_actions
 from  tempfile import NamedTemporaryFile
 
 from datetime import datetime
@@ -458,6 +459,36 @@ def diff(xmlstring, xml_file):
         return False
     return True
 
+
+def diff_ignoring_attrs(xmlstring, xml_file, ignore_attrs):
+    """
+    Like diff(), but ignores changes to specified XML attribute names.
+    Returns: (has_meaningful_changes, only_ignored_changes)
+      - has_meaningful_changes: True if structural or non-ignored attribute changes exist
+      - only_ignored_changes: True if the only differences are in the ignored attributes
+    """
+    f = NamedTemporaryFile(delete=False)
+    f.write(xmlstring)
+    path = f.name
+    f.close()
+    diff_result = main.diff_files(path, xml_file, {'ratio_mode': 'faster', 'fast_match': True})
+    os.unlink(path)
+
+    if len(diff_result) == 0:
+        return False, False
+    if len(diff_result) == 1 and diff_result[0].name == 'created':
+        return False, False
+
+    ignored = [
+        d for d in diff_result
+        if isinstance(d, xmldiff_actions.UpdateAttrib) and d.name in ignore_attrs
+    ]
+    meaningful = [d for d in diff_result if d not in ignored]
+
+    if not meaningful:
+        return False, bool(ignored)
+    return True, False
+
 '''
 def diff_old(mode, xmlstring, xml_file):
     if mode == 'DETAIL_MODE':
@@ -895,6 +926,13 @@ def saveIfChanged(data, FileFullPath, event_id):
             with open(FileFullPath, 'rb') as f:
                 existing_data = f.read()
             has_changed = (data != existing_data)
+        elif '_REPORTED-INTENSITY_dat.xml.test' in FileFullPath:
+            # For reported intensity files, ignore changes to the 'downloaded' attribute
+            # which is regenerated on every request and carries no meaningful information
+            has_changed, only_downloaded = diff_ignoring_attrs(data, FileFullPath, {'downloaded'})
+            if only_downloaded:
+                logger.info(f"\t\tskipping commit: only 'downloaded' attribute changed in reported intensity file".expandtabs(TAB_SIZE))
+                return
         else:
             # For XML files, use xmldiff
             has_changed = diff(data, FileFullPath)
