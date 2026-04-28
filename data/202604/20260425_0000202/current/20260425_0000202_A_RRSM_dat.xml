@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="MARCO" name="MARCO" netid="GE" insttype="VBB" commtype="DIG" lat="40.2972" lon="15.8063">
+    <comp name="--.HHE">
+      <acc value="0.0002940513" flag="0"/>
+      <vel value="0.0001328736" flag="0"/>
+      <psa03 value="0.0011435602" flag="0"/>
+      <psa10 value="0.0001510217" flag="0"/>
+      <psa30 value="0.0000123073" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0002443752" flag="0"/>
+      <vel value="0.0001074217" flag="0"/>
+      <psa03 value="0.0006411910" flag="0"/>
+      <psa10 value="0.0000733600" flag="0"/>
+      <psa30 value="0.0000115478" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0003600672" flag="0"/>
+      <vel value="0.0001955629" flag="0"/>
+      <psa03 value="0.0015711259" flag="0"/>
+      <psa10 value="0.0002070710" flag="0"/>
+      <psa30 value="0.0000311846" flag="0"/>
+    </comp>
+  </station>
   <station code="CAR1" name="CAR1" netid="IV" insttype="" commtype="DIG" lat="39.2534" lon="16.2114">
     <comp name="--.HHE">
       <acc value="0.0031564501" flag="0"/>
