@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="AMPE" name="AMPE" netid="HA" insttype="1s-100Hz," lat="38.3015" lon="23.2688">
+    <comp name="--.HHN">
+      <acc value="2.1274648386" flag="0"/>
+      <vel value="0.4789823141" flag="0"/>
+      <psa03 value="1.3519290508" flag="0"/>
+      <psa10 value="0.1789873737" flag="0"/>
+      <psa30 value="0.0183049252" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="3.6260001067" flag="0"/>
+      <vel value="0.5798412194" flag="0"/>
+      <psa03 value="2.0119682061" flag="0"/>
+      <psa10 value="0.1588435798" flag="0"/>
+      <psa30 value="0.0427623824" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.8743160955" flag="0"/>
+      <vel value="0.1854971965" flag="0"/>
+      <psa03 value="1.2423523946" flag="0"/>
+      <psa10 value="0.0565320849" flag="0"/>
+      <psa30 value="0.0037897714" flag="0"/>
+    </comp>
+  </station>
   <station code="ATAL" name="ATAL" netid="HA" insttype="120" lat="38.6926" lon="23.0213">
     <comp name="--.HHZ">
       <acc value="0.0278915091" flag="0"/>
@@ -597,6 +620,29 @@
       <psa03 value="0.0575737143" flag="0"/>
       <psa10 value="0.0114424800" flag="0"/>
       <psa30 value="0.0007624907" flag="0"/>
+    </comp>
+  </station>
+  <station code="XOR" name="XOR" netid="HT" insttype="Compact," lat="39.366" lon="23.1918">
+    <comp name="--.HHE">
+      <acc value="0.0117357605" flag="0"/>
+      <vel value="0.0067858882" flag="0"/>
+      <psa03 value="0.0272439106" flag="0"/>
+      <psa10 value="0.0103383478" flag="0"/>
+      <psa30 value="0.0011831246" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0098871475" flag="0"/>
+      <vel value="0.0068991492" flag="0"/>
+      <psa03 value="0.0374087597" flag="0"/>
+      <psa10 value="0.0065276348" flag="0"/>
+      <psa30 value="0.0010653097" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0151223736" flag="0"/>
+      <vel value="0.0079744065" flag="0"/>
+      <psa03 value="0.0386889248" flag="0"/>
+      <psa10 value="0.0067813749" flag="0"/>
+      <psa30 value="0.0007819704" flag="0"/>
     </comp>
   </station>
   <station code="KLV" name="KLV" netid="MN" insttype="" lat="38.0437" lon="22.1504">
