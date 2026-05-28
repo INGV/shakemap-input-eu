@@ -1,5 +1,5 @@
-<stationlist created="1777600518">
-	<station code="MALA" name="MALA" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.39341" lon="21.87263">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1779933304">
+	<station code="MALA" name="MALA" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.39341" lon="21.87263" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="01.HNE" depth="0.0">
 			<acc value="0.0210400319183306" flag="0"/>
 			<vel value="0.0326020242456557" flag="0"/>
@@ -22,7 +22,7 @@
 			<psa30 value="0.00489068940083721" flag="0"/>
 		</comp>
 	</station>
-	<station code="TRIZ" name="TRIZ" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.36543" lon="22.07272">
+	<station code="TRIZ" name="TRIZ" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.36543" lon="22.07272" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0204992600478981" flag="0"/>
 			<vel value="0.0170795751787965" flag="0"/>
@@ -45,7 +45,7 @@
 			<psa30 value="0.00247952842325581" flag="0"/>
 		</comp>
 	</station>
-	<station code="ATHU" name="ATHU" netid="HA" source="Hellenic Seismological Network, University of Athens, Seismological Laboratory (HA)" insttype="" lat="37.9665" lon="23.7845">
+	<station code="ATHU" name="ATHU" netid="HA" source="Hellenic Seismological Network, University of Athens, Seismological Laboratory (HA)" insttype="" lat="37.9665" lon="23.7845" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.000866031504191937" flag="0"/>
 			<vel value="0.000705449166521923" flag="0"/>
@@ -68,7 +68,7 @@
 			<psa30 value="0.000286185729233368" flag="0"/>
 		</comp>
 	</station>
-	<station code="ITS1" name="ITS1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="40.605" lon="23.0123">
+	<station code="ITS1" name="ITS1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="40.605" lon="23.0123" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0181414947236689" flag="0"/>
 			<vel value="0.0151703704223362" flag="0"/>
@@ -91,7 +91,7 @@
 			<psa30 value="0.000746741186688802" flag="0"/>
 		</comp>
 	</station>
-	<station code="ACHA" name="ACHA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.07458" lon="23.74127">
+	<station code="ACHA" name="ACHA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.07458" lon="23.74127" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0614485308599241" flag="0"/>
 			<vel value="0.0497081137685776" flag="0"/>
@@ -114,7 +114,7 @@
 			<psa30 value="0.0040381016710844" flag="0"/>
 		</comp>
 	</station>
-	<station code="AGXA" name="AGXA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.27649" lon="22.81999">
+	<station code="AGXA" name="AGXA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.27649" lon="22.81999" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.563102007796048" flag="0"/>
 			<vel value="0.286389526422662" flag="0"/>
@@ -137,7 +137,7 @@
 			<psa30 value="0.00828617058480149" flag="0"/>
 		</comp>
 	</station>
-	<station code="ALNA" name="ALNA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.14804" lon="23.86669">
+	<station code="ALNA" name="ALNA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.14804" lon="23.86669" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.295799555875528" flag="0"/>
 			<vel value="0.110121484747628" flag="0"/>
@@ -160,30 +160,7 @@
 			<psa30 value="0.00757547933832764" flag="0"/>
 		</comp>
 	</station>
-	<station code="ARTB" name="ARTB" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.15702" lon="20.9785">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="0.00831120540258971" flag="0"/>
-			<vel value="0.00358706048062971" flag="0"/>
-			<psa03 value="0.0309855448277757" flag="0"/>
-			<psa10 value="0.00489883092975688" flag="0"/>
-			<psa30 value="0.00139921123254385" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="0.00699912961690476" flag="0"/>
-			<vel value="0.00370206338341679" flag="0"/>
-			<psa03 value="0.0243553582146185" flag="0"/>
-			<psa10 value="0.00419172299357641" flag="0"/>
-			<psa30 value="0.00106864308402635" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="0.0233737012680613" flag="0"/>
-			<vel value="0.00348467478647936" flag="0"/>
-			<psa03 value="0.0083151471918595" flag="0"/>
-			<psa10 value="0.00326049646063883" flag="0"/>
-			<psa30 value="0.0011771114153543" flag="0"/>
-		</comp>
-	</station>
-	<station code="ATHP" name="ATHP" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.000799" lon="23.773487">
+	<station code="ATHP" name="ATHP" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.000799" lon="23.773487" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0228534134201207" flag="0"/>
 			<vel value="0.0216585161740702" flag="0"/>
@@ -206,7 +183,7 @@
 			<psa30 value="0.00380615588914801" flag="0"/>
 		</comp>
 	</station>
-	<station code="DLFA" name="DLFA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.47836" lon="22.49583">
+	<station code="DLFA" name="DLFA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.47836" lon="22.49583" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0330186561710115" flag="0"/>
 			<vel value="0.0225373049571796" flag="0"/>
@@ -229,7 +206,7 @@
 			<psa30 value="0.00280035905171039" flag="0"/>
 		</comp>
 	</station>
-	<station code="DRPA" name="DRPA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.94738" lon="23.63024">
+	<station code="DRPA" name="DRPA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.94738" lon="23.63024" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0593068955136584" flag="0"/>
 			<vel value="0.0321522591804121" flag="0"/>
@@ -252,7 +229,7 @@
 			<psa30 value="0.00529680213714623" flag="0"/>
 		</comp>
 	</station>
-	<station code="EFSA" name="EFSA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.54015" lon="24.98864">
+	<station code="EFSA" name="EFSA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.54015" lon="24.98864" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0306263222227463" flag="0"/>
 			<vel value="0.0326427503216994" flag="0"/>
@@ -275,7 +252,7 @@
 			<psa30 value="0.00310462254100664" flag="0"/>
 		</comp>
 	</station>
-	<station code="ELFA" name="ELFA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.04472" lon="23.5405">
+	<station code="ELFA" name="ELFA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.04472" lon="23.5405" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0382696226407462" flag="0"/>
 			<vel value="0.0248612572248458" flag="0"/>
@@ -298,7 +275,7 @@
 			<psa30 value="0.00230207625125364" flag="0"/>
 		</comp>
 	</station>
-	<station code="GINA" name="GINA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.66886" lon="22.389">
+	<station code="GINA" name="GINA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.66886" lon="22.389" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0599095695975113" flag="0"/>
 			<vel value="0.0725754484294704" flag="0"/>
@@ -321,7 +298,7 @@
 			<psa30 value="0.00891370798940808" flag="0"/>
 		</comp>
 	</station>
-	<station code="KIAA" name="KIAA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.0139" lon="22.7495">
+	<station code="KIAA" name="KIAA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.0139" lon="22.7495" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0385348811683624" flag="0"/>
 			<vel value="0.0499988862486587" flag="0"/>
@@ -344,7 +321,7 @@
 			<psa30 value="0.00511413878659572" flag="0"/>
 		</comp>
 	</station>
-	<station code="KRYO" name="KRYO" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.971151" lon="22.617961">
+	<station code="KRYO" name="KRYO" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.971151" lon="22.617961" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0199928038907601" flag="0"/>
 			<vel value="0.0167992511309567" flag="0"/>
@@ -367,7 +344,7 @@
 			<psa30 value="0.00310537613259505" flag="0"/>
 		</comp>
 	</station>
-	<station code="KVLA" name="KVLA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="40.93704" lon="24.38591">
+	<station code="KVLA" name="KVLA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="40.93704" lon="24.38591" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.00823358486109312" flag="0"/>
 			<vel value="0.00739481705818766" flag="0"/>
@@ -390,7 +367,7 @@
 			<psa30 value="0.0010084497215115" flag="0"/>
 		</comp>
 	</station>
-	<station code="LARA" name="LARA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.63704" lon="22.42969">
+	<station code="LARA" name="LARA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.63704" lon="22.42969" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0867806607100904" flag="0"/>
 			<vel value="0.129564895547665" flag="0"/>
@@ -413,7 +390,7 @@
 			<psa30 value="0.022837307859566" flag="0"/>
 		</comp>
 	</station>
-	<station code="LIA" name="LIA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.89725" lon="25.18055">
+	<station code="LIA" name="LIA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.89725" lon="25.18055" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.023677449774755" flag="0"/>
 			<vel value="0.0204542861055203" flag="0"/>
@@ -436,7 +413,7 @@
 			<psa30 value="0.00185558521508042" flag="0"/>
 		</comp>
 	</station>
-	<station code="LKR" name="LKR" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.64957" lon="22.998812">
+	<station code="LKR" name="LKR" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.64957" lon="22.998812" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0903516942905032" flag="0"/>
 			<vel value="0.0251136681730605" flag="0"/>
@@ -459,53 +436,7 @@
 			<psa30 value="0.00169062887086552" flag="0"/>
 		</comp>
 	</station>
-	<station code="MET1" name="MET1" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.578529" lon="23.385876">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="0.0163799879136951" flag="0"/>
-			<vel value="0.0122966759747627" flag="0"/>
-			<psa03 value="0.0560410301515458" flag="0"/>
-			<psa10 value="0.0177143266122006" flag="0"/>
-			<psa30 value="0.003097389145163" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="0.0119997453130554" flag="0"/>
-			<vel value="0.0101538147754779" flag="0"/>
-			<psa03 value="0.0311995537964862" flag="0"/>
-			<psa10 value="0.0165376074103286" flag="0"/>
-			<psa30 value="0.00181592571283304" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="2.79300220563785" flag="0"/>
-			<vel value="11.7009002521513" flag="0"/>
-			<psa03 value="3.55197463422066" flag="0"/>
-			<psa10 value="2.85329149655842" flag="0"/>
-			<psa30 value="2.15906718760503" flag="0"/>
-		</comp>
-	</station>
-	<station code="NASA" name="NASA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="40.63111" lon="22.06706">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="0.0248872180148877" flag="0"/>
-			<vel value="0.0233107696262901" flag="0"/>
-			<psa03 value="0.050138977711204" flag="0"/>
-			<psa10 value="0.0381745101239449" flag="0"/>
-			<psa30 value="0.00259104226883413" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="0.0197175941085664" flag="0"/>
-			<vel value="0.0198662613459464" flag="0"/>
-			<psa03 value="0.0437310948870818" flag="0"/>
-			<psa10 value="0.0287461549166844" flag="0"/>
-			<psa30 value="0.00237327617623257" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="0.0140618724095351" flag="0"/>
-			<vel value="0.00819943623476809" flag="0"/>
-			<psa03 value="0.0245880455040094" flag="0"/>
-			<psa10 value="0.0104561979843001" flag="0"/>
-			<psa30 value="0.00121091990500082" flag="0"/>
-		</comp>
-	</station>
-	<station code="NOAC" name="NOAC" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.97384" lon="23.71767">
+	<station code="NOAC" name="NOAC" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.97384" lon="23.71767" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0859789257982012" flag="0"/>
 			<vel value="0.0604567470669161" flag="0"/>
@@ -528,53 +459,7 @@
 			<psa30 value="0.00277568137526877" flag="0"/>
 		</comp>
 	</station>
-	<station code="NPLA" name="NPLA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.56561" lon="22.79975">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="0.0117973860552704" flag="0"/>
-			<vel value="0.00823465957978122" flag="0"/>
-			<psa03 value="0.0571014128966985" flag="0"/>
-			<psa10 value="0.00799516682806411" flag="0"/>
-			<psa30 value="0.00204878759712338" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="0.0111368527770857" flag="0"/>
-			<vel value="0.00725808791026653" flag="0"/>
-			<psa03 value="0.0510673569201037" flag="0"/>
-			<psa10 value="0.00614252159941003" flag="0"/>
-			<psa30 value="0.0018333999954185" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="0.00892334844739398" flag="0"/>
-			<vel value="0.00585163350429773" flag="0"/>
-			<psa03 value="0.0162781304295854" flag="0"/>
-			<psa10 value="0.00712498496403625" flag="0"/>
-			<psa30 value="0.00143438877121648" flag="0"/>
-		</comp>
-	</station>
-	<station code="OREA" name="OREA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="40.72705" lon="22.91452">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="0.0139876149647387" flag="0"/>
-			<vel value="0.00978807669237277" flag="0"/>
-			<psa03 value="0.0475201636026218" flag="0"/>
-			<psa10 value="0.0122187931850818" flag="0"/>
-			<psa30 value="0.00127915223755798" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="0.0108030145133906" flag="0"/>
-			<vel value="0.00780389804874611" flag="0"/>
-			<psa03 value="0.029128945274667" flag="0"/>
-			<psa10 value="0.0170921772728603" flag="0"/>
-			<psa30 value="0.00152090033551637" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="0.0103473364989413" flag="0"/>
-			<vel value="0.00490710209558535" flag="0"/>
-			<psa03 value="0.0183043935658238" flag="0"/>
-			<psa10 value="0.00775035389165856" flag="0"/>
-			<psa30 value="0.00102345050690658" flag="0"/>
-		</comp>
-	</station>
-	<station code="PATC" name="PATC" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.26933" lon="21.76001">
+	<station code="PATC" name="PATC" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.26933" lon="21.76001" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0119359676727294" flag="0"/>
 			<vel value="0.015260993474922" flag="0"/>
@@ -597,7 +482,7 @@
 			<psa30 value="0.0031669579204196" flag="0"/>
 		</comp>
 	</station>
-	<station code="PATG" name="PATG" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.23865" lon="21.72657">
+	<station code="PATG" name="PATG" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.23865" lon="21.72657" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0137173342571027" flag="0"/>
 			<vel value="0.0183768105935825" flag="0"/>
@@ -620,7 +505,7 @@
 			<psa30 value="0.0028532800574673" flag="0"/>
 		</comp>
 	</station>
-	<station code="PLG" name="PLG" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="40.37328" lon="23.44443">
+	<station code="PLG" name="PLG" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="40.37328" lon="23.44443" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0422094028609852" flag="0"/>
 			<vel value="0.0240892945772052" flag="0"/>
@@ -643,30 +528,7 @@
 			<psa30 value="0.00122886807314554" flag="0"/>
 		</comp>
 	</station>
-	<station code="RIOA" name="RIOA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.29585" lon="21.79118">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="0.0266451372911332" flag="0"/>
-			<vel value="0.00960854348773109" flag="0"/>
-			<psa03 value="0.0242104215299411" flag="0"/>
-			<psa10 value="0.011758186734665" flag="0"/>
-			<psa30 value="0.00543896447136984" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="0.042164165245203" flag="0"/>
-			<vel value="0.0131210055162367" flag="0"/>
-			<psa03 value="0.0342561755535098" flag="0"/>
-			<psa10 value="0.0111829689418092" flag="0"/>
-			<psa30 value="0.00568454365645228" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="0.034103920944692" flag="0"/>
-			<vel value="0.00930070018699139" flag="0"/>
-			<psa03 value="0.0232144831580784" flag="0"/>
-			<psa10 value="0.0066917932984644" flag="0"/>
-			<psa30 value="0.00464866670135449" flag="0"/>
-		</comp>
-	</station>
-	<station code="TRKA" name="TRKA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.55381" lon="21.76624">
+	<station code="TRKA" name="TRKA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.55381" lon="21.76624" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0415769754662875" flag="0"/>
 			<vel value="0.0407592423248333" flag="0"/>
@@ -689,53 +551,7 @@
 			<psa30 value="0.0034008704993133" flag="0"/>
 		</comp>
 	</station>
-	<station code="VELA" name="VELA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.974944" lon="22.766063">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="0.0992982615024647" flag="0"/>
-			<vel value="0.0516235780701202" flag="0"/>
-			<psa03 value="0.0898442850762867" flag="0"/>
-			<psa10 value="0.0471000376463391" flag="0"/>
-			<psa30 value="0.0143341895697104" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="0.120024536903787" flag="0"/>
-			<vel value="0.0696888841553417" flag="0"/>
-			<psa03 value="0.132515736850546" flag="0"/>
-			<psa10 value="0.0628770815480678" flag="0"/>
-			<psa30 value="0.0233218532916562" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="0.00179116043671168" flag="0"/>
-			<vel value="0.000828277754559982" flag="0"/>
-			<psa03 value="0.00162922641783769" flag="0"/>
-			<psa10 value="0.000709466959641693" flag="0"/>
-			<psa30 value="0.000346217284154262" flag="0"/>
-		</comp>
-	</station>
-	<station code="YDRA" name="YDRA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.34923" lon="23.46525">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="0.0226287603559613" flag="0"/>
-			<vel value="0.0123618953093585" flag="0"/>
-			<psa03 value="0.0597383219539823" flag="0"/>
-			<psa10 value="0.0189311472205941" flag="0"/>
-			<psa30 value="0.00436827771029324" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="0.013539930079031" flag="0"/>
-			<vel value="0.00693275918769647" flag="0"/>
-			<psa03 value="0.0378366184694478" flag="0"/>
-			<psa10 value="0.0105066632023731" flag="0"/>
-			<psa30 value="0.000964992050987442" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="0.00899412205612378" flag="0"/>
-			<vel value="0.00572313742049713" flag="0"/>
-			<psa03 value="0.0327251887164789" flag="0"/>
-			<psa10 value="0.0052934189442763" flag="0"/>
-			<psa30 value="0.00172247316789391" flag="0"/>
-		</comp>
-	</station>
-	<station code="ANX" name="ANX" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.5933" lon="21.9209">
+	<station code="ANX" name="ANX" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.5933" lon="21.9209" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0222391410122246" flag="0"/>
 			<vel value="0.0179887058209108" flag="0"/>
@@ -758,7 +574,7 @@
 			<psa30 value="0.00189250370241569" flag="0"/>
 		</comp>
 	</station>
-	<station code="DSF" name="DSF" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4112" lon="22.5271">
+	<station code="DSF" name="DSF" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4112" lon="22.5271" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="1.0">
 			<acc value="0.0647893412225136" flag="0"/>
 			<vel value="0.025804229807168" flag="0"/>
@@ -781,7 +597,7 @@
 			<psa30 value="0.00127903650072432" flag="0"/>
 		</comp>
 	</station>
-	<station code="EFP" name="EFP" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4269" lon="21.9058">
+	<station code="EFP" name="EFP" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4269" lon="21.9058" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0135442117551174" flag="0"/>
 			<vel value="0.0110701154671068" flag="0"/>
@@ -804,7 +620,7 @@
 			<psa30 value="0.00386403514003099" flag="0"/>
 		</comp>
 	</station>
-	<station code="GUR" name="GUR" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="37.9363" lon="22.3423">
+	<station code="GUR" name="GUR" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="37.9363" lon="22.3423" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0205106620974897" flag="0"/>
 			<vel value="0.0177159987453939" flag="0"/>
@@ -827,7 +643,7 @@
 			<psa30 value="0.00133560743577113" flag="0"/>
 		</comp>
 	</station>
-	<station code="LTK" name="LTK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.0228" lon="22.9673">
+	<station code="LTK" name="LTK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.0228" lon="22.9673" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0274591201544536" flag="0"/>
 			<vel value="0.0192781432009044" flag="0"/>
@@ -850,7 +666,7 @@
 			<psa30 value="0.00159856714722814" flag="0"/>
 		</comp>
 	</station>
-	<station code="PDO" name="PDO" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.5986" lon="21.1833">
+	<station code="PDO" name="PDO" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.5986" lon="21.1833" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.009123837765025" flag="0"/>
 			<vel value="0.00673991169058478" flag="0"/>
@@ -873,7 +689,7 @@
 			<psa30 value="0.000996130572094979" flag="0"/>
 		</comp>
 	</station>
-	<station code="SERG" name="SERG" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4133" lon="22.0566">
+	<station code="SERG" name="SERG" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4133" lon="22.0566" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0298793379641956" flag="0"/>
 			<vel value="0.0140821020253924" flag="0"/>
@@ -896,30 +712,7 @@
 			<psa30 value="0.00149606723211181" flag="0"/>
 		</comp>
 	</station>
-	<station code="UPR" name="UPR" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.2836" lon="21.7864">
-		<comp name="--.HNE" depth="2.0">
-			<acc value="0.0101521280533926" flag="0"/>
-			<vel value="0.0103010162962209" flag="0"/>
-			<psa03 value="0.0353697258832541" flag="0"/>
-			<psa10 value="0.0156346591569382" flag="0"/>
-			<psa30 value="0.00318151117616804" flag="0"/>
-		</comp>
-		<comp name="--.HNN" depth="2.0">
-			<acc value="0.0100901757469004" flag="0"/>
-			<vel value="0.0148944306100115" flag="0"/>
-			<psa03 value="0.0373997379657585" flag="0"/>
-			<psa10 value="0.0215756780327817" flag="0"/>
-			<psa30 value="0.00570664178701164" flag="0"/>
-		</comp>
-		<comp name="--.HNZ" depth="2.0">
-			<acc value="0.009425936224282" flag="0"/>
-			<vel value="0.00998755916753592" flag="0"/>
-			<psa03 value="0.0219139595047691" flag="0"/>
-			<psa10 value="0.0196804618590115" flag="0"/>
-			<psa30 value="0.0024710047336032" flag="0"/>
-		</comp>
-	</station>
-	<station code="VVK" name="VVK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4222" lon="21.8116">
+	<station code="VVK" name="VVK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4222" lon="21.8116" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00771435060080928" flag="0"/>
 			<vel value="0.00801728334208981" flag="0"/>
@@ -940,29 +733,6 @@
 			<psa03 value="0.0245009850491816" flag="0"/>
 			<psa10 value="0.00448985743101973" flag="0"/>
 			<psa30 value="0.00237614136603734" flag="0"/>
-		</comp>
-	</station>
-	<station code="HMT1" name="HMT1" netid="HT" source="Aristotle University of Thessaloniki Seismological Network" insttype="" lat="40.2581" lon="24.247619">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="0.0502785708500632" flag="0"/>
-			<vel value="0.0235653409382964" flag="0"/>
-			<psa03 value="0.100018750751371" flag="0"/>
-			<psa10 value="0.017881025155161" flag="0"/>
-			<psa30 value="0.00907823555521853" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="0.0400713775688742" flag="0"/>
-			<vel value="0.0294873909375033" flag="0"/>
-			<psa03 value="0.126926606181403" flag="0"/>
-			<psa10 value="0.0228401774246606" flag="0"/>
-			<psa30 value="0.0115538012159608" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="0.0612810858521914" flag="0"/>
-			<vel value="0.0297168554419254" flag="0"/>
-			<psa03 value="0.0556356439216976" flag="0"/>
-			<psa10 value="0.0200078791738017" flag="0"/>
-			<psa30 value="0.0124725370777027" flag="0"/>
 		</comp>
 	</station>
 </stationlist>
