@@ -1,5 +1,28 @@
-<stationlist created="1778135885">
-	<station code="KRL1" name="KRL1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="37.7951" lon="26.7065">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1780711006">
+	<station code="KOS2" name="KOS2" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="36.8941" lon="27.2888" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0472277057782095" flag="0"/>
+			<vel value="0.0385545688076984" flag="0"/>
+			<psa03 value="0.170882830565542" flag="0"/>
+			<psa10 value="0.0225116744129483" flag="0"/>
+			<psa30 value="0.0026868721587607" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0398640767400402" flag="0"/>
+			<vel value="0.0245845417784745" flag="0"/>
+			<psa03 value="0.098110447252296" flag="0"/>
+			<psa10 value="0.0160917159972108" flag="0"/>
+			<psa30 value="0.00301977421188792" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0137494121672062" flag="0"/>
+			<vel value="0.0105452800337939" flag="0"/>
+			<psa03 value="0.0313159104628776" flag="0"/>
+			<psa10 value="0.0121969751772458" flag="0"/>
+			<psa30 value="0.0023544859731405" flag="0"/>
+		</comp>
+	</station>
+	<station code="KRL1" name="KRL1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="37.7951" lon="26.7065" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="1.52474110731085" flag="0"/>
 			<vel value="0.417137590568941" flag="0"/>
@@ -22,7 +45,7 @@
 			<psa30 value="0.00690059052673605" flag="0"/>
 		</comp>
 	</station>
-	<station code="MYT1" name="MYT1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="39.085" lon="26.5694">
+	<station code="MYT1" name="MYT1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="39.085" lon="26.5694" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0115599188940845" flag="0"/>
 			<vel value="0.0102916715318534" flag="0"/>
@@ -45,7 +68,7 @@
 			<psa30 value="0.0011364520481041" flag="0"/>
 		</comp>
 	</station>
-	<station code="KLNA" name="KLNA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.95708" lon="26.97274">
+	<station code="KLNA" name="KLNA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.95708" lon="26.97274" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0480563472597643" flag="0"/>
 			<vel value="0.0179360062421222" flag="0"/>
@@ -68,7 +91,7 @@
 			<psa30 value="0.000790147368878679" flag="0"/>
 		</comp>
 	</station>
-	<station code="PRK" name="PRK" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.24565" lon="26.26499">
+	<station code="PRK" name="PRK" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="39.24565" lon="26.26499" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0101460038187606" flag="0"/>
 			<vel value="0.00823486333418768" flag="0"/>
@@ -91,7 +114,7 @@
 			<psa30 value="0.000542722966279636" flag="0"/>
 		</comp>
 	</station>
-	<station code="SMG" name="SMG" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.70425" lon="26.83772">
+	<station code="SMG" name="SMG" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="37.70425" lon="26.83772" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.334732967842693" flag="0"/>
 			<vel value="0.105648950718592" flag="0"/>
@@ -114,7 +137,7 @@
 			<psa30 value="0.00811489401435595" flag="0"/>
 		</comp>
 	</station>
-	<station code="FOCM" name="FOCM" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.7131" lon="26.7309">
+	<station code="FOCM" name="FOCM" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.7131" lon="26.7309" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0434876742691172" flag="0"/>
 			<vel value="0.0260655096430199" flag="0"/>
@@ -137,7 +160,7 @@
 			<psa30 value="0.000682766072994827" flag="0"/>
 		</comp>
 	</station>
-	<station code="GMLD" name="GMLD" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.0766" lon="26.9157">
+	<station code="GMLD" name="GMLD" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.0766" lon="26.9157" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.88843494548384" flag="0"/>
 			<vel value="0.474004348901174" flag="0"/>
@@ -160,7 +183,7 @@
 			<psa30 value="0.0171447661540555" flag="0"/>
 		</comp>
 	</station>
-	<station code="GORD" name="GORD" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.9088" lon="28.1769">
+	<station code="GORD" name="GORD" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.9088" lon="28.1769" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0343907315235018" flag="0"/>
 			<vel value="0.0244551255937968" flag="0"/>
@@ -183,7 +206,7 @@
 			<psa30 value="0.00190199120334273" flag="0"/>
 		</comp>
 	</station>
-	<station code="KRBN" name="KRBN" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.5936" lon="26.5537">
+	<station code="KRBN" name="KRBN" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.5936" lon="26.5537" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.193416321640071" flag="0"/>
 			<vel value="0.111709680910853" flag="0"/>
@@ -206,7 +229,7 @@
 			<psa30 value="0.00346841585704843" flag="0"/>
 		</comp>
 	</station>
-	<station code="NAZL" name="NAZL" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="37.9641" lon="28.2922">
+	<station code="NAZL" name="NAZL" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="37.9641" lon="28.2922" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.062441346306038" flag="0"/>
 			<vel value="0.0424057980185124" flag="0"/>
@@ -229,7 +252,7 @@
 			<psa30 value="0.00214807333974323" flag="0"/>
 		</comp>
 	</station>
-	<station code="SOMA" name="SOMA" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="39.1564" lon="27.5341">
+	<station code="SOMA" name="SOMA" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="39.1564" lon="27.5341" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0968845540112481" flag="0"/>
 			<vel value="0.052820192661154" flag="0"/>
