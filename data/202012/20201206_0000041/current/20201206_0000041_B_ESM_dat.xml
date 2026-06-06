@@ -1,5 +1,28 @@
-<stationlist created="1778135895">
-	<station code="LMS2" name="LMS2" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="40.834985" lon="21.141815">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1780711009">
+	<station code="KAS2" name="KAS2" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="40.504878" lon="21.280507" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.00118905251860505" flag="0"/>
+			<vel value="0.00172832767894322" flag="0"/>
+			<psa03 value="0.00355300164496342" flag="0"/>
+			<psa10 value="0.00391675641901532" flag="0"/>
+			<psa30 value="0.000322350598936831" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00139310499512528" flag="0"/>
+			<vel value="0.00166965015109219" flag="0"/>
+			<psa03 value="0.00464873048162129" flag="0"/>
+			<psa10 value="0.00375370968046908" flag="0"/>
+			<psa30 value="0.000566825309811607" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.000989783425567161" flag="0"/>
+			<vel value="0.000998435430143245" flag="0"/>
+			<psa03 value="0.00219355970058556" flag="0"/>
+			<psa10 value="0.00132690293987016" flag="0"/>
+			<psa30 value="0.000358962425332315" flag="0"/>
+		</comp>
+	</station>
+	<station code="LMS2" name="LMS2" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="40.834985" lon="21.141815" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00292314460240599" flag="0"/>
 			<vel value="0.00197096857892813" flag="0"/>
