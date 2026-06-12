@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1780970053">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781229255">
 	<station code="KARP" name="KARP" netid="GE" source="GEOFON" insttype="" lat="35.5471" lon="27.16106" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.186315998877184" flag="0"/>
@@ -20,6 +20,29 @@
 			<psa03 value="0.290063725506256" flag="0"/>
 			<psa10 value="0.0409847561064693" flag="0"/>
 			<psa30 value="0.00290958569638621" flag="0"/>
+		</comp>
+	</station>
+	<station code="ARK1" name="ARK1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="35.148777" lon="25.264194" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.00540510040587727" flag="0"/>
+			<vel value="0.00640576823721492" flag="0"/>
+			<psa03 value="0.0122641744205326" flag="0"/>
+			<psa10 value="0.01125543968014" flag="0"/>
+			<psa30 value="0.00144938955661156" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00456192064554683" flag="0"/>
+			<vel value="0.00460027494380705" flag="0"/>
+			<psa03 value="0.0152011775763276" flag="0"/>
+			<psa10 value="0.0097006551207934" flag="0"/>
+			<psa30 value="0.00099804059445792" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00437231237923386" flag="0"/>
+			<vel value="0.00489208885279726" flag="0"/>
+			<psa03 value="0.00913956313349461" flag="0"/>
+			<psa10 value="0.00893713922911272" flag="0"/>
+			<psa30 value="0.00124383635638751" flag="0"/>
 		</comp>
 	</station>
 	<station code="KSS1" name="KSS1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="35.4189" lon="26.9207" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
