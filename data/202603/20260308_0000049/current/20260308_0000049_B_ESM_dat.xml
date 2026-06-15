@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1779933298">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781488486">
 	<station code="SRN" name="SRN" netid="AC" source="Albanian Seismological Network (AC)" insttype="" lat="39.880001" lon="20.0005" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="01.HNE" depth="0.0">
 			<acc value="0.175690440395155" flag="0"/>
@@ -296,6 +296,29 @@
 			<psa03 value="0.0936718511337533" flag="0"/>
 			<psa10 value="0.0270937016997686" flag="0"/>
 			<psa30 value="0.00169356739886191" flag="0"/>
+		</comp>
+	</station>
+	<station code="PDO" name="PDO" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.5986" lon="21.1833" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.039068209315225" flag="0"/>
+			<vel value="0.0310898654746085" flag="0"/>
+			<psa03 value="0.128120685283283" flag="0"/>
+			<psa10 value="0.0391149674246256" flag="0"/>
+			<psa30 value="0.00173646013612858" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0335786383000392" flag="0"/>
+			<vel value="0.0239540028347911" flag="0"/>
+			<psa03 value="0.107792484473078" flag="0"/>
+			<psa10 value="0.0368935677678004" flag="0"/>
+			<psa30 value="0.00134272957424452" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0145521527013821" flag="0"/>
+			<vel value="0.0120584216487225" flag="0"/>
+			<psa03 value="0.039162495364785" flag="0"/>
+			<psa10 value="0.0139391212108706" flag="0"/>
+			<psa30 value="0.000620109725059278" flag="0"/>
 		</comp>
 	</station>
 	<station code="PVO" name="PVO" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.616" lon="21.525" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
