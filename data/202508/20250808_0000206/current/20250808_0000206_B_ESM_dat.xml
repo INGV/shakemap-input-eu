@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1779933288">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781488455">
 	<station code="ATHU" name="ATHU" netid="HA" source="Hellenic Seismological Network, University of Athens, Seismological Laboratory (HA)" insttype="" lat="37.9665" lon="23.7845" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00259142000214782" flag="0"/>
@@ -503,6 +503,52 @@
 			<psa03 value="0.040594514708218" flag="0"/>
 			<psa10 value="0.00508979170496336" flag="0"/>
 			<psa30 value="0.000699969286197635" flag="0"/>
+		</comp>
+	</station>
+	<station code="SERG" name="SERG" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4133" lon="22.0566" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0027880928382075" flag="0"/>
+			<vel value="0.00162553953082571" flag="0"/>
+			<psa03 value="0.00772709781979871" flag="0"/>
+			<psa10 value="0.00286077459040328" flag="0"/>
+			<psa30 value="0.000269200775938718" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00474338886153887" flag="0"/>
+			<vel value="0.00253135297850357" flag="0"/>
+			<psa03 value="0.0126146807127724" flag="0"/>
+			<psa10 value="0.00276756216553786" flag="0"/>
+			<psa30 value="0.000527295243221071" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00233214273413292" flag="0"/>
+			<vel value="0.00185931507596829" flag="0"/>
+			<psa03 value="0.00624080990741254" flag="0"/>
+			<psa10 value="0.00149640655146304" flag="0"/>
+			<psa30 value="0.000319062881141638" flag="0"/>
+		</comp>
+	</station>
+	<station code="VVK" name="VVK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4222" lon="21.8116" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0015961311716065" flag="0"/>
+			<vel value="0.00156768192031856" flag="0"/>
+			<psa03 value="0.00448426808941738" flag="0"/>
+			<psa10 value="0.00129255054700704" flag="0"/>
+			<psa30 value="0.000350086602977499" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.000996344386156823" flag="0"/>
+			<vel value="0.00138204856302674" flag="0"/>
+			<psa03 value="0.00261161197131762" flag="0"/>
+			<psa10 value="0.00105772710047783" flag="0"/>
+			<psa30 value="0.00028603332330394" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.000800114560207718" flag="0"/>
+			<vel value="0.000901944208682127" flag="0"/>
+			<psa03 value="0.002724812504155" flag="0"/>
+			<psa10 value="0.000747311712764402" flag="0"/>
+			<psa30 value="0.000216881893402849" flag="0"/>
 		</comp>
 	</station>
 </stationlist>
