@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781488451">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781574893">
 	<station code="ATEI" name="ATEI" netid="HC" source="Seismological Network of Crete (HC)" insttype="" lat="35.5193" lon="24.0432" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.938620822253334" flag="0"/>
@@ -1124,6 +1124,29 @@
 			<psa03 value="0.0201022066725546" flag="0"/>
 			<psa10 value="0.0142115636338302" flag="0"/>
 			<psa30 value="0.00410190298094321" flag="0"/>
+		</comp>
+	</station>
+	<station code="VVK" name="VVK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4222" lon="21.8116" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.00988895969540832" flag="0"/>
+			<vel value="0.0056253778980362" flag="0"/>
+			<psa03 value="0.014624294308556" flag="0"/>
+			<psa10 value="0.0043685068921363" flag="0"/>
+			<psa30 value="0.00166975967588361" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00743498540667509" flag="0"/>
+			<vel value="0.00438366712732349" flag="0"/>
+			<psa03 value="0.0127514189376932" flag="0"/>
+			<psa10 value="0.00514231159039447" flag="0"/>
+			<psa30 value="0.0022671424787292" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00575536182006144" flag="0"/>
+			<vel value="0.00460309326920669" flag="0"/>
+			<psa03 value="0.00752085564164804" flag="0"/>
+			<psa10 value="0.00399939900305596" flag="0"/>
+			<psa30 value="0.00163303036774639" flag="0"/>
 		</comp>
 	</station>
 </stationlist>
