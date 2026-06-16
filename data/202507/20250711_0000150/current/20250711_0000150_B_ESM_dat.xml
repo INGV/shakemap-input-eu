@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1779933281">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781574884">
 	<station code="AST1" name="AST1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="38.5416" lon="21.0895" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0181217688033966" flag="0"/>
@@ -158,6 +158,29 @@
 			<psa03 value="0.00585267286708322" flag="0"/>
 			<psa10 value="0.0021544389710103" flag="0"/>
 			<psa30 value="0.000122431469859068" flag="0"/>
+		</comp>
+	</station>
+	<station code="FSK" name="FSK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4593" lon="20.5623" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.24669465433812" flag="0"/>
+			<vel value="0.061020432467384" flag="0"/>
+			<psa03 value="0.110966757253192" flag="0"/>
+			<psa10 value="0.0351885023155702" flag="0"/>
+			<psa30 value="0.00306110444981444" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0758562879293329" flag="0"/>
+			<vel value="0.0338751106218238" flag="0"/>
+			<psa03 value="0.0719151129815852" flag="0"/>
+			<psa10 value="0.0257352304577337" flag="0"/>
+			<psa30 value="0.00176616637485652" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.136753509822429" flag="0"/>
+			<vel value="0.0297551802127336" flag="0"/>
+			<psa03 value="0.0616578761985716" flag="0"/>
+			<psa10 value="0.0164473933090783" flag="0"/>
+			<psa30 value="0.00122638572120191" flag="0"/>
 		</comp>
 	</station>
 	<station code="GUR" name="GUR" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="37.9363" lon="22.3423" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
