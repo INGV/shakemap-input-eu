@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1780710914">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781661286">
 	<station code="ROD3" name="ROD3" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.30811" lon="21.89204" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0148196368756397" flag="0"/>
@@ -595,6 +595,29 @@
 			<psa03 value="0.0367780938402194" flag="0"/>
 			<psa10 value="0.0235567717845201" flag="0"/>
 			<psa30 value="0.00360845896376362" flag="0"/>
+		</comp>
+	</station>
+	<station code="LTHK" name="LTHK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="37.7095" lon="20.8367" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.00442902231770037" flag="0"/>
+			<vel value="0.00457220557157935" flag="0"/>
+			<psa03 value="0.00884925939708848" flag="0"/>
+			<psa10 value="0.0101656465491935" flag="0"/>
+			<psa30 value="0.000957575101317594" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00371016267269267" flag="0"/>
+			<vel value="0.00490803158308057" flag="0"/>
+			<psa03 value="0.00945342051354737" flag="0"/>
+			<psa10 value="0.00832949772584528" flag="0"/>
+			<psa30 value="0.00178032106253303" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00272639112715136" flag="0"/>
+			<vel value="0.00351803365651951" flag="0"/>
+			<psa03 value="0.00926054966388348" flag="0"/>
+			<psa10 value="0.0056605949866371" flag="0"/>
+			<psa30 value="0.00099381854393446" flag="0"/>
 		</comp>
 	</station>
 	<station code="PVO" name="PVO" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.616" lon="21.525" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
