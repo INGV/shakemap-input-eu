@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781747640">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781834070">
 	<station code="TRIZ" name="TRIZ" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.36543" lon="22.07272" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0394376509333827" flag="0"/>
@@ -572,6 +572,29 @@
 			<psa03 value="0.0583994572190977" flag="0"/>
 			<psa10 value="0.0147322837539964" flag="0"/>
 			<psa30 value="0.00114874641131199" flag="0"/>
+		</comp>
+	</station>
+	<station code="ELFA" name="ELFA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="38.04472" lon="23.5405" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="00.HNE" depth="0.0">
+			<acc value="0.018369161259648" flag="0"/>
+			<vel value="0.0196355353496511" flag="0"/>
+			<psa03 value="0.0450283474903669" flag="0"/>
+			<psa10 value="0.0395424619940428" flag="0"/>
+			<psa30 value="0.00444572742429003" flag="0"/>
+		</comp>
+		<comp name="00.HNN" depth="0.0">
+			<acc value="0.0202835716484856" flag="0"/>
+			<vel value="0.0208521675693251" flag="0"/>
+			<psa03 value="0.0363679586779444" flag="0"/>
+			<psa10 value="0.0533557070537361" flag="0"/>
+			<psa30 value="0.00504435499709548" flag="0"/>
+		</comp>
+		<comp name="00.HNZ" depth="0.0">
+			<acc value="0.0229847450756747" flag="0"/>
+			<vel value="0.0234105583221793" flag="0"/>
+			<psa03 value="0.0524797786111089" flag="0"/>
+			<psa10 value="0.0284099226429464" flag="0"/>
+			<psa30 value="0.00261867243253021" flag="0"/>
 		</comp>
 	</station>
 	<station code="IMMV" name="IMMV" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="35.4606" lon="23.9811" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
