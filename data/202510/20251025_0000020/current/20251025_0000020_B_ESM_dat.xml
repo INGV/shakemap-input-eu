@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781920491">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1782093248">
 	<station code="KIS" name="KIS" netid="MD" source="Moldova Digital Seismic Network" insttype="" lat="46.9975" lon="28.8175" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0119633495134795" flag="0"/>
@@ -710,6 +710,29 @@
 			<psa03 value="0.0168733013671561" flag="0"/>
 			<psa10 value="0.00147168233548062" flag="0"/>
 			<psa30 value="0.000178585424157893" flag="0"/>
+		</comp>
+	</station>
+	<station code="PLAR" name="PLAR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.9142" lon="26.0274" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.121316507696702" flag="0"/>
+			<vel value="0.0311219036813587" flag="0"/>
+			<psa03 value="0.138162162981899" flag="0"/>
+			<psa10 value="0.00853593671391509" flag="0"/>
+			<psa30 value="0.000839522124637263" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0382899471224271" flag="0"/>
+			<vel value="0.0153035933639442" flag="0"/>
+			<psa03 value="0.0980361194117747" flag="0"/>
+			<psa10 value="0.00505093772483555" flag="0"/>
+			<psa30 value="0.000604230339794602" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0293891265960931" flag="0"/>
+			<vel value="0.00496183069976629" flag="0"/>
+			<psa03 value="0.0174837141998435" flag="0"/>
+			<psa10 value="0.00156224122518909" flag="0"/>
+			<psa30 value="0.000183596901977042" flag="0"/>
 		</comp>
 	</station>
 	<station code="PLOR" name="PLOR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="45.8512" lon="26.6498" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
