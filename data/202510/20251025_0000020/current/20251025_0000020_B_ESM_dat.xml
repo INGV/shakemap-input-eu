@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1782093248">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1782179641">
 	<station code="KIS" name="KIS" netid="MD" source="Moldova Digital Seismic Network" insttype="" lat="46.9975" lon="28.8175" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0119633495134795" flag="0"/>
@@ -480,6 +480,29 @@
 			<psa03 value="0.0071103818351923" flag="0"/>
 			<psa10 value="0.000612352987255133" flag="0"/>
 			<psa30 value="6.11250388171688e-05" flag="0"/>
+		</comp>
+	</station>
+	<station code="ICOR" name="ICOR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.1168" lon="27.8009" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0317197422187829" flag="0"/>
+			<vel value="0.00784986084686767" flag="0"/>
+			<psa03 value="0.0407517855432928" flag="0"/>
+			<psa10 value="0.0033950717818434" flag="0"/>
+			<psa30 value="0.000204046030068919" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0284238161160156" flag="0"/>
+			<vel value="0.00488627927474274" flag="0"/>
+			<psa03 value="0.032390877507502" flag="0"/>
+			<psa10 value="0.00470551031071464" flag="0"/>
+			<psa30 value="0.000170504875840396" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0764037049770314" flag="0"/>
+			<vel value="0.0174198157679674" flag="0"/>
+			<psa03 value="0.0498873725019271" flag="0"/>
+			<psa10 value="0.00221347983530089" flag="0"/>
+			<psa30 value="0.000233778689815874" flag="0"/>
 		</comp>
 	</station>
 	<station code="INCR" name="INCR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.441" lon="26.1611" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
