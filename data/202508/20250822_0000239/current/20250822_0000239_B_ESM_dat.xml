@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1782093236">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1782266044">
 	<station code="RAZAM" name="RAZAM" netid="BS" source="National Seismic Network of Bulgaria (BS)" insttype="" lat="43.6451" lon="25.1243" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0207101389532098" flag="0"/>
@@ -158,6 +158,29 @@
 			<psa03 value="0.0287901936673688" flag="0"/>
 			<psa10 value="0.00418150216024637" flag="0"/>
 			<psa30 value="0.000298342992925756" flag="0"/>
+		</comp>
+	</station>
+	<station code="DEV" name="DEV" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="45.887" lon="22.898" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.253500766537119" flag="0"/>
+			<vel value="0.064678898476663" flag="0"/>
+			<psa03 value="0.137270051800579" flag="0"/>
+			<psa10 value="0.00866140690069919" flag="0"/>
+			<psa30 value="0.000954016532246524" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.417218924903217" flag="0"/>
+			<vel value="0.132200317618576" flag="0"/>
+			<psa03 value="0.521689309356426" flag="0"/>
+			<psa10 value="0.0178218424845995" flag="0"/>
+			<psa30 value="0.00220086017118508" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.261971613839626" flag="0"/>
+			<vel value="0.0701991717264892" flag="0"/>
+			<psa03 value="0.191275879421612" flag="0"/>
+			<psa10 value="0.011816005252358" flag="0"/>
+			<psa30 value="0.00103503064903416" flag="0"/>
 		</comp>
 	</station>
 	<station code="GZR" name="GZR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="45.3933" lon="22.7767" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
