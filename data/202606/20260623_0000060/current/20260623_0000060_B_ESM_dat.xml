@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1782206635">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1782438831">
 	<station code="ROD3" name="ROD3" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.30811" lon="21.89204" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.00669157026508324" flag="0"/>
@@ -689,27 +689,27 @@
 			<psa30 value="0.00195066838887404" flag="0"/>
 		</comp>
 	</station>
-	<station code="LTK" name="LTK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.0228" lon="22.9673" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
+	<station code="LTK" name="LTK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.0228" lon="22.9673" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
-			<acc value="0.0219758535380056" flag="0"/>
-			<vel value="0.0139449831796784" flag="0"/>
-			<psa03 value="0.0563567125222869" flag="0"/>
+			<acc value="0.0219758570306243" flag="0"/>
+			<vel value="0.0139440574018023" flag="0"/>
+			<psa03 value="0.0563567177309652" flag="0"/>
 			<psa10 value="0.0176187946586776" flag="0"/>
-			<psa30 value="0.00237829275855653" flag="0"/>
+			<psa30 value="0.00237837359724503" flag="0"/>
 		</comp>
 		<comp name="--.HNN" depth="0.0">
-			<acc value="0.0248261007182729" flag="0"/>
-			<vel value="0.0123769383132926" flag="0"/>
-			<psa03 value="0.0639335477837711" flag="0"/>
-			<psa10 value="0.0159772171622249" flag="0"/>
-			<psa30 value="0.00261036042356708" flag="0"/>
+			<acc value="0.0248260988378302" flag="0"/>
+			<vel value="0.0123766925066528" flag="0"/>
+			<psa03 value="0.0639335373664143" flag="0"/>
+			<psa10 value="0.0159772134119764" flag="0"/>
+			<psa30 value="0.00261024104065854" flag="0"/>
 		</comp>
 		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.0222815726467561" flag="0"/>
-			<vel value="0.00972628223812138" flag="0"/>
-			<psa03 value="0.0503388555354623" flag="0"/>
-			<psa10 value="0.0141145184550772" flag="0"/>
-			<psa30 value="0.00112140387083621" flag="0"/>
+			<acc value="0.0222815595594411" flag="0"/>
+			<vel value="0.00972556786369592" flag="0"/>
+			<psa03 value="0.0503388607441406" flag="0"/>
+			<psa10 value="0.0141145465819404" flag="0"/>
+			<psa30 value="0.00112170972443084" flag="0"/>
 		</comp>
 	</station>
 	<station code="SERG" name="SERG" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4133" lon="22.0566" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
@@ -733,6 +733,52 @@
 			<psa03 value="0.0143299844473917" flag="0"/>
 			<psa10 value="0.00512874225400376" flag="0"/>
 			<psa30 value="0.00167667002949412" flag="0"/>
+		</comp>
+	</station>
+	<station code="UPR" name="UPR" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.2836" lon="21.7864" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="2.0">
+			<acc value="0.00483522034282145" flag="0"/>
+			<vel value="0.00628052433601011" flag="0"/>
+			<psa03 value="0.0137334996206993" flag="0"/>
+			<psa10 value="0.013436920755055" flag="0"/>
+			<psa30 value="0.00287549777928233" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="2.0">
+			<acc value="0.00585633892394421" flag="0"/>
+			<vel value="0.00708420929486165" flag="0"/>
+			<psa03 value="0.0108716511831189" flag="0"/>
+			<psa10 value="0.0122042656602046" flag="0"/>
+			<psa30 value="0.00235555354386182" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="2.0">
+			<acc value="0.00418763345192834" flag="0"/>
+			<vel value="0.00395267642700732" flag="0"/>
+			<psa03 value="0.00984723436219877" flag="0"/>
+			<psa10 value="0.0106417659022639" flag="0"/>
+			<psa30 value="0.0010184987205417" flag="0"/>
+		</comp>
+	</station>
+	<station code="VVK" name="VVK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4222" lon="21.8116" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.00283365978700775" flag="0"/>
+			<vel value="0.00428639136331166" flag="0"/>
+			<psa03 value="0.00667066325286925" flag="0"/>
+			<psa10 value="0.00394504899638471" flag="0"/>
+			<psa30 value="0.00220231360080099" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00316430016327075" flag="0"/>
+			<vel value="0.00377945648509049" flag="0"/>
+			<psa03 value="0.00715294780602063" flag="0"/>
+			<psa10 value="0.00277718014643001" flag="0"/>
+			<psa30 value="0.00161966135711602" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00233832998045219" flag="0"/>
+			<vel value="0.00311251483129679" flag="0"/>
+			<psa03 value="0.00560888848841869" flag="0"/>
+			<psa10 value="0.00325112224589311" flag="0"/>
+			<psa30 value="0.0021530795059505" flag="0"/>
 		</comp>
 	</station>
 </stationlist>
