@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="KTHA" name="KTHA" netid="GE" insttype="STS-2/N" commtype="DIG" lat="36.2566" lon="23.0621">
+    <comp name="--.HHN">
+      <acc value="0.0383623792" flag="0"/>
+      <vel value="0.0225801975" flag="0"/>
+      <psa03 value="0.0830832125" flag="0"/>
+      <psa10 value="0.0185963972" flag="0"/>
+      <psa30 value="0.0013106606" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0405870765" flag="0"/>
+      <vel value="0.0212428239" flag="0"/>
+      <psa03 value="0.1004944710" flag="0"/>
+      <psa10 value="0.0473090228" flag="0"/>
+      <psa30 value="0.0019897885" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0527082560" flag="0"/>
+      <vel value="0.0290764396" flag="0"/>
+      <psa03 value="0.1107849734" flag="0"/>
+      <psa10 value="0.0154282153" flag="0"/>
+      <psa30 value="0.0017708912" flag="0"/>
+    </comp>
+  </station>
   <station code="RODP" name="RODP" netid="HC" insttype="120" commtype="DIG" lat="35.5604" lon="23.7577">
     <comp name="--.HHN">
       <acc value="0.0139913242" flag="0"/>
