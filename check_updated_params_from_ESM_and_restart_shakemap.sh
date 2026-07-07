@@ -163,7 +163,8 @@ if [ "$HTTP_STATUS" -eq 200 ]; then
     EVENTIDS=$( echo "$RESPONSE" | jq -r '[.[] | .emsc_event_id // empty] | join(",")' )
     cd ${DIRWORK}
     echo_date "[INFO] Restarting shakemap-input-eu (docker run) for EVENTIDS: ${EVENTIDS}"
-    docker run --rm -v $(pwd):/opt/shakemap-input-eu -v $(pwd)/ssh_key:/home/shake/.ssh ingv/shakemap-input-eu -o /opt/shakemap-input-eu -k ${EVENTIDS}
+    #docker run --rm -v $(pwd):/opt/shakemap-input-eu -v $(pwd)/ssh_key:/home/shake/.ssh ingv/shakemap-input-eu -o /opt/shakemap-input-eu -k ${EVENTIDS}
+    docker run --rm -v $(pwd):/opt/shakemap-input-eu -v $(pwd)/ssh_key:/home/shake/.ssh ingv/shakemap-input-eu -o /opt/shakemap-input-eu --update-eventid --update-locstring boundary --get-reported-intensity --get-reported-intensity-token bIOlis5WNKcednaTmB270jVLroHqPY3g -k ${EVENTIDS}
     echo_date "[INFO] Completed shakemap-input-eu run."
 
     # Set SET_FILE_UPDATEDAFTER
