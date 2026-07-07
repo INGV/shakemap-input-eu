@@ -689,7 +689,7 @@ def generate_event_xml_data(event_id):
     result, author = check_repository_file(relative_path)
 
     if result:
-        url_ESM_dat = "https://esm-db.eu/esmws/shakemap/1/query?eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
+        url_ESM_dat = "https://esm-db.eu/esmws/shakemap/1/query?flag=all&apb=true&apg=true&eventid=%s&catalog=%s&format=event_dat" % (str(event_id), fdsn_client)
         logger.info(f"\trequest \"_dat.xml\" on: {url_ESM_dat}".expandtabs(TAB_SIZE))
         data = DownloadData(url_ESM_dat)
         if data:
