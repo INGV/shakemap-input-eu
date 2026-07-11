@@ -1,5 +1,5 @@
-<stationlist created="1779846952">
-	<station code="BOJS" name="BOJS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.5043" lon="15.2518">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1783734820">
+	<station code="BOJS" name="BOJS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.5043" lon="15.2518" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0064177544089839" flag="0"/>
 			<vel value="0.00253461060750441" flag="0"/>
@@ -22,7 +22,7 @@
 			<psa30 value="0.000265415967921903" flag="0"/>
 		</comp>
 	</station>
-	<station code="CEY" name="CEY" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.7381" lon="14.4221">
+	<station code="CEY" name="CEY" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.7381" lon="14.4221" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0023351231348521" flag="0"/>
 			<vel value="0.00121922214688957" flag="0"/>
@@ -45,7 +45,7 @@
 			<psa30 value="0.000129142318065503" flag="0"/>
 		</comp>
 	</station>
-	<station code="CRES" name="CRES" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.826" lon="15.4569">
+	<station code="CRES" name="CRES" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.826" lon="15.4569" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0289401246059534" flag="0"/>
 			<vel value="0.0120276673519078" flag="0"/>
@@ -68,7 +68,30 @@
 			<psa30 value="0.000647605192333559" flag="0"/>
 		</comp>
 	</station>
-	<station code="DOBS" name="DOBS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.1495" lon="15.4695">
+	<station code="CRNS" name="CRNS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0807" lon="14.2613" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0128993876674084" flag="0"/>
+			<vel value="0.00466469288636307" flag="0"/>
+			<psa03 value="0.0195227698501898" flag="0"/>
+			<psa10 value="0.00325193136199308" flag="0"/>
+			<psa30 value="0.00036551155709682" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00713435429416469" flag="0"/>
+			<vel value="0.00334853384990899" flag="0"/>
+			<psa03 value="0.0178426793857753" flag="0"/>
+			<psa10 value="0.0021422330843033" flag="0"/>
+			<psa30 value="0.000272294444420591" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00384681962957382" flag="0"/>
+			<vel value="0.00175726821569504" flag="0"/>
+			<psa03 value="0.00950894111859831" flag="0"/>
+			<psa10 value="0.00128405517954133" flag="0"/>
+			<psa30 value="0.000421498260732834" flag="0"/>
+		</comp>
+	</station>
+	<station code="DOBS" name="DOBS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.1495" lon="15.4695" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0387482199722974" flag="0"/>
 			<vel value="0.0119245558896775" flag="0"/>
@@ -91,7 +114,7 @@
 			<psa30 value="0.000733509008039245" flag="0"/>
 		</comp>
 	</station>
-	<station code="GBAS" name="GBAS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.9348" lon="14.4434">
+	<station code="GBAS" name="GBAS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.9348" lon="14.4434" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00274208377424374" flag="0"/>
 			<vel value="0.0011506279947604" flag="0"/>
@@ -114,7 +137,7 @@
 			<psa30 value="0.000699042453965186" flag="0"/>
 		</comp>
 	</station>
-	<station code="GCIS" name="GCIS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.8672" lon="15.6275">
+	<station code="GCIS" name="GCIS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.8672" lon="15.6275" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0298840732495701" flag="0"/>
 			<vel value="0.0122013897984782" flag="0"/>
@@ -137,7 +160,7 @@
 			<psa30 value="0.00100697951995032" flag="0"/>
 		</comp>
 	</station>
-	<station code="GOLS" name="GOLS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0108" lon="15.6245">
+	<station code="GOLS" name="GOLS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0108" lon="15.6245" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0566524550262371" flag="0"/>
 			<vel value="0.0239340220574783" flag="0"/>
@@ -160,7 +183,7 @@
 			<psa30 value="0.000682861329962551" flag="0"/>
 		</comp>
 	</station>
-	<station code="GORS" name="GORS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.3174" lon="13.9999">
+	<station code="GORS" name="GORS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.3174" lon="13.9999" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00139084780953724" flag="0"/>
 			<vel value="0.000648633297763876" flag="0"/>
@@ -183,7 +206,7 @@
 			<psa30 value="0.000105470600190698" flag="0"/>
 		</comp>
 	</station>
-	<station code="GROS" name="GROS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.461" lon="15.5018">
+	<station code="GROS" name="GROS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.461" lon="15.5018" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0435682462843443" flag="0"/>
 			<vel value="0.0090848331635897" flag="0"/>
@@ -206,7 +229,7 @@
 			<psa30 value="0.000305732024079645" flag="0"/>
 		</comp>
 	</station>
-	<station code="KNDS" name="KNDS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.5278" lon="14.3807">
+	<station code="KNDS" name="KNDS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.5278" lon="14.3807" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00330650725179693" flag="0"/>
 			<vel value="0.0024063951395374" flag="0"/>
@@ -229,7 +252,7 @@
 			<psa30 value="0.000443435573347132" flag="0"/>
 		</comp>
 	</station>
-	<station code="KOGS" name="KOGS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.4481" lon="16.2504">
+	<station code="KOGS" name="KOGS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.4481" lon="16.2504" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.32917600143868" flag="0"/>
 			<vel value="0.0976050493031268" flag="0"/>
@@ -252,7 +275,7 @@
 			<psa30 value="0.00293012181452354" flag="0"/>
 		</comp>
 	</station>
-	<station code="LJU" name="LJU" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0438" lon="14.5278">
+	<station code="LJU" name="LJU" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0438" lon="14.5278" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00528944937625755" flag="0"/>
 			<vel value="0.00299866719063466" flag="0"/>
@@ -275,7 +298,7 @@
 			<psa30 value="0.000408228006643741" flag="0"/>
 		</comp>
 	</station>
-	<station code="MOZS" name="MOZS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.2941" lon="14.4433">
+	<station code="MOZS" name="MOZS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.2941" lon="14.4433" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00594483111840917" flag="0"/>
 			<vel value="0.00297673489304939" flag="0"/>
@@ -298,7 +321,7 @@
 			<psa30 value="0.000320164803096934" flag="0"/>
 		</comp>
 	</station>
-	<station code="PDKS" name="PDKS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0612" lon="14.9977">
+	<station code="PDKS" name="PDKS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0612" lon="14.9977" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00998726710960428" flag="0"/>
 			<vel value="0.0051750491200353" flag="0"/>
@@ -321,7 +344,7 @@
 			<psa30 value="0.00112396456130108" flag="0"/>
 		</comp>
 	</station>
-	<station code="PERS" name="PERS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.6365" lon="15.1139">
+	<station code="PERS" name="PERS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.6365" lon="15.1139" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0301808206527396" flag="0"/>
 			<vel value="0.0104200725743323" flag="0"/>
@@ -344,7 +367,7 @@
 			<psa30 value="0.000462423081174725" flag="0"/>
 		</comp>
 	</station>
-	<station code="VISS" name="VISS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.8033" lon="14.8393">
+	<station code="VISS" name="VISS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.8033" lon="14.8393" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00637370325526641" flag="0"/>
 			<vel value="0.00263855457587742" flag="0"/>
@@ -367,7 +390,7 @@
 			<psa30 value="0.000159801784000528" flag="0"/>
 		</comp>
 	</station>
-	<station code="VNDS" name="VNDS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.1016" lon="14.7014">
+	<station code="VNDS" name="VNDS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.1016" lon="14.7014" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00706639759667291" flag="0"/>
 			<vel value="0.00401857098957114" flag="0"/>
@@ -390,7 +413,7 @@
 			<psa30 value="0.000854874599996216" flag="0"/>
 		</comp>
 	</station>
-	<station code="ZAVS" name="ZAVS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.4342" lon="15.0246">
+	<station code="ZAVS" name="ZAVS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.4342" lon="15.0246" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0433487820973011" flag="0"/>
 			<vel value="0.0102967040239695" flag="0"/>
@@ -411,6 +434,52 @@
 			<psa03 value="0.0314943832233078" flag="0"/>
 			<psa10 value="0.00489486972982935" flag="0"/>
 			<psa30 value="0.000341412564823598" flag="0"/>
+		</comp>
+	</station>
+	<station code="SKDS" name="SKDS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.5464" lon="14.0143" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="VOJS" name="VOJS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0322" lon="13.8877" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
 		</comp>
 	</station>
 </stationlist>
