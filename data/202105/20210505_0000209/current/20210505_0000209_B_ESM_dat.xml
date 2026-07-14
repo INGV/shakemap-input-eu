@@ -1,5 +1,28 @@
-<stationlist created="1778136620">
-	<station code="KSS1" name="KSS1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="35.4189" lon="26.9207">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1783994364">
+	<station code="KOS2" name="KOS2" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="36.8941" lon="27.2888" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0154155285534485" flag="0"/>
+			<vel value="0.0081001161907492" flag="0"/>
+			<psa03 value="0.0443398852164534" flag="0"/>
+			<psa10 value="0.0058990985988309" flag="0"/>
+			<psa30 value="0.000497731618110293" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0191675929566585" flag="0"/>
+			<vel value="0.00870815316606184" flag="0"/>
+			<psa03 value="0.0521363912800502" flag="0"/>
+			<psa10 value="0.00618214719316114" flag="0"/>
+			<psa30 value="0.000735355744959164" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00973500987762896" flag="0"/>
+			<vel value="0.00334232045342788" flag="0"/>
+			<psa03 value="0.0156438084609514" flag="0"/>
+			<psa10 value="0.00329416150328269" flag="0"/>
+			<psa30 value="0.000244018456691842" flag="0"/>
+		</comp>
+	</station>
+	<station code="KSS1" name="KSS1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="35.4189" lon="26.9207" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0712895017732571" flag="0"/>
 			<vel value="0.0198666606590481" flag="0"/>
@@ -22,7 +45,7 @@
 			<psa30 value="0.000262711752322536" flag="0"/>
 		</comp>
 	</station>
-	<station code="NAX1" name="NAX1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="37.101394" lon="25.374103">
+	<station code="NAX1" name="NAX1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="37.101394" lon="25.374103" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00221637618054155" flag="0"/>
 			<vel value="0.00080879338287978" flag="0"/>
@@ -45,7 +68,7 @@
 			<psa30 value="5.66177610653204e-05" flag="0"/>
 		</comp>
 	</station>
-	<station code="RDI1" name="RDI1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="36.4514" lon="28.224">
+	<station code="RDI1" name="RDI1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="36.4514" lon="28.224" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.126848883299308" flag="0"/>
 			<vel value="0.0707686649194069" flag="0"/>
@@ -68,7 +91,99 @@
 			<psa30 value="0.00138867501373701" flag="0"/>
 		</comp>
 	</station>
-	<station code="SIT2" name="SIT2" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="35.2059" lon="26.107">
+	<station code="RKL1" name="RKL1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="36.336699" lon="28.171224" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.279458074580555" flag="0"/>
+			<vel value="0.0859566389965375" flag="0"/>
+			<psa03 value="0.706286371339161" flag="0"/>
+			<psa10 value="0.0605027992635188" flag="0"/>
+			<psa30 value="0.00301731425726133" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.238863260388215" flag="0"/>
+			<vel value="0.086123600562905" flag="0"/>
+			<psa03 value="0.720829584755675" flag="0"/>
+			<psa10 value="0.0553735319747341" flag="0"/>
+			<psa30 value="0.00321214987249797" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.181859336325844" flag="0"/>
+			<vel value="0.0524051439334119" flag="0"/>
+			<psa03 value="0.307760929317822" flag="0"/>
+			<psa10 value="0.0225261428714126" flag="0"/>
+			<psa30 value="0.00124637214937135" flag="0"/>
+		</comp>
+	</station>
+	<station code="RKT1" name="RKT1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="35.954336" lon="27.767327" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.457606783707493" flag="0"/>
+			<vel value="0.120054824311231" flag="0"/>
+			<psa03 value="0.691686070807572" flag="0"/>
+			<psa10 value="0.0288027780426886" flag="0"/>
+			<psa30 value="0.00312313897596292" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.69276111635033" flag="0"/>
+			<vel value="0.14603077796989" flag="0"/>
+			<psa03 value="0.492921570301565" flag="0"/>
+			<psa10 value="0.0218303686547855" flag="0"/>
+			<psa30 value="0.00193033391681507" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="2.4326351291532" flag="0"/>
+			<vel value="0.301502275298607" flag="0"/>
+			<psa03 value="0.318978089066271" flag="0"/>
+			<psa10 value="0.0293028830471908" flag="0"/>
+			<psa30 value="0.00326040036052267" flag="0"/>
+		</comp>
+	</station>
+	<station code="RPN1" name="RPN1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="36.448678" lon="28.218047" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.143304998559724" flag="0"/>
+			<vel value="0.037798112939704" flag="0"/>
+			<psa03 value="0.173452990409351" flag="0"/>
+			<psa10 value="0.0327995528094018" flag="0"/>
+			<psa30 value="0.00186170853738714" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.205829839513033" flag="0"/>
+			<vel value="0.0743815944733539" flag="0"/>
+			<psa03 value="0.183219804079491" flag="0"/>
+			<psa10 value="0.0445591205730531" flag="0"/>
+			<psa30 value="0.00332466753457421" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.159124395122199" flag="0"/>
+			<vel value="0.030209318265531" flag="0"/>
+			<psa03 value="0.153460051391928" flag="0"/>
+			<psa10 value="0.0224524017364244" flag="0"/>
+			<psa30 value="0.0012345561582866" flag="0"/>
+		</comp>
+	</station>
+	<station code="RSO1" name="RSO1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="36.3632" lon="28.0016" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.194457254383055" flag="0"/>
+			<vel value="0.0502555379258872" flag="0"/>
+			<psa03 value="0.368397696206038" flag="0"/>
+			<psa10 value="0.0185361541792436" flag="0"/>
+			<psa30 value="0.00189999836556701" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.206937416393288" flag="0"/>
+			<vel value="0.0544623641183103" flag="0"/>
+			<psa03 value="0.196997529286168" flag="0"/>
+			<psa10 value="0.0307016207066961" flag="0"/>
+			<psa30 value="0.00283727941416988" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.284171311151408" flag="0"/>
+			<vel value="0.0492049482016193" flag="0"/>
+			<psa03 value="0.20613386369015" flag="0"/>
+			<psa10 value="0.0158102636023709" flag="0"/>
+			<psa30 value="0.000947532665222155" flag="0"/>
+		</comp>
+	</station>
+	<station code="SIT2" name="SIT2" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="35.2059" lon="26.107" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0318784879822628" flag="0"/>
 			<vel value="0.0172432995240661" flag="0"/>
@@ -91,7 +206,7 @@
 			<psa30 value="0.000233987427602245" flag="0"/>
 		</comp>
 	</station>
-	<station code="AGNA" name="AGNA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="35.1895" lon="25.71853">
+	<station code="AGNA" name="AGNA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="35.1895" lon="25.71853" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.00500898915407521" flag="0"/>
 			<vel value="0.00225248427378585" flag="0"/>
@@ -114,30 +229,30 @@
 			<psa30 value="0.000131145302315868" flag="0"/>
 		</comp>
 	</station>
-	<station code="KARP" name="KARP" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="35.5471" lon="27.16106">
+	<station code="KARP" name="KARP" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="35.5471" lon="27.16106" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
-			<acc value="0.314672323219728" flag="0"/>
-			<vel value="0.0772487175639138" flag="0"/>
-			<psa03 value="0.210986956016892" flag="0"/>
-			<psa10 value="0.0419236334851446" flag="0"/>
-			<psa30 value="0.00245782906911371" flag="0"/>
+			<acc value="0.309621458525574" flag="0"/>
+			<vel value="0.0756737374122408" flag="0"/>
+			<psa03 value="0.211700503286037" flag="0"/>
+			<psa10 value="0.0414606953175862" flag="0"/>
+			<psa30 value="0.00223869684434565" flag="0"/>
 		</comp>
 		<comp name="--.HNN" depth="0.0">
-			<acc value="0.356643323277001" flag="0"/>
-			<vel value="0.0953825209833054" flag="0"/>
-			<psa03 value="0.380941277156891" flag="0"/>
-			<psa10 value="0.019460352277813" flag="0"/>
-			<psa30 value="0.00147594329483157" flag="0"/>
+			<acc value="0.348838371479013" flag="0"/>
+			<vel value="0.0951886785246927" flag="0"/>
+			<psa03 value="0.382709477624652" flag="0"/>
+			<psa10 value="0.0193755085323502" flag="0"/>
+			<psa30 value="0.00146644839500921" flag="0"/>
 		</comp>
 		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.237922828319656" flag="0"/>
-			<vel value="0.0507414260479284" flag="0"/>
-			<psa03 value="0.182823298646092" flag="0"/>
-			<psa10 value="0.0174502547437544" flag="0"/>
-			<psa30 value="0.00133094410601441" flag="0"/>
+			<acc value="0.223159580575018" flag="0"/>
+			<vel value="0.0495838961189349" flag="0"/>
+			<psa03 value="0.183316435480847" flag="0"/>
+			<psa10 value="0.0174059136813576" flag="0"/>
+			<psa30 value="0.00123043661455371" flag="0"/>
 		</comp>
 	</station>
-	<station code="KLNA" name="KLNA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.95708" lon="26.97274">
+	<station code="KLNA" name="KLNA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.95708" lon="26.97274" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.00893604599321992" flag="0"/>
 			<vel value="0.00282789821160349" flag="0"/>
@@ -160,30 +275,30 @@
 			<psa30 value="0.000119516094437925" flag="0"/>
 		</comp>
 	</station>
-	<station code="NISR" name="NISR" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.6106" lon="27.131">
+	<station code="NISR" name="NISR" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.6106" lon="27.131" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
-			<acc value="0.00755886522929909" flag="0"/>
-			<vel value="0.00151148513823137" flag="0"/>
-			<psa03 value="0.0218888771140169" flag="0"/>
-			<psa10 value="0.00512411913523142" flag="0"/>
-			<psa30 value="0.00063031998477319" flag="0"/>
+			<acc value="0.0103800663918236" flag="0"/>
+			<vel value="0.00471431610360371" flag="0"/>
+			<psa03 value="0.0219485946116749" flag="0"/>
+			<psa10 value="0.00511564685524787" flag="0"/>
+			<psa30 value="0.00059620579779141" flag="0"/>
 		</comp>
 		<comp name="--.HNN" depth="0.0">
-			<acc value="0.00691313482060291" flag="0"/>
-			<vel value="0.00137161992150128" flag="0"/>
-			<psa03 value="0.0145446171553351" flag="0"/>
-			<psa10 value="0.00299303038295018" flag="0"/>
-			<psa30 value="0.000484871495356985" flag="0"/>
+			<acc value="0.00833432303238093" flag="0"/>
+			<vel value="0.00327828318499822" flag="0"/>
+			<psa03 value="0.014584561207686" flag="0"/>
+			<psa10 value="0.00298946061521925" flag="0"/>
+			<psa30 value="0.000457939659171635" flag="0"/>
 		</comp>
 		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.00307095599908196" flag="0"/>
-			<vel value="0.000469856816336545" flag="0"/>
-			<psa03 value="0.0101421731712834" flag="0"/>
-			<psa10 value="0.00365431801813239" flag="0"/>
-			<psa30 value="0.000282711957446247" flag="0"/>
+			<acc value="0.00436960746722822" flag="0"/>
+			<vel value="0.00176371825194287" flag="0"/>
+			<psa03 value="0.0101686352107193" flag="0"/>
+			<psa10 value="0.00365180417972978" flag="0"/>
+			<psa30 value="0.000349992065464998" flag="0"/>
 		</comp>
 	</station>
-	<station code="RODB" name="RODB" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.4471" lon="28.22116">
+	<station code="RODB" name="RODB" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.4471" lon="28.22116" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0819907350681436" flag="0"/>
 			<vel value="0.0357639199641993" flag="0"/>
@@ -206,7 +321,7 @@
 			<psa30 value="0.00109662181247895" flag="0"/>
 		</comp>
 	</station>
-	<station code="THRA" name="THRA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.41502" lon="25.43244">
+	<station code="THRA" name="THRA" netid="HL" source="National Observatory of Athens Seismic Network" insttype="" lat="36.41502" lon="25.43244" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0.0216581802231373" flag="0"/>
 			<vel value="0.00859961113534118" flag="0"/>
@@ -229,76 +344,7 @@
 			<psa30 value="0.000255567190488879" flag="0"/>
 		</comp>
 	</station>
-	<station code="DEMR" name="DEMR" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="36.2365" lon="29.9056">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0.0230194358644679" flag="0"/>
-			<vel value="0.00513113439907594" flag="0"/>
-			<psa03 value="0.0267359403956515" flag="0"/>
-			<psa10 value="0.00333967053365924" flag="0"/>
-			<psa30 value="0.000611661665414888" flag="0"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0.0208350634781789" flag="0"/>
-			<vel value="0.00581863552058219" flag="0"/>
-			<psa03 value="0.0287095294695969" flag="0"/>
-			<psa10 value="0.00363657863986432" flag="0"/>
-			<psa30 value="0.000293857956230889" flag="0"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.0198960815221598" flag="0"/>
-			<vel value="0.00596781942945084" flag="0"/>
-			<psa03 value="0.0440174003117469" flag="0"/>
-			<psa10 value="0.00318529788535069" flag="0"/>
-			<psa30 value="0.000339663568752843" flag="0"/>
-		</comp>
-	</station>
-	<station code="GMLD" name="GMLD" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.0766" lon="26.9157">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0.00554470791166636" flag="0"/>
-			<vel value="0.00262720499187643" flag="0"/>
-			<psa03 value="0.00726131175544129" flag="0"/>
-			<psa10 value="0.00323651760653168" flag="0"/>
-			<psa30 value="0.000381099360545473" flag="0"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0.00526820223174358" flag="0"/>
-			<vel value="0.00304467063795293" flag="0"/>
-			<psa03 value="0.007876523083084" flag="0"/>
-			<psa10 value="0.00324732933838103" flag="0"/>
-			<psa30 value="0.000295825534489954" flag="0"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.00669284993316774" flag="0"/>
-			<vel value="0.00138320282987215" flag="0"/>
-			<psa03 value="0.00623595151262574" flag="0"/>
-			<psa10 value="0.000931509969681265" flag="0"/>
-			<psa30 value="0.000348355316413504" flag="0"/>
-		</comp>
-	</station>
-	<station code="KUSD" name="KUSD" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="37.8606" lon="27.2868">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0.00734286024713433" flag="0"/>
-			<vel value="0.00196935657633939" flag="0"/>
-			<psa03 value="0.00335999504411828" flag="0"/>
-			<psa10 value="0.00281722154897793" flag="0"/>
-			<psa30 value="0.000274467088347604" flag="0"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0.00750834193254055" flag="0"/>
-			<vel value="0.00182458247649326" flag="0"/>
-			<psa03 value="0.00597148737861876" flag="0"/>
-			<psa10 value="0.00166215862547492" flag="0"/>
-			<psa30 value="0.000304001779251131" flag="0"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.00392741174833756" flag="0"/>
-			<vel value="0.000841432758818993" flag="0"/>
-			<psa03 value="0.0029513459028073" flag="0"/>
-			<psa10 value="0.00160555014887876" flag="0"/>
-			<psa30 value="0.000251996224763173" flag="0"/>
-		</comp>
-	</station>
-	<station code="NAZL" name="NAZL" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="37.9641" lon="28.2922">
+	<station code="NAZL" name="NAZL" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="37.9641" lon="28.2922" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.011955216926734" flag="0"/>
 			<vel value="0.00748339360691479" flag="0"/>
@@ -321,27 +367,211 @@
 			<psa30 value="0.000166633486567375" flag="0"/>
 		</comp>
 	</station>
-	<station code="ODEM" name="ODEM" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.2762" lon="28.0747">
+	<station code="KRL1" name="KRL1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="37.7951" lon="26.7065" esm:processing="discarded" esm:quality="bad">
 		<comp name="--.HNE" depth="0.0">
-			<acc value="0.00302231674375254" flag="0"/>
-			<vel value="0.00168534855587657" flag="0"/>
-			<psa03 value="0.011439855490536" flag="0"/>
-			<psa10 value="0.00170154549247378" flag="0"/>
-			<psa30 value="0.000146214907374153" flag="0"/>
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
 		</comp>
 		<comp name="--.HNN" depth="0.0">
-			<acc value="0.00433940940472602" flag="0"/>
-			<vel value="0.00209614938441443" flag="0"/>
-			<psa03 value="0.00770263526177252" flag="0"/>
-			<psa10 value="0.0014877351567145" flag="0"/>
-			<psa30 value="9.88401479349937e-05" flag="0"/>
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
 		</comp>
 		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.00232565322938033" flag="0"/>
-			<vel value="0.00123899867538644" flag="0"/>
-			<psa03 value="0.00585678707195083" flag="0"/>
-			<psa10 value="0.00158742554977804" flag="0"/>
-			<psa30 value="0.00010892138217366" flag="0"/>
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="DATC" name="DATC" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="36.7584" lon="27.6602" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="DEMR" name="DEMR" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="36.2365" lon="29.9056" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="DIDI" name="DIDI" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="37.3767" lon="27.2398" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="FETI" name="FETI" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="36.6903" lon="29.096" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="GMLD" name="GMLD" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.0766" lon="26.9157" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="KUSD" name="KUSD" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="37.8606" lon="27.2868" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="ODEM" name="ODEM" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="38.2762" lon="28.0747" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="YKAV" name="YKAV" netid="KO" source="Bogazici University Kandilli Observatory And Earthquake Research Institute (KOERI)" insttype="" lat="37.1246" lon="27.2801" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
 		</comp>
 	</station>
 </stationlist>
