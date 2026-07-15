@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="GVD" name="GVD" netid="GE" insttype="STS-2/N" lat="34.8391" lon="24.0874">
+    <comp name="--.HHE">
+      <acc value="0.4297417846" flag="0"/>
+      <vel value="0.0440045437" flag="0"/>
+      <psa03 value="0.1625717676" flag="0"/>
+      <psa10 value="0.0188718885" flag="0"/>
+      <psa30 value="0.0027182236" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0345037521" flag="0"/>
+      <vel value="0.0173336768" flag="0"/>
+      <psa03 value="0.1301389459" flag="0"/>
+      <psa10 value="0.0108776920" flag="0"/>
+      <psa30 value="0.0010338904" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0173817113" flag="0"/>
+      <vel value="0.0077001400" flag="0"/>
+      <psa03 value="0.0522611438" flag="0"/>
+      <psa10 value="0.0087939403" flag="0"/>
+      <psa30 value="0.0009532146" flag="0"/>
+    </comp>
+  </station>
+  <station code="IMMV" name="IMMV" netid="GE" insttype="STS-2/N" lat="35.4606" lon="23.9811">
+    <comp name="--.HHE">
+      <acc value="0.0057560847" flag="0"/>
+      <vel value="0.0043865526" flag="0"/>
+      <psa03 value="0.0182786268" flag="0"/>
+      <psa10 value="0.0083192682" flag="0"/>
+      <psa30 value="0.0007944232" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0060516734" flag="0"/>
+      <vel value="0.0054683390" flag="0"/>
+      <psa03 value="0.0231028549" flag="0"/>
+      <psa10 value="0.0079765853" flag="0"/>
+      <psa30 value="0.0006228311" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0046926187" flag="0"/>
+      <vel value="0.0035687274" flag="0"/>
+      <psa03 value="0.0153765517" flag="0"/>
+      <psa10 value="0.0049019294" flag="0"/>
+      <psa30 value="0.0004206560" flag="0"/>
+    </comp>
+  </station>
   <station code="CHAN" name="CHAN" netid="HC" insttype="120" lat="35.5193" lon="24.0428">
     <comp name="--.HHN">
       <acc value="0.0069999253" flag="0"/>
