@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1783734836">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1784339690">
 	<station code="BLY" name="BLY" netid="MN" source="Mediterranean Very Broadband Seismographic Network (MedNet)" insttype="" lat="44.7488" lon="17.1839" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="1.0">
 			<acc value="0.0112040994721874" flag="0"/>
@@ -344,6 +344,29 @@
 			<psa30 value="0.00012206562531102" flag="0"/>
 		</comp>
 	</station>
+	<station code="JAVS" name="JAVS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.8934" lon="14.0643" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.00760611879330142" flag="0"/>
+			<vel value="0.00310897962951251" flag="0"/>
+			<psa03 value="0.0140861987665368" flag="0"/>
+			<psa10 value="0.00259792366219267" flag="0"/>
+			<psa30 value="0.000186730013176116" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00767630725615496" flag="0"/>
+			<vel value="0.0024035135072034" flag="0"/>
+			<psa03 value="0.0109971777278031" flag="0"/>
+			<psa10 value="0.00231467138249427" flag="0"/>
+			<psa30 value="0.000168028058117545" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00714617360766497" flag="0"/>
+			<vel value="0.00186080919004002" flag="0"/>
+			<psa03 value="0.0108407350725783" flag="0"/>
+			<psa10 value="0.00182393051394516" flag="0"/>
+			<psa30 value="0.00011116051488023" flag="0"/>
+		</comp>
+	</station>
 	<station code="KNDS" name="KNDS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.5278" lon="14.3807" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0119469165566253" flag="0"/>
@@ -598,29 +621,6 @@
 		</comp>
 	</station>
 	<station code="GOLS" name="GOLS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0108" lon="15.6245" esm:processing="discarded" esm:quality="bad">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-	</station>
-	<station code="JAVS" name="JAVS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.8934" lon="14.0643" esm:processing="discarded" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
