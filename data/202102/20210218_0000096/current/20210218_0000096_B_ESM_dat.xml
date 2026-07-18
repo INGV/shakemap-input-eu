@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1782266041">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1784339632">
 	<station code="BLY" name="BLY" netid="MN" source="Mediterranean Very Broadband Seismographic Network (MedNet)" insttype="" lat="44.7488" lon="17.1839" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="1.0">
 			<acc value="0.00616094612064343" flag="0"/>
@@ -227,6 +227,29 @@
 			<psa03 value="0.0234988353283263" flag="0"/>
 			<psa10 value="0.0030424206860639" flag="0"/>
 			<psa30 value="0.000161064393684003" flag="0"/>
+		</comp>
+	</station>
+	<station code="GOLS" name="GOLS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0108" lon="15.6245" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0651721801448867" flag="0"/>
+			<vel value="0.0162764517135117" flag="0"/>
+			<psa03 value="0.0873355251332529" flag="0"/>
+			<psa10 value="0.00664377980530612" flag="0"/>
+			<psa30 value="0.000484897851269558" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0626346828882564" flag="0"/>
+			<vel value="0.0136401509366288" flag="0"/>
+			<psa03 value="0.0569266461109234" flag="0"/>
+			<psa10 value="0.00450496577562341" flag="0"/>
+			<psa30 value="0.000347935158371665" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0196018838142402" flag="0"/>
+			<vel value="0.00649357101187614" flag="0"/>
+			<psa03 value="0.0294015492708439" flag="0"/>
+			<psa10 value="0.00423328090283395" flag="0"/>
+			<psa30 value="0.000238483246261316" flag="0"/>
 		</comp>
 	</station>
 	<station code="GORS" name="GORS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.3174" lon="13.9999" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
@@ -572,6 +595,29 @@
 			<psa03 value="0.0135087633788656" flag="0"/>
 			<psa10 value="0.00391726176499304" flag="0"/>
 			<psa30 value="0.000209925885726193" flag="0"/>
+		</comp>
+	</station>
+	<station code="VJKL" name="VJKL" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0652" lon="14.5131" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
 		</comp>
 	</station>
 </stationlist>
