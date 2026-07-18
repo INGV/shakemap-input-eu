@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1784368406">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1784372005">
 	<station code="ATEI" name="ATEI" netid="HC" source="Seismological Network of Crete (HC)" insttype="" lat="35.5193" lon="24.0432" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0706328381965854" flag="0"/>
@@ -135,6 +135,29 @@
 			<psa03 value="0.0564607089948761" flag="0"/>
 			<psa10 value="0.0283390766997504" flag="0"/>
 			<psa30 value="0.00175723099126246" flag="0"/>
+		</comp>
+	</station>
+	<station code="HER1" name="HER1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="35.317672" lon="25.10217" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.120862445860388" flag="0"/>
+			<vel value="0.103445724918862" flag="0"/>
+			<psa03 value="0.259235568917512" flag="0"/>
+			<psa10 value="0.199453032784557" flag="0"/>
+			<psa30 value="0.00986579439379311" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.12893203273351" flag="0"/>
+			<vel value="0.0897390054428298" flag="0"/>
+			<psa03 value="0.201555393722318" flag="0"/>
+			<psa10 value="0.24122536999689" flag="0"/>
+			<psa30 value="0.0114912262373422" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.20041547977444" flag="0"/>
+			<vel value="0.0847710328776761" flag="0"/>
+			<psa03 value="0.235580210199425" flag="0"/>
+			<psa10 value="0.162320742952592" flag="0"/>
+			<psa30 value="0.00655082687679746" flag="0"/>
 		</comp>
 	</station>
 	<station code="HER3" name="HER3" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="35.3296" lon="25.1065" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
