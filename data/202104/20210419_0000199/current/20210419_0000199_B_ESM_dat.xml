@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1781920484">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1784339643">
 	<station code="CRES" name="CRES" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.826" lon="15.4569" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00126714658918939" flag="0"/>
@@ -135,6 +135,29 @@
 			<psa03 value="0.0158853843599854" flag="0"/>
 			<psa10 value="0.00235824411272358" flag="0"/>
 			<psa30 value="0.000285573240742259" flag="0"/>
+		</comp>
+	</station>
+	<station code="VNDS" name="VNDS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.1016" lon="14.7014" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.00181115753356278" flag="0"/>
+			<vel value="0.00165931119349765" flag="0"/>
+			<psa03 value="0.00611800619934342" flag="0"/>
+			<psa10 value="0.00263646941878487" flag="0"/>
+			<psa30 value="0.000251048635948382" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00232346720174263" flag="0"/>
+			<vel value="0.00238046411045959" flag="0"/>
+			<psa03 value="0.0035004870984241" flag="0"/>
+			<psa10 value="0.00385799283871652" flag="0"/>
+			<psa30 value="0.000174920637112909" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00118076379728683" flag="0"/>
+			<vel value="0.000861943107571827" flag="0"/>
+			<psa03 value="0.0030697342793097" flag="0"/>
+			<psa10 value="0.00119694757315241" flag="0"/>
+			<psa30 value="0.000148043140464831" flag="0"/>
 		</comp>
 	</station>
 	<station code="ZAVS" name="ZAVS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.4342" lon="15.0246" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
