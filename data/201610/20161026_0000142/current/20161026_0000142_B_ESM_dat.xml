@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1780538063">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1784685217">
 	<station code="MZ01" name="MZ01" netid="3A" source="Centro di microzonazione sismica Network, 2016 Central Italy seismic sequence (CentroMZ)" insttype="" lat="42.671575" lon="13.270813" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="15.5239956205442" flag="0"/>
@@ -3818,21 +3818,21 @@
 		</comp>
 	</station>
 	<station code="CERA" name="CERA" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="41.5978" lon="14.0183" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
-		<comp name="--.HNE" depth="1.0">
+		<comp name="--.HNE" depth="0.0">
 			<acc value="0.126540301931478" flag="0"/>
 			<vel value="0.338424960624759" flag="0"/>
 			<psa03 value="0.320488426006681" flag="0"/>
 			<psa10 value="0.414623344199127" flag="0"/>
 			<psa30 value="0.297784888102371" flag="0"/>
 		</comp>
-		<comp name="--.HNN" depth="1.0">
+		<comp name="--.HNN" depth="0.0">
 			<acc value="0.181811010123555" flag="0"/>
 			<vel value="0.343004321350691" flag="0"/>
 			<psa03 value="0.357400746466755" flag="0"/>
 			<psa10 value="0.337131632024545" flag="0"/>
 			<psa30 value="0.18315759185669" flag="0"/>
 		</comp>
-		<comp name="--.HNZ" depth="1.0">
+		<comp name="--.HNZ" depth="0.0">
 			<acc value="0.125530561064315" flag="0"/>
 			<vel value="0.218171018066358" flag="0"/>
 			<psa03 value="0.172794401959766" flag="0"/>
@@ -4140,21 +4140,21 @@
 		</comp>
 	</station>
 	<station code="MCEL" name="MCEL" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="40.3249" lon="15.8019" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
-		<comp name="--.HNE" depth="0.0">
+		<comp name="--.HNE" depth="1.0">
 			<acc value="0.015732572718385" flag="0"/>
 			<vel value="0.0442827685583259" flag="0"/>
 			<psa03 value="0.0203577040113136" flag="0"/>
 			<psa10 value="0.0284976536613758" flag="0"/>
 			<psa30 value="0.018992171865324" flag="0"/>
 		</comp>
-		<comp name="--.HNN" depth="0.0">
+		<comp name="--.HNN" depth="1.0">
 			<acc value="0.012213162536855" flag="0"/>
 			<vel value="0.0335380755512869" flag="0"/>
 			<psa03 value="0.0170467807215615" flag="0"/>
 			<psa10 value="0.0410693188769778" flag="0"/>
 			<psa30 value="0.0271531503524968" flag="0"/>
 		</comp>
-		<comp name="--.HNZ" depth="0.0">
+		<comp name="--.HNZ" depth="1.0">
 			<acc value="0.00922529676209205" flag="0"/>
 			<vel value="0.0406817587030332" flag="0"/>
 			<psa03 value="0.0124383334398795" flag="0"/>
@@ -5059,29 +5059,6 @@
 			<psa30 value="1.49054407456185" flag="0"/>
 		</comp>
 	</station>
-	<station code="TB02" name="TB02" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.370417" lon="12.409367" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
-		<comp name="01.DHE" depth="1.0">
-			<acc value="1.07129700890632" flag="0"/>
-			<vel value="0.771162881489266" flag="0"/>
-			<psa03 value="2.20222038629077" flag="0"/>
-			<psa10 value="1.03294850777092" flag="0"/>
-			<psa30 value="0.450712044128791" flag="0"/>
-		</comp>
-		<comp name="01.DHN" depth="1.0">
-			<acc value="1.47020502795076" flag="0"/>
-			<vel value="0.925006594043765" flag="0"/>
-			<psa03 value="4.61793724902841" flag="0"/>
-			<psa10 value="0.851002534739699" flag="0"/>
-			<psa30 value="0.298312268390616" flag="0"/>
-		</comp>
-		<comp name="01.DHZ" depth="1.0">
-			<acc value="0.641949585124676" flag="0"/>
-			<vel value="0.774842416056164" flag="0"/>
-			<psa03 value="1.92179064253354" flag="0"/>
-			<psa10 value="0.591941613227764" flag="0"/>
-			<psa30 value="0.239167497006113" flag="0"/>
-		</comp>
-	</station>
 	<station code="TERO" name="TERO" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="42.62279" lon="13.60393" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="2.82452223847992" flag="0"/>
@@ -5450,6 +5427,29 @@
 			<psa30 value="0.0274005351509947" flag="0"/>
 		</comp>
 	</station>
+	<station code="BALD" name="BALD" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="45.683" lon="10.8187" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0849975185207869" flag="0"/>
+			<vel value="0.0743271628663972" flag="0"/>
+			<psa03 value="0.239861764664655" flag="0"/>
+			<psa10 value="0.0775625481383359" flag="0"/>
+			<psa30 value="0.0389268187106958" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0474607655348719" flag="0"/>
+			<vel value="0.0627411289570983" flag="0"/>
+			<psa03 value="0.107411386310405" flag="0"/>
+			<psa10 value="0.081717305870409" flag="0"/>
+			<psa30 value="0.0250818015462395" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0248201738594874" flag="0"/>
+			<vel value="0.0394654701994734" flag="0"/>
+			<psa03 value="0.06254409636457" flag="0"/>
+			<psa10 value="0.0453590748161335" flag="0"/>
+			<psa30 value="0.0251896770257909" flag="0"/>
+		</comp>
+	</station>
 	<station code="BOO" name="BOO" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="46.3195" lon="13.0984" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0307223518540756" flag="0"/>
@@ -5542,6 +5542,75 @@
 			<psa30 value="0.0370617594301792" flag="0"/>
 		</comp>
 	</station>
+	<station code="DRE" name="DRE" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="46.1733" lon="13.645" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0871225915495851" flag="0"/>
+			<vel value="0.0876470314323375" flag="0"/>
+			<psa03 value="0.305839760383015" flag="0"/>
+			<psa10 value="0.126323533313953" flag="0"/>
+			<psa30 value="0.0647196873618169" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0622574664063918" flag="0"/>
+			<vel value="0.0543812348656532" flag="0"/>
+			<psa03 value="0.183972791461314" flag="0"/>
+			<psa10 value="0.077457286164942" flag="0"/>
+			<psa30 value="0.0223584244692439" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.046674474745157" flag="0"/>
+			<vel value="0.0501178833150068" flag="0"/>
+			<psa03 value="0.0775853479818266" flag="0"/>
+			<psa10 value="0.0682230644430133" flag="0"/>
+			<psa30 value="0.0334370850427828" flag="0"/>
+		</comp>
+	</station>
+	<station code="FUSE" name="FUSE" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="46.4142" lon="13.0011" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0321581483447764" flag="0"/>
+			<vel value="0.0653422956857008" flag="0"/>
+			<psa03 value="0.057689503938275" flag="0"/>
+			<psa10 value="0.0985297746138179" flag="0"/>
+			<psa30 value="0.0229858893690397" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0362637409776609" flag="0"/>
+			<vel value="0.0644153041952758" flag="0"/>
+			<psa03 value="0.0545461082037337" flag="0"/>
+			<psa10 value="0.108621783160129" flag="0"/>
+			<psa30 value="0.0301951902831792" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0260845821831229" flag="0"/>
+			<vel value="0.0619690631907459" flag="0"/>
+			<psa03 value="0.0365400872681361" flag="0"/>
+			<psa10 value="0.0591073693230082" flag="0"/>
+			<psa30 value="0.0314976765664897" flag="0"/>
+		</comp>
+	</station>
+	<station code="MARN" name="MARN" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="45.6378" lon="11.2099" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0835034291747185" flag="0"/>
+			<vel value="0.0735443705011046" flag="0"/>
+			<psa03 value="0.204791774783191" flag="0"/>
+			<psa10 value="0.0700500729734609" flag="0"/>
+			<psa30 value="0.0186402814938127" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0677085094917302" flag="0"/>
+			<vel value="0.0448568301658955" flag="0"/>
+			<psa03 value="0.150924737606581" flag="0"/>
+			<psa10 value="0.0661579826417091" flag="0"/>
+			<psa30 value="0.0204207261062167" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0310702187133207" flag="0"/>
+			<vel value="0.0407145018808031" flag="0"/>
+			<psa03 value="0.0872485818736865" flag="0"/>
+			<psa10 value="0.0416588771963404" flag="0"/>
+			<psa30 value="0.0243195693854327" flag="0"/>
+		</comp>
+	</station>
 	<station code="MLN" name="MLN" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="46.1495" lon="12.6154" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0445527479078167" flag="0"/>
@@ -5588,7 +5657,53 @@
 			<psa30 value="0.0397243681460326" flag="0"/>
 		</comp>
 	</station>
-	<station code="SABO" name="SABO" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="45.9875" lon="13.6336" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+	<station code="PLRO" name="PLRO" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="46.5491" lon="13.1481" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.121157724052036" flag="0"/>
+			<vel value="0.168227946167251" flag="0"/>
+			<psa03 value="0.258417410551718" flag="0"/>
+			<psa10 value="0.167832723094411" flag="0"/>
+			<psa30 value="0.0629684580178228" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0836810857361646" flag="0"/>
+			<vel value="0.146978237667686" flag="0"/>
+			<psa03 value="0.317751466141964" flag="0"/>
+			<psa10 value="0.236936015848096" flag="0"/>
+			<psa30 value="0.0736798075924361" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0464593725177146" flag="0"/>
+			<vel value="0.104385879220184" flag="0"/>
+			<psa03 value="0.0889028372932803" flag="0"/>
+			<psa10 value="0.172593633480981" flag="0"/>
+			<psa30 value="0.0393216815350929" flag="0"/>
+		</comp>
+	</station>
+	<station code="PRED" name="PRED" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="46.4428" lon="13.565" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0127932475496938" flag="0"/>
+			<vel value="0.0125176228304676" flag="0"/>
+			<psa03 value="0.0301022389172453" flag="0"/>
+			<psa10 value="0.0450051601209777" flag="0"/>
+			<psa30 value="0.04342186981911" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0104396598456757" flag="0"/>
+			<vel value="0.0099253840155907" flag="0"/>
+			<psa03 value="0.0248634257257651" flag="0"/>
+			<psa10 value="0.0429046497225513" flag="0"/>
+			<psa30 value="0.0242840970355778" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0107723131602053" flag="0"/>
+			<vel value="0.0104199798177833" flag="0"/>
+			<psa03 value="0.0327199045122726" flag="0"/>
+			<psa10 value="0.0390608100869498" flag="0"/>
+			<psa30 value="0.0333114367191798" flag="0"/>
+		</comp>
+	</station>
+	<station code="SABO" name="SABO" netid="OX" source="North-East Italy Seismic Network" insttype="" lat="45.9875" lon="13.6337" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.336809271891968" flag="0"/>
 			<vel value="0.681685468816308" flag="0"/>
@@ -5678,6 +5793,167 @@
 			<psa03 value="0.04894353393566" flag="0"/>
 			<psa10 value="0.0760497129200633" flag="0"/>
 			<psa30 value="0.0136303579443222" flag="0"/>
+		</comp>
+	</station>
+	<station code="CADS" name="CADS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.2281" lon="13.7368" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0455140736091256" flag="0"/>
+			<vel value="0.09020948712413" flag="0"/>
+			<psa03 value="0.104648088672388" flag="0"/>
+			<psa10 value="0.0752073696192934" flag="0"/>
+			<psa30 value="0.0518215462563743" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0348251945229232" flag="0"/>
+			<vel value="0.0444130532280516" flag="0"/>
+			<psa03 value="0.116271119057845" flag="0"/>
+			<psa10 value="0.0410307368350842" flag="0"/>
+			<psa30 value="0.022123805593558" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0309770035134149" flag="0"/>
+			<vel value="0.0538092093494319" flag="0"/>
+			<psa03 value="0.0578152414344829" flag="0"/>
+			<psa10 value="0.0629614808893088" flag="0"/>
+			<psa30 value="0.0254574364302056" flag="0"/>
+		</comp>
+	</station>
+	<station code="CEY" name="CEY" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.7381" lon="14.4221" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0464806498256154" flag="0"/>
+			<vel value="0.13904719073814" flag="0"/>
+			<psa03 value="0.0937419911968549" flag="0"/>
+			<psa10 value="0.0958211726824243" flag="0"/>
+			<psa30 value="0.0595000349186356" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0316141773393291" flag="0"/>
+			<vel value="0.0784713630248721" flag="0"/>
+			<psa03 value="0.093702373989076" flag="0"/>
+			<psa10 value="0.0513947321487726" flag="0"/>
+			<psa30 value="0.0315550737021018" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0453291793786224" flag="0"/>
+			<vel value="0.0573012120787073" flag="0"/>
+			<psa03 value="0.0606834106031337" flag="0"/>
+			<psa10 value="0.0879873312288745" flag="0"/>
+			<psa30 value="0.0207351752702653" flag="0"/>
+		</comp>
+	</station>
+	<station code="CRES" name="CRES" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.826" lon="15.4569" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0343481303447929" flag="0"/>
+			<vel value="0.109941586770623" flag="0"/>
+			<psa03 value="0.071712339132089" flag="0"/>
+			<psa10 value="0.113590397306164" flag="0"/>
+			<psa30 value="0.049979350886922" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0297935546619867" flag="0"/>
+			<vel value="0.0976979008344901" flag="0"/>
+			<psa03 value="0.0611611193324424" flag="0"/>
+			<psa10 value="0.0775602229842908" flag="0"/>
+			<psa30 value="0.0317655176429705" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0416226530769087" flag="0"/>
+			<vel value="0.1058192387441" flag="0"/>
+			<psa03 value="0.0536591431967723" flag="0"/>
+			<psa10 value="0.0907753184193081" flag="0"/>
+			<psa30 value="0.0492391985219103" flag="0"/>
+		</comp>
+	</station>
+	<station code="CRNS" name="CRNS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0807" lon="14.2613" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0525338464048763" flag="0"/>
+			<vel value="0.0995424025055983" flag="0"/>
+			<psa03 value="0.177541032055354" flag="0"/>
+			<psa10 value="0.07607390202285" flag="0"/>
+			<psa30 value="0.0466446999826385" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0334229555908397" flag="0"/>
+			<vel value="0.0553534338179507" flag="0"/>
+			<psa03 value="0.127021143693847" flag="0"/>
+			<psa10 value="0.0448344150599541" flag="0"/>
+			<psa30 value="0.0226536390257627" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0202974918774817" flag="0"/>
+			<vel value="0.0512103187873394" flag="0"/>
+			<psa03 value="0.0780744741339675" flag="0"/>
+			<psa10 value="0.037167632173212" flag="0"/>
+			<psa30 value="0.0294370467265548" flag="0"/>
+		</comp>
+	</station>
+	<station code="GBAS" name="GBAS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.9348" lon="14.4434" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.027674799511031" flag="0"/>
+			<vel value="0.103209878761957" flag="0"/>
+			<psa03 value="0.0560459315178174" flag="0"/>
+			<psa10 value="0.0474392588682583" flag="0"/>
+			<psa30 value="0.0272794687975778" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0212247312518742" flag="0"/>
+			<vel value="0.0351188458367513" flag="0"/>
+			<psa03 value="0.0598646688653316" flag="0"/>
+			<psa10 value="0.0307755831063354" flag="0"/>
+			<psa30 value="0.0199196495790071" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0199270982249061" flag="0"/>
+			<vel value="0.0516635386152185" flag="0"/>
+			<psa03 value="0.0460089437000624" flag="0"/>
+			<psa10 value="0.0424642655492287" flag="0"/>
+			<psa30 value="0.0240066203207902" flag="0"/>
+		</comp>
+	</station>
+	<station code="GORS" name="GORS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.3174" lon="13.9999" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0311286290006257" flag="0"/>
+			<vel value="0.0624316632567762" flag="0"/>
+			<psa03 value="0.0574506912431258" flag="0"/>
+			<psa10 value="0.0856351454079303" flag="0"/>
+			<psa30 value="0.0307106810985527" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0235165553643735" flag="0"/>
+			<vel value="0.0382421590910513" flag="0"/>
+			<psa03 value="0.0505085855293435" flag="0"/>
+			<psa10 value="0.0388586716962806" flag="0"/>
+			<psa30 value="0.0197760850685975" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0238127769347812" flag="0"/>
+			<vel value="0.0502308746536909" flag="0"/>
+			<psa03 value="0.0410275564159075" flag="0"/>
+			<psa10 value="0.0534657318423309" flag="0"/>
+			<psa30 value="0.0258652567796506" flag="0"/>
+		</comp>
+	</station>
+	<station code="LJU" name="LJU" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0438" lon="14.5278" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0382695352167109" flag="0"/>
+			<vel value="0.0892446839062852" flag="0"/>
+			<psa03 value="0.0655672132979705" flag="0"/>
+			<psa10 value="0.0730908044070805" flag="0"/>
+			<psa30 value="0.0424572892537251" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0522832913682397" flag="0"/>
+			<vel value="0.0954050126078769" flag="0"/>
+			<psa03 value="0.0957624792111386" flag="0"/>
+			<psa10 value="0.115232316075515" flag="0"/>
+			<psa30 value="0.0366353335777298" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0263732266320556" flag="0"/>
+			<vel value="0.0521559963233287" flag="0"/>
+			<psa03 value="0.0534149759798358" flag="0"/>
+			<psa10 value="0.0618974529023346" flag="0"/>
+			<psa30 value="0.0307595976723783" flag="0"/>
 		</comp>
 	</station>
 	<station code="MOZS" name="MOZS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.2941" lon="14.4433" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
@@ -5795,6 +6071,29 @@
 			<psa30 value="0.0405198709092611" flag="0"/>
 		</comp>
 	</station>
+	<station code="VOJS" name="VOJS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0322" lon="13.8877" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0478449339349981" flag="0"/>
+			<vel value="0.160436530883327" flag="0"/>
+			<psa03 value="0.0784614945639408" flag="0"/>
+			<psa10 value="0.109862110325524" flag="0"/>
+			<psa30 value="0.0627048805573949" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0291345119767711" flag="0"/>
+			<vel value="0.0550688980443599" flag="0"/>
+			<psa03 value="0.0653028468266257" flag="0"/>
+			<psa10 value="0.0557724046480278" flag="0"/>
+			<psa30 value="0.0234924862619158" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0303125350088945" flag="0"/>
+			<vel value="0.0703250923594363" flag="0"/>
+			<psa03 value="0.0443909979774093" flag="0"/>
+			<psa10 value="0.0691909960638814" flag="0"/>
+			<psa30 value="0.0253525011454337" flag="0"/>
+		</comp>
+	</station>
 	<station code="DOSS" name="DOSS" netid="ST" source="Trentino Seismic Network" insttype="" lat="45.8808" lon="11.1884" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0446237689132122" flag="0"/>
@@ -5908,6 +6207,650 @@
 			<psa03 value="9.02190802692155" flag="0"/>
 			<psa10 value="3.35083602258801" flag="0"/>
 			<psa30 value="2.62260470891595" flag="0"/>
+		</comp>
+	</station>
+	<station code="T1241" name="T1241" netid="8P" source="INGV SISMIKO Emergency Seismic Network for 2016 Central Italy Sequence (ISESNCIS)" insttype="" lat="42.85635" lon="13.43116" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="KBN" name="KBN" netid="AC" source="Albanian Seismological Network (AC)" insttype="" lat="40.6236" lon="20.7874" esm:processing="discarded" esm:quality="good">
+		<comp name="00.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="00.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="00.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="FCC" name="FCC" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="42.754501" lon="13.1932" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HGE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="FIE" name="FIE" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="43.8072" lon="11.2944" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HGE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="MNT" name="MNT" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="43.1396" lon="11.1827" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HGE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="NCR" name="NCR" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="43.1115" lon="12.7845" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HGE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="RQT" name="RQT" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="42.813" lon="13.311" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HGE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HGZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="BRSN" name="BRSN" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="44.28418" lon="12.08023" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="CAFI" name="CAFI" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.3292" lon="11.9663" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="CNCS" name="CNCS" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="45.606" lon="10.217" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="CPGN" name="CPGN" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.8011" lon="12.3205" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="1.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="1.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="1.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="FAEN" name="FAEN" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="44.2895" lon="11.877" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="FEMA" name="FEMA" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="42.9621" lon="13.04976" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="GAG1" name="GAG1" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.238063" lon="13.067434" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="MMO1" name="MMO1" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="42.899333" lon="13.326833" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="NRCA" name="NRCA" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="42.83355" lon="13.11427" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="PIO1" name="PIO1" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.178198" lon="12.983759" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="ROM9" name="ROM9" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="41.82842" lon="12.51553" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="ROVR" name="ROVR" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="45.6468" lon="11.0721" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="SEF1" name="SEF1" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.14683" lon="12.94762" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="SERM" name="SERM" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="45.00997" lon="11.29582" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="1.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="1.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="1.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="SGG" name="SGG" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="41.38667" lon="14.37917" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="SGTA" name="SGTA" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="41.135" lon="15.365" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="SNTG" name="SNTG" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.255" lon="12.94057" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="SSM1" name="SSM1" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.228783" lon="13.176956" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="TB01" name="TB01" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.381567" lon="12.435667" esm:processing="discarded" esm:quality="good">
+		<comp name="01.DHE" depth="1.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="01.DHN" depth="1.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="01.DHZ" depth="1.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="TRIV" name="TRIV" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="41.7666" lon="14.5502" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="VITU" name="VITU" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="41.18326" lon="14.630154" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
 		</comp>
 	</station>
 </stationlist>
