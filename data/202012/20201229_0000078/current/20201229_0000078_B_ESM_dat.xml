@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1784685245">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1785462811">
 	<station code="CIMA" name="CIMA" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="43.305297" lon="13.670091" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.349604898396514" flag="0"/>
@@ -1034,6 +1034,29 @@
 			<psa30 value="0.0474561837393973" flag="0"/>
 		</comp>
 	</station>
+	<station code="GOLS" name="GOLS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0108" lon="15.6245" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="2.60960534672087" flag="0"/>
+			<vel value="2.15265696023196" flag="0"/>
+			<psa03 value="8.49157119158364" flag="0"/>
+			<psa10 value="1.82611981147538" flag="0"/>
+			<psa30 value="0.37773950338825" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="2.2099636976824" flag="0"/>
+			<vel value="2.35717478555059" flag="0"/>
+			<psa03 value="5.16255766077517" flag="0"/>
+			<psa10 value="2.09597556809487" flag="0"/>
+			<psa30 value="0.322047494065955" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.955854546259029" flag="0"/>
+			<vel value="0.845781559776893" flag="0"/>
+			<psa03 value="2.44857353931334" flag="0"/>
+			<psa10 value="1.42836378209052" flag="0"/>
+			<psa30 value="0.197848159802932" flag="0"/>
+		</comp>
+	</station>
 	<station code="GORS" name="GORS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.3174" lon="13.9999" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.374708413753031" flag="0"/>
@@ -1124,6 +1147,29 @@
 			<psa03 value="1.10543172942535" flag="0"/>
 			<psa10 value="0.303643874916499" flag="0"/>
 			<psa30 value="0.02717550524387" flag="0"/>
+		</comp>
+	</station>
+	<station code="KNDS" name="KNDS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.5278" lon="14.3807" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.77255866205922" flag="0"/>
+			<vel value="0.631111979532741" flag="0"/>
+			<psa03 value="1.33702948830847" flag="0"/>
+			<psa10 value="0.666821893677864" flag="0"/>
+			<psa30 value="0.154751664871649" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.827160197555523" flag="0"/>
+			<vel value="0.915552077805226" flag="0"/>
+			<psa03 value="1.98939212079791" flag="0"/>
+			<psa10 value="0.454509589029656" flag="0"/>
+			<psa30 value="0.265572152851766" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.310101106698609" flag="0"/>
+			<vel value="0.546222494311073" flag="0"/>
+			<psa03 value="0.680100469985043" flag="0"/>
+			<psa10 value="0.32874758791429" flag="0"/>
+			<psa30 value="0.157856723899904" flag="0"/>
 		</comp>
 	</station>
 	<station code="KOGS" name="KOGS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.4481" lon="16.2504" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
@@ -1655,53 +1701,7 @@
 			<psa30 value="0" flag="1"/>
 		</comp>
 	</station>
-	<station code="GBAS" name="GBAS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.9348" lon="14.4434" esm:processing="discarded" esm:quality="bad">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-	</station>
 	<station code="GCIS" name="GCIS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="45.8672" lon="15.6275" esm:processing="discarded" esm:quality="good">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-	</station>
-	<station code="GOLS" name="GOLS" netid="SL" source="Seismic Network of the Republic of Slovenia (SNRS)" insttype="" lat="46.0108" lon="15.6245" esm:processing="discarded" esm:quality="bad">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
