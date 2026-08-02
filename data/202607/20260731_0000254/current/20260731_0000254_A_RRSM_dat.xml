@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="CGAU" name="CGAU" netid="2I" insttype="" commtype="DIG" lat="40.8524" lon="14.113">
+    <comp name="--.HNE">
+      <acc value="117.8366802296" flag="0"/>
+      <vel value="19.2978147660" flag="0"/>
+      <psa03 value="103.3355938769" flag="0"/>
+      <psa10 value="14.3715821782" flag="0"/>
+      <psa30 value="1.2152399045" flag="0"/>
+    </comp>
+    <comp name="--.HNN">
+      <acc value="55.4156762598" flag="0"/>
+      <vel value="12.4636318786" flag="0"/>
+      <psa03 value="56.7086853144" flag="0"/>
+      <psa10 value="9.6110960432" flag="0"/>
+      <psa30 value="1.1672313351" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="61.0179418330" flag="0"/>
+      <vel value="11.5927254586" flag="0"/>
+      <psa03 value="54.4075281045" flag="0"/>
+      <psa10 value="9.5315817100" flag="0"/>
+      <psa30 value="0.5738761839" flag="0"/>
+    </comp>
+  </station>
+  <station code="CREM" name="CREM" netid="2I" insttype="" commtype="DIG" lat="40.8235" lon="14.1282">
+    <comp name="--.HNN">
+      <acc value="23.8163804789" flag="0"/>
+      <vel value="17.8202252766" flag="0"/>
+      <psa03 value="69.1286002903" flag="0"/>
+      <psa10 value="12.4119977481" flag="0"/>
+      <psa30 value="1.0476990318" flag="0"/>
+    </comp>
+    <comp name="--.HNE">
+      <acc value="13.2076858978" flag="0"/>
+      <vel value="11.3694695628" flag="0"/>
+      <psa03 value="38.5965643445" flag="0"/>
+      <psa10 value="17.0110056705" flag="0"/>
+      <psa30 value="0.7791446771" flag="0"/>
+    </comp>
+    <comp name="--.HNZ">
+      <acc value="19.0904208732" flag="0"/>
+      <vel value="9.0159782389" flag="0"/>
+      <psa03 value="55.0232884607" flag="0"/>
+      <psa10 value="7.7265470819" flag="0"/>
+      <psa30 value="0.8481182894" flag="0"/>
+    </comp>
+  </station>
   <station code="CAMPI" name="CAMPI" netid="GX" insttype="Trillium Compact" commtype="DIG" lat="40.7071" lon="15.2738">
     <comp name="--.HHE">
       <acc value="0.0078615842" flag="0"/>
@@ -698,6 +744,29 @@
       <psa03 value="0.0022929788" flag="0"/>
       <psa10 value="0.0022219973" flag="0"/>
       <psa30 value="0.0010977900" flag="0"/>
+    </comp>
+  </station>
+  <station code="MOCO" name="MOCO" netid="IV" insttype="" commtype="DIG" lat="41.37" lon="15.158">
+    <comp name="--.HHE">
+      <acc value="0.0025706842" flag="0"/>
+      <vel value="0.0058573129" flag="0"/>
+      <psa03 value="0.0039628689" flag="0"/>
+      <psa10 value="0.0070056110" flag="0"/>
+      <psa30 value="0.0027543103" flag="0"/>
+    </comp>
+    <comp name="--.HHN">
+      <acc value="0.0015234859" flag="0"/>
+      <vel value="0.0051448962" flag="0"/>
+      <psa03 value="0.0023758879" flag="0"/>
+      <psa10 value="0.0031653331" flag="0"/>
+      <psa30 value="0.0021714761" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0012757657" flag="0"/>
+      <vel value="0.0041552870" flag="0"/>
+      <psa03 value="0.0024996423" flag="0"/>
+      <psa10 value="0.0038757651" flag="0"/>
+      <psa30 value="0.0042245562" flag="0"/>
     </comp>
   </station>
   <station code="MRB1" name="MRB1" netid="IV" insttype="" commtype="DIG" lat="41.1227" lon="14.9681">
