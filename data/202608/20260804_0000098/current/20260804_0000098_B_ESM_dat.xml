@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1785847986">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1785885786">
 	<station code="FIVI" name="FIVI" netid="GU" source="Regional Seismic Network of North Western Italy (RSNI)" insttype="" lat="44.2394" lon="10.1271" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.172110145282179" flag="0"/>
@@ -2047,6 +2047,29 @@
 		</comp>
 	</station>
 	<station code="FAZ" name="FAZ" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="44.298" lon="11.8907" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="FGV" name="FGV" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="43.6014" lon="11.4116" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
