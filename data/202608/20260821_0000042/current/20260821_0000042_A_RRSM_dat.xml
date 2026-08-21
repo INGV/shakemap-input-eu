@@ -2,12 +2,26 @@
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
   <station code="BZK" name="BZK" netid="KO" insttype="CMG-3T" commtype="DIG" lat="41.96" lon="34.0035">
+    <comp name="--.HHN">
+      <acc value="0.0393708053" flag="0"/>
+      <vel value="0.0243206538" flag="0"/>
+      <psa03 value="0.1523603849" flag="0"/>
+      <psa10 value="0.0250779947" flag="0"/>
+      <psa30 value="0.0012649055" flag="0"/>
+    </comp>
     <comp name="--.HHE">
-      <acc value="0.0467726676" flag="0"/>
+      <acc value="0.0467726680" flag="0"/>
       <vel value="0.0268447846" flag="0"/>
       <psa03 value="0.1341524295" flag="0"/>
-      <psa10 value="0.0350205106" flag="0"/>
-      <psa30 value="0.0016122475" flag="0"/>
+      <psa10 value="0.0350205107" flag="0"/>
+      <psa30 value="0.0016122010" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0428086868" flag="0"/>
+      <vel value="0.0250009711" flag="0"/>
+      <psa03 value="0.1638811726" flag="0"/>
+      <psa10 value="0.0189020080" flag="0"/>
+      <psa30 value="0.0010890576" flag="0"/>
     </comp>
   </station>
 </stationlist>
