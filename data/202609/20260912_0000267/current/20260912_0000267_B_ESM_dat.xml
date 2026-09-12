@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1789240943">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1789242743">
 	<station code="SRN" name="SRN" netid="AC" source="Albanian Seismological Network (AC)" insttype="" lat="39.880001" lon="20.0005" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="01.HNE" depth="0.0">
 			<acc value="0.031604618669418" flag="0"/>
@@ -20,6 +20,75 @@
 			<psa03 value="0.0926950885113566" flag="0"/>
 			<psa10 value="0.0389716741821515" flag="0"/>
 			<psa30 value="0.00510687330529324" flag="0"/>
+		</comp>
+	</station>
+	<station code="MALA" name="MALA" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.39341" lon="21.87263" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="01.HNE" depth="0.0">
+			<acc value="0.0599277674885396" flag="0"/>
+			<vel value="0.0603187153699268" flag="0"/>
+			<psa03 value="0.119359334053429" flag="0"/>
+			<psa10 value="0.152924210478431" flag="0"/>
+			<psa30 value="0.0116393035467372" flag="0"/>
+		</comp>
+		<comp name="01.HNN" depth="0.0">
+			<acc value="0.048428762483919" flag="0"/>
+			<vel value="0.0442127869512584" flag="0"/>
+			<psa03 value="0.0882676181298394" flag="0"/>
+			<psa10 value="0.110270737395172" flag="0"/>
+			<psa30 value="0.0171889603509309" flag="0"/>
+		</comp>
+		<comp name="01.HNZ" depth="0.0">
+			<acc value="0.0215000430331686" flag="0"/>
+			<vel value="0.0217606636682316" flag="0"/>
+			<psa03 value="0.0406578053592336" flag="0"/>
+			<psa10 value="0.0329629398829935" flag="0"/>
+			<psa30 value="0.00464694658740538" flag="0"/>
+		</comp>
+	</station>
+	<station code="ROD3" name="ROD3" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.30811" lon="21.89204" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
+		<comp name="00.HNE" depth="0.0">
+			<acc value="0.104636665793096" flag="0"/>
+			<vel value="0.0397424852448032" flag="0"/>
+			<psa03 value="0.331785687506811" flag="0"/>
+			<psa10 value="0.0363436275869624" flag="0"/>
+			<psa30 value="0.00357632566402354" flag="0"/>
+		</comp>
+		<comp name="00.HNN" depth="0.0">
+			<acc value="0.0970770912092062" flag="0"/>
+			<vel value="0.038766035611368" flag="0"/>
+			<psa03 value="0.315479044771759" flag="0"/>
+			<psa10 value="0.0357696333126587" flag="0"/>
+			<psa30 value="0.0064867655497156" flag="0"/>
+		</comp>
+		<comp name="00.HNZ" depth="0.0">
+			<acc value="0.0435341438777134" flag="0"/>
+			<vel value="0.017886819746016" flag="0"/>
+			<psa03 value="0.03975372203065" flag="0"/>
+			<psa10 value="0.0173805920039207" flag="0"/>
+			<psa30 value="0.00271368664342204" flag="0"/>
+		</comp>
+	</station>
+	<station code="TRIZ" name="TRIZ" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.36543" lon="22.07272" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="00.HNE" depth="0.0">
+			<acc value="0.0135784080498268" flag="0"/>
+			<vel value="0.0102605312863025" flag="0"/>
+			<psa03 value="0.0426180367774447" flag="0"/>
+			<psa10 value="0.0137186722322076" flag="0"/>
+			<psa30 value="0.00241068115412878" flag="0"/>
+		</comp>
+		<comp name="00.HNN" depth="0.0">
+			<acc value="0.0249933125603436" flag="0"/>
+			<vel value="0.0160546630221075" flag="0"/>
+			<psa03 value="0.091656103017" flag="0"/>
+			<psa10 value="0.0205387249647301" flag="0"/>
+			<psa30 value="0.00327397105118099" flag="0"/>
+		</comp>
+		<comp name="00.HNZ" depth="0.0">
+			<acc value="0.023097120324948" flag="0"/>
+			<vel value="0.00988395229539292" flag="0"/>
+			<psa03 value="0.0315106889909992" flag="0"/>
+			<psa10 value="0.0197721291815217" flag="0"/>
+			<psa30 value="0.00252584857507188" flag="0"/>
 		</comp>
 	</station>
 	<station code="AGR3" name="AGR3" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="38.5893" lon="21.4162" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
