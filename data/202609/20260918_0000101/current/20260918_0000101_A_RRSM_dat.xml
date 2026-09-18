@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE earthquake SYSTEM "stationlist.dtd">
 <stationlist created="" xmlns="ch.ethz.sed.shakemap.usgs.xml">
+  <station code="ACOR" name="ACOR" netid="HA" insttype="Horizon,120s,1200" commtype="DIG" lat="37.8905" lon="22.8694">
+    <comp name="--.HHN">
+      <acc value="0.0094444822" flag="0"/>
+      <vel value="0.0123447159" flag="0"/>
+      <psa03 value="0.0230918559" flag="0"/>
+      <psa10 value="0.0263888908" flag="0"/>
+      <psa30 value="0.0028478920" flag="0"/>
+    </comp>
+    <comp name="--.HHE">
+      <acc value="0.0113286069" flag="0"/>
+      <vel value="0.0109762258" flag="0"/>
+      <psa03 value="0.0239701600" flag="0"/>
+      <psa10 value="0.0245648123" flag="0"/>
+      <psa30 value="0.0038619004" flag="0"/>
+    </comp>
+    <comp name="--.HHZ">
+      <acc value="0.0082282678" flag="0"/>
+      <vel value="0.0064355091" flag="0"/>
+      <psa03 value="0.0217961827" flag="0"/>
+      <psa10 value="0.0108911928" flag="0"/>
+      <psa30 value="0.0018573127" flag="0"/>
+    </comp>
+  </station>
   <station code="ALIO" name="ALIO" netid="HA" insttype="25" commtype="DIG" lat="38.0657" lon="23.6727">
     <comp name="--.HHZ">
       <acc value="0.0246723702" flag="0"/>
@@ -160,6 +183,15 @@
       <psa03 value="0.1541468821" flag="0"/>
       <psa10 value="0.0194515837" flag="0"/>
       <psa30 value="0.0011100139" flag="0"/>
+    </comp>
+  </station>
+  <station code="KALE" name="KALE" netid="HA" insttype="40," commtype="DIG" lat="38.3911" lon="22.1398">
+    <comp name="--.HHE">
+      <acc value="0.0089940003" flag="0"/>
+      <vel value="0.0066236484" flag="0"/>
+      <psa03 value="0.0260356618" flag="0"/>
+      <psa10 value="0.0058189979" flag="0"/>
+      <psa30 value="0.0015796701" flag="0"/>
     </comp>
   </station>
   <station code="LOUT" name="LOUT" netid="HA" insttype="30" commtype="DIG" lat="37.9879" lon="22.9743">
