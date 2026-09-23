@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1780710925">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1790128341">
 	<station code="TIR1" name="TIR1" netid="AC" source="Albanian Seismological Network (AC)" insttype="" lat="41.3357" lon="19.8078" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="None">
 			<acc value="0.649121498811891" flag="0"/>
@@ -185,22 +185,22 @@
 	</station>
 	<station code="CEVME" name="CEVME" netid="ME" source="Montenegrin Seismic Network (ME)" insttype="" lat="42.546741" lon="18.917674" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="00.HLE" depth="0.0">
-			<acc value="0.116800735073466" flag="0"/>
-			<vel value="0.0444879064295656" flag="0"/>
+			<acc value="0.117069010452874" flag="0"/>
+			<vel value="0.0442759554221657" flag="0"/>
 			<psa03 value="0.165859359933933" flag="0"/>
 			<psa10 value="0.0188454174276161" flag="0"/>
 			<psa30 value="0.00221205469520735" flag="0"/>
 		</comp>
 		<comp name="00.HLN" depth="0.0">
-			<acc value="0.0839832494754731" flag="0"/>
-			<vel value="0.0279475184696215" flag="0"/>
+			<acc value="0.0840072463353886" flag="0"/>
+			<vel value="0.0277020237812755" flag="0"/>
 			<psa03 value="0.124070138952468" flag="0"/>
 			<psa10 value="0.00987773695511585" flag="0"/>
 			<psa30 value="0.00107112842644143" flag="0"/>
 		</comp>
 		<comp name="00.HLZ" depth="0.0">
-			<acc value="0.0559577144038743" flag="0"/>
-			<vel value="0.0162350841591476" flag="0"/>
+			<acc value="0.0558712818761833" flag="0"/>
+			<vel value="0.0159403578362797" flag="0"/>
 			<psa03 value="0.0913188437078927" flag="0"/>
 			<psa10 value="0.00791265924044136" flag="0"/>
 			<psa30 value="0.00134942495160708" flag="0"/>
@@ -229,27 +229,119 @@
 			<psa30 value="0.00134316104268052" flag="0"/>
 		</comp>
 	</station>
-	<station code="KOLME" name="KOLME" netid="ME" source="Montenegrin Seismic Network (ME)" insttype="" lat="42.8505" lon="19.5152" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+	<station code="PHP" name="PHP" netid="AC" source="Albanian Seismological Network (AC)" insttype="" lat="41.6847" lon="20.4408" esm:processing="discarded" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="ART2" name="ART2" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="39.1474" lon="20.9937" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="PTO1" name="PTO1" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="40.510132" lon="21.681568" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="MESG" name="MESG" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="40.589408" lon="17.850423" esm:processing="discarded" esm:quality="best">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="KOLME" name="KOLME" netid="ME" source="Montenegrin Seismic Network (ME)" insttype="" lat="42.8505" lon="19.5152" esm:processing="discarded" esm:quality="good">
 		<comp name="00.HLE" depth="0.0">
-			<acc value="0.00934585710190458" flag="0"/>
-			<vel value="0.00805477889957917" flag="0"/>
-			<psa03 value="0.0189706956061472" flag="0"/>
-			<psa10 value="0.0108804098054313" flag="0"/>
-			<psa30 value="0.00188588400896015" flag="0"/>
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
 		</comp>
 		<comp name="00.HLN" depth="0.0">
-			<acc value="0.00840265339025818" flag="0"/>
-			<vel value="0.0061552467020218" flag="0"/>
-			<psa03 value="0.0263084174915438" flag="0"/>
-			<psa10 value="0.00910056482615647" flag="0"/>
-			<psa30 value="0.00178476662200286" flag="0"/>
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
 		</comp>
 		<comp name="00.HLZ" depth="0.0">
-			<acc value="0.00658602600193858" flag="0"/>
-			<vel value="0.00653105992987499" flag="0"/>
-			<psa03 value="0.0174942027877443" flag="0"/>
-			<psa10 value="0.0140857414875643" flag="0"/>
-			<psa30 value="0.00145725366955711" flag="0"/>
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
 		</comp>
 	</station>
 </stationlist>
