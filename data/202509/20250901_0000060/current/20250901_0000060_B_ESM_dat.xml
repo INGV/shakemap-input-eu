@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1790819546">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1791165132">
 	<station code="CREM" name="CREM" netid="2I" source="INGV temporary seismic network of Osservatorio Vesuviano (Mobile_Seismic_Network_OV)" insttype="" lat="40.823459" lon="14.128082" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="2.30302017866913" flag="0"/>
@@ -549,29 +549,6 @@
 			<psa03 value="0.179171577571019" flag="0"/>
 			<psa10 value="0.213928631721944" flag="0"/>
 			<psa30 value="0.0244141056480143" flag="0"/>
-		</comp>
-	</station>
-	<station code="COLB" name="COLB" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="40.819016" lon="14.144606" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="54.0334691763242" flag="0"/>
-			<vel value="4.14755551827742" flag="0"/>
-			<psa03 value="8.69778218538328" flag="0"/>
-			<psa10 value="1.45327011201264" flag="0"/>
-			<psa30 value="0.0912874406782627" flag="0"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="52.8013296510448" flag="0"/>
-			<vel value="7.90997137860976" flag="0"/>
-			<psa03 value="9.45747051100649" flag="0"/>
-			<psa10 value="5.09520969263614" flag="0"/>
-			<psa30 value="0.566830616413143" flag="0"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="66.920426188983" flag="0"/>
-			<vel value="12.044250903502" flag="0"/>
-			<psa03 value="22.406100294181" flag="0"/>
-			<psa10 value="8.73228343092147" flag="0"/>
-			<psa30 value="1.06378321708402" flag="0"/>
 		</comp>
 	</station>
 	<station code="CPOZ" name="CPOZ" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="40.821072" lon="14.11911" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
@@ -4324,6 +4301,29 @@
 		</comp>
 	</station>
 	<station code="CMPR" name="CMPR" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="40.3181" lon="15.303" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="COLB" name="COLB" netid="IV" source="Italian National Seismic Network (INSN)" insttype="" lat="40.819016" lon="14.144606" esm:processing="discarded" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
