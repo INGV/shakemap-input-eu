@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1792401703">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1792405302">
 	<station code="RAZG" name="RAZG" netid="BS" source="National Seismic Network of Bulgaria (BS)" insttype="" lat="43.5662" lon="26.5079" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.116289279105269" flag="0"/>
@@ -1262,6 +1262,29 @@
 			<psa03 value="0.154439460022944" flag="0"/>
 			<psa10 value="0.00868053691796895" flag="0"/>
 			<psa30 value="0.000609205825646122" flag="0"/>
+		</comp>
+	</station>
+	<station code="VOIR" name="VOIR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="45.4371" lon="25.0495" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0211813754033571" flag="0"/>
+			<vel value="0.0151509065546813" flag="0"/>
+			<psa03 value="0.0734350938812355" flag="0"/>
+			<psa10 value="0.0143238376339455" flag="0"/>
+			<psa30 value="0.00193234842526637" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0321879944438098" flag="0"/>
+			<vel value="0.0198858068936956" flag="0"/>
+			<psa03 value="0.0527662767568717" flag="0"/>
+			<psa10 value="0.0206675853760999" flag="0"/>
+			<psa30 value="0.00128980971439685" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0215932444155808" flag="0"/>
+			<vel value="0.0110543152013065" flag="0"/>
+			<psa03 value="0.0575807779856164" flag="0"/>
+			<psa10 value="0.0135478652920861" flag="0"/>
+			<psa30 value="0.00068353147852252" flag="0"/>
 		</comp>
 	</station>
 	<station code="VRI" name="VRI" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="45.8657" lon="26.7277" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
