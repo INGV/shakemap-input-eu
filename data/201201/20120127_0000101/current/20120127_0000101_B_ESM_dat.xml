@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1788314004">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1793238878">
 	<station code="BIBA" name="BIBA" netid="CH" source="Switzerland Seismological Network" insttype="" lat="46.30255" lon="7.93038" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HGE" depth="0.0">
 			<acc value="0.0285484991446918" flag="0"/>
@@ -137,7 +137,7 @@
 			<psa30 value="0.00121072411109043" flag="0"/>
 		</comp>
 	</station>
-	<station code="LIENZ" name="LIENZ" netid="CH" source="Switzerland Seismological Network" insttype="" lat="47.294601" lon="9.4927" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
+	<station code="LIENZ" name="LIENZ" netid="CH" source="Switzerland Seismological Network" insttype="" lat="47.294437" lon="9.491773" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
 		<comp name="--.HGE" depth="0.0">
 			<acc value="0.0178236529994751" flag="0"/>
 			<vel value="0.0129615990796766" flag="0"/>
@@ -321,7 +321,7 @@
 			<psa30 value="0.00211048988618388" flag="0"/>
 		</comp>
 	</station>
-	<station code="SENIN" name="SENIN" netid="CH" source="Switzerland Seismological Network" insttype="" lat="46.36335" lon="7.29938" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
+	<station code="SENIN" name="SENIN" netid="CH" source="Switzerland Seismological Network" insttype="" lat="46.36335" lon="7.2993" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HGE" depth="0.0">
 			<acc value="0.0183020462114579" flag="0"/>
 			<vel value="0.0110673834042701" flag="0"/>
@@ -1906,29 +1906,6 @@
 			<psa03 value="0.90947483392961" flag="0"/>
 			<psa10 value="0.390986036442694" flag="0"/>
 			<psa30 value="0.0111725764146486" flag="0"/>
-		</comp>
-	</station>
-	<station code="SLS" name="SLS" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="44.6323" lon="9.4059" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0.734796378349956" flag="0"/>
-			<vel value="0.268438798798433" flag="0"/>
-			<psa03 value="1.44052008428188" flag="0"/>
-			<psa10 value="0.260207698451949" flag="0"/>
-			<psa30 value="0.0176100851028856" flag="0"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0.000598223044881055" flag="0"/>
-			<vel value="0.000540864020416793" flag="0"/>
-			<psa03 value="0.00076061751251062" flag="0"/>
-			<psa10 value="0.000688582559855202" flag="0"/>
-			<psa30 value="0.000229527519951734" flag="0"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.453556975616335" flag="0"/>
-			<vel value="0.287788637568866" flag="0"/>
-			<psa03 value="1.83273026749765" flag="0"/>
-			<psa10 value="0.234105989954982" flag="0"/>
-			<psa30 value="0.0142584464051108" flag="0"/>
 		</comp>
 	</station>
 	<station code="SMP" name="SMP" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="44.0641" lon="10.8037" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
@@ -3655,6 +3632,29 @@
 		</comp>
 	</station>
 	<station code="SCV" name="SCV" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="41.3063" lon="14.8804" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="SLS" name="SLS" netid="IT" source="Italian Strong Motion Network (RAN)" insttype="" lat="44.6323" lon="9.4059" esm:processing="discarded" esm:quality="bad">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
