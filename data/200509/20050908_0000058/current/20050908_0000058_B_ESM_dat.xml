@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1788313991">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1793238875">
 	<station code="BOURR" name="BOURR" netid="CH" source="Switzerland Seismological Network" insttype="" lat="47.39364" lon="7.2301" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HGE" depth="0.0">
 			<acc value="0.0244644961854082" flag="0"/>
@@ -298,7 +298,7 @@
 			<psa30 value="0.00646838081080355" flag="0"/>
 		</comp>
 	</station>
-	<station code="SENIN" name="SENIN" netid="CH" source="Switzerland Seismological Network" insttype="" lat="46.36335" lon="7.29938" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+	<station code="SENIN" name="SENIN" netid="CH" source="Switzerland Seismological Network" insttype="" lat="46.36335" lon="7.2993" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HGE" depth="0.0">
 			<acc value="0.363745919392931" flag="0"/>
 			<vel value="0.108385084307763" flag="0"/>
@@ -850,29 +850,6 @@
 			<psa30 value="0.0019753684221967" flag="0"/>
 		</comp>
 	</station>
-	<station code="STFL" name="STFL" netid="RA" source="Reseau Accelerometrique Permanent (French Accelerometrique Network) (RAP)" insttype="" lat="47.1121" lon="6.56289" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
-		<comp name="00.HNE" depth="0.0">
-			<acc value="24.4475667761094" flag="0"/>
-			<vel value="124.379714307025" flag="0"/>
-			<psa03 value="0.124025396745849" flag="0"/>
-			<psa10 value="0.0539953423689965" flag="0"/>
-			<psa30 value="0.00664913932554136" flag="0"/>
-		</comp>
-		<comp name="00.HNN" depth="0.0">
-			<acc value="23.9998270966157" flag="0"/>
-			<vel value="122.143041076342" flag="0"/>
-			<psa03 value="0.1625931788508" flag="0"/>
-			<psa10 value="0.0911022914278602" flag="0"/>
-			<psa30 value="0.00567465406539541" flag="0"/>
-		</comp>
-		<comp name="00.HNZ" depth="0.0">
-			<acc value="23.5421251039725" flag="0"/>
-			<vel value="119.793903608524" flag="0"/>
-			<psa03 value="0.139640426855626" flag="0"/>
-			<psa10 value="0.0228641624260692" flag="0"/>
-			<psa30 value="0.00262860463882347" flag="0"/>
-		</comp>
-	</station>
 	<station code="LS2" name="LS2" netid="ZN" source="SISMOVALP" insttype="" lat="45.7464" lon="7.0704" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="00.HNE" depth="None">
 			<acc value="0.690960426048878" flag="0"/>
@@ -1058,6 +1035,29 @@
 		</comp>
 	</station>
 	<station code="STET" name="STET" netid="RA" source="Reseau Accelerometrique Permanent (French Accelerometrique Network) (RAP)" insttype="" lat="44.2595" lon="6.92867" esm:processing="discarded" esm:quality="good">
+		<comp name="00.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="00.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="00.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="STFL" name="STFL" netid="RA" source="Reseau Accelerometrique Permanent (French Accelerometrique Network) (RAP)" insttype="" lat="47.1121" lon="6.56289" esm:processing="discarded" esm:quality="bad">
 		<comp name="00.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
