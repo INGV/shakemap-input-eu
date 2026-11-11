@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1787709204">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1794361924">
 	<station code="FLO2" name="FLO2" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="40.7801" lon="21.4052" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0239529978448244" flag="0"/>
@@ -89,6 +89,52 @@
 			<psa03 value="0.0180475913977029" flag="0"/>
 			<psa10 value="0.00400598912711836" flag="0"/>
 			<psa30 value="0.000372655337628869" flag="0"/>
+		</comp>
+	</station>
+	<station code="CEVME" name="CEVME" netid="ME" source="Montenegrin Seismic Network (ME)" insttype="" lat="42.546741" lon="18.917674" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0128229198262963" flag="0"/>
+			<vel value="0.00506009983668422" flag="0"/>
+			<psa03 value="0.0299996045140686" flag="0"/>
+			<psa10 value="0.00425659479101462" flag="0"/>
+			<psa30 value="0.000463667486528754" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0107801563291306" flag="0"/>
+			<vel value="0.00323709771768241" flag="0"/>
+			<psa03 value="0.0135119328596555" flag="0"/>
+			<psa10 value="0.00198838875224633" flag="0"/>
+			<psa30 value="0.000202879989282773" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00606007421161311" flag="0"/>
+			<vel value="0.00332300691503119" flag="0"/>
+			<psa03 value="0.0125785324847949" flag="0"/>
+			<psa10 value="0.00194990030413803" flag="0"/>
+			<psa30 value="0.00026209233628933" flag="0"/>
+		</comp>
+	</station>
+	<station code="KOLME" name="KOLME" netid="ME" source="Montenegrin Seismic Network (ME)" insttype="" lat="42.8505" lon="19.5152" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.00250059564524205" flag="0"/>
+			<vel value="0.00216790209528711" flag="0"/>
+			<psa03 value="0.00825607491923635" flag="0"/>
+			<psa10 value="0.00280348274822329" flag="0"/>
+			<psa30 value="0.000357080998613695" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.00212547682528254" flag="0"/>
+			<vel value="0.00165779212909499" flag="0"/>
+			<psa03 value="0.00535864176757242" flag="0"/>
+			<psa10 value="0.00234862871012557" flag="0"/>
+			<psa30 value="0.000276322810238389" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.00241058659269939" flag="0"/>
+			<vel value="0.00222294318207762" flag="0"/>
+			<psa03 value="0.00730757458574426" flag="0"/>
+			<psa10 value="0.00190378502266446" flag="0"/>
+			<psa30 value="0.000687465645391767" flag="0"/>
 		</comp>
 	</station>
 	<station code="GRE3" name="GRE3" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="40.08481" lon="21.43829" esm:processing="discarded" esm:quality="bad">
@@ -275,53 +321,7 @@
 			<psa30 value="0" flag="1"/>
 		</comp>
 	</station>
-	<station code="CEVME" name="CEVME" netid="ME" source="Montenegrin Seismic Network (ME)" insttype="" lat="42.546741" lon="18.917674" esm:processing="discarded" esm:quality="good">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-	</station>
 	<station code="DANME" name="DANME" netid="ME" source="Montenegrin Seismic Network (ME)" insttype="" lat="42.54614" lon="19.098616" esm:processing="discarded" esm:quality="undef">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-	</station>
-	<station code="KOLME" name="KOLME" netid="ME" source="Montenegrin Seismic Network (ME)" insttype="" lat="42.8505" lon="19.5152" esm:processing="discarded" esm:quality="bad">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
