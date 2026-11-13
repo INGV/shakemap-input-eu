@@ -1,25 +1,25 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1784080687">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1794534770">
 	<station code="MALA" name="MALA" netid="CL" source="Corinth Riff Laboratory (CRLNET)" insttype="" lat="38.39341" lon="21.87263" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
 		<comp name="01.HNE" depth="0.0">
-			<acc value="0.0607715704587509" flag="0"/>
-			<vel value="0.00772707533332965" flag="0"/>
-			<psa03 value="0.0181158328975378" flag="0"/>
-			<psa10 value="0.0153567141819452" flag="0"/>
-			<psa30 value="0.0015433684905875" flag="0"/>
+			<acc value="0.0607715704395969" flag="0"/>
+			<vel value="0.0077270709620122" flag="0"/>
+			<psa03 value="0.0181251772665402" flag="0"/>
+			<psa10 value="0.0153569335714812" flag="0"/>
+			<psa30 value="0.00157127950622251" flag="0"/>
 		</comp>
 		<comp name="01.HNN" depth="0.0">
-			<acc value="0.0348228996199783" flag="0"/>
-			<vel value="0.00581254391750618" flag="0"/>
-			<psa03 value="0.0112738249605659" flag="0"/>
-			<psa10 value="0.0106410871072781" flag="0"/>
-			<psa30 value="0.0012360006289769" flag="0"/>
+			<acc value="0.0348228995830021" flag="0"/>
+			<vel value="0.00581266993917029" flag="0"/>
+			<psa03 value="0.0112696410896637" flag="0"/>
+			<psa10 value="0.00935221110058714" flag="0"/>
+			<psa30 value="0.00101497848734353" flag="0"/>
 		</comp>
 		<comp name="01.HNZ" depth="0.0">
-			<acc value="0.0701473403740386" flag="0"/>
-			<vel value="0.00759286494757714" flag="0"/>
-			<psa03 value="0.00696443010931502" flag="0"/>
-			<psa10 value="0.00481679143253423" flag="0"/>
-			<psa30 value="0.000336693371991822" flag="0"/>
+			<acc value="0.0701473403295855" flag="0"/>
+			<vel value="0.00759287209296823" flag="0"/>
+			<psa03 value="0.00611137099416864" flag="0"/>
+			<psa10 value="0.00482103671377186" flag="0"/>
+			<psa30 value="0.00033103612222679" flag="0"/>
 		</comp>
 	</station>
 	<station code="AGR3" name="AGR3" netid="HI" source="ITSAK Strong Motion Network" insttype="" lat="38.5893" lon="21.4162" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
@@ -459,27 +459,50 @@
 			<psa30 value="0.000244582816994618" flag="0"/>
 		</comp>
 	</station>
-	<station code="VVK" name="VVK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4222" lon="21.8116" esm:processing="automatic (Paolucci et al 2011)" esm:quality="best">
+	<station code="VVK" name="VVK" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.4222" lon="21.8116" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HNE" depth="0.0">
-			<acc value="0.00284679225066772" flag="0"/>
-			<vel value="0.00323055624305132" flag="0"/>
-			<psa03 value="0.00895404693772092" flag="0"/>
-			<psa10 value="0.00510851528906258" flag="0"/>
-			<psa30 value="0.00067890356777741" flag="0"/>
+			<acc value="0.00290300484607691" flag="0"/>
+			<vel value="0.00314815518761941" flag="0"/>
+			<psa03 value="0.00897181113533135" flag="0"/>
+			<psa10 value="0.00509433653729389" flag="0"/>
+			<psa30 value="0.000645616414752289" flag="0"/>
 		</comp>
 		<comp name="--.HNN" depth="0.0">
-			<acc value="0.00306787222260041" flag="0"/>
-			<vel value="0.0028334618924645" flag="0"/>
-			<psa03 value="0.0104741808422276" flag="0"/>
-			<psa10 value="0.00726232093685539" flag="0"/>
-			<psa30 value="0.00074753045772307" flag="0"/>
+			<acc value="0.00310369364007023" flag="0"/>
+			<vel value="0.00269974724530615" flag="0"/>
+			<psa03 value="0.0105066003075817" flag="0"/>
+			<psa10 value="0.00725183055443409" flag="0"/>
+			<psa30 value="0.000706707440899619" flag="0"/>
 		</comp>
 		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.00280388939911416" flag="0"/>
-			<vel value="0.0018829123853042" flag="0"/>
-			<psa03 value="0.00399653721191175" flag="0"/>
-			<psa10 value="0.00187273589550022" flag="0"/>
-			<psa30 value="0.000388811512062965" flag="0"/>
+			<acc value="0.00284407929159778" flag="0"/>
+			<vel value="0.00184402275069904" flag="0"/>
+			<psa03 value="0.00400944985116695" flag="0"/>
+			<psa10 value="0.0018697673394724" flag="0"/>
+			<psa30 value="0.000377172407695944" flag="0"/>
+		</comp>
+	</station>
+	<station code="CKVA" name="CKVA" netid="KF" source="ARGONET" insttype="" lat="38.1642" lon="20.5063" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
+		<comp name="00.HN1" depth="0.0">
+			<acc value="0.208381506928241" flag="0"/>
+			<vel value="0.122565400347386" flag="0"/>
+			<psa03 value="0.649731124831285" flag="0"/>
+			<psa10 value="0.114440413615686" flag="0"/>
+			<psa30 value="0.00645046939526114" flag="0"/>
+		</comp>
+		<comp name="00.HN2" depth="0.0">
+			<acc value="0.236831071449194" flag="0"/>
+			<vel value="0.0803081429836366" flag="0"/>
+			<psa03 value="0.656314519282814" flag="0"/>
+			<psa10 value="0.0593481577743603" flag="0"/>
+			<psa30 value="0.00393803045852344" flag="0"/>
+		</comp>
+		<comp name="00.HNZ" depth="0.0">
+			<acc value="0.0775654227638473" flag="0"/>
+			<vel value="0.0366537518065586" flag="0"/>
+			<psa03 value="0.23106505692591" flag="0"/>
+			<psa10 value="0.0172737868036136" flag="0"/>
+			<psa30 value="0.00145367890326014" flag="0"/>
 		</comp>
 	</station>
 	<station code="CKWP" name="CKWP" netid="KF" source="ARGONET" insttype="" lat="38.166171" lon="20.510214" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
@@ -943,21 +966,21 @@
 		</comp>
 	</station>
 	<station code="UPR" name="UPR" netid="HP" source="University of Patras, Seismological Laboratory (PSLNET)" insttype="" lat="38.2836" lon="21.7864" esm:processing="discarded" esm:quality="bad">
-		<comp name="--.HNE" depth="0.0">
+		<comp name="--.HNE" depth="2.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
 			<psa03 value="0" flag="1"/>
 			<psa10 value="0" flag="1"/>
 			<psa30 value="0" flag="1"/>
 		</comp>
-		<comp name="--.HNN" depth="0.0">
+		<comp name="--.HNN" depth="2.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
 			<psa03 value="0" flag="1"/>
 			<psa10 value="0" flag="1"/>
 			<psa30 value="0" flag="1"/>
 		</comp>
-		<comp name="--.HNZ" depth="0.0">
+		<comp name="--.HNZ" depth="2.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
 			<psa03 value="0" flag="1"/>
