@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1795226008">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1795312330">
 	<station code="DAVOX" name="DAVOX" netid="CH" source="Switzerland Seismological Network" insttype="" lat="46.7805" lon="9.87952" esm:processing="manual (Paolucci et al 2011)" esm:quality="best">
 		<comp name="--.HGE" depth="0.0">
 			<acc value="0.0467184404689968" flag="0"/>
@@ -597,29 +597,6 @@
 			<psa30 value="0.000214346412939566" flag="0"/>
 		</comp>
 	</station>
-	<station code="PDN3" name="PDN3" netid="ZO" source="Dynamic Planet (PD) multiparametric Northern Italy seismic network (PDNET)" insttype="" lat="45.81286" lon="10.73769" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0.0221097885178465" flag="0"/>
-			<vel value="0.00589247057291613" flag="0"/>
-			<psa03 value="0.0334337747193071" flag="0"/>
-			<psa10 value="0.00142052343864544" flag="0"/>
-			<psa30 value="0.000214088505229555" flag="0"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0.0209816603684619" flag="0"/>
-			<vel value="0.00617160613214011" flag="0"/>
-			<psa03 value="0.0517950717942901" flag="0"/>
-			<psa10 value="0.0018490200275649" flag="0"/>
-			<psa30 value="0.000441521644475594" flag="0"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0.0156976907906066" flag="0"/>
-			<vel value="0.00342164404620902" flag="0"/>
-			<psa03 value="0.0153753062990075" flag="0"/>
-			<psa10 value="0.00126161416168243" flag="0"/>
-			<psa30 value="0.000280674973547883" flag="0"/>
-		</comp>
-	</station>
 	<station code="SAPK" name="SAPK" netid="CH" source="Switzerland Seismological Network" insttype="" lat="47.330517" lon="9.404271" esm:processing="discarded" esm:quality="bad">
 		<comp name="--.HGE" depth="1.0">
 			<acc value="0" flag="1"/>
@@ -920,6 +897,29 @@
 		</comp>
 	</station>
 	<station code="ZIAN" name="ZIAN" netid="ST" source="Trentino Seismic Network" insttype="" lat="46.2764" lon="11.5632" esm:processing="discarded" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0" flag="1"/>
+			<vel value="0" flag="1"/>
+			<psa03 value="0" flag="1"/>
+			<psa10 value="0" flag="1"/>
+			<psa30 value="0" flag="1"/>
+		</comp>
+	</station>
+	<station code="PDN3" name="PDN3" netid="ZO" source="Dynamic Planet (PD) multiparametric Northern Italy seismic network (PDNET)" insttype="" lat="45.81286" lon="10.73769" esm:processing="discarded" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
