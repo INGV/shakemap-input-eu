@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1795225989">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1795485129">
 	<station code="LOZB" name="LOZB" netid="BS" source="National Seismic Network of Bulgaria (BS)" insttype="" lat="43.3701" lon="26.593" esm:processing="automatic (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.487811880600127" flag="0"/>
@@ -365,6 +365,29 @@
 			<psa03 value="4.76086038363532" flag="0"/>
 			<psa10 value="0.303121540314402" flag="0"/>
 			<psa30 value="0.0276871774729593" flag="0"/>
+		</comp>
+	</station>
+	<station code="CHLR" name="CHLR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="45.4245" lon="29.289" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="1.23644123621098" flag="0"/>
+			<vel value="0.542670932311864" flag="0"/>
+			<psa03 value="2.62749939227297" flag="0"/>
+			<psa10 value="0.421850175503794" flag="0"/>
+			<psa30 value="0.048935298390023" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="1.12606867350581" flag="0"/>
+			<vel value="0.501258561619859" flag="0"/>
+			<psa03 value="4.27799639626593" flag="0"/>
+			<psa10 value="0.592459207514859" flag="0"/>
+			<psa30 value="0.0630051404480081" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="1.91616344612004" flag="0"/>
+			<vel value="0.443064187695608" flag="0"/>
+			<psa03 value="1.21949111863499" flag="0"/>
+			<psa10 value="0.197723763228936" flag="0"/>
+			<psa30 value="0.0193086007667058" flag="0"/>
 		</comp>
 	</station>
 	<station code="CICN" name="CICN" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.197" lon="27.0261" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
@@ -1584,29 +1607,6 @@
 			<psa03 value="1.22239556104005" flag="0"/>
 			<psa10 value="0.417024025795061" flag="0"/>
 			<psa30 value="0.0291841999766865" flag="0"/>
-		</comp>
-	</station>
-	<station code="CHLR" name="CHLR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="45.4245" lon="29.289" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
 		</comp>
 	</station>
 	<station code="EFOR" name="EFOR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.075" lon="28.6323" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
