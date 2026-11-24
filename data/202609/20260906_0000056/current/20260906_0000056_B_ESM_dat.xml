@@ -1,4 +1,4 @@
-<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1795225980">
+<stationlist xmlns:esm="https://esm-db.eu/esmws/shakemap/1/" created="1795485124">
 	<station code="AMRR" name="AMRR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.6102" lon="27.3351" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.0655081042799359" flag="0"/>
@@ -43,6 +43,52 @@
 			<psa03 value="0.0086497852454049" flag="0"/>
 			<psa10 value="0.000962308826361979" flag="0"/>
 			<psa30 value="7.89603934989684e-05" flag="0"/>
+		</comp>
+	</station>
+	<station code="BSTR" name="BSTR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.4458" lon="26.0984" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0255820506036042" flag="0"/>
+			<vel value="0.00937994068886372" flag="0"/>
+			<psa03 value="0.0540527369785477" flag="0"/>
+			<psa10 value="0.00371773354722681" flag="0"/>
+			<psa30 value="0.000305136932574249" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0293975073066601" flag="0"/>
+			<vel value="0.00953441918149723" flag="0"/>
+			<psa03 value="0.0434345283660053" flag="0"/>
+			<psa10 value="0.00337214721632844" flag="0"/>
+			<psa30 value="0.00032680685768377" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0234006378379143" flag="0"/>
+			<vel value="0.00500473439900447" flag="0"/>
+			<psa03 value="0.0186663263962642" flag="0"/>
+			<psa10 value="0.000983516832850826" flag="0"/>
+			<psa30 value="9.01643518520565e-05" flag="0"/>
+		</comp>
+	</station>
+	<station code="BTMR" name="BTMR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.437" lon="26.1067" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0225307391303522" flag="0"/>
+			<vel value="0.00963164991248937" flag="0"/>
+			<psa03 value="0.0512015585186343" flag="0"/>
+			<psa10 value="0.00278907312178126" flag="0"/>
+			<psa30 value="0.000257175239722481" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0269758527053598" flag="0"/>
+			<vel value="0.00846758445524162" flag="0"/>
+			<psa03 value="0.045291114897418" flag="0"/>
+			<psa10 value="0.00237745030691491" flag="0"/>
+			<psa30 value="0.000234493346533374" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0221253589645248" flag="0"/>
+			<vel value="0.00366863014416877" flag="0"/>
+			<psa03 value="0.0209523554386356" flag="0"/>
+			<psa10 value="0.000636211306032911" flag="0"/>
+			<psa30 value="7.09162277999696e-05" flag="0"/>
 		</comp>
 	</station>
 	<station code="BUC" name="BUC" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.4107" lon="26.0938" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
@@ -505,6 +551,29 @@
 			<psa30 value="0.000477193695073687" flag="0"/>
 		</comp>
 	</station>
+	<station code="STFAR" name="STFAR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.8629" lon="24.9609" esm:processing="manual (Paolucci et al 2011)" esm:quality="bad">
+		<comp name="--.HNE" depth="0.0">
+			<acc value="0.0313976904037155" flag="0"/>
+			<vel value="0.00979330339895971" flag="0"/>
+			<psa03 value="0.0593678807474037" flag="0"/>
+			<psa10 value="0.00182950010165301" flag="0"/>
+			<psa30 value="0.000208439341937603" flag="0"/>
+		</comp>
+		<comp name="--.HNN" depth="0.0">
+			<acc value="0.0337786418965832" flag="0"/>
+			<vel value="0.0098175116825923" flag="0"/>
+			<psa03 value="0.029057833793047" flag="0"/>
+			<psa10 value="0.00211617260792464" flag="0"/>
+			<psa30 value="0.000144221207593035" flag="0"/>
+		</comp>
+		<comp name="--.HNZ" depth="0.0">
+			<acc value="0.0174322758976939" flag="0"/>
+			<vel value="0.0038242402930263" flag="0"/>
+			<psa03 value="0.0144587416748428" flag="0"/>
+			<psa10 value="0.000803137324999937" flag="0"/>
+			<psa30 value="5.60093678978268e-05" flag="0"/>
+		</comp>
+	</station>
 	<station code="TESR" name="TESR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="46.5118" lon="26.6489" esm:processing="manual (Paolucci et al 2011)" esm:quality="good">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0.00735169751994246" flag="0"/>
@@ -689,52 +758,6 @@
 			<psa30 value="0" flag="1"/>
 		</comp>
 	</station>
-	<station code="BSTR" name="BSTR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.4458" lon="26.0984" esm:processing="discarded" esm:quality="good">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-	</station>
-	<station code="BTMR" name="BTMR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.437" lon="26.1067" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-	</station>
 	<station code="CICN" name="CICN" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.197" lon="27.0261" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
@@ -897,29 +920,6 @@
 		</comp>
 	</station>
 	<station code="ODSR" name="ODSR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="46.2969" lon="25.2919" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
-		<comp name="--.HNE" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNN" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-		<comp name="--.HNZ" depth="0.0">
-			<acc value="0" flag="1"/>
-			<vel value="0" flag="1"/>
-			<psa03 value="0" flag="1"/>
-			<psa10 value="0" flag="1"/>
-			<psa30 value="0" flag="1"/>
-		</comp>
-	</station>
-	<station code="STFAR" name="STFAR" netid="RO" source="Romanian Seismic Network (NIEP)" insttype="" lat="44.8629" lon="24.9609" esm:processing="automatic (Paolucci et al 2011)" esm:quality="bad">
 		<comp name="--.HNE" depth="0.0">
 			<acc value="0" flag="1"/>
 			<vel value="0" flag="1"/>
